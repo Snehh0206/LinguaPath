@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">LinguaPath</string>
+    <string name="logo_letter">L</string>
+    <string name="splash_tagline">Learn a language, one little step at a time</string>
+    <string name="pick_language_title">What do you want to learn?</string>
+    <string name="pick_language_subtitle">Pick a language to begin. More are coming later.</string>
+    <string name="lang_korean_native">한국어</string>
+    <string name="lang_korean">Korean</string>
+    <string name="lang_spanish_native">Español</string>
+    <string name="lang_spanish">Spanish</string>
+    <string name="status_default">Tap a language to begin</string>
+    <string name="status_picked">You picked %1$s! Its learning path opens here in the next milestone.</string>
 </resources>
