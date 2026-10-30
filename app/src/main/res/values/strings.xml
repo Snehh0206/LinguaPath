@@ -10,4 +10,12 @@
     <string name="lang_spanish">Spanish</string>
     <string name="status_default">Tap a language to begin</string>
     <string name="status_picked">You picked %1$s! Its learning path opens here in the next milestone.</string>
+    <string name="dashboard_title">%1$s path</string>
+    <string name="dashboard_progress">%1$d of %2$d stages done</string>
+    <string name="change_language">Change</string>
+    <string name="stage_locked">Finish the earlier stage first.</string>
+    <string name="course_placeholder">Lessons for this stage will appear here once the data is added.</string>
+    <string name="complete_stage">Mark stage complete</string>
+    <string name="stage_already_done">Stage already completed</string>
+    <string name="back">← Back</string>
 </resources>

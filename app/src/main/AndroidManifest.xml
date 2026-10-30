@@ -23,6 +23,13 @@
         <activity
             android:name=".LanguageSelectActivity"
             android:exported="false" />
+        <activity
+            android:name=".LanguageDashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".CourseActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

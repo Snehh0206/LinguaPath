@@ -1,5 +1,6 @@
 package com.example.linguapath;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,7 +23,6 @@ public class LanguageSelectActivity extends AppCompatActivity {
         binding = ActivityLanguageSelectBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Click events: each card calls the same method with its own language name
         binding.cardKorean.setOnClickListener(v -> onLanguagePicked(v, "Korean"));
         binding.cardSpanish.setOnClickListener(v -> onLanguagePicked(v, "Spanish"));
     }
@@ -30,14 +30,17 @@ public class LanguageSelectActivity extends AppCompatActivity {
     private void onLanguagePicked(View card, String languageName) {
         Log.d(TAG, "Picked: " + languageName);
 
-        // Small "press" animation: shrink a little, then bounce back
+        // Press animation, then open that language's dashboard
         card.animate()
                 .scaleX(0.96f)
                 .scaleY(0.96f)
                 .setDuration(100)
-                .withEndAction(() -> card.animate().scaleX(1f).scaleY(1f).setDuration(100));
+                .withEndAction(() -> {
+                    card.animate().scaleX(1f).scaleY(1f).setDuration(100);
 
-        // Inline feedback (better than a Toast here)
-        binding.textStatus.setText(getString(R.string.status_picked, languageName));
+                    Intent intent = new Intent(this, LanguageDashboardActivity.class);
+                    intent.putExtra(LanguageDashboardActivity.EXTRA_LANGUAGE, languageName);
+                    startActivity(intent);
+                });
     }
 }
