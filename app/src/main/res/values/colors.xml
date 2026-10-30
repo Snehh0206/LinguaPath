@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="cream">#FFF6E5</color>
+    <color name="ink">#4A3B32</color>
+    <color name="peach">#F6C9B4</color>
+    <color name="locked">#E6DDCF</color>
+    <color name="sage">#BFD8B8</color>
 </resources>
