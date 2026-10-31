@@ -19,4 +19,19 @@
     <string name="stage_already_done">Stage already completed</string>
     <string name="back">← Back</string>
     <string name="course_word_count">%1$d words in this stage</string>
+    <string name="label_meaning">Meaning</string>
+    <string name="label_example">Example</string>
+    <string name="share_word">Share this word</string>
+    <string name="share_chooser_title">Share word with</string>
+    <string name="share_no_app">No app found to share with.</string>
+    <string name="word_not_found">Could not load this word.</string>
+    <string name="arrow">›</string>
+    <string name="redo_dialog_title">Redo this stage?</string>
+    <string name="redo_dialog_message">You finished this stage before. Redoing it will not add extra progress.</string>
+    <string name="redo_yes">Redo</string>
+    <string name="redo_finish">Finish redo</string>
+    <string name="course_redo_info">Redo mode: %1$d words, no extra progress</string>
+    <string name="fab_continue">▶ Continue</string>
+    <string name="fab_surprise">🎲 Surprise me</string>
+    <string name="fab_all_done">All stages are done. Tap a stage to redo it.</string>
 </resources>

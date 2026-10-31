@@ -24,4 +24,15 @@ public class ProgressStore {
             prefs.edit().putInt("completed_" + language, stageIndex + 1).apply();
         }
     }
+
+    // How many times a finished stage was redone (no extra progress).
+    // Saved now so revision suggestions can use it later.
+    public int getPracticeCount(String language, int stageIndex) {
+        return prefs.getInt("practice_" + language + "_" + stageIndex, 0);
+    }
+
+    public void addPractice(String language, int stageIndex) {
+        int count = getPracticeCount(language, stageIndex) + 1;
+        prefs.edit().putInt("practice_" + language + "_" + stageIndex, count).apply();
+    }
 }

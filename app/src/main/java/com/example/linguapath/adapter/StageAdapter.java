@@ -16,6 +16,7 @@ import com.example.linguapath.model.Stage;
 import com.example.linguapath.view.RopeView;
 
 import java.util.List;
+import com.example.linguapath.view.TouchBounce;
 
 public class StageAdapter extends RecyclerView.Adapter<StageAdapter.StageViewHolder> {
 
@@ -71,6 +72,11 @@ public class StageAdapter extends RecyclerView.Adapter<StageAdapter.StageViewHol
 
     @Override
     public void onBindViewHolder(@NonNull StageViewHolder holder, int position) {
+
+        holder.binding.nodeContainer.animate().cancel();
+        holder.binding.nodeContainer.setScaleX(1f);
+        holder.binding.nodeContainer.setScaleY(1f);
+
         Stage stage = stages.get(position);
         int state = getState(position);
         ItemStageBinding b = holder.binding;
@@ -130,6 +136,7 @@ public class StageAdapter extends RecyclerView.Adapter<StageAdapter.StageViewHol
         StageViewHolder(ItemStageBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+            TouchBounce.attach(binding.nodeContainer);
         }
     }
 }

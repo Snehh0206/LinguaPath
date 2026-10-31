@@ -6,6 +6,8 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.appcompat.app.AlertDialog;
+import android.view.animation.OvershootInterpolator;
 
 import com.example.linguapath.adapter.StageAdapter;
 import com.example.linguapath.data.ProgressStore;
@@ -50,6 +52,15 @@ public class LanguageDashboardActivity extends AppCompatActivity {
 
         binding.buttonChangeLanguage.setOnClickListener(v -> finish());
 
+        // Floating "Continue" button: slides up, then jumps to the next unfinished stage
+        binding.fabContinue.setOnClickListener(v -> continueLearning());
+        binding.fabContinue.setTranslationY(300f);
+        binding.fabContinue.animate()
+                .translationY(0f)
+                .setStartDelay(400)
+                .setDuration(600)
+                .setInterpolator(new OvershootInterpolator());
+
         StageRepository.loadStages(this, language, loadedStages -> {
             if (isFinishing() || isDestroyed()) {
                 return;
@@ -59,7 +70,17 @@ public class LanguageDashboardActivity extends AppCompatActivity {
             refreshProgress();
         });
     }
-
+    private void continueLearning() {
+        if (stages.isEmpty()) {
+            return; // data not loaded yet
+        }
+        int completed = progressStore.getCompletedCount(language);
+        if (completed >= stages.size()) {
+            binding.textMessage.setText(R.string.fab_all_done);
+            return;
+        }
+        openStage(stages.get(completed), false);
+    }
     @Override
     protected void onResume() {
         super.onResume();
@@ -95,11 +116,28 @@ public class LanguageDashboardActivity extends AppCompatActivity {
             return;
         }
 
+        if (state == StageAdapter.STATE_DONE) {
+            // Finished before: ask if the user wants to redo it
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.redo_dialog_title)
+                    .setMessage(R.string.redo_dialog_message)
+                    .setPositiveButton(R.string.redo_yes, (dialog, which) -> openStage(stage, true))
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .show();
+            return;
+        }
+
+        openStage(stage, false);
+    }
+
+    // Explicit Intent. The "redo" extra tells the course screen which mode to use.
+    private void openStage(Stage stage, boolean redo) {
         Intent intent = new Intent(this, CourseActivity.class);
         intent.putExtra(EXTRA_LANGUAGE, language);
         intent.putExtra(CourseActivity.EXTRA_STAGE_ID, stage.getId());
         intent.putExtra(CourseActivity.EXTRA_STAGE_INDEX, stage.getOrderIndex());
         intent.putExtra(CourseActivity.EXTRA_STAGE_TITLE, stage.getTitle());
+        intent.putExtra(CourseActivity.EXTRA_REDO, redo);
         startActivity(intent);
     }
 }
