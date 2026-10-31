@@ -6,6 +6,7 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.appcompat.app.AlertDialog;
 
 import com.example.linguapath.adapter.StageAdapter;
 import com.example.linguapath.data.ProgressStore;
@@ -95,11 +96,28 @@ public class LanguageDashboardActivity extends AppCompatActivity {
             return;
         }
 
+        if (state == StageAdapter.STATE_DONE) {
+            // Finished before: ask if the user wants to redo it
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.redo_dialog_title)
+                    .setMessage(R.string.redo_dialog_message)
+                    .setPositiveButton(R.string.redo_yes, (dialog, which) -> openStage(stage, true))
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .show();
+            return;
+        }
+
+        openStage(stage, false);
+    }
+
+    // Explicit Intent. The "redo" extra tells the course screen which mode to use.
+    private void openStage(Stage stage, boolean redo) {
         Intent intent = new Intent(this, CourseActivity.class);
         intent.putExtra(EXTRA_LANGUAGE, language);
         intent.putExtra(CourseActivity.EXTRA_STAGE_ID, stage.getId());
         intent.putExtra(CourseActivity.EXTRA_STAGE_INDEX, stage.getOrderIndex());
         intent.putExtra(CourseActivity.EXTRA_STAGE_TITLE, stage.getTitle());
+        intent.putExtra(CourseActivity.EXTRA_REDO, redo);
         startActivity(intent);
     }
 }

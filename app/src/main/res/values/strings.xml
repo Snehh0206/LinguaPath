@@ -26,4 +26,9 @@
     <string name="share_no_app">No app found to share with.</string>
     <string name="word_not_found">Could not load this word.</string>
     <string name="arrow">›</string>
+    <string name="redo_dialog_title">Redo this stage?</string>
+    <string name="redo_dialog_message">You finished this stage before. Redoing it will not add extra progress.</string>
+    <string name="redo_yes">Redo</string>
+    <string name="redo_finish">Finish redo</string>
+    <string name="course_redo_info">Redo mode: %1$d words, no extra progress</string>
 </resources>
