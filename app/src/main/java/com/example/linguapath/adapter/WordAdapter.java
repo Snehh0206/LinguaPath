@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.linguapath.databinding.ItemWordBinding;
 import com.example.linguapath.model.Word;
+import com.example.linguapath.view.TouchBounce;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,8 +43,14 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull WordViewHolder holder, int position) {
+        holder.itemView.animate().cancel();
+        holder.itemView.setScaleX(1f);
+        holder.itemView.setScaleY(1f);
+
         Word word = words.get(position);
         ItemWordBinding b = holder.binding;
+
+
 
         b.textWord.setText(word.getWord());
         b.textMeaning.setText(word.getMeaning());
@@ -70,6 +77,7 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder
         WordViewHolder(ItemWordBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+            TouchBounce.attach(binding.getRoot());
         }
     }
 }

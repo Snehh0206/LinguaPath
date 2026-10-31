@@ -12,6 +12,11 @@ import com.example.linguapath.data.ProgressStore;
 import com.example.linguapath.data.WordRepository;
 import com.example.linguapath.databinding.ActivityCourseBinding;
 import com.example.linguapath.model.Word;
+import com.example.linguapath.view.TopicTheme;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class CourseActivity extends AppCompatActivity {
 
@@ -23,6 +28,9 @@ public class CourseActivity extends AppCompatActivity {
 
     private ActivityCourseBinding binding;
     private WordAdapter adapter;
+
+    private final List<Word> loadedWords = new ArrayList<>();
+    private final Random random = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +48,17 @@ public class CourseActivity extends AppCompatActivity {
         boolean redo = getIntent().getBooleanExtra(EXTRA_REDO, false);
 
         binding.textCourseTitle.setText(stageTitle);
+        TopicTheme theme = TopicTheme.forTitle(stageTitle);
+        binding.textSticker.setText(theme.sticker);
+        binding.headerBand.setBackgroundResource(theme.backgroundRes);
+
         binding.buttonBack.setOnClickListener(v -> finish());
+        // Floating "Surprise me": opens a random word from this stage
+        binding.fabSurprise.setOnClickListener(v -> {
+            if (!loadedWords.isEmpty()) {
+                openWordDetail(loadedWords.get(random.nextInt(loadedWords.size())));
+            }
+        });
 
         adapter = new WordAdapter(this::openWordDetail);
         binding.recyclerWords.setLayoutManager(new LinearLayoutManager(this));
@@ -50,7 +68,12 @@ public class CourseActivity extends AppCompatActivity {
             if (isFinishing() || isDestroyed()) {
                 return;
             }
+            loadedWords.clear();
+            loadedWords.addAll(words);
+
             adapter.setWords(words);
+            binding.recyclerWords.scheduleLayoutAnimation();
+
             int infoText = redo ? R.string.course_redo_info : R.string.course_word_count;
             binding.textCourseInfo.setText(getString(infoText, words.size()));
         });

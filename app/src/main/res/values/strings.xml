@@ -31,4 +31,7 @@
     <string name="redo_yes">Redo</string>
     <string name="redo_finish">Finish redo</string>
     <string name="course_redo_info">Redo mode: %1$d words, no extra progress</string>
+    <string name="fab_continue">▶ Continue</string>
+    <string name="fab_surprise">🎲 Surprise me</string>
+    <string name="fab_all_done">All stages are done. Tap a stage to redo it.</string>
 </resources>

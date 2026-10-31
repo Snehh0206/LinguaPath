@@ -56,6 +56,11 @@ public class WordDetailActivity extends AppCompatActivity {
             binding.textDetailRomanization.setText(word.getRomanization());
         }
 
+        // The word floats up and fades in
+        binding.textDetailWord.setAlpha(0f);
+        binding.textDetailWord.setTranslationY(40f);
+        binding.textDetailWord.animate().alpha(1f).translationY(0f).setDuration(450);
+
         binding.buttonShare.setEnabled(true);
         binding.buttonShare.setOnClickListener(v -> shareWord(word));
     }
