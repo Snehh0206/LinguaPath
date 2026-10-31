@@ -13,6 +13,7 @@ import com.example.linguapath.data.StageRepository;
 import com.example.linguapath.databinding.ActivityLanguageDashboardBinding;
 import com.example.linguapath.model.Stage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LanguageDashboardActivity extends AppCompatActivity {
@@ -23,7 +24,7 @@ public class LanguageDashboardActivity extends AppCompatActivity {
     private ActivityLanguageDashboardBinding binding;
     private ProgressStore progressStore;
     private StageAdapter adapter;
-    private List<Stage> stages;
+    private List<Stage> stages = new ArrayList<>();
     private String language;
 
     @Override
@@ -34,25 +35,31 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         binding = ActivityLanguageDashboardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Which language did the user pick? It comes from the Intent extra.
         language = getIntent().getStringExtra(EXTRA_LANGUAGE);
         if (language == null) {
             language = "Spanish";
         }
 
         progressStore = new ProgressStore(this);
-        stages = StageRepository.getStages(language);
-
         binding.textLanguageTitle.setText(getString(R.string.dashboard_title, language));
 
+        // Start with an empty list; the real stages arrive from the database
         adapter = new StageAdapter(stages, this::onStageClicked);
         binding.recyclerStages.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerStages.setAdapter(adapter);
 
         binding.buttonChangeLanguage.setOnClickListener(v -> finish());
+
+        StageRepository.loadStages(this, language, loadedStages -> {
+            if (isFinishing() || isDestroyed()) {
+                return;
+            }
+            stages = loadedStages;
+            adapter.setStages(stages);
+            refreshProgress();
+        });
     }
 
-    // Runs every time the screen comes back, so progress is always fresh
     @Override
     protected void onResume() {
         super.onResume();
@@ -67,6 +74,9 @@ public class LanguageDashboardActivity extends AppCompatActivity {
     }
 
     private void refreshProgress() {
+        if (stages.isEmpty()) {
+            return; // data not loaded yet
+        }
         int completed = progressStore.getCompletedCount(language);
 
         adapter.setCompletedCount(completed);
@@ -76,21 +86,19 @@ public class LanguageDashboardActivity extends AppCompatActivity {
                 getString(R.string.dashboard_progress, completed, stages.size()));
         binding.textMessage.setText("");
 
-        // Scroll so the next stage is visible
         binding.recyclerStages.scrollToPosition(Math.min(completed, stages.size() - 1));
     }
 
     private void onStageClicked(Stage stage, int state) {
         if (state == StageAdapter.STATE_LOCKED) {
-            // Inline message instead of a Toast
             binding.textMessage.setText(R.string.stage_locked);
             return;
         }
 
-        // Explicit Intent: we name the exact Activity to open and pass data as extras
         Intent intent = new Intent(this, CourseActivity.class);
         intent.putExtra(EXTRA_LANGUAGE, language);
-        intent.putExtra(CourseActivity.EXTRA_STAGE_INDEX, stage.getId());
+        intent.putExtra(CourseActivity.EXTRA_STAGE_ID, stage.getId());
+        intent.putExtra(CourseActivity.EXTRA_STAGE_INDEX, stage.getOrderIndex());
         intent.putExtra(CourseActivity.EXTRA_STAGE_TITLE, stage.getTitle());
         startActivity(intent);
     }

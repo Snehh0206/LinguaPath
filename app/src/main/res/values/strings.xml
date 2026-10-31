@@ -18,4 +18,5 @@
     <string name="complete_stage">Mark stage complete</string>
     <string name="stage_already_done">Stage already completed</string>
     <string name="back">← Back</string>
+    <string name="course_word_count">%1$d words in this stage</string>
 </resources>

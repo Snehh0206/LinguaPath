@@ -1,0 +1,114 @@
+{
+  "languages": [
+    {
+      "name": "Spanish",
+      "stages": [
+        {
+          "title": "Greetings", "level": "A1",
+          "words": [
+            {"word": "hola", "romanization": "", "meaning": "hello", "example": "Hola, ¿cómo estás?", "exampleMeaning": "Hello, how are you?"},
+            {"word": "adiós", "romanization": "", "meaning": "goodbye", "example": "Adiós, hasta mañana.", "exampleMeaning": "Goodbye, see you tomorrow."},
+            {"word": "buenos días", "romanization": "", "meaning": "good morning", "example": "Buenos días, señora.", "exampleMeaning": "Good morning, ma'am."},
+            {"word": "gracias", "romanization": "", "meaning": "thank you", "example": "Muchas gracias por tu ayuda.", "exampleMeaning": "Thank you very much for your help."},
+            {"word": "por favor", "romanization": "", "meaning": "please", "example": "Un café, por favor.", "exampleMeaning": "A coffee, please."}
+          ]
+        },
+        {
+          "title": "Food & Drink", "level": "A1",
+          "words": [
+            {"word": "agua", "romanization": "", "meaning": "water", "example": "Quiero un vaso de agua.", "exampleMeaning": "I want a glass of water."},
+            {"word": "pan", "romanization": "", "meaning": "bread", "example": "El pan está fresco.", "exampleMeaning": "The bread is fresh."},
+            {"word": "café", "romanization": "", "meaning": "coffee", "example": "Me gusta el café con leche.", "exampleMeaning": "I like coffee with milk."},
+            {"word": "manzana", "romanization": "", "meaning": "apple", "example": "Ella come una manzana.", "exampleMeaning": "She eats an apple."},
+            {"word": "leche", "romanization": "", "meaning": "milk", "example": "La leche está fría.", "exampleMeaning": "The milk is cold."}
+          ]
+        },
+        {
+          "title": "Travel", "level": "A1",
+          "words": [
+            {"word": "aeropuerto", "romanization": "", "meaning": "airport", "example": "El aeropuerto está lejos.", "exampleMeaning": "The airport is far."},
+            {"word": "maleta", "romanization": "", "meaning": "suitcase", "example": "Mi maleta es azul.", "exampleMeaning": "My suitcase is blue."},
+            {"word": "tren", "romanization": "", "meaning": "train", "example": "El tren llega a las ocho.", "exampleMeaning": "The train arrives at eight."},
+            {"word": "hotel", "romanization": "", "meaning": "hotel", "example": "El hotel está cerca de la playa.", "exampleMeaning": "The hotel is near the beach."},
+            {"word": "mapa", "romanization": "", "meaning": "map", "example": "Necesito un mapa de la ciudad.", "exampleMeaning": "I need a map of the city."}
+          ]
+        },
+        {
+          "title": "Numbers", "level": "A1",
+          "words": [
+            {"word": "uno", "romanization": "", "meaning": "one", "example": "Solo tengo uno.", "exampleMeaning": "I only have one."},
+            {"word": "dos", "romanization": "", "meaning": "two", "example": "Tenemos dos gatos.", "exampleMeaning": "We have two cats."},
+            {"word": "tres", "romanization": "", "meaning": "three", "example": "Son las tres.", "exampleMeaning": "It is three o'clock."},
+            {"word": "cuatro", "romanization": "", "meaning": "four", "example": "Hay cuatro sillas.", "exampleMeaning": "There are four chairs."},
+            {"word": "cinco", "romanization": "", "meaning": "five", "example": "Tengo cinco libros.", "exampleMeaning": "I have five books."}
+          ]
+        },
+        {
+          "title": "Daily Life", "level": "A2",
+          "words": [
+            {"word": "casa", "romanization": "", "meaning": "house, home", "example": "Mi casa es pequeña.", "exampleMeaning": "My house is small."},
+            {"word": "trabajo", "romanization": "", "meaning": "work, job", "example": "Mi trabajo es interesante.", "exampleMeaning": "My job is interesting."},
+            {"word": "amigo", "romanization": "", "meaning": "friend", "example": "Él es mi mejor amigo.", "exampleMeaning": "He is my best friend."},
+            {"word": "familia", "romanization": "", "meaning": "family", "example": "Mi familia es grande.", "exampleMeaning": "My family is big."},
+            {"word": "tiempo", "romanization": "", "meaning": "time, weather", "example": "No tengo tiempo hoy.", "exampleMeaning": "I don't have time today."}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Korean",
+      "stages": [
+        {
+          "title": "Hangul Basics", "level": "Level 1",
+          "words": [
+            {"word": "나", "romanization": "na", "meaning": "I, me", "example": "나는 학생이에요.", "exampleMeaning": "I am a student."},
+            {"word": "아이", "romanization": "ai", "meaning": "child", "example": "아이가 웃어요.", "exampleMeaning": "The child is smiling."},
+            {"word": "나무", "romanization": "namu", "meaning": "tree", "example": "나무가 커요.", "exampleMeaning": "The tree is big."},
+            {"word": "오이", "romanization": "oi", "meaning": "cucumber", "example": "오이를 먹어요.", "exampleMeaning": "I eat a cucumber."},
+            {"word": "바지", "romanization": "baji", "meaning": "pants", "example": "바지가 작아요.", "exampleMeaning": "The pants are small."}
+          ]
+        },
+        {
+          "title": "Greetings", "level": "Level 1",
+          "words": [
+            {"word": "안녕하세요", "romanization": "annyeonghaseyo", "meaning": "hello", "example": "안녕하세요, 만나서 반갑습니다.", "exampleMeaning": "Hello, nice to meet you."},
+            {"word": "감사합니다", "romanization": "gamsahamnida", "meaning": "thank you", "example": "도와주셔서 감사합니다.", "exampleMeaning": "Thank you for helping me."},
+            {"word": "네", "romanization": "ne", "meaning": "yes", "example": "네, 알겠습니다.", "exampleMeaning": "Yes, I understand."},
+            {"word": "아니요", "romanization": "aniyo", "meaning": "no", "example": "아니요, 괜찮아요.", "exampleMeaning": "No, it's okay."},
+            {"word": "죄송합니다", "romanization": "joesonghamnida", "meaning": "I'm sorry", "example": "늦어서 죄송합니다.", "exampleMeaning": "I'm sorry for being late."}
+          ]
+        },
+        {
+          "title": "Numbers", "level": "Level 1",
+          "words": [
+            {"word": "일", "romanization": "il", "meaning": "one", "example": "일 번 버스예요.", "exampleMeaning": "It's bus number one."},
+            {"word": "이", "romanization": "i", "meaning": "two", "example": "이 층에 있어요.", "exampleMeaning": "It's on the second floor."},
+            {"word": "삼", "romanization": "sam", "meaning": "three", "example": "삼 분만 기다리세요.", "exampleMeaning": "Please wait just three minutes."},
+            {"word": "사", "romanization": "sa", "meaning": "four", "example": "사 번 출구예요.", "exampleMeaning": "It's exit number four."},
+            {"word": "오", "romanization": "o", "meaning": "five", "example": "오 시에 만나요.", "exampleMeaning": "Let's meet at five o'clock."}
+          ]
+        },
+        {
+          "title": "Food", "level": "Level 1",
+          "words": [
+            {"word": "물", "romanization": "mul", "meaning": "water", "example": "물 주세요.", "exampleMeaning": "Please give me water."},
+            {"word": "밥", "romanization": "bap", "meaning": "cooked rice, meal", "example": "밥을 먹었어요.", "exampleMeaning": "I ate a meal."},
+            {"word": "김치", "romanization": "gimchi", "meaning": "kimchi", "example": "김치가 매워요.", "exampleMeaning": "The kimchi is spicy."},
+            {"word": "커피", "romanization": "keopi", "meaning": "coffee", "example": "커피 한 잔 주세요.", "exampleMeaning": "One cup of coffee, please."},
+            {"word": "사과", "romanization": "sagwa", "meaning": "apple", "example": "사과를 좋아해요.", "exampleMeaning": "I like apples."}
+          ]
+        },
+        {
+          "title": "Travel", "level": "Level 2",
+          "words": [
+            {"word": "공항", "romanization": "gonghang", "meaning": "airport", "example": "공항에 가요.", "exampleMeaning": "I'm going to the airport."},
+            {"word": "지하철", "romanization": "jihacheol", "meaning": "subway", "example": "지하철을 타요.", "exampleMeaning": "I take the subway."},
+            {"word": "호텔", "romanization": "hotel", "meaning": "hotel", "example": "호텔이 어디예요?", "exampleMeaning": "Where is the hotel?"},
+            {"word": "여권", "romanization": "yeogwon", "meaning": "passport", "example": "여권을 보여 주세요.", "exampleMeaning": "Please show your passport."},
+            {"word": "지도", "romanization": "jido", "meaning": "map", "example": "지도가 필요해요.", "exampleMeaning": "I need a map."}
+          ]
+        }
+      ]
+    }
+  ]
+}

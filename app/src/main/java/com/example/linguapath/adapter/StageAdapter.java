@@ -37,7 +37,7 @@ public class StageAdapter extends RecyclerView.Adapter<StageAdapter.StageViewHol
             RopeView.LEFT, RopeView.CENTER, RopeView.RIGHT, RopeView.CENTER
     };
 
-    private final List<Stage> stages;
+    private  List<Stage> stages;
     private final OnStageClickListener listener;
     private int completedCount = 0;
 
@@ -50,7 +50,11 @@ public class StageAdapter extends RecyclerView.Adapter<StageAdapter.StageViewHol
         this.completedCount = completedCount;
         notifyDataSetChanged();
     }
-
+    // Called when the stages arrive from the database
+    public void setStages(List<Stage> stages) {
+        this.stages = stages;
+        notifyDataSetChanged();
+    }
     private int getState(int position) {
         if (position < completedCount) return STATE_DONE;
         if (position == completedCount) return STATE_CURRENT;
