@@ -34,4 +34,6 @@
     <string name="fab_continue">▶ Continue</string>
     <string name="fab_surprise">🎲 Surprise me</string>
     <string name="fab_all_done">All stages are done. Tap a stage to redo it.</string>
+    <string name="sprig_description">Sprig, the LinguaPath sprout. Tap to say hello.</string>
+    <string name="sprig_first_prompt">Tap me!</string>
 </resources>

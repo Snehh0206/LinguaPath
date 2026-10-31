@@ -52,6 +52,9 @@ public class LanguageDashboardActivity extends AppCompatActivity {
 
         binding.buttonChangeLanguage.setOnClickListener(v -> finish());
 
+        // Tap Sprig: it jumps and smiles
+        binding.sprig.setOnClickListener(v -> binding.sprig.react());
+
         // Floating "Continue" button: slides up, then jumps to the next unfinished stage
         binding.fabContinue.setOnClickListener(v -> continueLearning());
         binding.fabContinue.setTranslationY(300f);
@@ -86,12 +89,14 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         super.onResume();
         Log.d(TAG, "onResume");
         refreshProgress();
+        binding.sprig.startIdle();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         Log.d(TAG, "onPause");
+        binding.sprig.stopIdle();
     }
 
     private void refreshProgress() {
