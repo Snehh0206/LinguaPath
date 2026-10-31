@@ -24,4 +24,10 @@ public interface ContentDao {
 
     @Query("SELECT COUNT(*) FROM words WHERE stageId = :stageId")
     int countWordsInStage(int stageId);
+
+    @Query("SELECT * FROM words WHERE stageId = :stageId ORDER BY id")
+    List<WordEntity> getWordsForStage(int stageId);
+
+    @Query("SELECT * FROM words WHERE id = :wordId")
+    WordEntity getWordById(int wordId);
 }

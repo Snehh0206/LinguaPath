@@ -1,13 +1,17 @@
 package com.example.linguapath;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.linguapath.adapter.WordAdapter;
 import com.example.linguapath.data.ProgressStore;
-import com.example.linguapath.data.StageRepository;
+import com.example.linguapath.data.WordRepository;
 import com.example.linguapath.databinding.ActivityCourseBinding;
+import com.example.linguapath.model.Word;
 
 public class CourseActivity extends AppCompatActivity {
 
@@ -17,6 +21,7 @@ public class CourseActivity extends AppCompatActivity {
     private static final String TAG = "CourseActivity";
 
     private ActivityCourseBinding binding;
+    private WordAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +40,19 @@ public class CourseActivity extends AppCompatActivity {
             language = "Spanish";
         }
         binding.textCourseTitle.setText(stageTitle);
-
         binding.buttonBack.setOnClickListener(v -> finish());
 
-        // Real data: ask the database how many words this stage has
-        StageRepository.loadWordCount(this, stageId, count -> {
+        // Word list: tapping a word opens its detail screen (explicit Intent)
+        adapter = new WordAdapter(this::openWordDetail);
+        binding.recyclerWords.setLayoutManager(new LinearLayoutManager(this));
+        binding.recyclerWords.setAdapter(adapter);
+
+        WordRepository.loadWords(this, stageId, words -> {
             if (isFinishing() || isDestroyed()) {
                 return;
             }
-            binding.textCourseInfo.setText(getString(R.string.course_word_count, count));
+            adapter.setWords(words);
+            binding.textCourseInfo.setText(getString(R.string.course_word_count, words.size()));
         });
 
         ProgressStore progressStore = new ProgressStore(this);
@@ -59,5 +68,11 @@ public class CourseActivity extends AppCompatActivity {
                 finish();
             });
         }
+    }
+
+    private void openWordDetail(Word word) {
+        Intent intent = new Intent(this, WordDetailActivity.class);
+        intent.putExtra(WordDetailActivity.EXTRA_WORD_ID, word.getId());
+        startActivity(intent);
     }
 }
