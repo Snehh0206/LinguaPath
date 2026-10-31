@@ -77,6 +77,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/progressBar" />
 
+    <LinearLayout
+        android:id="@+id/sprigRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textMessage">
+
+        <com.example.linguapath.view.SprigView
+            android:id="@+id/sprig"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:contentDescription="@string/sprig_description" />
+
+        <TextView
+            android:id="@+id/textSprigSays"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_card_butter"
+            android:padding="12dp"
+            android:text="@string/sprig_first_prompt"
+            android:textColor="@color/ink"
+            android:textSize="14sp" />
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerStages"
         android:layout_width="0dp"
@@ -88,7 +120,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textMessage" />
+        app:layout_constraintTop_toBottomOf="@id/sprigRow"/>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fabContinue"

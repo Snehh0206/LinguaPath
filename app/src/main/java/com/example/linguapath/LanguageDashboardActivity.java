@@ -17,6 +17,7 @@ import com.example.linguapath.model.Stage;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class LanguageDashboardActivity extends AppCompatActivity {
 
@@ -28,6 +29,8 @@ public class LanguageDashboardActivity extends AppCompatActivity {
     private StageAdapter adapter;
     private List<Stage> stages = new ArrayList<>();
     private String language;
+    private final Random random = new Random();
+    private int lastCompleted = -1; // -1 = not known yet
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,12 @@ public class LanguageDashboardActivity extends AppCompatActivity {
 
         binding.buttonChangeLanguage.setOnClickListener(v -> finish());
 
+        // Tap Sprig: it jumps and smiles
+        binding.sprig.setOnClickListener(v -> {
+            binding.sprig.react();
+            showSprigLine(pickSprigLine());
+        });
+
         // Floating "Continue" button: slides up, then jumps to the next unfinished stage
         binding.fabContinue.setOnClickListener(v -> continueLearning());
         binding.fabContinue.setTranslationY(300f);
@@ -68,6 +77,7 @@ public class LanguageDashboardActivity extends AppCompatActivity {
             stages = loadedStages;
             adapter.setStages(stages);
             refreshProgress();
+            showSprigLine(pickSprigLine());
         });
     }
     private void continueLearning() {
@@ -86,12 +96,14 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         super.onResume();
         Log.d(TAG, "onResume");
         refreshProgress();
+        binding.sprig.startIdle();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         Log.d(TAG, "onPause");
+        binding.sprig.stopIdle();
     }
 
     private void refreshProgress() {
@@ -100,6 +112,12 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         }
         int completed = progressStore.getCompletedCount(language);
 
+        // Coming back after finishing a stage? Sprig celebrates.
+        if (lastCompleted >= 0 && completed > lastCompleted) {
+            binding.sprig.react();
+            showSprigLine(getString(R.string.sprig_stage_done));
+        }
+        lastCompleted = completed;
         adapter.setCompletedCount(completed);
         binding.progressBar.setMax(stages.size());
         binding.progressBar.setProgress(completed);
@@ -109,7 +127,32 @@ public class LanguageDashboardActivity extends AppCompatActivity {
 
         binding.recyclerStages.scrollToPosition(Math.min(completed, stages.size() - 1));
     }
+    // Chooses what Sprig says, based on the user's progress
+    private String pickSprigLine() {
+        if (stages.isEmpty()) {
+            return getString(R.string.sprig_cheer);
+        }
+        int completed = progressStore.getCompletedCount(language);
+        if (completed >= stages.size()) {
+            return getString(R.string.sprig_all_done);
+        }
 
+        int pick = random.nextInt(3);
+        if (pick == 0) {
+            return getString(language.equals("Korean")
+                    ? R.string.sprig_hello_korean
+                    : R.string.sprig_hello_spanish);
+        } else if (pick == 1) {
+            return getString(R.string.sprig_next, stages.get(completed).getTitle());
+        }
+        return getString(R.string.sprig_cheer);
+    }
+
+    private void showSprigLine(String line) {
+        binding.textSprigSays.setText(line);
+        binding.textSprigSays.setAlpha(0f);
+        binding.textSprigSays.animate().alpha(1f).setDuration(250);
+    }
     private void onStageClicked(Stage stage, int state) {
         if (state == StageAdapter.STATE_LOCKED) {
             binding.textMessage.setText(R.string.stage_locked);
