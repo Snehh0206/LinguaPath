@@ -30,6 +30,15 @@ public class ProgressStore {
         }
     }
 
+    // Used when the cloud copy is ahead of this phone. Progress only goes forward.
+    public boolean raiseCompletedTo(String language, int value) {
+        if (value > getCompletedCount(language)) {
+            prefs.edit().putInt("completed_" + language, value).apply();
+            return true;
+        }
+        return false;
+    }
+
     // How many times a finished stage was redone (no extra progress).
     // Saved now so revision suggestions can use it later.
     public int getPracticeCount(String language, int stageIndex) {

@@ -14,6 +14,7 @@ import com.example.linguapath.data.ProgressStore;
 import com.example.linguapath.data.StageRepository;
 import com.example.linguapath.databinding.ActivityLanguageDashboardBinding;
 import com.example.linguapath.model.Stage;
+import com.example.linguapath.data.CloudSyncRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,7 @@ public class LanguageDashboardActivity extends AppCompatActivity {
     private String language;
     private final Random random = new Random();
     private int lastCompleted = -1; // -1 = not known yet
+    private final CloudSyncRepository cloudSync = new CloudSyncRepository();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +80,24 @@ public class LanguageDashboardActivity extends AppCompatActivity {
             adapter.setStages(stages);
             refreshProgress();
             showSprigLine(pickSprigLine());
+        });
+        syncWithCloud();
+    }
+    // Compare the phone's progress with the cloud's. The higher one wins.
+    private void syncWithCloud() {
+        cloudSync.downloadProgress(language, (reachedServer, cloudCompleted) -> {
+            if (isFinishing() || isDestroyed()) {
+                return;
+            }
+            int local = progressStore.getCompletedCount(language);
+            if (cloudCompleted > local) {
+                // Cloud is ahead (for example, a new phone): update this phone
+                progressStore.raiseCompletedTo(language, cloudCompleted);
+                refreshProgress();
+            } else if (local > cloudCompleted) {
+                // Phone is ahead: back it up
+                cloudSync.uploadProgress(language, local);
+            }
         });
     }
     private void continueLearning() {
