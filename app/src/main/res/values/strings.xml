@@ -68,4 +68,8 @@
     <string name="logout_title">Log out?</string>
     <string name="logout_message">You can log back in any time. Your progress is saved to your account on this phone.</string>
     <string name="dots">⋮</string>
+    <string name="sync_syncing">☁ Syncing…</string>
+    <string name="sync_done">☁ Synced</string>
+    <string name="sync_offline">☁ Offline, saved on this phone</string>
+    <string name="sprig_cloud_restored">Welcome back! I found your progress in the cloud ☁️</string>
 </resources>

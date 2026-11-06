@@ -13,6 +13,7 @@ import com.example.linguapath.data.WordRepository;
 import com.example.linguapath.databinding.ActivityCourseBinding;
 import com.example.linguapath.model.Word;
 import com.example.linguapath.view.TopicTheme;
+import com.example.linguapath.data.CloudSyncRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,8 +91,12 @@ public class CourseActivity extends AppCompatActivity {
         } else {
             binding.buttonComplete.setOnClickListener(v -> {
                 progressStore.markStageCompleted(language, stageIndex);
+                // Back up the new progress to the cloud
+                new CloudSyncRepository().uploadProgress(
+                        language, progressStore.getCompletedCount(language));
                 finish();
             });
+
         }
     }
 

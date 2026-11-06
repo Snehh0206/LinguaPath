@@ -51,6 +51,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textLanguageTitle" />
 
+    <TextView
+        android:id="@+id/textSyncStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_card_sky"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="12dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="4dp"
+        android:textColor="@color/ink"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/textProgress"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"

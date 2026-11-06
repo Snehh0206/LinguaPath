@@ -14,6 +14,7 @@ import com.example.linguapath.data.ProgressStore;
 import com.example.linguapath.data.StageRepository;
 import com.example.linguapath.databinding.ActivityLanguageDashboardBinding;
 import com.example.linguapath.model.Stage;
+import com.example.linguapath.data.CloudSyncRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,7 @@ public class LanguageDashboardActivity extends AppCompatActivity {
     private String language;
     private final Random random = new Random();
     private int lastCompleted = -1; // -1 = not known yet
+    private final CloudSyncRepository cloudSync = new CloudSyncRepository();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +80,32 @@ public class LanguageDashboardActivity extends AppCompatActivity {
             adapter.setStages(stages);
             refreshProgress();
             showSprigLine(pickSprigLine());
+        });
+
+        // Tap the chip to try syncing again
+        binding.textSyncStatus.setOnClickListener(v -> syncWithCloud());
+        syncWithCloud();
+    }
+    // Compare the phone's progress with the cloud's. The higher one wins.
+    private void syncWithCloud() {
+        binding.textSyncStatus.setText(R.string.sync_syncing);
+
+        cloudSync.downloadProgress(language, (reachedServer, cloudCompleted) -> {
+            if (isFinishing() || isDestroyed()) {
+                return;
+            }
+            int local = progressStore.getCompletedCount(language);
+            if (cloudCompleted > local) {
+                progressStore.raiseCompletedTo(language, cloudCompleted);
+                refreshProgress();
+                // Sprig announces that the cloud had newer progress
+                binding.sprig.react();
+                showSprigLine(getString(R.string.sprig_cloud_restored));
+            } else if (local > cloudCompleted) {
+                cloudSync.uploadProgress(language, local);
+            }
+            binding.textSyncStatus.setText(
+                    reachedServer ? R.string.sync_done : R.string.sync_offline);
         });
     }
     private void continueLearning() {
