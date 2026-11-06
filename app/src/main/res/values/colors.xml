@@ -11,4 +11,5 @@
     <color name="sky">#CFE3EC</color>
     <color name="butter">#F7E3A1</color>
     <color name="leaf">#8FBF8A</color>
+    <color name="error">#B3402A</color>
 </resources>

@@ -2,6 +2,8 @@ package com.example.linguapath.data;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 // Remembers how many stages are finished, per language.
 public class ProgressStore {
@@ -11,7 +13,10 @@ public class ProgressStore {
     private final SharedPreferences prefs;
 
     public ProgressStore(Context context) {
-        prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        // Each account gets its own notebook, so two users never share progress
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String userId = (user == null) ? "guest" : user.getUid();
+        prefs = context.getSharedPreferences("linguapath_progress_" + userId, Context.MODE_PRIVATE);
     }
 
     public int getCompletedCount(String language) {

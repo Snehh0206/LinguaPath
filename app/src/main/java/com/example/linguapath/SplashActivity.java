@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import com.example.linguapath.data.AuthRepository;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,8 +21,11 @@ public class SplashActivity extends AppCompatActivity {
 
     // The job we run after the delay: open the next screen
     private final Runnable goToLanguageSelect = () -> {
-        startActivity(new Intent(SplashActivity.this, LanguageSelectActivity.class));
-        finish(); // remove splash from the back stack so Back doesn't return here
+        // Signed in? Go to the app. Not signed in? Go to login.
+        boolean loggedIn = new AuthRepository().isLoggedIn();
+        Class<?> next = loggedIn ? LanguageSelectActivity.class : LoginActivity.class;
+        startActivity(new Intent(SplashActivity.this, next));
+        finish();
     };
 
     @Override
