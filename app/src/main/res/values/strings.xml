@@ -42,4 +42,25 @@
     <string name="sprig_cheer">Tiny steps add up. Keep going!</string>
     <string name="sprig_all_done">You finished every stage! Tap one to redo it.</string>
     <string name="sprig_stage_done">Yay! Stage complete! 🎉</string>
+    <string name="login_title">Welcome back</string>
+    <string name="login_subtitle">Log in to continue your path</string>
+    <string name="register_title">Create your account</string>
+    <string name="register_subtitle">Save your progress and learn anywhere</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm password</string>
+    <string name="button_login">Log in</string>
+    <string name="button_register">Create account</string>
+    <string name="go_register">New here? <u>Create an account</u></string>
+    <string name="go_login">Already have an account? <u>Log in</u></string>
+    <string name="error_email_invalid">Enter a valid email address.</string>
+    <string name="error_password_empty">Enter your password.</string>
+    <string name="error_password_short">Use at least 6 characters.</string>
+    <string name="error_password_mismatch">The passwords do not match.</string>
+    <string name="error_weak_password">That password is too weak. Try a longer one.</string>
+    <string name="error_email_taken">An account with this email already exists. Try logging in.</string>
+    <string name="error_wrong_credentials">Wrong email or password.</string>
+    <string name="error_no_network">No internet connection. Check your network and try again.</string>
+    <string name="error_too_many">Too many attempts. Please wait a bit and try again.</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
 </resources>
