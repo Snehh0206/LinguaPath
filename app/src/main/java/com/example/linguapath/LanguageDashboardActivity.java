@@ -81,23 +81,31 @@ public class LanguageDashboardActivity extends AppCompatActivity {
             refreshProgress();
             showSprigLine(pickSprigLine());
         });
+
+        // Tap the chip to try syncing again
+        binding.textSyncStatus.setOnClickListener(v -> syncWithCloud());
         syncWithCloud();
     }
     // Compare the phone's progress with the cloud's. The higher one wins.
     private void syncWithCloud() {
+        binding.textSyncStatus.setText(R.string.sync_syncing);
+
         cloudSync.downloadProgress(language, (reachedServer, cloudCompleted) -> {
             if (isFinishing() || isDestroyed()) {
                 return;
             }
             int local = progressStore.getCompletedCount(language);
             if (cloudCompleted > local) {
-                // Cloud is ahead (for example, a new phone): update this phone
                 progressStore.raiseCompletedTo(language, cloudCompleted);
                 refreshProgress();
+                // Sprig announces that the cloud had newer progress
+                binding.sprig.react();
+                showSprigLine(getString(R.string.sprig_cloud_restored));
             } else if (local > cloudCompleted) {
-                // Phone is ahead: back it up
                 cloudSync.uploadProgress(language, local);
             }
+            binding.textSyncStatus.setText(
+                    reachedServer ? R.string.sync_done : R.string.sync_offline);
         });
     }
     private void continueLearning() {
