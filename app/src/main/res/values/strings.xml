@@ -63,4 +63,9 @@
     <string name="error_no_network">No internet connection. Check your network and try again.</string>
     <string name="error_too_many">Too many attempts. Please wait a bit and try again.</string>
     <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="signed_in_as">Signed in as %1$s</string>
+    <string name="menu_logout">Log out</string>
+    <string name="logout_title">Log out?</string>
+    <string name="logout_message">You can log back in any time. Your progress is saved to your account on this phone.</string>
+    <string name="dots">⋮</string>
 </resources>
