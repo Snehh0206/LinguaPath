@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Map;
+
 // Remembers how many stages are finished, per language.
 public class ProgressStore {
 
@@ -49,4 +51,23 @@ public class ProgressStore {
         int count = getPracticeCount(language, stageIndex) + 1;
         prefs.edit().putInt("practice_" + language + "_" + stageIndex, count).apply();
     }
+
+    private static final int XP_PER_STAGE = 10;
+
+    // All finished stages across every language
+    public int getTotalCompleted() {
+        int total = 0;
+        for (Map.Entry<String, ?> entry : prefs.getAll().entrySet()) {
+            if (entry.getKey().startsWith("completed_") && entry.getValue() instanceof Integer) {
+                total += (Integer) entry.getValue();
+            }
+        }
+        return total;
+    }
+
+    // XP only comes from finishing stages. Redoing a stage gives none.
+    public int getXp() {
+        return getTotalCompleted() * XP_PER_STAGE;
+    }
+
 }

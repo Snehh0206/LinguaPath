@@ -27,6 +27,7 @@
                 android:gravity="center"
                 android:textColor="@color/ink"
                 android:textSize="28sp"
+                android:elevation="6dp"
                 android:textStyle="bold" />
 
             <TextView

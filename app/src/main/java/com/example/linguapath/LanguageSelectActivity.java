@@ -11,6 +11,8 @@ import androidx.appcompat.widget.PopupMenu;
 
 import com.example.linguapath.data.AuthRepository;
 import com.example.linguapath.databinding.ActivityLanguageSelectBinding;
+import com.example.linguapath.view.Motion;
+import com.example.linguapath.view.TouchBounce;
 
 public class LanguageSelectActivity extends AppCompatActivity {
 
@@ -29,25 +31,22 @@ public class LanguageSelectActivity extends AppCompatActivity {
 
         authRepository = new AuthRepository();
 
-        binding.cardKorean.setOnClickListener(v -> onLanguagePicked(v, "Korean"));
-        binding.cardSpanish.setOnClickListener(v -> onLanguagePicked(v, "Spanish"));
+        binding.cardKorean.setOnClickListener(v -> onLanguagePicked("Korean"));
+        binding.cardSpanish.setOnClickListener(v -> onLanguagePicked("Spanish"));
         binding.buttonMenu.setOnClickListener(this::showAccountMenu);
+
+        // Cards float in, and tilt in 3D when touched
+        Motion.fadeSlideIn(binding.cardKorean, 100);
+        Motion.fadeSlideIn(binding.cardSpanish, 220);
+        TouchBounce.attach(binding.cardKorean);
+        TouchBounce.attach(binding.cardSpanish);
     }
 
-    private void onLanguagePicked(View card, String languageName) {
+    private void onLanguagePicked(String languageName) {
         Log.d(TAG, "Picked: " + languageName);
-
-        card.animate()
-                .scaleX(0.96f)
-                .scaleY(0.96f)
-                .setDuration(100)
-                .withEndAction(() -> {
-                    card.animate().scaleX(1f).scaleY(1f).setDuration(100);
-
-                    Intent intent = new Intent(this, LanguageDashboardActivity.class);
-                    intent.putExtra(LanguageDashboardActivity.EXTRA_LANGUAGE, languageName);
-                    startActivity(intent);
-                });
+        Intent intent = new Intent(this, LanguageDashboardActivity.class);
+        intent.putExtra(LanguageDashboardActivity.EXTRA_LANGUAGE, languageName);
+        startActivity(intent);
     }
 
     // The three-dots menu: shows who is signed in, and offers Log out

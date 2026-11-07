@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="8dp"
         android:textColor="@color/ink"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -42,12 +42,14 @@
 
     <TextView
         android:id="@+id/textProgress"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:textColor="@color/ink"
-        android:textSize="16sp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/ink_soft"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/textSyncStatus"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textLanguageTitle" />
 
@@ -76,8 +78,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-        android:progressBackgroundTint="@color/locked"
-        android:progressTint="@color/ink"
+        android:progressDrawable="@drawable/progress_rounded"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textProgress" />
@@ -99,7 +100,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -117,10 +118,11 @@
             android:id="@+id/textSprigSays"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="8dp"
             android:layout_weight="1"
             android:background="@drawable/bg_card_butter"
-            android:padding="12dp"
+            android:elevation="4dp"
+            android:padding="16dp"
             android:text="@string/sprig_first_prompt"
             android:textColor="@color/ink"
             android:textSize="14sp" />
@@ -132,12 +134,12 @@
         android:layout_height="0dp"
         android:layout_marginTop="4dp"
         android:clipToPadding="false"
-        android:paddingBottom="96dp"
         android:paddingTop="16dp"
+        android:paddingBottom="96dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sprigRow"/>
+        app:layout_constraintTop_toBottomOf="@id/sprigRow" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fabContinue"
@@ -146,7 +148,18 @@
         android:layout_margin="24dp"
         android:text="@string/fab_continue"
         android:textColor="@color/ink"
-        app:backgroundTint="@color/peach"
+        app:backgroundTint="@color/accent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.example.linguapath.view.ConfettiView
+        android:id="@+id/confetti"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

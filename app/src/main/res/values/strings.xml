@@ -70,6 +70,7 @@
     <string name="dots">⋮</string>
     <string name="sync_syncing">☁ Syncing…</string>
     <string name="sync_done">☁ Synced</string>
-    <string name="sync_offline">☁ Offline, saved on this phone</string>
+    <string name="sync_offline">☁ Offline</string>
     <string name="sprig_cloud_restored">Welcome back! I found your progress in the cloud ☁️</string>
+    <string name="dashboard_progress_xp">%1$d of %2$d stages · ⚡ %3$d XP</string>
 </resources>

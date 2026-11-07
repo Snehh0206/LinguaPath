@@ -8,6 +8,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.appcompat.app.AlertDialog;
 import android.view.animation.OvershootInterpolator;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+
+import com.example.linguapath.view.Motion;
 
 import com.example.linguapath.adapter.StageAdapter;
 import com.example.linguapath.data.ProgressStore;
@@ -30,6 +34,9 @@ public class LanguageDashboardActivity extends AppCompatActivity {
     private StageAdapter adapter;
     private List<Stage> stages = new ArrayList<>();
     private String language;
+    private ValueAnimator xpAnimator;
+    private ObjectAnimator fabFloat;
+    private int shownXp = 0;
     private final Random random = new Random();
     private int lastCompleted = -1; // -1 = not known yet
     private final CloudSyncRepository cloudSync = new CloudSyncRepository();
@@ -65,12 +72,12 @@ public class LanguageDashboardActivity extends AppCompatActivity {
 
         // Floating "Continue" button: slides up, then jumps to the next unfinished stage
         binding.fabContinue.setOnClickListener(v -> continueLearning());
-        binding.fabContinue.setTranslationY(300f);
-        binding.fabContinue.animate()
-                .translationY(0f)
-                .setStartDelay(400)
-                .setDuration(600)
-                .setInterpolator(new OvershootInterpolator());
+        //binding.fabContinue.setTranslationY(300f);
+        //binding.fabContinue.animate()
+              //  .translationY(0f)
+               // .setStartDelay(400)
+               // .setDuration(600)
+               // .setInterpolator(new OvershootInterpolator());
 
         StageRepository.loadStages(this, language, loadedStages -> {
             if (isFinishing() || isDestroyed()) {
@@ -85,6 +92,11 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         // Tap the chip to try syncing again
         binding.textSyncStatus.setOnClickListener(v -> syncWithCloud());
         syncWithCloud();
+        // Things float in one after another
+        Motion.fadeSlideIn(binding.textLanguageTitle, 0);
+        Motion.fadeSlideIn(binding.textProgress, 80);
+        Motion.fadeSlideIn(binding.sprigRow, 160);
+        Motion.fadeSlideIn(binding.fabContinue, 500);
     }
     // Compare the phone's progress with the cloud's. The higher one wins.
     private void syncWithCloud() {
@@ -125,6 +137,9 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         Log.d(TAG, "onResume");
         refreshProgress();
         binding.sprig.startIdle();
+        if (fabFloat == null) {
+            fabFloat = Motion.startFloat(binding.fabContinue, 4, 1400);
+        }
     }
 
     @Override
@@ -132,28 +147,43 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         super.onPause();
         Log.d(TAG, "onPause");
         binding.sprig.stopIdle();
+        Motion.stopFloat(fabFloat, binding.fabContinue);
+        fabFloat = null;
+        if (xpAnimator != null) {
+            xpAnimator.cancel();
+        }
     }
 
     private void refreshProgress() {
         if (stages.isEmpty()) {
             return; // data not loaded yet
         }
-        int completed = progressStore.getCompletedCount(language);
+        final int completed = progressStore.getCompletedCount(language);
+        final int total = stages.size();
 
-        // Coming back after finishing a stage? Sprig celebrates.
+        // Coming back after finishing a stage? Celebrate.
         if (lastCompleted >= 0 && completed > lastCompleted) {
             binding.sprig.react();
+            binding.confetti.burst();
             showSprigLine(getString(R.string.sprig_stage_done));
         }
         lastCompleted = completed;
-        adapter.setCompletedCount(completed);
-        binding.progressBar.setMax(stages.size());
-        binding.progressBar.setProgress(completed);
-        binding.textProgress.setText(
-                getString(R.string.dashboard_progress, completed, stages.size()));
-        binding.textMessage.setText("");
 
-        binding.recyclerStages.scrollToPosition(Math.min(completed, stages.size() - 1));
+        adapter.setCompletedCount(completed);
+        Motion.animateProgress(binding.progressBar, completed, total);
+
+        // XP counts up to its new value
+        int xp = progressStore.getXp();
+        if (xpAnimator != null) {
+            xpAnimator.cancel();
+        }
+        xpAnimator = Motion.countUp(shownXp, xp, 800, value ->
+                binding.textProgress.setText(
+                        getString(R.string.dashboard_progress_xp, completed, total, value)));
+        shownXp = xp;
+
+        binding.textMessage.setText("");
+        binding.recyclerStages.scrollToPosition(Math.min(completed, total - 1));
     }
     // Chooses what Sprig says, based on the user's progress
     private String pickSprigLine() {
