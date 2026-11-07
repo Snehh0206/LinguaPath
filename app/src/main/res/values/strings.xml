@@ -73,4 +73,9 @@
     <string name="sync_offline">☁ Offline</string>
     <string name="sprig_cloud_restored">Welcome back! I found your progress in the cloud ☁️</string>
     <string name="dashboard_progress_xp">%1$d of %2$d stages · ⚡ %3$d XP</string>
+    <string name="timer_paused">▶ %1$s</string>
+    <string name="timer_running">⏸ %1$s</string>
+    <string name="timer_reset_title">Reset study timer?</string>
+    <string name="timer_reset_message">The timer goes back to 00:00.</string>
+    <string name="timer_reset_yes">Reset</string>
 </resources>
