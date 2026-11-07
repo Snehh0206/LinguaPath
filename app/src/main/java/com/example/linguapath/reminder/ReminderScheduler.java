@@ -15,7 +15,8 @@ import java.util.concurrent.TimeUnit;
 // Plans the reminder with WorkManager (no exact alarms needed).
 // Each reminder plans tomorrow's one when it runs.
 public class ReminderScheduler {
-
+    private static final String SNOOZE_WORK = "snooze_study_reminder";
+    public static final int SNOOZE_MINUTES = 3;
     private static final String DAILY_WORK = "daily_study_reminder";
     public static final String KEY_TARGET_TIME = "target_time";
     public static final String KEY_SNOOZE = "snooze";
@@ -51,8 +52,18 @@ public class ReminderScheduler {
         WorkManager.getInstance(context)
                 .enqueueUniqueWork(DAILY_WORK, ExistingWorkPolicy.REPLACE, request);
     }
-
+    // A one-time reminder after "Remind me later"
+    public static void scheduleSnooze(Context context, int minutes) {
+        Data data = new Data.Builder().putBoolean(KEY_SNOOZE, true).build();
+        OneTimeWorkRequest request = new OneTimeWorkRequest.Builder(ReminderWorker.class)
+                .setInitialDelay(minutes, TimeUnit.MINUTES)
+                .setInputData(data)
+                .build();
+        WorkManager.getInstance(context)
+                .enqueueUniqueWork(SNOOZE_WORK, ExistingWorkPolicy.REPLACE, request);
+    }
     public static void cancelAll(Context context) {
         WorkManager.getInstance(context).cancelUniqueWork(DAILY_WORK);
+        WorkManager.getInstance(context).cancelUniqueWork(SNOOZE_WORK);
     }
 }

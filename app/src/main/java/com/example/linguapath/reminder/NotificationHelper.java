@@ -23,6 +23,8 @@ public class NotificationHelper {
     public static final String CHANNEL_ID = "study_reminders";
     public static final int NOTIFICATION_ID = 1001;
     private static final String TAG = "NotificationHelper";
+    private static final int MAX_SNOOZES_PER_DAY = 3;
+
 
     // A channel is the "category" the user can switch on or off in system Settings.
     // Creating it again is harmless.
@@ -73,6 +75,14 @@ public class NotificationHelper {
                 .setAutoCancel(true)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
+        // "Remind me later" button, shown only up to 3 times a day
+        if (new ReminderSettings(context).getSnoozeCountToday() < MAX_SNOOZES_PER_DAY) {
+            Intent snooze = new Intent(context, SnoozeReceiver.class);
+            snooze.setAction(SnoozeReceiver.ACTION_SNOOZE);
+            PendingIntent snoozePending = PendingIntent.getBroadcast(context, 1, snooze,
+                    PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+            builder.addAction(0, context.getString(R.string.reminder_snooze), snoozePending);
+        }
         manager.notify(NOTIFICATION_ID, builder.build());
     }
 }

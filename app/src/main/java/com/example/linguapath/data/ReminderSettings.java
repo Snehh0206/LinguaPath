@@ -38,6 +38,21 @@ public class ReminderSettings {
         return prefs.getString("last_language", null);
     }
 
+
+    // Remind me later: at most 3 times a day, so the app never nags
+    private static String today() {
+        return java.time.LocalDate.now().toString();
+    }
+
+    public int getSnoozeCountToday() {
+        return today().equals(prefs.getString("snooze_date", ""))
+                ? prefs.getInt("snooze_count", 0) : 0;
+    }
+
+    public void addSnoozeToday() {
+        int count = getSnoozeCountToday() + 1;
+        prefs.edit().putString("snooze_date", today()).putInt("snooze_count", count).apply();
+    }
     public void setLastLanguage(String language) {
         prefs.edit().putString("last_language", language).apply();
     }

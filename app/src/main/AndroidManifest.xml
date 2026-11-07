@@ -51,6 +51,9 @@
         <activity
             android:name=".ReminderActivity"
             android:exported="false" />
+        <receiver
+            android:name=".reminder.SnoozeReceiver"
+            android:exported="false" />
     </application>
 
 </manifest>

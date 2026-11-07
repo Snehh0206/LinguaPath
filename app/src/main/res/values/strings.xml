@@ -102,4 +102,5 @@
     <string name="reminder_open_settings">Open Settings</string>
     <string name="reminder_revoked">Notifications are turned off for LinguaPath, so the reminder is off.</string>
     <string name="menu_reminder">Study reminder</string>
+    <string name="reminder_snooze">Remind me later</string>
 </resources>
