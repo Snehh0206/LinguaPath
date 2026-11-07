@@ -6,6 +6,9 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import com.example.linguapath.data.AuthRepository;
+import android.animation.ObjectAnimator;
+
+import com.example.linguapath.view.Motion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +20,7 @@ public class SplashActivity extends AppCompatActivity {
     private static final long SPLASH_DELAY_MS = 2000;
 
     private ActivitySplashBinding binding;
+    private ObjectAnimator logoFloat;
     private final Handler handler = new Handler(Looper.getMainLooper());
 
     // The job we run after the delay: open the next screen
@@ -46,6 +50,9 @@ public class SplashActivity extends AppCompatActivity {
         super.onStart();
         Log.d(TAG, "onStart - timer started");
         handler.postDelayed(goToLanguageSelect, SPLASH_DELAY_MS);
+
+        binding.scenery.start();
+        logoFloat = Motion.startFloat(binding.textLogo, 6, 600);
     }
 
     @Override
@@ -54,6 +61,10 @@ public class SplashActivity extends AppCompatActivity {
         Log.d(TAG, "onStop - timer cancelled");
         // If the user leaves the app, cancel the timer so it never runs twice
         handler.removeCallbacks(goToLanguageSelect);
+
+        binding.scenery.stop();
+        Motion.stopFloat(logoFloat, binding.textLogo);
+        logoFloat = null;
     }
 
     @Override

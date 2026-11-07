@@ -5,7 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cream">
-
+    <com.example.linguapath.view.SceneryView
+        android:id="@+id/scenery"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:sceneHorizon="0.64" />
     <TextView
         android:id="@+id/textLogo"
         android:layout_width="120dp"
@@ -20,6 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:elevation="10dp"
         app:layout_constraintVertical_bias="0.35" />
 
     <TextView

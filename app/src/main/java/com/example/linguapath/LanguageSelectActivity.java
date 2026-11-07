@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.animation.ObjectAnimator;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,8 @@ public class LanguageSelectActivity extends AppCompatActivity {
 
     private ActivityLanguageSelectBinding binding;
     private AuthRepository authRepository;
+    private ObjectAnimator floatKorean;
+    private ObjectAnimator floatSpanish;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,4 +84,28 @@ public class LanguageSelectActivity extends AppCompatActivity {
                 .setNegativeButton(android.R.string.cancel, null)
                 .show();
     }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        binding.scenery.start();
+        // The cards hover gently, one slightly after the other
+        if (floatKorean == null) {
+            floatKorean = Motion.startFloat(binding.cardKorean, 3, 900);
+            floatSpanish = Motion.startFloat(binding.cardSpanish, 3, 1300);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        binding.scenery.stop();
+        Motion.stopFloat(floatKorean, binding.cardKorean);
+        Motion.stopFloat(floatSpanish, binding.cardSpanish);
+        floatKorean = null;
+        floatSpanish = null;
+    }
+
+
 }
