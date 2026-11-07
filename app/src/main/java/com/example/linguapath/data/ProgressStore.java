@@ -15,12 +15,31 @@ public class ProgressStore {
     private final SharedPreferences prefs;
 
     public ProgressStore(Context context) {
-        // Each account gets its own notebook, so two users never share progress
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String userId = (user == null) ? "guest" : user.getUid();
+        this(context, currentUserId());
+    }
+
+    // Used by the study service, which knows who the session belongs to
+    public ProgressStore(Context context, String userId) {
         prefs = context.getSharedPreferences("linguapath_progress_" + userId, Context.MODE_PRIVATE);
     }
 
+    private static String currentUserId() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        return (user == null) ? "guest" : user.getUid();
+    }
+    private static String today() {
+        return java.time.LocalDate.now().toString(); // for example 2026-11-02
+    }
+
+    // Adds studied time to today's total
+    public void addStudyMillis(long millis) {
+        String key = "study_" + today();
+        prefs.edit().putLong(key, prefs.getLong(key, 0) + millis).apply();
+    }
+
+    public long getStudyMillisToday() {
+        return prefs.getLong("study_" + today(), 0);
+    }
     public int getCompletedCount(String language) {
         return prefs.getInt("completed_" + language, 0);
     }

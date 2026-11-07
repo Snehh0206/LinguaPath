@@ -1,5 +1,6 @@
 package com.example.linguapath.service;
 
+import com.example.linguapath.data.ProgressStore;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
@@ -105,8 +106,13 @@ public class StudySessionService extends Service {
 
     public void pause() {
         if (isRunning()) {
-            accumulatedMs += SystemClock.elapsedRealtime() - runningSince;
+            long delta = SystemClock.elapsedRealtime() - runningSince;
+            accumulatedMs += delta;
             runningSince = 0;
+            // Save this stretch to the owner's daily total
+            if (ownerUid != null) {
+                new ProgressStore(this, ownerUid).addStudyMillis(delta);
+            }
         }
     }
 

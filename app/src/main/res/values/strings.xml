@@ -78,4 +78,5 @@
     <string name="timer_reset_title">Reset study timer?</string>
     <string name="timer_reset_message">The timer goes back to 00:00.</string>
     <string name="timer_reset_yes">Reset</string>
+    <string name="sprig_today_minutes">You have studied %1$d min today. Lovely rhythm!</string>
 </resources>
