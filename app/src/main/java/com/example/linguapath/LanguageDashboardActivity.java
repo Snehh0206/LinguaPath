@@ -58,6 +58,7 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         }
 
         progressStore = new ProgressStore(this);
+        new com.example.linguapath.data.ReminderSettings(this).setLastLanguage(language);
         binding.textLanguageTitle.setText(getString(R.string.dashboard_title, language));
 
         // Start with an empty list; the real stages arrive from the database
