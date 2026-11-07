@@ -36,8 +36,8 @@ public class RopeView extends View {
 
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeWidth(4 * density);
-        paint.setColor(ContextCompat.getColor(context, R.color.ink));
+        paint.setStrokeWidth(3 * density);
+        paint.setColor(ContextCompat.getColor(context, R.color.ink_soft));
     }
 
     // from / to are LEFT, CENTER or RIGHT. done = solid rope, not done = dotted rope.

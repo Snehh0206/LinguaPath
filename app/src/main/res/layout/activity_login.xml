@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:padding="24dp">
 
-        <com.example.linguapath.view.SprigView
+        <com.example.linguapath.view.HeroView
             android:id="@+id/sprig"
             android:layout_width="110dp"
             android:layout_height="110dp"
