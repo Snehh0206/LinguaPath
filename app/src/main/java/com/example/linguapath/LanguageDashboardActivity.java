@@ -7,6 +7,7 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.animation.OvershootInterpolator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -61,6 +62,13 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         adapter = new StageAdapter(stages, this::onStageClicked);
         binding.recyclerStages.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerStages.setAdapter(adapter);
+        // Scrolling the list shifts the scenery layers by different amounts (parallax)
+        binding.recyclerStages.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                binding.scenery.setScroll(recyclerView.computeVerticalScrollOffset());
+            }
+        });
 
         binding.buttonChangeLanguage.setOnClickListener(v -> finish());
 
@@ -137,6 +145,7 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         Log.d(TAG, "onResume");
         refreshProgress();
         binding.sprig.startIdle();
+        binding.scenery.start();
         if (fabFloat == null) {
             fabFloat = Motion.startFloat(binding.fabContinue, 4, 1400);
         }
@@ -146,7 +155,9 @@ public class LanguageDashboardActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Log.d(TAG, "onPause");
+        binding.scenery.stop();
         binding.sprig.stopIdle();
+
         Motion.stopFloat(fabFloat, binding.fabContinue);
         fabFloat = null;
         if (xpAnimator != null) {
