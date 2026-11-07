@@ -18,6 +18,7 @@ import com.example.linguapath.data.CloudSyncRepository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import com.example.linguapath.service.StudySessionClient;
 
 public class CourseActivity extends AppCompatActivity {
 
@@ -29,6 +30,7 @@ public class CourseActivity extends AppCompatActivity {
 
     private ActivityCourseBinding binding;
     private WordAdapter adapter;
+    private StudySessionClient studyClient;
 
     private final List<Word> loadedWords = new ArrayList<>();
     private final Random random = new Random();
@@ -54,6 +56,12 @@ public class CourseActivity extends AppCompatActivity {
         binding.headerBand.setBackgroundResource(theme.backgroundRes);
 
         binding.buttonBack.setOnClickListener(v -> finish());
+        // Same study timer as the dashboard: one service, many screens
+        studyClient = new StudySessionClient(this, (elapsedMs, running) ->
+                binding.textStudyTime.setText(getString(
+                        running ? R.string.timer_running : R.string.timer_paused,
+                        StudySessionClient.formatTime(elapsedMs))));
+        binding.textStudyTime.setOnClickListener(v -> studyClient.toggle());
         // Floating "Surprise me": opens a random word from this stage
         binding.fabSurprise.setOnClickListener(v -> {
             if (!loadedWords.isEmpty()) {
@@ -99,7 +107,17 @@ public class CourseActivity extends AppCompatActivity {
 
         }
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        studyClient.bind();
+    }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        studyClient.unbind();
+    }
     private void openWordDetail(Word word) {
         Intent intent = new Intent(this, WordDetailActivity.class);
         intent.putExtra(WordDetailActivity.EXTRA_WORD_ID, word.getId());

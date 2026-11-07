@@ -20,6 +20,7 @@ import com.example.linguapath.data.StageRepository;
 import com.example.linguapath.databinding.ActivityLanguageDashboardBinding;
 import com.example.linguapath.model.Stage;
 import com.example.linguapath.data.CloudSyncRepository;
+import com.example.linguapath.service.StudySessionClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,7 @@ public class LanguageDashboardActivity extends AppCompatActivity {
     private StageAdapter adapter;
     private List<Stage> stages = new ArrayList<>();
     private String language;
+    private StudySessionClient studyClient;
     private ValueAnimator xpAnimator;
     private ObjectAnimator fabFloat;
     private int shownXp = 0;
@@ -77,7 +79,17 @@ public class LanguageDashboardActivity extends AppCompatActivity {
             binding.sprig.react();
             showSprigLine(pickSprigLine());
         });
-
+        // Study timer: tap to start or pause, long-press to reset
+        studyClient = new StudySessionClient(this, (elapsedMs, running) ->
+                binding.textTimer.setText(getString(
+                        running ? R.string.timer_running : R.string.timer_paused,
+                        StudySessionClient.formatTime(elapsedMs))));
+        binding.textTimer.setText(getString(R.string.timer_paused, "00:00"));
+        binding.textTimer.setOnClickListener(v -> studyClient.toggle());
+        binding.textTimer.setOnLongClickListener(v -> {
+            confirmResetTimer();
+            return true;
+        });
         // Floating "Continue" button: slides up, then jumps to the next unfinished stage
         binding.fabContinue.setOnClickListener(v -> continueLearning());
         //binding.fabContinue.setTranslationY(300f);
@@ -107,6 +119,29 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         Motion.fadeSlideIn(binding.fabContinue, 500);
     }
     // Compare the phone's progress with the cloud's. The higher one wins.
+    // Bind when the screen becomes visible, unbind when it is no longer visible
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart - binding to study service");
+        studyClient.bind();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop - unbinding from study service");
+        studyClient.unbind();
+    }
+
+    private void confirmResetTimer() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.timer_reset_title)
+                .setMessage(R.string.timer_reset_message)
+                .setPositiveButton(R.string.timer_reset_yes, (dialog, which) -> studyClient.reset())
+                .setNegativeButton(android.R.string.cancel, null)
+                .show();
+    }
     private void syncWithCloud() {
         binding.textSyncStatus.setText(R.string.sync_syncing);
 
@@ -206,13 +241,16 @@ public class LanguageDashboardActivity extends AppCompatActivity {
             return getString(R.string.sprig_all_done);
         }
 
-        int pick = random.nextInt(3);
+        long minutes = progressStore.getStudyMillisToday() / 60000;
+        int pick = random.nextInt(minutes > 0 ? 4 : 3);
         if (pick == 0) {
             return getString(language.equals("Korean")
                     ? R.string.sprig_hello_korean
                     : R.string.sprig_hello_spanish);
         } else if (pick == 1) {
             return getString(R.string.sprig_next, stages.get(completed).getTitle());
+        } else if (pick == 3) {
+            return getString(R.string.sprig_today_minutes, (int) minutes);
         }
         return getString(R.string.sprig_cheer);
     }
