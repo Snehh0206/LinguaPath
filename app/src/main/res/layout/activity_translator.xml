@@ -182,6 +182,16 @@
                     android:backgroundTint="@color/sage"
                     android:text="@string/translator_copy"
                     android:textColor="@color/ink" />
+
+                <Button
+                    android:id="@+id/buttonSave"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/peach"
+                    android:text="@string/translator_save"
+                    android:textColor="@color/ink" />
             </LinearLayout>
         </LinearLayout>
 

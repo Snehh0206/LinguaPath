@@ -129,4 +129,12 @@
     <string name="translator_quota">You have reached today\'s free translation limit. Saved translations still work. Try again tomorrow.</string>
     <string name="translator_too_long">That text is too long. Try a shorter phrase.</string>
     <string name="translator_error">Something went wrong with the translator. Please try again.</string>
+    <string name="translator_save">Save to my words</string>
+    <string name="translator_saved">Saved to your words.</string>
+    <string name="translator_already_saved">That word is already in your list.</string>
+    <string name="add_word_title">Add a word</string>
+    <string name="add_word_subtitle">Type an English word. We translate it and you can save it.</string>
+    <string name="saved_add_word">+ Add word</string>
+    <string name="saved_custom_tag">%1$s · added by you</string>
+    <string name="custom_word_message">%1$s\n\nAdded by you (%2$s)</string>
 </resources>

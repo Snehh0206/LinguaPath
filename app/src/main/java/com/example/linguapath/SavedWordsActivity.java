@@ -11,6 +11,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.appcompat.app.AlertDialog;
 
 import com.example.linguapath.adapter.SavedWordAdapter;
 import com.example.linguapath.data.SavedWordsRepository;
@@ -41,6 +42,11 @@ public class SavedWordsActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         binding.buttonBack.setOnClickListener(v -> finish());
+        binding.fabAddWord.setOnClickListener(v -> {
+            Intent intent = new Intent(this, TranslatorActivity.class);
+            intent.putExtra(TranslatorActivity.EXTRA_ADD_WORD, true);
+            startActivity(intent);
+        });
 
         adapter = new SavedWordAdapter(new SavedWordAdapter.Listener() {
             @Override
@@ -89,7 +95,18 @@ public class SavedWordsActivity extends AppCompatActivity {
     }
 
     // Explicit Intent: open the word's detail screen
+    // Explicit Intent: open the word's detail screen.
+    // Words the user added have no lesson page, so we show a small dialog instead.
     private void openDetail(SavedWord word) {
+        if (word.getWordId() < 0) {
+            new AlertDialog.Builder(this)
+                    .setTitle(word.getWord())
+                    .setMessage(getString(R.string.custom_word_message,
+                            word.getMeaning(), word.getLanguage()))
+                    .setPositiveButton(android.R.string.ok, null)
+                    .show();
+            return;
+        }
         Intent intent = new Intent(this, WordDetailActivity.class);
         intent.putExtra(WordDetailActivity.EXTRA_WORD_ID, word.getWordId());
         intent.putExtra(WordDetailActivity.EXTRA_LANGUAGE, word.getLanguage());

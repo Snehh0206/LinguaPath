@@ -13,10 +13,12 @@ import com.example.linguapath.data.TranslationRepository;
 import com.example.linguapath.data.TranslationUsage;
 import com.example.linguapath.databinding.ActivityTranslatorBinding;
 import com.example.linguapath.view.Motion;
+import com.example.linguapath.data.SavedWordsRepository;
 
 public class TranslatorActivity extends AppCompatActivity {
 
     private static final String STATE_TARGET = "state_target";
+    public static final String EXTRA_ADD_WORD = "extra_add_word";
 
     private ActivityTranslatorBinding binding;
     private String target = "Spanish";
@@ -44,11 +46,32 @@ public class TranslatorActivity extends AppCompatActivity {
         binding.chipSpanish.setOnClickListener(v -> selectTarget("Spanish"));
         binding.buttonTranslate.setOnClickListener(v -> translate());
         binding.buttonCopy.setOnClickListener(v -> copyResult());
+        binding.buttonSave.setOnClickListener(v -> saveWord());
+
+        // Opened from "Add word"? Change the wording.
+        if (getIntent().getBooleanExtra(EXTRA_ADD_WORD, false)) {
+            binding.textTranslatorTitle.setText(R.string.add_word_title);
+            binding.textTranslatorSubtitle.setText(R.string.add_word_subtitle);
+        }
 
         showChips();
         showUsage();
     }
-
+    // Saves the translated word into the user's vocabulary (through the Content Provider)
+    private void saveWord() {
+        if (lastTranslated.isEmpty()) {
+            return;
+        }
+        binding.buttonSave.setEnabled(false);
+        SavedWordsRepository.saveCustom(this, target, lastTranslated, lastSource, saved -> {
+            if (isFinishing() || isDestroyed()) {
+                return;
+            }
+            binding.buttonSave.setEnabled(true);
+            binding.textResultSource.setText(
+                    saved ? R.string.translator_saved : R.string.translator_already_saved);
+        });
+    }
     // Keep the chosen language when the screen is rotated.
     // (The typed text is restored by the EditText itself.)
     @Override
