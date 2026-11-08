@@ -87,10 +87,20 @@
             android:textStyle="italic" />
 
         <Button
-            android:id="@+id/buttonShare"
+            android:id="@+id/buttonSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
+            android:backgroundTint="@color/sage"
+            android:enabled="false"
+            android:text="@string/save_word"
+            android:textColor="@color/ink" />
+
+        <Button
+            android:id="@+id/buttonShare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:backgroundTint="@color/peach"
             android:enabled="false"
             android:text="@string/share_word"

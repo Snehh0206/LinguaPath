@@ -30,6 +30,7 @@ public class CourseActivity extends AppCompatActivity {
 
     private ActivityCourseBinding binding;
     private WordAdapter adapter;
+    private String languageName = "Spanish";
     private StudySessionClient studyClient;
 
     private final List<Word> loadedWords = new ArrayList<>();
@@ -45,6 +46,7 @@ public class CourseActivity extends AppCompatActivity {
 
         String languageExtra = getIntent().getStringExtra(LanguageDashboardActivity.EXTRA_LANGUAGE);
         final String language = (languageExtra != null) ? languageExtra : "Spanish";
+        languageName = language;
         int stageId = getIntent().getIntExtra(EXTRA_STAGE_ID, 0);
         int stageIndex = getIntent().getIntExtra(EXTRA_STAGE_INDEX, 0);
         String stageTitle = getIntent().getStringExtra(EXTRA_STAGE_TITLE);
@@ -121,6 +123,7 @@ public class CourseActivity extends AppCompatActivity {
     private void openWordDetail(Word word) {
         Intent intent = new Intent(this, WordDetailActivity.class);
         intent.putExtra(WordDetailActivity.EXTRA_WORD_ID, word.getId());
+        intent.putExtra(WordDetailActivity.EXTRA_LANGUAGE, languageName);
         startActivity(intent);
     }
 }

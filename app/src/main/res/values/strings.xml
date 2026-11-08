@@ -103,4 +103,8 @@
     <string name="reminder_revoked">Notifications are turned off for LinguaPath, so the reminder is off.</string>
     <string name="menu_reminder">Study reminder</string>
     <string name="reminder_snooze">Remind me later</string>
+    <string name="save_word">Save word</string>
+    <string name="saved_word_tap_remove">Saved ✓ Tap to remove</string>
+    <string name="word_saved_message">Saved to your list.</string>
+    <string name="word_removed_message">Removed from your list.</string>
 </resources>

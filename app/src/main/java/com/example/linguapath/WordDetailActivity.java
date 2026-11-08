@@ -8,6 +8,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.linguapath.data.SavedWordsRepository;
 import com.example.linguapath.data.WordRepository;
 import com.example.linguapath.databinding.ActivityWordDetailBinding;
 import com.example.linguapath.model.Word;
@@ -15,9 +16,13 @@ import com.example.linguapath.model.Word;
 public class WordDetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_WORD_ID = "extra_word_id";
+    public static final String EXTRA_LANGUAGE = "extra_language";
     private static final String TAG = "WordDetail";
 
     private ActivityWordDetailBinding binding;
+    private String language = "";
+    private Word currentWord;
+    private boolean saved = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +34,12 @@ public class WordDetailActivity extends AppCompatActivity {
 
         binding.buttonBack.setOnClickListener(v -> finish());
 
-        // The word id arrives in the Intent extras
+        // The word id and language arrive in the Intent extras
         int wordId = getIntent().getIntExtra(EXTRA_WORD_ID, -1);
+        String languageExtra = getIntent().getStringExtra(EXTRA_LANGUAGE);
+        if (languageExtra != null) {
+            language = languageExtra;
+        }
 
         WordRepository.loadWord(this, wordId, word -> {
             if (isFinishing() || isDestroyed()) {
@@ -45,6 +54,7 @@ public class WordDetailActivity extends AppCompatActivity {
     }
 
     private void showWord(Word word) {
+        currentWord = word;
         binding.textDetailWord.setText(word.getWord());
         binding.textDetailMeaning.setText(word.getMeaning());
         binding.textDetailExample.setText(word.getExample());
@@ -63,6 +73,53 @@ public class WordDetailActivity extends AppCompatActivity {
 
         binding.buttonShare.setEnabled(true);
         binding.buttonShare.setOnClickListener(v -> shareWord(word));
+
+        // Save button: only possible when we know which language the word belongs to
+        if (language.isEmpty()) {
+            binding.buttonSave.setVisibility(View.GONE);
+        } else {
+            binding.buttonSave.setOnClickListener(v -> toggleSaved());
+            SavedWordsRepository.isSaved(this, language, word.getWord(), isSaved -> {
+                if (isFinishing() || isDestroyed()) {
+                    return;
+                }
+                saved = isSaved;
+                updateSaveButton();
+            });
+        }
+    }
+
+    private void updateSaveButton() {
+        binding.buttonSave.setEnabled(true);
+        binding.buttonSave.setText(saved ? R.string.saved_word_tap_remove : R.string.save_word);
+    }
+
+    // Saves the word, or removes it if it is already saved. Both go through the Content Provider.
+    private void toggleSaved() {
+        if (currentWord == null) {
+            return;
+        }
+        binding.buttonSave.setEnabled(false); // no double taps while working
+
+        if (saved) {
+            SavedWordsRepository.remove(this, language, currentWord.getWord(), removed -> {
+                if (isFinishing() || isDestroyed()) {
+                    return;
+                }
+                saved = false;
+                updateSaveButton();
+                binding.textDetailMessage.setText(R.string.word_removed_message);
+            });
+        } else {
+            SavedWordsRepository.save(this, language, currentWord, savedNow -> {
+                if (isFinishing() || isDestroyed()) {
+                    return;
+                }
+                saved = true; // saved now, or it was already there
+                updateSaveButton();
+                binding.textDetailMessage.setText(R.string.word_saved_message);
+            });
+        }
     }
 
     // Implicit Intent: we don't name an app, we say "send this text" and Android lets the user pick
@@ -82,7 +139,6 @@ public class WordDetailActivity extends AppCompatActivity {
         try {
             startActivity(Intent.createChooser(send, getString(R.string.share_chooser_title)));
         } catch (ActivityNotFoundException e) {
-            // No app can handle it: tell the user instead of crashing
             binding.textDetailMessage.setText(R.string.share_no_app);
         }
     }
