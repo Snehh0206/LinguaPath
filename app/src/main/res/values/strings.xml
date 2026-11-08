@@ -107,4 +107,10 @@
     <string name="saved_word_tap_remove">Saved ✓ Tap to remove</string>
     <string name="word_saved_message">Saved to your list.</string>
     <string name="word_removed_message">Removed from your list.</string>
+    <string name="saved_words_title">Saved words</string>
+    <string name="saved_count">%1$d saved</string>
+    <string name="saved_empty">No saved words yet. Open a word and tap Save.</string>
+    <string name="menu_saved">Saved words</string>
+    <string name="delete_saved">✕</string>
+    <string name="delete_saved_description">Remove from saved words</string>
 </resources>

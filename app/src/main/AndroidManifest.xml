@@ -59,6 +59,10 @@
             android:name=".provider.SavedWordsProvider"
             android:authorities="com.example.linguapath.savedwords"
             android:exported="false" />
+
+        <activity
+            android:name=".SavedWordsActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
