@@ -63,6 +63,10 @@
         <activity
             android:name=".SavedWordsActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".TranslatorActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

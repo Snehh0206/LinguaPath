@@ -113,4 +113,20 @@
     <string name="menu_saved">Saved words</string>
     <string name="delete_saved">✕</string>
     <string name="delete_saved_description">Remove from saved words</string>
+    <string name="menu_translator">Travel translator</string>
+    <string name="translator_title">Travel translator</string>
+    <string name="translator_subtitle">Type English, get Korean or Spanish.</string>
+    <string name="translator_hint">English text</string>
+    <string name="translator_button">Translate</string>
+    <string name="translator_usage">Used about %1$d of %2$d free characters today</string>
+    <string name="translator_from_cache">Saved translation (works offline)</string>
+    <string name="translator_from_online">Fresh from MyMemory</string>
+    <string name="translator_copy">Copy</string>
+    <string name="translator_copied">Copied.</string>
+    <string name="translator_note">Machine translation can be wrong. Double-check important phrases.</string>
+    <string name="translator_empty">Type something to translate.</string>
+    <string name="translator_offline">Could not reach the translator. Check your internet connection. Phrases you translated before still work offline.</string>
+    <string name="translator_quota">You have reached today\'s free translation limit. Saved translations still work. Try again tomorrow.</string>
+    <string name="translator_too_long">That text is too long. Try a shorter phrase.</string>
+    <string name="translator_error">Something went wrong with the translator. Please try again.</string>
 </resources>

@@ -9,10 +9,12 @@ import androidx.room.RoomDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {StageEntity.class, WordEntity.class}, version = 1, exportSchema = false)
+@Database(entities = {StageEntity.class, WordEntity.class, CachedTranslation.class},
+        version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract ContentDao contentDao();
+    public abstract TranslationDao translationDao();
 
     // One background worker for all database jobs, so the screen never freezes
     public static final ExecutorService databaseExecutor = Executors.newSingleThreadExecutor();
@@ -25,9 +27,11 @@ public abstract class AppDatabase extends RoomDatabase {
             synchronized (AppDatabase.class) {
                 if (instance == null) {
                     instance = Room.databaseBuilder(
-                            context.getApplicationContext(),
-                            AppDatabase.class,
-                            "linguapath.db").build();
+                                    context.getApplicationContext(),
+                                    AppDatabase.class,
+                                    "linguapath.db")
+                            .fallbackToDestructiveMigration()
+                            .build();
                 }
             }
         }
