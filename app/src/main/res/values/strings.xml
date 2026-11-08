@@ -82,7 +82,7 @@
     <string name="channel_name">Study reminders</string>
     <string name="channel_description">One gentle daily reminder to study</string>
     <string name="reminder_title">Time for a little LinguaPath</string>
-    <string name="reminder_text_language">Your %1$s path is waiting. A few minutes is enough.</string>
+    <string name="reminder_text_language">It won\'t learn itself. Neither will you, sitting there.</string>
     <string name="reminder_text_generic">Your path is waiting. A few minutes is enough.</string>
     <string name="reminder_description">One gentle reminder a day, at the time you choose. Nothing else.</string>
     <string name="reminder_switch_label">Remind me every day</string>

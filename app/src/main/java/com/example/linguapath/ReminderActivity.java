@@ -185,7 +185,7 @@ public class ReminderActivity extends AppCompatActivity {
             binding.textStatus.setText(R.string.reminder_test_blocked);
             return;
         }
-        NotificationHelper.showStudyReminder(this);
+        ReminderScheduler.fireTest(this); // a real reminder with its own 3 snoozes
         binding.textStatus.setText(R.string.reminder_test_sent);
     }
 
