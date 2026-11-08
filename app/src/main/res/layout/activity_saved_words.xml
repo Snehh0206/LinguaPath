@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cream"
@@ -50,7 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
-            android:paddingBottom="24dp" />
+            android:paddingBottom="96dp" />
 
         <TextView
             android:id="@+id/textEmpty"
@@ -62,5 +63,15 @@
             android:textColor="@color/ink_soft"
             android:textSize="16sp"
             android:visibility="gone" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fabAddWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="8dp"
+            android:text="@string/saved_add_word"
+            android:textColor="@color/ink"
+            app:backgroundTint="@color/accent" />
     </FrameLayout>
 </LinearLayout>

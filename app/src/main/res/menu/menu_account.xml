@@ -5,6 +5,9 @@
         android:enabled="false"
         android:title="@string/signed_in_as" />
     <item
+        android:id="@+id/menu_translator"
+        android:title="@string/menu_translator" />
+    <item
         android:id="@+id/menu_saved"
         android:title="@string/menu_saved" />
     <item

@@ -93,7 +93,22 @@ public class SavedWordsRepository {
             mainHandler.post(() -> callback.onResult(result));
         });
     }
+    // A word the user typed themselves (not from the lessons). word_id = -1 marks it.
+    public static void saveCustom(Context context, String language, String word,
+                                  String meaning, BoolCallback callback) {
+        executor.execute(() -> {
+            ContentValues values = new ContentValues();
+            values.put(SavedWordsContract.COLUMN_LANGUAGE, language);
+            values.put(SavedWordsContract.COLUMN_WORD_ID, -1);
+            values.put(SavedWordsContract.COLUMN_WORD, word);
+            values.put(SavedWordsContract.COLUMN_MEANING, meaning);
+            values.put(SavedWordsContract.COLUMN_EXAMPLE, "");
 
+            Uri created = resolver(context).insert(SavedWordsContract.CONTENT_URI, values);
+            boolean result = (created != null);
+            mainHandler.post(() -> callback.onResult(result));
+        });
+    }
     public static void loadAll(Context context, ListCallback callback) {
         executor.execute(() -> {
             List<SavedWord> words = new ArrayList<>();

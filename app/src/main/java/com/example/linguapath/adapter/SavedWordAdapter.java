@@ -3,6 +3,8 @@ package com.example.linguapath.adapter;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import com.example.linguapath.R;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
@@ -78,7 +80,9 @@ public class SavedWordAdapter extends RecyclerView.Adapter<SavedWordAdapter.Save
 
         b.textSavedWord.setText(word.getWord());
         b.textSavedMeaning.setText(word.getMeaning());
-        b.textSavedLanguage.setText(word.getLanguage());
+        b.textSavedLanguage.setText(word.getWordId() < 0
+                ? b.getRoot().getContext().getString(R.string.saved_custom_tag, word.getLanguage())
+                : word.getLanguage());
 
         b.getRoot().setOnClickListener(v -> listener.onOpen(word));
         b.buttonDelete.setOnClickListener(v -> listener.onDelete(word));
