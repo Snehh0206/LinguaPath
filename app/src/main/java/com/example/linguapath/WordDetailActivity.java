@@ -12,6 +12,7 @@ import com.example.linguapath.data.SavedWordsRepository;
 import com.example.linguapath.data.WordRepository;
 import com.example.linguapath.databinding.ActivityWordDetailBinding;
 import com.example.linguapath.model.Word;
+import com.example.linguapath.speech.SpeechHelper;
 
 public class WordDetailActivity extends AppCompatActivity {
 
@@ -23,6 +24,7 @@ public class WordDetailActivity extends AppCompatActivity {
     private String language = "";
     private Word currentWord;
     private boolean saved = false;
+    private SpeechHelper speech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +89,14 @@ public class WordDetailActivity extends AppCompatActivity {
                 updateSaveButton();
             });
         }
+        // Pronunciation needs to know the language
+        if (language.isEmpty()) {
+            binding.buttonSpeakWord.setVisibility(View.GONE);
+            binding.buttonSpeakExample.setVisibility(View.GONE);
+        } else {
+            binding.buttonSpeakWord.setOnClickListener(v -> speak(word.getWord()));
+            binding.buttonSpeakExample.setOnClickListener(v -> speak(word.getExample()));
+        }
     }
 
     private void updateSaveButton() {
@@ -121,7 +131,27 @@ public class WordDetailActivity extends AppCompatActivity {
             });
         }
     }
+    // The speech engine lives only while the screen is visible
+    @Override
+    protected void onStart() {
+        super.onStart();
+        speech = new SpeechHelper(this);
+    }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (speech != null) {
+            speech.shutdown();
+            speech = null;
+        }
+    }
+
+    private void speak(String text) {
+        if (speech != null) {
+            speech.speak(text, language);
+        }
+    }
     // Implicit Intent: we don't name an app, we say "send this text" and Android lets the user pick
     private void shareWord(Word word) {
         String text = word.getWord();

@@ -13,6 +13,7 @@ import com.example.linguapath.view.TouchBounce;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder> {
 
@@ -22,7 +23,11 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder
 
     private final List<Word> words = new ArrayList<>();
     private final OnWordClickListener listener;
+    private Consumer<Word> speakListener;
 
+    public void setSpeakListener(Consumer<Word> speakListener) {
+        this.speakListener = speakListener;
+    }
     public WordAdapter(OnWordClickListener listener) {
         this.listener = listener;
     }
@@ -64,6 +69,11 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder
         }
 
         b.getRoot().setOnClickListener(v -> listener.onWordClick(word));
+        b.buttonSpeak.setOnClickListener(v -> {
+            if (speakListener != null) {
+                speakListener.accept(word);
+            }
+        });
     }
 
     @Override

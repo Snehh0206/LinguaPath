@@ -137,4 +137,11 @@
     <string name="saved_add_word">+ Add word</string>
     <string name="saved_custom_tag">%1$s · added by you</string>
     <string name="custom_word_message">%1$s\n\nAdded by you (%2$s)</string>
+    <string name="speak_description">Listen to the pronunciation</string>
+    <string name="speak_listen">🔊 Listen</string>
+    <string name="speech_missing_title">Voice not installed</string>
+    <string name="speech_missing_message">This phone has no %1$s voice yet. You can install voice data, then try again.</string>
+    <string name="speech_install">Install voice data</string>
+    <string name="speech_unavailable_title">Speech is not available</string>
+    <string name="speech_unavailable_message">This phone cannot play spoken audio right now. Check Settings for Text-to-speech output and make sure a speech engine is installed.</string>
 </resources>

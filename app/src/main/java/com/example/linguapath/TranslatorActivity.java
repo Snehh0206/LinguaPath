@@ -14,6 +14,7 @@ import com.example.linguapath.data.TranslationUsage;
 import com.example.linguapath.databinding.ActivityTranslatorBinding;
 import com.example.linguapath.view.Motion;
 import com.example.linguapath.data.SavedWordsRepository;
+import com.example.linguapath.speech.SpeechHelper;
 
 public class TranslatorActivity extends AppCompatActivity {
 
@@ -24,6 +25,7 @@ public class TranslatorActivity extends AppCompatActivity {
     private String target = "Spanish";
     private String lastSource = "";
     private String lastTranslated = "";
+    private SpeechHelper speech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,11 @@ public class TranslatorActivity extends AppCompatActivity {
         binding.chipSpanish.setOnClickListener(v -> selectTarget("Spanish"));
         binding.buttonTranslate.setOnClickListener(v -> translate());
         binding.buttonCopy.setOnClickListener(v -> copyResult());
+        binding.buttonSpeakResult.setOnClickListener(v -> {
+            if (speech != null) {
+                speech.speak(lastTranslated, target);
+            }
+        });
         binding.buttonSave.setOnClickListener(v -> saveWord());
 
         // Opened from "Add word"? Change the wording.
@@ -56,6 +63,20 @@ public class TranslatorActivity extends AppCompatActivity {
 
         showChips();
         showUsage();
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        speech = new SpeechHelper(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (speech != null) {
+            speech.shutdown();
+            speech = null;
+        }
     }
     // Saves the translated word into the user's vocabulary (through the Content Provider)
     private void saveWord() {

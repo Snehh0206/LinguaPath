@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import com.example.linguapath.service.StudySessionClient;
+import com.example.linguapath.speech.SpeechHelper;
 
 public class CourseActivity extends AppCompatActivity {
 
@@ -27,7 +28,7 @@ public class CourseActivity extends AppCompatActivity {
     public static final String EXTRA_STAGE_TITLE = "extra_stage_title";
     public static final String EXTRA_REDO = "extra_redo";
     private static final String TAG = "CourseActivity";
-
+    private SpeechHelper speech;
     private ActivityCourseBinding binding;
     private WordAdapter adapter;
     private String languageName = "Spanish";
@@ -74,6 +75,12 @@ public class CourseActivity extends AppCompatActivity {
         adapter = new WordAdapter(this::openWordDetail);
         binding.recyclerWords.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerWords.setAdapter(adapter);
+        // The 🔊 on each card speaks that word in the stage's language
+        adapter.setSpeakListener(word -> {
+            if (speech != null) {
+                speech.speak(word.getWord(), languageName);
+            }
+        });
 
         WordRepository.loadWords(this, stageId, words -> {
             if (isFinishing() || isDestroyed()) {
@@ -113,12 +120,17 @@ public class CourseActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         studyClient.bind();
+        speech = new SpeechHelper(this);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         studyClient.unbind();
+        if (speech != null) {
+            speech.shutdown();
+            speech = null;
+        }
     }
     private void openWordDetail(Word word) {
         Intent intent = new Intent(this, WordDetailActivity.class);
