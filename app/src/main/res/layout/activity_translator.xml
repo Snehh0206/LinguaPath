@@ -167,6 +167,23 @@
                 android:textColor="@color/ink_soft"
                 android:textSize="12sp" />
 
+            <TextView
+                android:id="@+id/buttonSpeakResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_card_sky"
+                android:clickable="true"
+                android:contentDescription="@string/speak_description"
+                android:focusable="true"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:text="@string/speak_listen"
+                android:textColor="@color/ink"
+                android:textSize="14sp" />
+
             <LinearLayout
                 android:id="@+id/rowActions"
                 android:layout_width="match_parent"
