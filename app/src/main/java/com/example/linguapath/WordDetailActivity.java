@@ -13,6 +13,7 @@ import com.example.linguapath.data.WordRepository;
 import com.example.linguapath.databinding.ActivityWordDetailBinding;
 import com.example.linguapath.model.Word;
 import com.example.linguapath.speech.SpeechHelper;
+import com.example.linguapath.service.StudyTimerController;
 
 public class WordDetailActivity extends AppCompatActivity {
 
@@ -136,6 +137,7 @@ public class WordDetailActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         speech = new SpeechHelper(this);
+        StudyTimerController.screenStarted();
     }
 
     @Override
@@ -145,6 +147,7 @@ public class WordDetailActivity extends AppCompatActivity {
             speech.shutdown();
             speech = null;
         }
+        StudyTimerController.screenStopped();
     }
 
     private void speak(String text) {

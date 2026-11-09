@@ -144,4 +144,21 @@
     <string name="speech_install">Install voice data</string>
     <string name="speech_unavailable_title">Speech is not available</string>
     <string name="speech_unavailable_message">This phone cannot play spoken audio right now. Check Settings for Text-to-speech output and make sure a speech engine is installed.</string>
+    <string name="quota_dialog_title">Daily translation limit reached</string>
+    <string name="quota_dialog_message">You have used today\'s free translations, so no new translations can be made until tomorrow. Words and phrases you translated before still work, even offline.</string>
+    <string name="timer_channel_name">Study timer</string>
+    <string name="timer_channel_description">Shows the stage you are studying and for how long</string>
+    <string name="timer_title_running">Studying %1$s · %2$s · %3$s</string>
+    <string name="timer_title_paused">Practice paused</string>
+    <string name="timer_text_paused">%1$s · %2$s · %3$s</string>
+    <string name="timer_action_pause">Pause</string>
+    <string name="timer_action_resume">Resume</string>
+    <string name="timer_action_stop">Stop</string>
+    <string name="today_minutes">Today: %1$d min</string>
+    <string name="pill_today_main">%1$d min</string>
+    <string name="pill_today_sub">studied today</string>
+    <string name="pill_sub_running">Today: %1$d min</string>
+    <string name="pill_sub_paused">Paused · today %1$d min</string>
+    <string name="timer_permission_title">Show the study timer?</string>
+    <string name="timer_permission_message">The timer notification lets you pause or stop from anywhere. The timer works without it.</string>
 </resources>

@@ -3,13 +3,13 @@ package com.example.linguapath.view;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
+import android.graphics.DiscretePathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.RadialGradient;
-import android.graphics.Shader;
+import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -20,35 +20,28 @@ import androidx.core.content.ContextCompat;
 
 import com.example.linguapath.R;
 
-// A floating open book with a soft halo and a ground shadow.
-// The shadow shrinks and fades as the book rises, which gives the 3D "floating" feel.
-// Drop it into any layout. Call startIdle() in onResume and stopIdle() in onPause.
+// A storybook hero: an open book with a little sprout, on a mossy mound.
+// Flat soft colours and a slightly wobbly brown outline, like a hand drawing.
+// If you add your own painted logo as res/drawable/hero_logo.webp (or .png), it is used instead.
+// Call startIdle() in onResume and stopIdle() in onPause.
 public class HeroView extends View {
 
-    private final Paint haloPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private final Paint shadowPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private final Paint coverPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private final Paint leftPagePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private final Paint rightPagePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private final Paint spinePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint fillPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint linePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private final Paint ribbonPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private final Paint sparklePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-
+    private final Paint stemPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint detailPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Path leftPage = new Path();
     private final Path rightPage = new Path();
-    private final Path ribbon = new Path();
-    private final Path star = new Path();
+    private final Path leafPath = new Path();
+    private final RectF rect = new RectF();
 
     private final float density;
-    private final int primary;
-    private final int primaryDark;
-    private final int accent;
-    private final int inkColor;
+    private final int cardColor, sageColor, butterColor, leafColor, accentColor;
+    private Bitmap painted; // your own painted logo, if you added one
 
     private float bookCx, bookCy, pageW, pageH, dip, thickness, floatDistance;
-    private float floatPhase = 0f;    // 0..1, drives float, shadow and sparkles
-    private float sparkleBoost = 0f;  // extra sparkle after a tap
+    private float floatPhase = 0f; // 0..1, drives the floating
+    private float boost = 0f;      // extra sway after a tap
 
     private ValueAnimator floatAnimator;
     private ValueAnimator boostAnimator;
@@ -57,80 +50,55 @@ public class HeroView extends View {
     public HeroView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         density = context.getResources().getDisplayMetrics().density;
-        primary = ContextCompat.getColor(context, R.color.primary);
-        primaryDark = ContextCompat.getColor(context, R.color.primary_dark);
-        accent = ContextCompat.getColor(context, R.color.accent);
-        inkColor = ContextCompat.getColor(context, R.color.ink);
+        int ink = ContextCompat.getColor(context, R.color.ink);
+        cardColor = ContextCompat.getColor(context, R.color.card);
+        sageColor = ContextCompat.getColor(context, R.color.sage);
+        butterColor = ContextCompat.getColor(context, R.color.butter);
+        leafColor = ContextCompat.getColor(context, R.color.leaf);
+        accentColor = ContextCompat.getColor(context, R.color.accent);
 
+        fillPaint.setStyle(Paint.Style.FILL);
+        fillPaint.setFilterBitmap(true);
+
+        // The outline wobbles a little, like a pencil line
         linePaint.setStyle(Paint.Style.STROKE);
+        linePaint.setStrokeWidth(2.2f * density);
+        linePaint.setStrokeJoin(Paint.Join.ROUND);
         linePaint.setStrokeCap(Paint.Cap.ROUND);
-        linePaint.setStrokeWidth(2 * density);
-        linePaint.setColor(withAlpha(ContextCompat.getColor(context, R.color.ink_soft), 70));
+        linePaint.setColor((ink & 0x00FFFFFF) | 0xD0000000);
+        linePaint.setPathEffect(new DiscretePathEffect(9 * density, 1.3f * density));
 
-        spinePaint.setStyle(Paint.Style.STROKE);
-        spinePaint.setStrokeWidth(1.5f * density);
-        spinePaint.setColor(withAlpha(inkColor, 40));
+        stemPaint.setStyle(Paint.Style.STROKE);
+        stemPaint.setStrokeWidth(4 * density);
+        stemPaint.setStrokeCap(Paint.Cap.ROUND);
+        stemPaint.setColor(0xFF6E9E6A);
 
-        sparklePaint.setStyle(Paint.Style.FILL);
-    }
+        detailPaint.setStyle(Paint.Style.STROKE);
+        detailPaint.setStrokeWidth(1.6f * density);
+        detailPaint.setStrokeCap(Paint.Cap.ROUND);
+        detailPaint.setColor((ink & 0x00FFFFFF) | 0x55000000);
 
-    private static int withAlpha(int color, int alpha) {
-        return (color & 0x00FFFFFF) | (alpha << 24);
+        int res = context.getResources().getIdentifier("hero_logo", "drawable", context.getPackageName());
+        if (res != 0) {
+            painted = BitmapFactory.decodeResource(context.getResources(), res);
+        }
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         bookCx = w / 2f;
-        bookCy = h * 0.46f;
-        pageW = w * 0.38f;
-        pageH = h * 0.36f;
-        dip = h * 0.05f;
-        thickness = h * 0.035f;
-        floatDistance = h * 0.06f;
-
+        bookCy = h * 0.56f;
+        pageW = w * 0.30f;
+        pageH = h * 0.26f;
+        dip = h * 0.035f;
+        thickness = h * 0.03f;
+        floatDistance = h * 0.05f;
         buildPage(leftPage, -1);
         buildPage(rightPage, 1);
-
-        float top = bookCy - pageH / 2f;
-        float bottom = bookCy + pageH / 2f + dip + thickness;
-
-        haloPaint.setShader(new RadialGradient(bookCx, bookCy, w * 0.48f,
-                new int[]{withAlpha(ContextCompat.getColor(getContext(), R.color.sage), 170),
-                        withAlpha(ContextCompat.getColor(getContext(), R.color.sage), 0)},
-                null, Shader.TileMode.CLAMP));
-
-        shadowPaint.setShader(new RadialGradient(bookCx, h * 0.90f, w * 0.34f,
-                new int[]{withAlpha(inkColor, 90), withAlpha(inkColor, 0)},
-                null, Shader.TileMode.CLAMP));
-
-        coverPaint.setShader(new LinearGradient(0, top, 0, bottom, primary, primaryDark,
-                Shader.TileMode.CLAMP));
-
-        int pageWhite = Color.WHITE;
-        int pageShade = 0xFFDDE3E5;
-        leftPagePaint.setShader(new LinearGradient(bookCx - pageW, 0, bookCx, 0,
-                pageWhite, pageShade, Shader.TileMode.CLAMP));
-        rightPagePaint.setShader(new LinearGradient(bookCx + pageW, 0, bookCx, 0,
-                pageWhite, pageShade, Shader.TileMode.CLAMP));
-
-        // Bookmark ribbon hanging from the spine
-        float ribbonTop = bookCy + pageH / 2f + dip - h * 0.01f;
-        float half = w * 0.025f;
-        float ribbonBottom = ribbonTop + h * 0.11f;
-        ribbon.reset();
-        ribbon.moveTo(bookCx - half, ribbonTop);
-        ribbon.lineTo(bookCx + half, ribbonTop);
-        ribbon.lineTo(bookCx + half, ribbonBottom);
-        ribbon.lineTo(bookCx, ribbonBottom - h * 0.03f);
-        ribbon.lineTo(bookCx - half, ribbonBottom);
-        ribbon.close();
-        ribbonPaint.setShader(new LinearGradient(0, ribbonTop, 0, ribbonBottom,
-                0xFFF9BE82, accent, Shader.TileMode.CLAMP));
     }
 
-    // side = -1 for the left page, +1 for the right page.
-    // The outer edges sit a little higher than the spine, like an open book seen from the front.
+    // side = -1 for the left page, +1 for the right page
     private void buildPage(Path p, int side) {
         float top = bookCy - pageH / 2f;
         float bottom = bookCy + pageH / 2f;
@@ -151,71 +119,98 @@ public class HeroView extends View {
         if (w == 0f) {
             return;
         }
+        if (painted != null) {
+            drawPainted(canvas, w, h);
+            return;
+        }
 
-        // Ground shadow: stays on the ground, gets smaller and lighter as the book rises
-        float shadowScale = 1f - 0.22f * floatPhase;
-        shadowPaint.setAlpha((int) (255 * (1f - 0.4f * floatPhase)));
-        canvas.save();
-        canvas.scale(shadowScale, 0.28f * shadowScale, bookCx, h * 0.90f);
-        canvas.drawCircle(bookCx, h * 0.90f, w * 0.34f, shadowPaint);
-        canvas.restore();
+        // 1. A mossy mound. It stays on the ground while the book floats above it.
+        fillPaint.setColor(sageColor);
+        rect.set(w * 0.14f, h * 0.80f, w * 0.86f, h * 0.96f);
+        canvas.drawOval(rect, fillPaint);
+        canvas.drawOval(rect, linePaint);
 
-        // The book floats up and down
+        // 2. Everything that floats
         canvas.save();
         canvas.translate(0f, -floatDistance * floatPhase);
 
-        canvas.drawCircle(bookCx, bookCy, w * 0.48f, haloPaint);
-
-        // Cover, slightly lower than the pages so it reads as thickness
+        // The cover, a little lower than the pages
         canvas.save();
         canvas.translate(0f, thickness);
-        canvas.drawPath(leftPage, coverPaint);
-        canvas.drawPath(rightPage, coverPaint);
+        fillPaint.setColor(accentColor);
+        canvas.drawPath(leftPage, fillPaint);
+        canvas.drawPath(rightPage, fillPaint);
+        canvas.drawPath(leftPage, linePaint);
+        canvas.drawPath(rightPage, linePaint);
         canvas.restore();
 
-        canvas.drawPath(leftPage, leftPagePaint);
-        canvas.drawPath(rightPage, rightPagePaint);
+        // The pages
+        fillPaint.setColor(cardColor);
+        canvas.drawPath(leftPage, fillPaint);
+        canvas.drawPath(rightPage, fillPaint);
+        canvas.drawPath(leftPage, linePaint);
+        canvas.drawPath(rightPage, linePaint);
 
+        // The spine and a few pencil lines of "writing"
         float top = bookCy - pageH / 2f;
         float bottom = bookCy + pageH / 2f;
-        canvas.drawLine(bookCx, top + dip, bookCx, bottom + dip, spinePaint);
+        canvas.drawLine(bookCx, top + dip, bookCx, bottom + dip, detailPaint);
+        for (int side = -1; side <= 1; side += 2) {
+            for (int i = 0; i < 3; i++) {
+                float y = bookCy - pageH * 0.18f + i * pageH * 0.18f;
+                canvas.drawLine(bookCx + side * pageW * 0.18f, y + dip * 0.5f,
+                        bookCx + side * pageW * 0.78f, y - dip * 0.5f, detailPaint);
+            }
+        }
 
-        drawTextLines(canvas, -1);
-        drawTextLines(canvas, 1);
+        drawSprout(canvas);
 
-        canvas.drawPath(ribbon, ribbonPaint);
-
-        // Sparkles that gently pulse
-        drawSparkle(canvas, bookCx - pageW * 1.05f, bookCy - pageH * 0.95f, h * 0.05f, 0f);
-        drawSparkle(canvas, bookCx + pageW * 0.95f, bookCy - pageH * 0.80f, h * 0.04f, 1.6f);
-        drawSparkle(canvas, bookCx + pageW * 0.15f, bookCy - pageH * 1.20f, h * 0.03f, 3.1f);
-
+        // A few tiny specks drifting up
+        fillPaint.setColor(butterColor);
+        for (int i = 0; i < 3; i++) {
+            float x = bookCx + (i - 1) * pageW * 0.95f;
+            float y = bookCy - pageH * (0.95f + 0.28f * i) - floatPhase * h * 0.02f * (i + 1);
+            canvas.drawCircle(x, y, (2.2f + 0.6f * i) * density, fillPaint);
+        }
         canvas.restore();
     }
 
-    private void drawTextLines(Canvas canvas, int side) {
-        for (int i = 0; i < 3; i++) {
-            float y = bookCy - pageH * 0.18f + i * pageH * 0.18f;
-            float x1 = bookCx + side * pageW * 0.18f;
-            float x2 = bookCx + side * pageW * 0.80f;
-            canvas.drawLine(x1, y + dip * 0.5f, x2, y - dip * 0.5f, linePaint);
-        }
+    // A little sprout growing from the spine. It sways with the floating.
+    private void drawSprout(Canvas canvas) {
+        float baseX = bookCx;
+        float baseY = bookCy - pageH / 2f + dip;
+        float stem = pageH * 0.9f;
+        float sway = (floatPhase - 0.5f) * 8f
+                + boost * 10f * (float) Math.sin(floatPhase * 6.28f * 3f);
+
+        canvas.save();
+        canvas.rotate(sway, baseX, baseY);
+        canvas.drawLine(baseX, baseY, baseX, baseY - stem, stemPaint);
+        drawLeaf(canvas, baseX, baseY - stem * 0.55f, pageH * 0.55f, -48f);
+        drawLeaf(canvas, baseX, baseY - stem, pageH * 0.62f, 38f);
+        drawLeaf(canvas, baseX, baseY - stem, pageH * 0.42f, -12f);
+        canvas.restore();
     }
 
-    private void drawSparkle(Canvas canvas, float x, float y, float size, float offset) {
-        float pulse = 0.5f + 0.5f * (float) Math.sin(floatPhase * Math.PI + offset);
-        float s = size * (0.7f + 0.5f * pulse + sparkleBoost);
-        int alpha = (int) Math.min(255, 110 + 120 * pulse + 120 * sparkleBoost);
-        sparklePaint.setColor(withAlpha(offset > 1f ? accent : primary, alpha));
+    private void drawLeaf(Canvas canvas, float x, float y, float size, float angle) {
+        canvas.save();
+        canvas.translate(x, y);
+        canvas.rotate(angle);
+        leafPath.reset();
+        leafPath.moveTo(0, 0);
+        leafPath.quadTo(-size * 0.45f, -size * 0.5f, 0, -size);
+        leafPath.quadTo(size * 0.45f, -size * 0.5f, 0, 0);
+        fillPaint.setColor(leafColor);
+        canvas.drawPath(leafPath, fillPaint);
+        canvas.drawPath(leafPath, linePaint);
+        canvas.restore();
+    }
 
-        star.reset();
-        star.moveTo(x, y - s);
-        star.quadTo(x, y, x + s, y);
-        star.quadTo(x, y, x, y + s);
-        star.quadTo(x, y, x - s, y);
-        star.quadTo(x, y, x, y - s);
-        star.close();
-        canvas.drawPath(star, sparklePaint);
+    private void drawPainted(Canvas canvas, float w, float h) {
+        float side = Math.min(w, h * 0.92f);
+        float top = h * 0.04f - floatDistance * floatPhase;
+        rect.set(w / 2f - side / 2f, top, w / 2f + side / 2f, top + side);
+        canvas.drawBitmap(painted, null, rect, fillPaint);
     }
 
     // ---- Idle: gentle floating loop ----
@@ -225,7 +220,7 @@ public class HeroView extends View {
             return; // never start twice
         }
         floatAnimator = ValueAnimator.ofFloat(0f, 1f);
-        floatAnimator.setDuration(2400);
+        floatAnimator.setDuration(2600);
         floatAnimator.setRepeatCount(ValueAnimator.INFINITE);
         floatAnimator.setRepeatMode(ValueAnimator.REVERSE);
         floatAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
@@ -252,22 +247,22 @@ public class HeroView extends View {
         setScaleY(1f);
         setRotation(0f);
         floatPhase = 0f;
-        sparkleBoost = 0f;
+        boost = 0f;
         invalidate();
     }
 
-    // ---- Tap reaction: a small pop, a wobble, and a burst of sparkle ----
+    // ---- Tap: a small pop, a wobble, and the sprout sways ----
 
     public void react() {
         animate().cancel();
-        animate().scaleX(1.12f).scaleY(1.12f).setDuration(120)
+        animate().scaleX(1.1f).scaleY(1.1f).setDuration(120)
                 .withEndAction(() -> animate().scaleX(1f).scaleY(1f).setDuration(350)
                         .setInterpolator(new OvershootInterpolator(3f)));
 
         if (wobbleAnimator != null) {
             wobbleAnimator.cancel();
         }
-        wobbleAnimator = ObjectAnimator.ofFloat(this, View.ROTATION, 0f, -7f, 5f, -3f, 0f);
+        wobbleAnimator = ObjectAnimator.ofFloat(this, View.ROTATION, 0f, -6f, 5f, -3f, 0f);
         wobbleAnimator.setDuration(600);
         wobbleAnimator.start();
 
@@ -275,9 +270,9 @@ public class HeroView extends View {
             boostAnimator.cancel();
         }
         boostAnimator = ValueAnimator.ofFloat(1f, 0f);
-        boostAnimator.setDuration(800);
+        boostAnimator.setDuration(900);
         boostAnimator.addUpdateListener(a -> {
-            sparkleBoost = (float) a.getAnimatedValue();
+            boost = (float) a.getAnimatedValue();
             invalidate();
         });
         boostAnimator.start();
@@ -285,7 +280,7 @@ public class HeroView extends View {
 
     @Override
     protected void onDetachedFromWindow() {
-        stopIdle(); // nothing keeps running after the screen is gone
+        stopIdle();
         super.onDetachedFromWindow();
     }
 }

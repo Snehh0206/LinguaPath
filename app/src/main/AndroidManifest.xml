@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
     <queries>
         <intent>
             <action android:name="android.intent.action.TTS_SERVICE" />
@@ -51,9 +53,6 @@
             android:name=".WordDetailActivity"
             android:exported="false" />
 
-        <service
-            android:name=".service.StudySessionService"
-            android:exported="false" />
 
         <activity
             android:name=".ReminderActivity"
@@ -61,7 +60,18 @@
         <receiver
             android:name=".reminder.SnoozeReceiver"
             android:exported="false" />
+        <service
+            android:name=".service.StudyTimerService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Visible study timer for the stage the learner is practising" />
+        </service>
 
+        <service
+            android:name=".service.SyncProgressService"
+            android:exported="false" />
         <provider
             android:name=".provider.SavedWordsProvider"
             android:authorities="com.example.linguapath.savedwords"

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
 
 import com.example.linguapath.data.ReminderSettings;
 import com.example.linguapath.data.TranslationRepository;
@@ -149,10 +150,22 @@ public class TranslatorActivity extends AppCompatActivity {
                     return;
                 }
                 setLoading(false);
-                binding.textError.setText(messageResId);
                 showUsage();
+                if (messageResId == R.string.translator_quota) {
+                    showQuotaDialog(); // a popup, and the day is blocked
+                } else {
+                    binding.textError.setText(messageResId);
+                }
             }
         });
+    }
+
+    private void showQuotaDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.quota_dialog_title)
+                .setMessage(R.string.quota_dialog_message)
+                .setPositiveButton(android.R.string.ok, null)
+                .show();
     }
 
     private void showResult(String translated, boolean fromCache) {

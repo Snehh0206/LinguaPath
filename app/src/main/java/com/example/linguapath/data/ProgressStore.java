@@ -43,7 +43,24 @@ public class ProgressStore {
     public int getCompletedCount(String language) {
         return prefs.getInt("completed_" + language, 0);
     }
+    // Study time for one stage (in addition to the daily total)
+    public void addStageStudyMillis(String language, int stageIndex, long millis) {
+        String key = "stagetime_" + language + "_" + stageIndex;
+        prefs.edit().putLong(key, prefs.getLong(key, 0) + millis).apply();
+    }
 
+    public long getStageStudyMillis(String language, int stageIndex) {
+        return prefs.getLong("stagetime_" + language + "_" + stageIndex, 0);
+    }
+
+    // True while a progress upload has not been confirmed yet
+    public void setSyncPending(String language, boolean pending) {
+        prefs.edit().putBoolean("sync_pending_" + language, pending).apply();
+    }
+
+    public boolean isSyncPending(String language) {
+        return prefs.getBoolean("sync_pending_" + language, false);
+    }
     // Only the next stage in order can be completed
     public void markStageCompleted(String language, int stageIndex) {
         if (stageIndex == getCompletedCount(language)) {

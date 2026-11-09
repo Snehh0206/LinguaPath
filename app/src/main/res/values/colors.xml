@@ -2,21 +2,21 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <!-- Surfaces and text -->
-    <color name="cream">#F7F5F0</color>
-    <color name="card">#FADCC9</color>
-    <color name="ink">#1F2A2E</color>
-    <color name="ink_soft">#66737B</color>
-    <!-- Brand -->
-    <color name="primary">#2F8F83</color>
-    <color name="primary_dark">#1F6B62</color>
-    <color name="accent">#F4A259</color>
-    <!-- Soft tints -->
-    <color name="peach">#FCE3C8</color>
-    <color name="sage">#D5ECE6</color>
-    <color name="sky">#DDEBF4</color>
-    <color name="butter">#FBEFC9</color>
-    <color name="locked">#E4E7E9</color>
-    <color name="leaf">#2F8F83</color>
-    <color name="error">#C0392B</color>
+    <!-- Surfaces and text: the soft cream look -->
+    <color name="cream">#FFF6E5</color>
+    <color name="card">#FFFDF8</color>
+    <color name="ink">#4A3B32</color>
+    <color name="ink_soft">#8A7A6E</color>
+    <!-- Brand: soft and warm -->
+    <color name="primary">#7BA881</color>
+    <color name="primary_dark">#5E8A68</color>
+    <color name="accent">#E9A07A</color>
+    <!-- Pastel tints, as in the first version -->
+    <color name="peach">#F6C9B4</color>
+    <color name="sage">#BFD8B8</color>
+    <color name="sky">#CFE3EC</color>
+    <color name="butter">#F7E3A1</color>
+    <color name="locked">#E6DDCF</color>
+    <color name="leaf">#8FBF8A</color>
+    <color name="error">#B3402A</color>
 </resources>

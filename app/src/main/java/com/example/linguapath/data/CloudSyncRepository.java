@@ -56,4 +56,22 @@ public class CloudSyncRepository {
             callback.onResult(reachedServer, value == null ? -1 : value.intValue());
         });
     }
+    public interface DoneCallback {
+        void onDone(boolean success);
+    }
+
+    // Same upload, but we are told when the server has confirmed it
+    public void uploadProgress(String language, int completed, DoneCallback callback) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) {
+            callback.onDone(false);
+            return;
+        }
+        Map<String, Object> data = new HashMap<>();
+        data.put("completed", completed);
+        data.put("updated", FieldValue.serverTimestamp());
+        progressDoc(user.getUid(), language).set(data)
+                .addOnCompleteListener(task -> callback.onDone(task.isSuccessful()));
+    }
+
 }

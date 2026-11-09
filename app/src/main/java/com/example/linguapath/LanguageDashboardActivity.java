@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.animation.OvershootInterpolator;
+
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 
@@ -20,7 +20,7 @@ import com.example.linguapath.data.StageRepository;
 import com.example.linguapath.databinding.ActivityLanguageDashboardBinding;
 import com.example.linguapath.model.Stage;
 import com.example.linguapath.data.CloudSyncRepository;
-import com.example.linguapath.service.StudySessionClient;
+import com.example.linguapath.service.StudyTimerState;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +36,6 @@ public class LanguageDashboardActivity extends AppCompatActivity {
     private StageAdapter adapter;
     private List<Stage> stages = new ArrayList<>();
     private String language;
-    private StudySessionClient studyClient;
     private ValueAnimator xpAnimator;
     private ObjectAnimator fabFloat;
     private int shownXp = 0;
@@ -58,6 +57,10 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         }
 
         progressStore = new ProgressStore(this);
+
+        // "Today: 12 min" follows the study timer. There is nothing to tap.
+        StudyTimerState.live().observe(this, this::showToday);
+
         new com.example.linguapath.data.ReminderSettings(this).setLastLanguage(language);
         binding.textLanguageTitle.setText(getString(R.string.dashboard_title, language));
 
@@ -80,25 +83,15 @@ public class LanguageDashboardActivity extends AppCompatActivity {
             binding.sprig.react();
             showSprigLine(pickSprigLine());
         });
-        // Study timer: tap to start or pause, long-press to reset
-        studyClient = new StudySessionClient(this, (elapsedMs, running) ->
-                binding.textTimer.setText(getString(
-                        running ? R.string.timer_running : R.string.timer_paused,
-                        StudySessionClient.formatTime(elapsedMs))));
-        binding.textTimer.setText(getString(R.string.timer_paused, "00:00"));
-        binding.textTimer.setOnClickListener(v -> studyClient.toggle());
-        binding.textTimer.setOnLongClickListener(v -> {
-            confirmResetTimer();
-            return true;
-        });
-        // Floating "Continue" button: slides up, then jumps to the next unfinished stage
+
+        // Floating "Continue" button: jumps to the next unfinished stage
         binding.fabContinue.setOnClickListener(v -> continueLearning());
         //binding.fabContinue.setTranslationY(300f);
         //binding.fabContinue.animate()
-              //  .translationY(0f)
-               // .setStartDelay(400)
-               // .setDuration(600)
-               // .setInterpolator(new OvershootInterpolator());
+        //  .translationY(0f)
+        // .setStartDelay(400)
+        // .setDuration(600)
+        // .setInterpolator(new OvershootInterpolator());
 
         StageRepository.loadStages(this, language, loadedStages -> {
             if (isFinishing() || isDestroyed()) {
@@ -119,30 +112,13 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         Motion.fadeSlideIn(binding.sprigRow, 160);
         Motion.fadeSlideIn(binding.fabContinue, 500);
     }
+
+    private void showToday(StudyTimerState.Snapshot s) {
+        long total = progressStore.getStudyMillisToday() + (s.active ? s.unsavedMs : 0);
+        binding.textTimer.setText(getString(R.string.today_minutes, (int) (total / 60000)));
+    }
+
     // Compare the phone's progress with the cloud's. The higher one wins.
-    // Bind when the screen becomes visible, unbind when it is no longer visible
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d(TAG, "onStart - binding to study service");
-        studyClient.bind();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(TAG, "onStop - unbinding from study service");
-        studyClient.unbind();
-    }
-
-    private void confirmResetTimer() {
-        new AlertDialog.Builder(this)
-                .setTitle(R.string.timer_reset_title)
-                .setMessage(R.string.timer_reset_message)
-                .setPositiveButton(R.string.timer_reset_yes, (dialog, which) -> studyClient.reset())
-                .setNegativeButton(android.R.string.cancel, null)
-                .show();
-    }
     private void syncWithCloud() {
         binding.textSyncStatus.setText(R.string.sync_syncing);
 
@@ -164,6 +140,7 @@ public class LanguageDashboardActivity extends AppCompatActivity {
                     reachedServer ? R.string.sync_done : R.string.sync_offline);
         });
     }
+
     private void continueLearning() {
         if (stages.isEmpty()) {
             return; // data not loaded yet
@@ -175,6 +152,7 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         }
         openStage(stages.get(completed), false);
     }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -232,6 +210,7 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         binding.textMessage.setText("");
         binding.recyclerStages.scrollToPosition(Math.min(completed, total - 1));
     }
+
     // Chooses what Sprig says, based on the user's progress
     private String pickSprigLine() {
         if (stages.isEmpty()) {
@@ -261,6 +240,7 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         binding.textSprigSays.setAlpha(0f);
         binding.textSprigSays.animate().alpha(1f).setDuration(250);
     }
+
     private void onStageClicked(Stage stage, int state) {
         if (state == StageAdapter.STATE_LOCKED) {
             binding.textMessage.setText(R.string.stage_locked);

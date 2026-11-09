@@ -69,9 +69,10 @@ public class TranslationRepository {
                 return;
             }
 
-            // 3. Would this go over today's free limit?
+            // 3. Would this go over today's free limit? If so, block for the rest of the day.
             TranslationUsage usage = new TranslationUsage(appContext);
             if (!usage.canUse(clean.length())) {
+                usage.blockForToday();
                 postError(callback, R.string.translator_quota);
                 return;
             }
@@ -83,6 +84,7 @@ public class TranslationRepository {
                 usage.add(clean.length());
                 postSuccess(callback, translated, false);
             } catch (QuotaException e) {
+                usage.blockForToday();
                 postError(callback, R.string.translator_quota);
             } catch (IOException e) {
                 Log.w(TAG, "Network problem: " + e.getMessage());

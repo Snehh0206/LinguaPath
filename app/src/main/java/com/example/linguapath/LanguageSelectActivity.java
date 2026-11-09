@@ -88,7 +88,8 @@ public class LanguageSelectActivity extends AppCompatActivity {
                 .setTitle(R.string.logout_title)
                 .setMessage(R.string.logout_message)
                 .setPositiveButton(R.string.menu_logout, (dialog, which) -> {
-                    stopService(new Intent(this, com.example.linguapath.service.StudySessionService.class));
+                    //stopService(new Intent(this, com.example.linguapath.service.StudySessionService.class));
+                    com.example.linguapath.service.StudyTimerController.endSession();
                     authRepository.logout();
                     Intent intent = new Intent(this, LoginActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

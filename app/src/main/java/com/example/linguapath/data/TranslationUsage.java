@@ -5,10 +5,12 @@ import android.content.SharedPreferences;
 
 import java.time.LocalDate;
 
-// Our own estimate of the characters used today, so we stop before MyMemory does
+// Our own count of the characters used today, so we stop before MyMemory does
 public class TranslationUsage {
 
-    public static final int DAILY_CHAR_LIMIT = 5000;
+    // MyMemory allows about 5,000 characters a day without an email.
+    // We stop earlier, at 4,500, so we never reach the real limit.
+    public static final int DAILY_CHAR_LIMIT = 4500;
 
     private final SharedPreferences prefs;
 
@@ -17,19 +19,28 @@ public class TranslationUsage {
                 .getSharedPreferences("linguapath_translation", Context.MODE_PRIVATE);
     }
 
+    private static String today() {
+        return LocalDate.now().toString();
+    }
+
     public int getUsedToday() {
-        String today = LocalDate.now().toString();
-        return today.equals(prefs.getString("date", "")) ? prefs.getInt("used", 0) : 0;
+        return today().equals(prefs.getString("date", "")) ? prefs.getInt("used", 0) : 0;
     }
 
     public void add(int chars) {
-        prefs.edit()
-                .putString("date", LocalDate.now().toString())
-                .putInt("used", getUsedToday() + chars)
-                .apply();
+        prefs.edit().putString("date", today()).putInt("used", getUsedToday() + chars).apply();
+    }
+
+    // After the limit is hit, nothing new can be translated for the rest of the day
+    public boolean isBlockedToday() {
+        return today().equals(prefs.getString("blocked_date", ""));
+    }
+
+    public void blockForToday() {
+        prefs.edit().putString("blocked_date", today()).apply();
     }
 
     public boolean canUse(int chars) {
-        return getUsedToday() + chars <= DAILY_CHAR_LIMIT;
+        return !isBlockedToday() && getUsedToday() + chars <= DAILY_CHAR_LIMIT;
     }
 }
