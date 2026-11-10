@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.util.Log;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -19,6 +20,8 @@ import com.example.linguapath.data.ProgressStore;
 import com.example.linguapath.data.WordRepository;
 import com.example.linguapath.databinding.ActivityCourseBinding;
 import com.example.linguapath.model.Word;
+import com.example.linguapath.service.PlaybackController;
+import com.example.linguapath.service.PlaybackState;
 import com.example.linguapath.service.StudyTimerController;
 import com.example.linguapath.service.SyncProgressService;
 import com.example.linguapath.speech.SpeechHelper;
@@ -28,6 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+// The page of ONE stage: all its word boxes, plus listening for this stage only.
 public class CourseActivity extends AppCompatActivity {
 
     public static final String EXTRA_STAGE_ID = "extra_stage_id";
@@ -72,7 +76,7 @@ public class CourseActivity extends AppCompatActivity {
 
         binding.buttonBack.setOnClickListener(v -> finish());
 
-        // The timer notification needs a permission on Android 13+. It is asked once, with a reason.
+        // The notification permission (Android 13+) is asked once, with a reason
         notificationPermission = registerForActivityResult(
                 new ActivityResultContracts.RequestPermission(), granted -> { });
 
@@ -83,6 +87,7 @@ public class CourseActivity extends AppCompatActivity {
             }
         });
 
+        // The word boxes. Tap a box to open its word page. Tap its 🔊 to hear it.
         adapter = new WordAdapter(this::openWordDetail);
         adapter.setSpeakListener(word -> {
             if (speech != null) {
@@ -103,6 +108,25 @@ public class CourseActivity extends AppCompatActivity {
             int infoText = redo ? R.string.course_redo_info : R.string.course_word_count;
             binding.textCourseInfo.setText(getString(infoText, words.size()));
         });
+
+        // Play all pronunciations / Audio lesson of THIS stage: a foreground service with its own notification
+        binding.buttonPlayAll.setOnClickListener(v -> {
+            PlaybackState.Snapshot s = PlaybackState.live().getValue();
+            if (s != null && s.active) {
+                PlaybackController.toggle(); // Pause or Play
+            } else {
+                PlaybackController.start(this, false, languageName, stageId, stageIndex, stageTitle);
+            }
+        });
+        binding.buttonAudioLesson.setOnClickListener(v -> {
+            PlaybackState.Snapshot s = PlaybackState.live().getValue();
+            if (s != null && s.active) {
+                PlaybackController.stop();
+            } else {
+                PlaybackController.start(this, true, languageName, stageId, stageIndex, stageTitle);
+            }
+        });
+        PlaybackState.live().observe(this, this::showPlayback);
 
         ProgressStore progressStore = new ProgressStore(this);
 
@@ -151,6 +175,25 @@ public class CourseActivity extends AppCompatActivity {
         super.onDestroy();
         if (isFinishing()) {
             StudyTimerController.endSession(); // Back, or the stage is finished: the session ends
+        }
+    }
+
+    private void showPlayback(PlaybackState.Snapshot s) {
+        if (s.active) {
+            binding.buttonPlayAll.setText(s.playing ? R.string.playback_pause : R.string.playback_play);
+            binding.buttonAudioLesson.setText(R.string.playback_stop);
+            binding.textPlayback.setText(getString(R.string.playback_status,
+                    Math.min(s.index + 1, Math.max(1, s.total)), s.total, s.currentWord));
+            return;
+        }
+        binding.buttonPlayAll.setText(R.string.playback_play_all);
+        binding.buttonAudioLesson.setText(R.string.playback_audio_lesson);
+        if (s.errorRes != 0) {
+            binding.textPlayback.setText(getString(s.errorRes, s.errorArg)); // for example a missing voice
+        } else if (getSystemService(PowerManager.class).isPowerSaveMode()) {
+            binding.textPlayback.setText(R.string.playback_battery_note);
+        } else {
+            binding.textPlayback.setText("");
         }
     }
 

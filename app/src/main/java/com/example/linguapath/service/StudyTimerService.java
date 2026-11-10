@@ -101,8 +101,18 @@ public class StudyTimerService extends Service {
         long m = (total % 3600) / 60;
         long s = total % 60;
         return h > 0
-                ? String.format(Locale.US, "%d:%02d:%02d", h, m, s)
-                : String.format(Locale.US, "%02d:%02d", m, s);
+                ? String.format(Locale.US, "%d h %02d min %02d s", h, m, s)
+                : String.format(Locale.US, "%d min %02d s", m, s);
+    }
+    // Longer text with seconds, for example "12 min 34 s"
+    public static String formatLong(long ms) {
+        long total = ms / 1000;
+        long h = total / 3600;
+        long m = (total % 3600) / 60;
+        long s = total % 60;
+        return h > 0
+                ? String.format(Locale.US, "%d h %02d min %02d s", h, m, s)
+                : String.format(Locale.US, "%d min %02d s", m, s);
     }
 
     // ---- Lifecycle ----

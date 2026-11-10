@@ -10,13 +10,12 @@
     <com.example.linguapath.view.SceneryView
         android:id="@+id/scenery"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="300dp"
         android:importantForAccessibility="no"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:sceneHorizon="0.50" />
+        app:sceneHorizon="0.42" />
 
     <TextView
         android:id="@+id/textLanguageTitle"
@@ -98,13 +97,13 @@
         android:id="@+id/textMessage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@id/textTimer"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:minHeight="20dp"
         android:textColor="@color/ink"
         android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/textTimer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/progressBar" />
 
@@ -115,9 +114,6 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/bg_card_butter"
-
-        android:elevation="2dp"
-
         android:paddingStart="12dp"
         android:paddingTop="4dp"
         android:paddingEnd="12dp"
@@ -127,6 +123,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/progressBar" />
 
+    <!-- The book and Sprig's speech bubble: right under the header, at the TOP -->
     <LinearLayout
         android:id="@+id/sprigRow"
         android:layout_width="0dp"
@@ -160,6 +157,74 @@
             android:textSize="14sp" />
     </LinearLayout>
 
+    <!-- Word of the day: hidden until a word has been saved -->
+    <LinearLayout
+        android:id="@+id/cardWordOfDay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_card_butter"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sprigRow">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wod_label"
+                android:textColor="@color/ink_soft"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textWodWord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ink"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textWodEnglish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ink"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wod_credit"
+                android:textColor="@color/ink_soft"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/buttonWodSpeak"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_sticker"
+            android:clickable="true"
+            android:contentDescription="@string/speak_description"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="🔊"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- The winding path of stages -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerStages"
         android:layout_width="0dp"
@@ -171,7 +236,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sprigRow" />
+        app:layout_constraintTop_toBottomOf="@id/cardWordOfDay" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fabContinue"

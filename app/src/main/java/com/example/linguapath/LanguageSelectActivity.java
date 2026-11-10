@@ -62,6 +62,10 @@ public class LanguageSelectActivity extends AppCompatActivity {
                 .setTitle(getString(R.string.signed_in_as, email == null ? "" : email));
 
         popup.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.menu_sign) {
+                startActivity(new Intent(this, SignTranslateActivity.class));
+                return true;
+            }
             if (item.getItemId() == R.id.menu_translator) {
                 startActivity(new Intent(this, TranslatorActivity.class));
                 return true;
