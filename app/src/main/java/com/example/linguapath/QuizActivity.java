@@ -32,6 +32,8 @@ public class QuizActivity extends AppCompatActivity {
     public static final String EXTRA_STAGE_TITLE = "extra_stage_title";
     public static final String EXTRA_REDO = "extra_redo";
     public static final String EXTRA_REVISION = "extra_revision";
+    public static final String EXTRA_TOPIC_ID = "extra_topic_id";
+    public static final String EXTRA_TOPIC_TITLE = "extra_topic_title";
 
     private static final String TAG = "QuizActivity";
     private static final int PASS_PERCENT = 70;
@@ -48,6 +50,8 @@ public class QuizActivity extends AppCompatActivity {
     private String stageTitle;
     private boolean redo;
     private boolean revision;
+    private String topicId;
+    private String topicTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +68,8 @@ public class QuizActivity extends AppCompatActivity {
         stageTitle = getIntent().getStringExtra(EXTRA_STAGE_TITLE);
         redo = getIntent().getBooleanExtra(EXTRA_REDO, false);
         revision = getIntent().getBooleanExtra(EXTRA_REVISION, false);
+        topicId = getIntent().getStringExtra(EXTRA_TOPIC_ID);
+        topicTitle = getIntent().getStringExtra(EXTRA_TOPIC_TITLE);
 
         // The ViewModel is the same object after a rotation
         viewModel = new ViewModelProvider(this).get(QuizViewModel.class);
@@ -97,7 +103,7 @@ public class QuizActivity extends AppCompatActivity {
 
         viewModel.getQuestions().observe(this, questions -> render());
         viewModel.getResultReady().observe(this, ready -> render());
-        viewModel.load(this, stageId, language, revision);
+        viewModel.load(this, stageId, language, revision, topicId);
     }
 
     // Draws the right screen for the current state: loading, a question, or the result
@@ -253,6 +259,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private void finishQuiz(int total) {
         viewModel.finished = true;
+        boolean topicQuiz = (topicId != null);
 
         // Save only once, even if the phone is rotated on the result screen
         if (!viewModel.resultSaved) {
@@ -265,8 +272,8 @@ public class QuizActivity extends AppCompatActivity {
 
             ProgressStore store = new ProgressStore(this);
             int xp = 0;
-            if (revision) {
-                // Revision never changes stage progress or XP. It only updates the word scores.
+            if (revision || topicQuiz) {
+                // Revision and topic quizzes never change stage progress or XP
             } else if (redo) {
                 store.addPractice(language, stageIndex); // practice: no progress, no XP
             } else if (passed) {
@@ -284,18 +291,23 @@ public class QuizActivity extends AppCompatActivity {
             }
             viewModel.xpGained = xp;
 
-            // Remember which words were right and wrong
-            WordStatsRepository.recordAnswers(getApplicationContext(), language,
-                    new java.util.ArrayList<>(viewModel.correctIds),
-                    new java.util.ArrayList<>(viewModel.wrongIds));
+            // Topic words are not lesson words, so they must not enter the word scores
+            if (!topicQuiz) {
+                WordStatsRepository.recordAnswers(getApplicationContext(), language,
+                        new java.util.ArrayList<>(viewModel.correctIds),
+                        new java.util.ArrayList<>(viewModel.wrongIds));
+            }
 
-            // Save the attempt. The result screen shows once this is done.
+            // stageIndex: -1 = revision quiz, -2 = topic quiz
+            int savedIndex = topicQuiz ? -2 : revision ? -1 : stageIndex;
+            String savedTitle = topicQuiz ? (topicTitle == null ? "" : topicTitle)
+                    : revision ? getString(R.string.revision_label)
+                    : (stageTitle == null ? "" : stageTitle);
+
             final QuizViewModel vm = viewModel; // not the Activity, so a rotation can't leak it
             QuizAttempt attempt = new QuizAttempt(
-                    QuizHistoryRepository.currentUserId(), language,
-                    revision ? -1 : stageIndex,
-                    revision ? getString(R.string.revision_label) : (stageTitle == null ? "" : stageTitle),
-                    viewModel.score, total, percent, passed, redo || revision,
+                    QuizHistoryRepository.currentUserId(), language, savedIndex, savedTitle,
+                    viewModel.score, total, percent, passed, redo || revision || topicQuiz,
                     System.currentTimeMillis());
             QuizHistoryRepository.record(getApplicationContext(), attempt, newBest -> vm.markReady(newBest));
         }
@@ -316,7 +328,7 @@ public class QuizActivity extends AppCompatActivity {
             binding.textResultEmoji.setText("🎉");
             binding.textResultTitle.setText(R.string.quiz_passed_title);
             StringBuilder message = new StringBuilder();
-            if (redo || revision) {
+            if (redo || revision || topicId != null) {
                 message.append(getString(R.string.quiz_no_xp_redo));
             } else {
                 message.append(getString(R.string.quiz_xp_gained, viewModel.xpGained));
@@ -347,7 +359,7 @@ public class QuizActivity extends AppCompatActivity {
 
             binding.buttonResultPrimary.setText(R.string.quiz_try_again);
             binding.buttonResultPrimary.setOnClickListener(v ->
-                    viewModel.restart(getApplicationContext(), stageId, language, revision));
+                    viewModel.restart(getApplicationContext(), stageId, language, revision, topicId));
         }
 
         binding.buttonResultSecondary.setOnClickListener(v -> {

@@ -84,7 +84,22 @@ public class SavedWordsRepository {
             mainHandler.post(() -> callback.onResult(result));
         });
     }
+    // A word saved from a topic. The topic name goes in the example field.
+    public static void saveTopicWord(Context context, String language, String word,
+                                     String meaning, String topicTitle, BoolCallback callback) {
+        executor.execute(() -> {
+            ContentValues values = new ContentValues();
+            values.put(SavedWordsContract.COLUMN_LANGUAGE, language);
+            values.put(SavedWordsContract.COLUMN_WORD_ID, -1);
+            values.put(SavedWordsContract.COLUMN_WORD, word);
+            values.put(SavedWordsContract.COLUMN_MEANING, meaning);
+            values.put(SavedWordsContract.COLUMN_EXAMPLE, topicTitle);
 
+            Uri created = resolver(context).insert(SavedWordsContract.CONTENT_URI, values);
+            boolean result = (created != null);
+            mainHandler.post(() -> callback.onResult(result));
+        });
+    }
     public static void removeById(Context context, long id, BoolCallback callback) {
         executor.execute(() -> {
             Uri item = ContentUris.withAppendedId(SavedWordsContract.CONTENT_URI, id);

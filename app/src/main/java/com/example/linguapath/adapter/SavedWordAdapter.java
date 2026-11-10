@@ -80,9 +80,16 @@ public class SavedWordAdapter extends RecyclerView.Adapter<SavedWordAdapter.Save
 
         b.textSavedWord.setText(word.getWord());
         b.textSavedMeaning.setText(word.getMeaning());
-        b.textSavedLanguage.setText(word.getWordId() < 0
-                ? b.getRoot().getContext().getString(R.string.saved_custom_tag, word.getLanguage())
-                : word.getLanguage());
+        android.content.Context ctx = b.getRoot().getContext();
+        String label;
+        if (word.getWordId() >= 0) {
+            label = word.getLanguage();
+        } else if (word.getExample() != null && !word.getExample().isEmpty()) {
+            label = ctx.getString(R.string.saved_topic_tag, word.getLanguage(), word.getExample());
+        } else {
+            label = ctx.getString(R.string.saved_custom_tag, word.getLanguage());
+        }
+        b.textSavedLanguage.setText(label);
 
         b.getRoot().setOnClickListener(v -> listener.onOpen(word));
         b.buttonDelete.setOnClickListener(v -> listener.onDelete(word));

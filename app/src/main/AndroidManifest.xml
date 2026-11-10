@@ -113,6 +113,14 @@
             android:name=".ProgressActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".TopicsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".TopicWordsActivity"
+            android:exported="false" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"

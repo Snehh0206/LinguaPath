@@ -266,5 +266,22 @@
     <string name="revise_count">%1$d words to review</string>
     <string name="revise_none">Nothing to review. Great job!</string>
     <string name="revise_button">Revise now</string>
+    <string name="topics_title">Topic words</string>
+    <string name="topics_subtitle">Words for the places you will go.</string>
+    <string name="topics_card_title">🌍 Topic words</string>
+    <string name="topics_card_subtitle">Café, airport, shop, festival and more</string>
+    <string name="topic_word_count">%1$d words</string>
+    <string name="topic_info">%1$d words · %2$s</string>
+    <string name="topic_saved">Saved to your words ⭐</string>
+    <string name="topic_already_saved">Already in your saved words.</string>
+    <string name="topic_save_description">Save this word</string>
+    <string name="saved_topic_tag">%1$s · Topic: %2$s</string>
+    <string name="topic_word_message">%1$s\n\nFrom the topic: %2$s</string>
+    <string name="learn_mode_off">🎓 Learn mode</string>
+    <string name="learn_mode_on">👀 Show all</string>
+    <string name="learn_tap_to_reveal">Tap to reveal ✨</string>
+    <string name="topic_quiz_button">🎯 Topic quiz</string>
+    <string name="attempt_topic_title">Topic: %1$s</string>
+    <string name="attempt_topic_quiz">Topic quiz</string>
     <string name="ach_locked">🔒 %1$s</string>
 </resources>

@@ -3,5 +3,6 @@
     <declare-styleable name="SceneryView">
         <attr name="sceneHorizon" format="float" />
         <attr name="sceneSun" format="boolean" />
+        <attr name="sceneTheme" format="integer" />
     </declare-styleable>
 </resources>

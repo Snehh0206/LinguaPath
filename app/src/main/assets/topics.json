@@ -1,0 +1,154 @@
+{
+  "topics": [
+    {
+      "id": "cafe", "title": "Café", "emoji": "☕", "theme": 1,
+      "words": {
+        "Spanish": [
+          {"word": "café", "romanization": "", "meaning": "coffee", "emoji": "☕"},
+          {"word": "té", "romanization": "", "meaning": "tea", "emoji": "🍵"},
+          {"word": "leche", "romanization": "", "meaning": "milk", "emoji": "🥛"},
+          {"word": "zumo", "romanization": "", "meaning": "juice", "emoji": "🧃"},
+          {"word": "pastel", "romanization": "", "meaning": "cake", "emoji": "🍰"},
+          {"word": "galleta", "romanization": "", "meaning": "cookie", "emoji": "🍪"},
+          {"word": "cuenta", "romanization": "", "meaning": "the bill", "emoji": "🧾"},
+          {"word": "agua", "romanization": "", "meaning": "water", "emoji": "💧"}
+        ],
+        "Korean": [
+          {"word": "커피", "romanization": "keopi", "meaning": "coffee", "emoji": "☕"},
+          {"word": "차", "romanization": "cha", "meaning": "tea", "emoji": "🍵"},
+          {"word": "우유", "romanization": "uyu", "meaning": "milk", "emoji": "🥛"},
+          {"word": "주스", "romanization": "juseu", "meaning": "juice", "emoji": "🧃"},
+          {"word": "케이크", "romanization": "keikeu", "meaning": "cake", "emoji": "🍰"},
+          {"word": "쿠키", "romanization": "kuki", "meaning": "cookie", "emoji": "🍪"},
+          {"word": "계산서", "romanization": "gyesanseo", "meaning": "the bill", "emoji": "🧾"},
+          {"word": "물", "romanization": "mul", "meaning": "water", "emoji": "💧"}
+        ]
+      }
+    },
+    {
+      "id": "airport", "title": "Airport", "emoji": "✈️", "theme": 2,
+      "words": {
+        "Spanish": [
+          {"word": "aeropuerto", "romanization": "", "meaning": "airport", "emoji": "✈️"},
+          {"word": "avión", "romanization": "", "meaning": "airplane", "emoji": "🛩️"},
+          {"word": "maleta", "romanization": "", "meaning": "suitcase", "emoji": "🧳"},
+          {"word": "pasaporte", "romanization": "", "meaning": "passport", "emoji": "🛂"},
+          {"word": "billete", "romanization": "", "meaning": "ticket", "emoji": "🎫"},
+          {"word": "puerta", "romanization": "", "meaning": "gate, door", "emoji": "🚪"},
+          {"word": "llegada", "romanization": "", "meaning": "arrival", "emoji": "🛬"},
+          {"word": "salida", "romanization": "", "meaning": "departure, exit", "emoji": "🛫"}
+        ],
+        "Korean": [
+          {"word": "공항", "romanization": "gonghang", "meaning": "airport", "emoji": "✈️"},
+          {"word": "비행기", "romanization": "bihaenggi", "meaning": "airplane", "emoji": "🛩️"},
+          {"word": "짐", "romanization": "jim", "meaning": "luggage", "emoji": "🧳"},
+          {"word": "여권", "romanization": "yeogwon", "meaning": "passport", "emoji": "🛂"},
+          {"word": "표", "romanization": "pyo", "meaning": "ticket", "emoji": "🎫"},
+          {"word": "탑승구", "romanization": "tapseunggu", "meaning": "boarding gate", "emoji": "🚪"},
+          {"word": "도착", "romanization": "dochak", "meaning": "arrival", "emoji": "🛬"},
+          {"word": "출발", "romanization": "chulbal", "meaning": "departure", "emoji": "🛫"}
+        ]
+      }
+    },
+    {
+      "id": "shop", "title": "Shopping", "emoji": "🛍️", "theme": 3,
+      "words": {
+        "Spanish": [
+          {"word": "tienda", "romanization": "", "meaning": "shop", "emoji": "🏪"},
+          {"word": "precio", "romanization": "", "meaning": "price", "emoji": "🏷️"},
+          {"word": "dinero", "romanization": "", "meaning": "money", "emoji": "💵"},
+          {"word": "camisa", "romanization": "", "meaning": "shirt", "emoji": "👕"},
+          {"word": "zapatos", "romanization": "", "meaning": "shoes", "emoji": "👟"},
+          {"word": "bolsa", "romanization": "", "meaning": "bag", "emoji": "🛍️"},
+          {"word": "regalo", "romanization": "", "meaning": "gift", "emoji": "🎁"},
+          {"word": "tarjeta", "romanization": "", "meaning": "card", "emoji": "💳"}
+        ],
+        "Korean": [
+          {"word": "가게", "romanization": "gage", "meaning": "shop", "emoji": "🏪"},
+          {"word": "가격", "romanization": "gagyeok", "meaning": "price", "emoji": "🏷️"},
+          {"word": "돈", "romanization": "don", "meaning": "money", "emoji": "💵"},
+          {"word": "셔츠", "romanization": "syeocheu", "meaning": "shirt", "emoji": "👕"},
+          {"word": "신발", "romanization": "sinbal", "meaning": "shoes", "emoji": "👟"},
+          {"word": "쇼핑백", "romanization": "syopingbaek", "meaning": "shopping bag", "emoji": "🛍️"},
+          {"word": "선물", "romanization": "seonmul", "meaning": "gift", "emoji": "🎁"},
+          {"word": "카드", "romanization": "kadeu", "meaning": "card", "emoji": "💳"}
+        ]
+      }
+    },
+    {
+      "id": "festival", "title": "Festival", "emoji": "🏮", "theme": 4,
+      "words": {
+        "Spanish": [
+          {"word": "fiesta", "romanization": "", "meaning": "party, festival", "emoji": "🎉"},
+          {"word": "música", "romanization": "", "meaning": "music", "emoji": "🎵"},
+          {"word": "baile", "romanization": "", "meaning": "dance", "emoji": "💃"},
+          {"word": "fuegos artificiales", "romanization": "", "meaning": "fireworks", "emoji": "🎆"},
+          {"word": "linterna", "romanization": "", "meaning": "lantern", "emoji": "🏮"},
+          {"word": "comida", "romanization": "", "meaning": "food", "emoji": "🍲"},
+          {"word": "disfraz", "romanization": "", "meaning": "costume", "emoji": "🎭"},
+          {"word": "amigos", "romanization": "", "meaning": "friends", "emoji": "🧑‍🤝‍🧑"}
+        ],
+        "Korean": [
+          {"word": "축제", "romanization": "chukje", "meaning": "festival", "emoji": "🎉"},
+          {"word": "음악", "romanization": "eumak", "meaning": "music", "emoji": "🎵"},
+          {"word": "춤", "romanization": "chum", "meaning": "dance", "emoji": "💃"},
+          {"word": "불꽃놀이", "romanization": "bulkkonnori", "meaning": "fireworks", "emoji": "🎆"},
+          {"word": "등불", "romanization": "deungbul", "meaning": "lantern", "emoji": "🏮"},
+          {"word": "음식", "romanization": "eumsik", "meaning": "food", "emoji": "🍲"},
+          {"word": "가면", "romanization": "gamyeon", "meaning": "mask", "emoji": "🎭"},
+          {"word": "친구", "romanization": "chingu", "meaning": "friend", "emoji": "🧑‍🤝‍🧑"}
+        ]
+      }
+    },
+    {
+      "id": "travel", "title": "Travel", "emoji": "🧳", "theme": 5,
+      "words": {
+        "Spanish": [
+          {"word": "hotel", "romanization": "", "meaning": "hotel", "emoji": "🏨"},
+          {"word": "habitación", "romanization": "", "meaning": "room", "emoji": "🛏️"},
+          {"word": "mapa", "romanization": "", "meaning": "map", "emoji": "🗺️"},
+          {"word": "tren", "romanization": "", "meaning": "train", "emoji": "🚆"},
+          {"word": "autobús", "romanization": "", "meaning": "bus", "emoji": "🚌"},
+          {"word": "playa", "romanization": "", "meaning": "beach", "emoji": "🏖️"},
+          {"word": "montaña", "romanization": "", "meaning": "mountain", "emoji": "⛰️"},
+          {"word": "ciudad", "romanization": "", "meaning": "city", "emoji": "🏙️"}
+        ],
+        "Korean": [
+          {"word": "호텔", "romanization": "hotel", "meaning": "hotel", "emoji": "🏨"},
+          {"word": "방", "romanization": "bang", "meaning": "room", "emoji": "🛏️"},
+          {"word": "지도", "romanization": "jido", "meaning": "map", "emoji": "🗺️"},
+          {"word": "기차", "romanization": "gicha", "meaning": "train", "emoji": "🚆"},
+          {"word": "버스", "romanization": "beoseu", "meaning": "bus", "emoji": "🚌"},
+          {"word": "해변", "romanization": "haebyeon", "meaning": "beach", "emoji": "🏖️"},
+          {"word": "산", "romanization": "san", "meaning": "mountain", "emoji": "⛰️"},
+          {"word": "도시", "romanization": "dosi", "meaning": "city", "emoji": "🏙️"}
+        ]
+      }
+    },
+    {
+      "id": "business", "title": "Business", "emoji": "💼", "theme": 6,
+      "words": {
+        "Spanish": [
+          {"word": "reunión", "romanization": "", "meaning": "meeting", "emoji": "👥"},
+          {"word": "trabajo", "romanization": "", "meaning": "work, job", "emoji": "💼"},
+          {"word": "empresa", "romanization": "", "meaning": "company", "emoji": "🏢"},
+          {"word": "jefe", "romanization": "", "meaning": "boss", "emoji": "👔"},
+          {"word": "correo", "romanization": "", "meaning": "email, mail", "emoji": "📧"},
+          {"word": "contrato", "romanization": "", "meaning": "contract", "emoji": "📄"},
+          {"word": "ordenador", "romanization": "", "meaning": "computer", "emoji": "💻"},
+          {"word": "cliente", "romanization": "", "meaning": "customer", "emoji": "🧑‍💼"}
+        ],
+        "Korean": [
+          {"word": "회의", "romanization": "hoeui", "meaning": "meeting", "emoji": "👥"},
+          {"word": "업무", "romanization": "eommu", "meaning": "work, duties", "emoji": "💼"},
+          {"word": "회사", "romanization": "hoesa", "meaning": "company", "emoji": "🏢"},
+          {"word": "사장님", "romanization": "sajangnim", "meaning": "boss, company president", "emoji": "👔"},
+          {"word": "이메일", "romanization": "imeil", "meaning": "email", "emoji": "📧"},
+          {"word": "계약서", "romanization": "gyeyakseo", "meaning": "contract", "emoji": "📄"},
+          {"word": "컴퓨터", "romanization": "keompyuteo", "meaning": "computer", "emoji": "💻"},
+          {"word": "고객", "romanization": "gogaek", "meaning": "customer", "emoji": "🧑‍💼"}
+        ]
+      }
+    }
+  ]
+}
