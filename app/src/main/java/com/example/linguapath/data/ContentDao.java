@@ -18,10 +18,14 @@ public interface ContentDao {
 
     @Query("SELECT COUNT(*) FROM stages")
     int countStages();
+    // Every word of one language: the pool for wrong answer options
+    @Query("SELECT words.* FROM words INNER JOIN stages ON words.stageId = stages.id WHERE stages.language = :language")
+    List<WordEntity> getWordsForLanguage(String language);
 
     @Query("SELECT * FROM stages WHERE language = :language ORDER BY orderIndex")
     List<StageEntity> getStagesForLanguage(String language);
-
+    @Query("SELECT COUNT(*) FROM stages WHERE language = :language")
+    int countStagesForLanguage(String language);
     @Query("SELECT COUNT(*) FROM words WHERE stageId = :stageId")
     int countWordsInStage(int stageId);
 

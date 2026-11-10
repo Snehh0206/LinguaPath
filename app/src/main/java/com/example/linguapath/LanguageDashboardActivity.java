@@ -26,6 +26,7 @@ import com.example.linguapath.service.StudyTimerState;
 import com.example.linguapath.service.WordOfDayService;
 import com.example.linguapath.speech.SpeechHelper;
 import com.example.linguapath.view.Motion;
+import com.example.linguapath.data.QuizHistoryRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -201,6 +202,12 @@ public class LanguageDashboardActivity extends AppCompatActivity {
             showSprigLine(getString(R.string.sprig_stage_done));
         }
         lastCompleted = completed;
+        // Best quiz score per stage, loaded in the background
+        QuizHistoryRepository.loadBestScores(this, language, scores -> {
+            if (!isFinishing() && !isDestroyed()) {
+                adapter.setBestScores(scores);
+            }
+        });
 
         adapter.setCompletedCount(completed);
         Motion.animateProgress(binding.progressBar, completed, total);

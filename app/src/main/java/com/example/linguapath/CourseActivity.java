@@ -31,6 +31,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+
 // The page of ONE stage: all its word boxes, plus listening for this stage only.
 public class CourseActivity extends AppCompatActivity {
 
@@ -43,6 +46,7 @@ public class CourseActivity extends AppCompatActivity {
     private ActivityCourseBinding binding;
     private WordAdapter adapter;
     private SpeechHelper speech;
+    private ActivityResultLauncher<Intent> quizLauncher;
     private ActivityResultLauncher<String> notificationPermission;
     private final List<Word> loadedWords = new ArrayList<>();
     private final Random random = new Random();
@@ -130,24 +134,18 @@ public class CourseActivity extends AppCompatActivity {
 
         ProgressStore progressStore = new ProgressStore(this);
 
-        if (redo) {
-            // Redo: counts the practice, never changes progress
-            binding.buttonComplete.setText(R.string.redo_finish);
-            binding.buttonComplete.setOnClickListener(v -> {
-                progressStore.addPractice(language, stageIndex);
-                StudyTimerController.endSession(); // saves this stage's time and stops the service
-                finish();
-            });
-        } else {
-            binding.buttonComplete.setOnClickListener(v -> {
-                progressStore.markStageCompleted(language, stageIndex);
-                StudyTimerController.endSession();
-                // A background service uploads the progress to Firebase, then stops itself
-                startService(new Intent(this, SyncProgressService.class)
-                        .putExtra(SyncProgressService.EXTRA_LANGUAGE, language));
-                finish();
-            });
-        }
+        // The quiz decides whether the stage is finished
+        quizLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK) {
+                        finish(); // passed: back to the path
+                    }
+                });
+
+        binding.buttonComplete.setText(redo ? R.string.redo_finish : R.string.complete_stage);
+        binding.buttonComplete.setOnClickListener(v ->
+                startQuiz(language, stageId, stageIndex, stageTitle, redo));
     }
 
     @Override
@@ -177,7 +175,17 @@ public class CourseActivity extends AppCompatActivity {
             StudyTimerController.endSession(); // Back, or the stage is finished: the session ends
         }
     }
-
+    // Explicit Intent with extras, and we wait for a result
+    private void startQuiz(String language, int stageId, int stageIndex,
+                           String stageTitle, boolean redo) {
+        Intent intent = new Intent(this, QuizActivity.class);
+        intent.putExtra(QuizActivity.EXTRA_LANGUAGE, language);
+        intent.putExtra(QuizActivity.EXTRA_STAGE_ID, stageId);
+        intent.putExtra(QuizActivity.EXTRA_STAGE_INDEX, stageIndex);
+        intent.putExtra(QuizActivity.EXTRA_STAGE_TITLE, stageTitle);
+        intent.putExtra(QuizActivity.EXTRA_REDO, redo);
+        quizLauncher.launch(intent);
+    }
     private void showPlayback(PlaybackState.Snapshot s) {
         if (s.active) {
             binding.buttonPlayAll.setText(s.playing ? R.string.playback_pause : R.string.playback_play);

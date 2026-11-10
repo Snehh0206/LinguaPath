@@ -88,7 +88,7 @@ public class ProgressStore {
         prefs.edit().putInt("practice_" + language + "_" + stageIndex, count).apply();
     }
 
-    private static final int XP_PER_STAGE = 10;
+    public static final int XP_PER_STAGE = 10;
 
     // All finished stages across every language
     public int getTotalCompleted() {
@@ -102,8 +102,24 @@ public class ProgressStore {
     }
 
     // XP only comes from finishing stages. Redoing a stage gives none.
+    // 10 XP per finished stage, plus bonuses for perfect first tries
     public int getXp() {
-        return getTotalCompleted() * XP_PER_STAGE;
+        return getTotalCompleted() * XP_PER_STAGE + prefs.getInt("bonus_xp", 0);
     }
 
+    public void addBonusXp(int xp) {
+        prefs.edit().putInt("bonus_xp", prefs.getInt("bonus_xp", 0) + xp).apply();
+    }
+    // The days with at least one minute of study (for the streak)
+    public java.util.List<String> getStudyDays() {
+        java.util.List<String> days = new java.util.ArrayList<>();
+        for (Map.Entry<String, ?> entry : prefs.getAll().entrySet()) {
+            if (entry.getKey().startsWith("study_")
+                    && entry.getValue() instanceof Long
+                    && (Long) entry.getValue() >= 60000) {
+                days.add(entry.getKey().substring("study_".length()));
+            }
+        }
+        return days;
+    }
 }

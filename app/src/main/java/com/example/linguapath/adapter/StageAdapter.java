@@ -17,6 +17,8 @@ import com.example.linguapath.view.RopeView;
 
 import java.util.List;
 import com.example.linguapath.view.TouchBounce;
+import java.util.HashMap;
+import java.util.Map;
 
 public class StageAdapter extends RecyclerView.Adapter<StageAdapter.StageViewHolder> {
 
@@ -69,7 +71,12 @@ public class StageAdapter extends RecyclerView.Adapter<StageAdapter.StageViewHol
                 LayoutInflater.from(parent.getContext()), parent, false);
         return new StageViewHolder(binding);
     }
+    private Map<Integer, Integer> bestScores = new HashMap<>();
 
+    public void setBestScores(Map<Integer, Integer> bestScores) {
+        this.bestScores = bestScores;
+        notifyDataSetChanged();
+    }
     @Override
     public void onBindViewHolder(@NonNull StageViewHolder holder, int position) {
 
@@ -82,7 +89,13 @@ public class StageAdapter extends RecyclerView.Adapter<StageAdapter.StageViewHol
         ItemStageBinding b = holder.binding;
 
         b.textStageTitle.setText(stage.getTitle());
-        b.textStageSubtitle.setText(stage.getSubtitle());
+        Integer best = bestScores.get(position);
+        if (best != null) {
+            b.textStageSubtitle.setText(b.getRoot().getContext()
+                    .getString(R.string.stage_best, stage.getSubtitle(), best));
+        } else {
+            b.textStageSubtitle.setText(stage.getSubtitle());
+        }
 
         // Reset the circle first, because rows get recycled
         b.textNode.animate().cancel();
