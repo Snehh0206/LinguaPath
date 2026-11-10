@@ -16,6 +16,7 @@ import com.example.linguapath.databinding.ActivityTranslatorBinding;
 import com.example.linguapath.view.Motion;
 import com.example.linguapath.data.SavedWordsRepository;
 import com.example.linguapath.speech.SpeechHelper;
+import com.example.linguapath.system.NetworkMonitor;
 
 public class TranslatorActivity extends AppCompatActivity {
 
@@ -64,6 +65,16 @@ public class TranslatorActivity extends AppCompatActivity {
 
         showChips();
         showUsage();
+
+        // Offline: new phrases are queued. Online again: translating is allowed again.
+        NetworkMonitor.get(this).online().observe(this, online -> {
+            CharSequence note = getString(R.string.translator_offline_note);
+            if (!online) {
+                binding.textError.setText(note);
+            } else if (note.toString().contentEquals(binding.textError.getText())) {
+                binding.textError.setText("");
+            }
+        });
     }
     @Override
     protected void onStart() {

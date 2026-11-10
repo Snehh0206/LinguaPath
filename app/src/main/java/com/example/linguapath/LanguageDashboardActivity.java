@@ -3,6 +3,7 @@ package com.example.linguapath;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,6 +22,10 @@ import com.example.linguapath.databinding.ActivityLanguageDashboardBinding;
 import com.example.linguapath.model.Stage;
 import com.example.linguapath.data.CloudSyncRepository;
 import com.example.linguapath.service.StudyTimerState;
+import com.example.linguapath.data.WordOfDay;
+import com.example.linguapath.data.WordOfDayRepository;
+import com.example.linguapath.service.WordOfDayService;
+import com.example.linguapath.speech.SpeechHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +45,8 @@ public class LanguageDashboardActivity extends AppCompatActivity {
     private ObjectAnimator fabFloat;
     private int shownXp = 0;
     private final Random random = new Random();
+    private SpeechHelper speech;
+    private WordOfDay todaysWord;
     private int lastCompleted = -1; // -1 = not known yet
     private final CloudSyncRepository cloudSync = new CloudSyncRepository();
 
@@ -78,6 +85,13 @@ public class LanguageDashboardActivity extends AppCompatActivity {
 
         binding.buttonChangeLanguage.setOnClickListener(v -> finish());
 
+        // Speak today's word out loud
+        binding.buttonWodSpeak.setOnClickListener(v -> {
+            if (todaysWord != null && speech != null) {
+                speech.speak(todaysWord.translated, language);
+            }
+        });
+
         // Tap Sprig: it jumps and smiles
         binding.sprig.setOnClickListener(v -> {
             binding.sprig.react();
@@ -111,6 +125,39 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         Motion.fadeSlideIn(binding.textProgress, 80);
         Motion.fadeSlideIn(binding.sprigRow, 160);
         Motion.fadeSlideIn(binding.fabContinue, 500);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        speech = new SpeechHelper(this);
+
+        // Ask the background service for today's word if we do not have it yet.
+        // It stops itself when done. The card shows the word the next time the dashboard opens.
+        WordOfDayService.requestIfNeeded(this);
+
+        WordOfDayRepository.loadToday(this, language, word -> {
+            if (isFinishing() || isDestroyed()) {
+                return;
+            }
+            todaysWord = word;
+            if (word == null) {
+                binding.cardWordOfDay.setVisibility(View.GONE);
+            } else {
+                binding.textWodWord.setText(word.translated);
+                binding.textWodEnglish.setText(word.english);
+                binding.cardWordOfDay.setVisibility(View.VISIBLE);
+            }
+        });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (speech != null) {
+            speech.shutdown();
+            speech = null;
+        }
     }
 
     private void showToday(StudyTimerState.Snapshot s) {

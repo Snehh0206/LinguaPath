@@ -20,13 +20,15 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 
 // The only class that talks to MyMemory.
-// Order: saved translations first (free, offline), then the daily limit check, then the network.
-// All work happens on a background thread. Answers come back on the main thread.
+// Order: saved translations first (free, offline), then the daily limit, then the network.
+// If the phone is offline, the request is kept and retried when the connection returns.
 public class TranslationRepository {
 
     public interface Callback {
@@ -35,25 +37,67 @@ public class TranslationRepository {
         void onError(@StringRes int messageResId);
     }
 
+    public interface RetryListener {
+        void onFinished(int translated);
+    }
+
     private static class QuotaException extends Exception {
     }
 
     private static final String TAG = "TranslationRepository";
     private static final String BASE_URL = "https://api.mymemory.translated.net/get";
-    private static final int MAX_BYTES = 500; // MyMemory's limit for one request
+    private static final int MAX_BYTES = 500;
 
     private static final ExecutorService executor = Executors.newSingleThreadExecutor();
     private static final Handler mainHandler = new Handler(Looper.getMainLooper());
 
-    public static void translate(Context context, String text, String targetLanguage,
-                                 Callback callback) {
+    // English -> Spanish or Korean
+    public static void translate(Context context, String text, String targetLanguage, Callback callback) {
+        run(context, text, "en|" + languageCode(targetLanguage), callback);
+    }
+
+    // Spanish or Korean -> English (used by the sign photo translator)
+    public static void translateToEnglish(Context context, String text, String sourceLanguage, Callback callback) {
+        run(context, text, languageCode(sourceLanguage) + "|en", callback);
+    }
+
+    // Tries the waiting translations again. Every answer is saved in the cache.
+    public static void retryPending(Context context, RetryListener listener) {
+        Context app = context.getApplicationContext();
+        List<String[]> items = PendingTranslations.takeAll(app);
+        if (items.isEmpty()) {
+            mainHandler.post(() -> listener.onFinished(0));
+            return;
+        }
+        AtomicInteger left = new AtomicInteger(items.size());
+        AtomicInteger done = new AtomicInteger(0);
+        for (String[] item : items) {
+            run(app, item[1], item[0], new Callback() {
+                @Override
+                public void onSuccess(String translated, boolean fromCache) {
+                    done.incrementAndGet();
+                    if (left.decrementAndGet() == 0) {
+                        listener.onFinished(done.get());
+                    }
+                }
+
+                @Override
+                public void onError(int messageResId) {
+                    // Offline again: run() has put it back in the waiting list
+                    if (left.decrementAndGet() == 0) {
+                        listener.onFinished(done.get());
+                    }
+                }
+            });
+        }
+    }
+
+    private static void run(Context context, String text, String pair, Callback callback) {
         Context appContext = context.getApplicationContext();
 
         executor.execute(() -> {
             String clean = text.trim();
-            String pair = "en|" + languageCode(targetLanguage);
             String key = clean.toLowerCase(Locale.ROOT);
-
             TranslationDao dao = AppDatabase.getInstance(appContext).translationDao();
 
             // 1. Already translated before? Instant, free and works offline.
@@ -69,7 +113,7 @@ public class TranslationRepository {
                 return;
             }
 
-            // 3. Would this go over today's free limit? If so, block for the rest of the day.
+            // 3. Would this go over today's safe limit? Then stop for the rest of the day.
             TranslationUsage usage = new TranslationUsage(appContext);
             if (!usage.canUse(clean.length())) {
                 usage.blockForToday();
@@ -88,6 +132,7 @@ public class TranslationRepository {
                 postError(callback, R.string.translator_quota);
             } catch (IOException e) {
                 Log.w(TAG, "Network problem: " + e.getMessage());
+                PendingTranslations.add(appContext, pair, clean); // retried when we are back online
                 postError(callback, R.string.translator_offline);
             } catch (JSONException e) {
                 Log.e(TAG, "Could not read the answer", e);
@@ -126,7 +171,6 @@ public class TranslationRepository {
             int status = json.optInt("responseStatus", 0);
             String translated = json.getJSONObject("responseData").optString("translatedText", "");
 
-            // The service can also report "limit reached" inside a normal answer
             if (status == 429 || json.optBoolean("quotaFinished", false)
                     || translated.startsWith("MYMEMORY WARNING")) {
                 throw new QuotaException();
@@ -134,8 +178,6 @@ public class TranslationRepository {
             if (status != 200 || translated.isEmpty()) {
                 throw new IOException("API status " + status);
             }
-
-            // The service sometimes sends HTML codes like &#39;
             return Html.fromHtml(translated, Html.FROM_HTML_MODE_LEGACY).toString();
         } finally {
             connection.disconnect();

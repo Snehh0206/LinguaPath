@@ -23,6 +23,10 @@ import com.example.linguapath.service.StudyTimerController;
 import com.example.linguapath.service.SyncProgressService;
 import com.example.linguapath.speech.SpeechHelper;
 import com.example.linguapath.view.TopicTheme;
+import android.os.PowerManager;
+
+import com.example.linguapath.service.PlaybackController;
+import com.example.linguapath.service.PlaybackState;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -103,7 +107,24 @@ public class CourseActivity extends AppCompatActivity {
             int infoText = redo ? R.string.course_redo_info : R.string.course_word_count;
             binding.textCourseInfo.setText(getString(infoText, words.size()));
         });
-
+        // Play all pronunciations / Audio lesson: a foreground service with its own notification
+        binding.buttonPlayAll.setOnClickListener(v -> {
+            PlaybackState.Snapshot s = PlaybackState.live().getValue();
+            if (s != null && s.active) {
+                PlaybackController.toggle(); // Pause or Play
+            } else {
+                PlaybackController.start(this, false, languageName, stageId, stageIndex, stageTitle);
+            }
+        });
+        binding.buttonAudioLesson.setOnClickListener(v -> {
+            PlaybackState.Snapshot s = PlaybackState.live().getValue();
+            if (s != null && s.active) {
+                PlaybackController.stop();
+            } else {
+                PlaybackController.start(this, true, languageName, stageId, stageIndex, stageTitle);
+            }
+        });
+        PlaybackState.live().observe(this, this::showPlayback);
         ProgressStore progressStore = new ProgressStore(this);
 
         if (redo) {
@@ -123,6 +144,24 @@ public class CourseActivity extends AppCompatActivity {
                         .putExtra(SyncProgressService.EXTRA_LANGUAGE, language));
                 finish();
             });
+        }
+    }
+    private void showPlayback(PlaybackState.Snapshot s) {
+        if (s.active) {
+            binding.buttonPlayAll.setText(s.playing ? R.string.playback_pause : R.string.playback_play);
+            binding.buttonAudioLesson.setText(R.string.playback_stop);
+            binding.textPlayback.setText(getString(R.string.playback_status,
+                    Math.min(s.index + 1, Math.max(1, s.total)), s.total, s.currentWord));
+            return;
+        }
+        binding.buttonPlayAll.setText(R.string.playback_play_all);
+        binding.buttonAudioLesson.setText(R.string.playback_audio_lesson);
+        if (s.errorRes != 0) {
+            binding.textPlayback.setText(getString(s.errorRes, s.errorArg)); // for example a missing voice
+        } else if (getSystemService(PowerManager.class).isPowerSaveMode()) {
+            binding.textPlayback.setText(R.string.playback_battery_note);
+        } else {
+            binding.textPlayback.setText("");
         }
     }
 
