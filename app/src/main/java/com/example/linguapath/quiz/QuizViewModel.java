@@ -42,12 +42,14 @@ public class QuizViewModel extends ViewModel {
         return resultReady;
     }
 
-    public void load(Context context, int stageId, String language, boolean revision) {
+    public void load(Context context, int stageId, String language, boolean revision, String topicId) {
         if (started) {
             return; // already loading, or loaded
         }
         started = true;
-        if (revision) {
+        if (topicId != null) {
+            QuizRepository.loadTopicQuiz(context, topicId, language, list -> questions.setValue(list));
+        } else if (revision) {
             QuizRepository.loadRevisionQuiz(context, language, list -> questions.setValue(list));
         } else {
             QuizRepository.loadQuiz(context, stageId, language, list -> questions.setValue(list));
@@ -55,7 +57,7 @@ public class QuizViewModel extends ViewModel {
     }
 
     // "Try again": new random questions, everything back to zero
-    public void restart(Context context, int stageId, String language, boolean revision) {
+    public void restart(Context context, int stageId, String language, boolean revision, String topicId) {
         index = 0;
         score = 0;
         selected = -1;
@@ -73,7 +75,7 @@ public class QuizViewModel extends ViewModel {
         started = false;
         resultReady.setValue(false);
         questions.setValue(null);
-        load(context, stageId, language, revision);
+        load(context, stageId, language, revision, topicId);
     }
 
     public void markReady(boolean newBest) {

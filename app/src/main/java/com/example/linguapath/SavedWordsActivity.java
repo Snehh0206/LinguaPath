@@ -101,8 +101,9 @@ public class SavedWordsActivity extends AppCompatActivity {
         if (word.getWordId() < 0) {
             new AlertDialog.Builder(this)
                     .setTitle(word.getWord())
-                    .setMessage(getString(R.string.custom_word_message,
-                            word.getMeaning(), word.getLanguage()))
+                    .setMessage(word.getExample() != null && !word.getExample().isEmpty()
+                            ? getString(R.string.topic_word_message, word.getMeaning(), word.getExample())
+                            : getString(R.string.custom_word_message, word.getMeaning(), word.getLanguage()))
                     .setPositiveButton(android.R.string.ok, null)
                     .show();
             return;

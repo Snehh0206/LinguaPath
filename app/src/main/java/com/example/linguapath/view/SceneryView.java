@@ -24,18 +24,29 @@ import com.example.linguapath.R;
 
 import java.util.Random;
 
-// A calm, whimsical landscape drawn entirely in code:
-// sky, sun, drifting clouds, four layers of hand-wobbled hills, a swaying tree,
-// floating pollen and a paper-grain texture.
+// A calm, whimsical landscape drawn entirely in code.
+// sceneTheme changes the colors: 0 meadow, 1 café, 2 airport, 3 shop, 4 festival, 5 travel, 6 business.
 // Call start() in onResume and stop() in onPause. setScroll() adds parallax depth.
 public class SceneryView extends View {
 
     private static final int HILLS = 4;
-    private static final int[] HILL_TOP = {0xFFD6EBE4, 0xFFBFE1D6, 0xFFCDE6D0, 0xFFB5DCB0};
-    private static final int[] HILL_BOTTOM = {0xFFC4E1D9, 0xFFA9D4C7, 0xFFB7DBB9, 0xFFA3D19E};
-    private static final float[] PARALLAX = {0.08f, 0.16f, 0.26f, 0.38f};
     private static final int NOISE_POINTS = 128;
     private static final int POLLEN_COUNT = 14;
+    private static final int CREAM = 0xFFF7F5F0;
+    private static final float[] PARALLAX = {0.08f, 0.16f, 0.26f, 0.38f};
+
+    private static final int[] SKY_TOP = {
+            0xFFD2E9F4, 0xFFF3DEC6, 0xFFBFE0F5, 0xFFFBE0E6, 0xFF4A4A7D, 0xFFCDE9F1, 0xFFD5DEE8};
+    private static final int[] SKY_BOTTOM = {
+            0xFFFDEFD8, 0xFFFDF0DF, 0xFFE8F4FB, 0xFFFFEFD9, 0xFFF4A68B, 0xFFFDE9C8, 0xFFEDEFF2};
+    private static final int[][] HILL_BASE = {
+            {0xFFD6EBE4, 0xFFBFE1D6, 0xFFCDE6D0, 0xFFEEF5E8},
+            {0xFFE8D2B5, 0xFFD9BC98, 0xFFEAD9BE, 0xFFF4EBDD},
+            {0xFFD5E4EE, 0xFFC2D6E6, 0xFFD2E3EA, 0xFFE9F0F4},
+            {0xFFF6D5DA, 0xFFEFC3CB, 0xFFF4D9D3, 0xFFFAEBE6},
+            {0xFF5E5A8C, 0xFF6F6A9C, 0xFF8A7BA6, 0xFFD9C3C7},
+            {0xFFBFE3D9, 0xFFA9D8C9, 0xFFC9E5C4, 0xFFEAF3DF},
+            {0xFFCBD7E1, 0xFFB9C8D5, 0xFFD3DDE5, 0xFFECF0F3}};
 
     // Clouds: height (fraction of the sky), size in dp, speed in dp per second, start position
     private static final float[] CLOUD_Y = {0.22f, 0.55f, 0.80f};
@@ -43,11 +54,14 @@ public class SceneryView extends View {
     private static final float[] CLOUD_SPEED = {7f, 5f, 9f};
     private static final float[] CLOUD_X0 = {0.10f, 0.55f, 0.85f};
 
+    private static final int[] BALLOON_COLORS = {0xFFF29CB0, 0xFFF9BE82, 0xFF9CC9E6, 0xFFB7DBB9};
+
     private static Bitmap grainBitmap;
 
     private final float density;
-    private final float horizon;
     private final boolean showSun;
+    private int theme;
+    private final float horizon;
 
     private final Paint skyPaint = newPaint();
     private final Paint sunGlowPaint = newPaint();
@@ -62,6 +76,9 @@ public class SceneryView extends View {
     private final Paint[] hillPaints = new Paint[HILLS];
     private final Path[] hillPaths = new Path[HILLS];
     private final Path rayPath = new Path();
+    private final Paint accentPaint = newPaint();
+    private final Paint strokePaint = newPaint();
+    private final Path tmpPath = new Path();
     private final RectF rect = new RectF();
 
     private final float[][] noise = new float[HILLS][NOISE_POINTS];
@@ -83,6 +100,7 @@ public class SceneryView extends View {
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SceneryView);
         horizon = a.getFloat(R.styleable.SceneryView_sceneHorizon, 0.55f);
         showSun = a.getBoolean(R.styleable.SceneryView_sceneSun, true);
+        theme = clampTheme(a.getInt(R.styleable.SceneryView_sceneTheme, 0));
         a.recycle();
 
         // A fixed seed: the hills always have the same hand-drawn shape
@@ -102,7 +120,6 @@ public class SceneryView extends View {
             pollenPhase[i] = random.nextFloat() * 6.28f;
         }
 
-        cloudPaint.setColor(0xEBFFFFFF);
         trunkPaint.setColor(0xFF8A6A55);
         leafPaint.setColor(0xFF4FA593);
         leafLightPaint.setColor(0xFF7CC7B4);
@@ -115,10 +132,24 @@ public class SceneryView extends View {
         rayPath.lineTo(62 * density, 0);
         rayPath.lineTo(26 * density, 4 * density);
         rayPath.close();
+
+        strokePaint.setStyle(Paint.Style.STROKE);
+        strokePaint.setStrokeCap(Paint.Cap.ROUND);
     }
 
     private static Paint newPaint() {
         return new Paint(Paint.ANTI_ALIAS_FLAG);
+    }
+
+    private static int clampTheme(int value) {
+        return Math.max(0, Math.min(value, SKY_TOP.length - 1));
+    }
+
+    private static int shade(int color, float factor) {
+        int r = (int) (((color >> 16) & 0xFF) * factor);
+        int g = (int) (((color >> 8) & 0xFF) * factor);
+        int b = (int) ((color & 0xFF) * factor);
+        return 0xFF000000 | (r << 16) | (g << 8) | b;
     }
 
     // A small tile of faint specks, repeated over the whole scene
@@ -135,13 +166,27 @@ public class SceneryView extends View {
         return grainBitmap;
     }
 
+    public void setSceneTheme(int newTheme) {
+        theme = clampTheme(newTheme);
+        if (getWidth() > 0) {
+            rebuild(getWidth(), getHeight());
+        }
+        invalidate();
+    }
+
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
+        rebuild(w, h);
+    }
+
+    // Builds everything that depends on the size and the theme
+    private void rebuild(int w, int h) {
         skyHeight = h * horizon;
 
         skyPaint.setShader(new LinearGradient(0, 0, 0, skyHeight * 1.2f,
-                0xFFD2E9F4, 0xFFFDEFD8, Shader.TileMode.CLAMP));
+                SKY_TOP[theme], SKY_BOTTOM[theme], Shader.TileMode.CLAMP));
+        cloudPaint.setColor(theme == 4 ? 0x66FFFFFF : 0xEBFFFFFF);
 
         sunX = w * 0.64f;
         sunY = Math.min(skyHeight * 0.30f, 90 * density);
@@ -163,9 +208,13 @@ public class SceneryView extends View {
             p.lineTo(w, h + extra);
             p.close();
 
+            // Each hill fades from its color to a slightly darker one.
+            // The nearest hill fades into the page color, so the scene melts into the screen.
+            int base = HILL_BASE[theme][i];
+            int bottom = (i == HILLS - 1) ? CREAM : shade(base, 0.93f);
             float top = h * (horizon + i * 0.07f) - hillAmp(i, h) * 1.3f;
             hillPaints[i].setShader(new LinearGradient(0, top, 0, h + extra,
-                    HILL_TOP[i], HILL_BOTTOM[i], Shader.TileMode.CLAMP));
+                    base, bottom, Shader.TileMode.CLAMP));
         }
 
         treeX = w * 0.58f;
@@ -219,6 +268,7 @@ public class SceneryView extends View {
         canvas.restore();
 
         drawHill(canvas, 0);
+        drawSignature(canvas, w, h, time);
 
         // A cloud floating in front of the farthest hill
         canvas.save();
@@ -303,6 +353,155 @@ public class SceneryView extends View {
             float twinkle = 0.5f + 0.5f * (float) Math.sin(time * 2f + pollenPhase[i] * 3f);
             pollenPaint.setAlpha((int) (60 + 150 * twinkle));
             canvas.drawCircle(x, y, (1.4f + 1.4f * twinkle) * density, pollenPaint);
+        }
+    }
+
+    // One small moving detail that tells you the topic
+    private void drawSignature(Canvas canvas, float w, float h, float time) {
+        switch (theme) {
+            case 1: drawSteam(canvas, w, time); break;
+            case 2: drawPlane(canvas, w, time); break;
+            case 3: drawBalloons(canvas, w, time); break;
+            case 4: drawLanterns(canvas, w, h, time); break;
+            case 5: drawHotAirBalloon(canvas, w, time); break;
+            case 6: drawSkyline(canvas, w, h); break;
+            default: break;
+        }
+    }
+
+    // Café: three wisps of steam rising and fading
+    private void drawSteam(Canvas canvas, float w, float time) {
+        float d = density;
+        strokePaint.setStrokeWidth(3 * d);
+        for (int i = 0; i < 3; i++) {
+            float x = w * (0.22f + 0.28f * i);
+            float rise = ((time * 12f + i * 20f) % 60f) * d;
+            float fade = 1f - rise / (60f * d);
+            float y = skyHeight * 0.95f - rise;
+
+            strokePaint.setColor(0xFFFFFFFF);
+            strokePaint.setAlpha((int) (170 * fade));
+            tmpPath.reset();
+            tmpPath.moveTo(x, y);
+            tmpPath.cubicTo(x + 10 * d, y - 14 * d, x - 10 * d, y - 28 * d, x, y - 42 * d);
+            canvas.drawPath(tmpPath, strokePaint);
+        }
+    }
+
+    // Airport: a little plane crossing the sky, with a trail
+    private void drawPlane(Canvas canvas, float w, float time) {
+        float s = density;
+        float span = w + 120 * s;
+        float x = ((time * 16f * s) % span) - 60 * s;
+        float y = skyHeight * 0.30f + (float) Math.sin(time * 0.6f) * 4 * s;
+
+        strokePaint.setColor(0xFFFFFFFF);
+        strokePaint.setAlpha(150);
+        strokePaint.setStrokeWidth(2 * s);
+        canvas.drawLine(x - 70 * s, y + 2 * s, x - 16 * s, y + 2 * s, strokePaint);
+
+        accentPaint.setColor(0xFFFFFFFF);
+        rect.set(x - 14 * s, y - 4 * s, x + 16 * s, y + 4 * s);
+        canvas.drawRoundRect(rect, 4 * s, 4 * s, accentPaint);
+
+        accentPaint.setColor(0xFFF4A259);
+        tmpPath.reset();
+        tmpPath.moveTo(x - 2 * s, y);
+        tmpPath.lineTo(x - 12 * s, y + 14 * s);
+        tmpPath.lineTo(x + 4 * s, y + 2 * s);
+        tmpPath.close();
+        canvas.drawPath(tmpPath, accentPaint);
+
+        tmpPath.reset();
+        tmpPath.moveTo(x - 12 * s, y - 2 * s);
+        tmpPath.lineTo(x - 18 * s, y - 10 * s);
+        tmpPath.lineTo(x - 8 * s, y - 2 * s);
+        tmpPath.close();
+        canvas.drawPath(tmpPath, accentPaint);
+    }
+
+    // Shop: four balloons floating up
+    private void drawBalloons(Canvas canvas, float w, float time) {
+        float d = density;
+        for (int i = 0; i < 4; i++) {
+            float x = w * (0.15f + 0.22f * i) + (float) Math.sin(time * 0.7f + i * 1.7f) * 6 * d;
+            float travel = skyHeight * 0.9f;
+            float y = skyHeight * 0.95f - ((time * (8f + i * 2f) * d + i * 40 * d) % travel);
+
+            strokePaint.setColor(0x80606C74);
+            strokePaint.setStrokeWidth(1.2f * d);
+            canvas.drawLine(x, y + 12 * d, x + 2 * d, y + 30 * d, strokePaint);
+
+            accentPaint.setColor(BALLOON_COLORS[i]);
+            rect.set(x - 9 * d, y - 12 * d, x + 9 * d, y + 12 * d);
+            canvas.drawOval(rect, accentPaint);
+        }
+    }
+
+    // Festival: glowing lanterns drifting up from behind the hills
+    private void drawLanterns(Canvas canvas, float w, float h, float time) {
+        float d = density;
+        for (int i = 0; i < 6; i++) {
+            float x = w * (0.10f + 0.16f * i) + (float) Math.sin(time * 0.5f + i * 2f) * 8 * d;
+            float travel = h * 0.9f;
+            float y = h * 0.85f - ((time * (7f + i) * d + i * 55 * d) % travel);
+
+            accentPaint.setColor(0x33FFC878);
+            canvas.drawCircle(x, y, 24 * d, accentPaint);
+            accentPaint.setColor(0x55FFB45A);
+            canvas.drawCircle(x, y, 14 * d, accentPaint);
+
+            accentPaint.setColor(0xFFFFA94D);
+            rect.set(x - 7 * d, y - 10 * d, x + 7 * d, y + 10 * d);
+            canvas.drawRoundRect(rect, 5 * d, 5 * d, accentPaint);
+            accentPaint.setColor(0xFFFFE3A8);
+            rect.set(x - 4 * d, y - 6 * d, x + 4 * d, y + 6 * d);
+            canvas.drawRoundRect(rect, 3 * d, 3 * d, accentPaint);
+        }
+    }
+
+    // Travel: a hot-air balloon drifting slowly across
+    private void drawHotAirBalloon(Canvas canvas, float w, float time) {
+        float d = density;
+        float span = w + 100 * d;
+        float x = ((time * 6f * d) % span) - 50 * d;
+        float y = skyHeight * 0.40f + (float) Math.sin(time * 0.5f) * 5 * d;
+        float r = 20 * d;
+
+        strokePaint.setColor(0x99606C74);
+        strokePaint.setStrokeWidth(1.2f * d);
+        canvas.drawLine(x - 8 * d, y + r * 0.9f, x - 5 * d, y + r + 10 * d, strokePaint);
+        canvas.drawLine(x + 8 * d, y + r * 0.9f, x + 5 * d, y + r + 10 * d, strokePaint);
+
+        accentPaint.setColor(0xFF8A6A55);
+        rect.set(x - 6 * d, y + r + 10 * d, x + 6 * d, y + r + 18 * d);
+        canvas.drawRoundRect(rect, 2 * d, 2 * d, accentPaint);
+
+        accentPaint.setColor(0xFFF29C7A);
+        canvas.drawCircle(x, y, r, accentPaint);
+        accentPaint.setColor(0xFFFFE3A8);
+        rect.set(x - r * 0.35f, y - r, x + r * 0.35f, y + r);
+        canvas.drawOval(rect, accentPaint);
+    }
+
+    // Business: a calm skyline behind the nearer hills
+    private void drawSkyline(Canvas canvas, float w, float h) {
+        float d = density;
+        float[] heights = {40, 64, 48, 80, 56, 70, 44, 60, 36};
+        float bw = w / heights.length;
+        float baseY = skyHeight + h * 0.05f;
+
+        for (int i = 0; i < heights.length; i++) {
+            float bh = heights[i] * d;
+            accentPaint.setColor(0xFFB3C3D1);
+            rect.set(i * bw + 3 * d, baseY - bh, (i + 1) * bw - 3 * d, baseY + 60 * d);
+            canvas.drawRect(rect, accentPaint);
+
+            // two lit windows on each building
+            accentPaint.setColor(0xFFFFF3C4);
+            float cx = i * bw + bw / 2f;
+            canvas.drawRect(cx - 5 * d, baseY - bh + 8 * d, cx - 1 * d, baseY - bh + 12 * d, accentPaint);
+            canvas.drawRect(cx + 1 * d, baseY - bh + 16 * d, cx + 5 * d, baseY - bh + 20 * d, accentPaint);
         }
     }
 

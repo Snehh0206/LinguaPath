@@ -11,6 +11,9 @@ import com.example.linguapath.model.Word;
 import com.example.linguapath.data.QuizHistoryRepository;
 import com.example.linguapath.data.WordStat;
 import com.example.linguapath.data.WordStatDao;
+import com.example.linguapath.data.TopicRepository;
+import com.example.linguapath.model.Topic;
+import com.example.linguapath.model.TopicWord;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,5 +69,30 @@ public class QuizRepository {
             words.add(new Word(e.id, e.word, e.romanization, e.meaning, e.example, e.exampleMeaning));
         }
         return words;
+    }
+    // A quiz made from one topic's words. These words are not in the lesson database,
+    // so they get made-up ids (100000 and up) just for this quiz.
+    public static void loadTopicQuiz(Context context, String topicId, String language, Callback callback) {
+        Context appContext = context.getApplicationContext();
+
+        AppDatabase.databaseExecutor.execute(() -> {
+            List<Topic> topics = TopicRepository.loadBlocking(appContext);
+
+            List<Word> pool = new ArrayList<>();       // all topic words: wrong answer options
+            List<Word> topicWords = new ArrayList<>(); // the words being tested
+            int id = 100000;
+            for (Topic topic : topics) {
+                for (TopicWord tw : topic.getWords(language)) {
+                    Word word = new Word(id++, tw.word, tw.romanization, tw.meaning, "", "");
+                    pool.add(word);
+                    if (topic.id.equals(topicId)) {
+                        topicWords.add(word);
+                    }
+                }
+            }
+
+            List<QuizQuestion> questions = QuizBuilder.build(topicWords, pool);
+            mainHandler.post(() -> callback.onLoaded(questions));
+        });
     }
 }

@@ -43,6 +43,10 @@ public class LanguageSelectActivity extends AppCompatActivity {
         Motion.fadeSlideIn(binding.cardSpanish, 220);
         TouchBounce.attach(binding.cardKorean);
         TouchBounce.attach(binding.cardSpanish);
+        binding.cardTopics.setOnClickListener(v ->
+                startActivity(new Intent(this, TopicsActivity.class)));
+        Motion.fadeSlideIn(binding.cardTopics, 340);
+        TouchBounce.attach(binding.cardTopics);
     }
 
     private void onLanguagePicked(String languageName) {

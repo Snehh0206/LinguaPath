@@ -42,14 +42,18 @@ public class AttemptAdapter extends RecyclerView.Adapter<AttemptAdapter.AttemptV
         ItemAttemptBinding b = holder.binding;
         android.content.Context context = b.getRoot().getContext();
 
-        boolean revision = a.stageIndex < 0;
-        String name = revision ? context.getString(R.string.attempt_revision) : a.stageTitle;
+        boolean revision = a.stageIndex == -1;
+        boolean topic = a.stageIndex == -2;
+        String name = revision ? context.getString(R.string.attempt_revision)
+                : topic ? context.getString(R.string.attempt_topic_title, a.stageTitle)
+                : a.stageTitle;
 
         b.textAttemptTitle.setText(context.getString(R.string.attempt_title, name, a.language));
         b.textAttemptDate.setText(dateFormat.format(new Date(a.createdAt)));
         b.textAttemptScore.setText(context.getString(R.string.attempt_score, a.correct, a.total, a.percent));
 
         int status = revision ? R.string.attempt_revision
+                : topic ? R.string.attempt_topic_quiz
                 : a.redo ? R.string.attempt_practice
                 : a.passed ? R.string.attempt_passed
                 : R.string.attempt_not_passed;
