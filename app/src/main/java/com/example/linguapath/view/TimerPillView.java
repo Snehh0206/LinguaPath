@@ -72,16 +72,18 @@ public class TimerPillView extends FrameLayout {
 
     private void render(StudyTimerState.Snapshot s) {
         long today = new ProgressStore(getContext()).getStudyMillisToday() + (s.active ? s.unsavedMs : 0);
-        int minutes = (int) (today / 60000);
+        String todayText = StudyTimerService.formatLong(today);
 
         if (s.active) {
+            // The stage you are studying right now: minutes and seconds, counting up
             textMain.setText(StudyTimerService.format(s.sessionMs));
             textSub.setText(getContext().getString(
-                    s.running ? R.string.pill_sub_running : R.string.pill_sub_paused, minutes));
+                    s.running ? R.string.pill_sub_running : R.string.pill_sub_paused, todayText));
             buttonToggle.setVisibility(View.VISIBLE);
             buttonToggle.setText(s.running ? "⏸" : "▶");
         } else {
-            textMain.setText(getContext().getString(R.string.pill_today_main, minutes));
+            // Not inside a stage: today's total, also with seconds
+            textMain.setText(StudyTimerService.format(today));
             textSub.setText(R.string.pill_today_sub);
             buttonToggle.setVisibility(View.GONE);
         }

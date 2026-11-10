@@ -155,10 +155,11 @@
     <string name="timer_action_resume">Resume</string>
     <string name="timer_action_stop">Stop</string>
     <string name="today_minutes">Today: %1$d min</string>
+    <string name="today_time">Today: %1$s</string>
     <string name="pill_today_main">%1$d min</string>
     <string name="pill_today_sub">studied today</string>
-    <string name="pill_sub_running">Today: %1$d min</string>
-    <string name="pill_sub_paused">Paused · today %1$d min</string>
+    <string name="pill_sub_running">Today: %1$s</string>
+    <string name="pill_sub_paused">Paused · today %1$s</string>
     <string name="timer_permission_title">Show the study timer?</string>
     <string name="timer_permission_message">The timer notification lets you pause or stop from anywhere. The timer works without it.</string>
     <string name="playback_play_all">▶ Play all</string>
@@ -188,4 +189,20 @@
     <string name="banner_power">🔋 Battery saver is on. Audio and downloads may be limited.</string>
     <string name="banner_retry_done">☁ Welcome back! Retried: %1$d progress sync(s) and %2$d translation(s).</string>
     <string name="translator_offline_note">📴 You are offline. Saved translations still work, and new phrases are translated when you are back online.</string>
+    <string name="menu_sign">Sign translator</string>
+    <string name="sign_title">Sign translator</string>
+    <string name="sign_subtitle">Choose a photo of a sign, menu or notice. We read the text and translate it to English.</string>
+    <string name="sign_language_label">Language on the sign</string>
+    <string name="sign_choose_photo">From gallery</string>
+    <string name="sign_photo_info">%1$s · %2$s</string>
+    <string name="sign_text_label">Text found (fix any mistakes, then translate)</string>
+    <string name="sign_translate">Translate to English</string>
+    <string name="sign_no_text">No text found in that picture. Try a clearer, closer photo.</string>
+    <string name="sign_read_failed">Could not read that picture. Try another one.</string>
+    <string name="sign_reading">Reading the picture…</string>
+    <string name="sign_trimmed">Only the first part of a long text was translated.</string>
+    <string name="sign_note">Text recognition works on the phone, even offline. Photos are not uploaded.</string>
+    <string name="sign_result_label">In English</string>
+    <string name="sign_take_photo">📸 Take a photo</string>
+    <string name="sign_no_camera">No camera app found on this phone.</string>
 </resources>
