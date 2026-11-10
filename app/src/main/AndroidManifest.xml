@@ -121,6 +121,18 @@
             android:name=".TopicWordsActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".ChatRoomsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".LeaderboardActivity"
+            android:exported="false" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"

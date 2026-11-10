@@ -66,6 +66,10 @@ public class LanguageSelectActivity extends AppCompatActivity {
                 .setTitle(getString(R.string.signed_in_as, email == null ? "" : email));
 
         popup.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.menu_chat) {
+                startActivity(new Intent(this, ChatRoomsActivity.class));
+                return true;
+            }
             if (item.getItemId() == R.id.menu_progress) {
                 startActivity(new Intent(this, ProgressActivity.class));
                 return true;

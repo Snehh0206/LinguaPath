@@ -1,0 +1,38 @@
+package com.example.linguapath.model;
+
+import com.example.linguapath.R;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+// The fixed list of chat rooms. To add a room, add one line here.
+public class ChatRoom {
+
+    public final String id;      // also the name of the room in the database
+    public final int titleRes;
+    public final String language;
+    public final String emoji;
+
+    public ChatRoom(String id, int titleRes, String language, String emoji) {
+        this.id = id;
+        this.titleRes = titleRes;
+        this.language = language;
+        this.emoji = emoji;
+    }
+
+    public static final List<ChatRoom> ALL = Collections.unmodifiableList(Arrays.asList(
+            new ChatRoom("es_everyday", R.string.room_es_everyday, "Spanish", "☕"),
+            new ChatRoom("es_travel", R.string.room_es_travel, "Spanish", "✈️"),
+            new ChatRoom("ko_everyday", R.string.room_ko_everyday, "Korean", "☕"),
+            new ChatRoom("ko_travel", R.string.room_ko_travel, "Korean", "✈️")));
+
+    public static ChatRoom byId(String id) {
+        for (ChatRoom room : ALL) {
+            if (room.id.equals(id)) {
+                return room;
+            }
+        }
+        return null;
+    }
+}

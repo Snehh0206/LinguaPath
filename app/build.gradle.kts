@@ -51,4 +51,5 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.mlkit:text-recognition:16.0.1")
     implementation("com.google.mlkit:text-recognition-korean:16.0.1")
+    implementation("com.google.firebase:firebase-database")
 }

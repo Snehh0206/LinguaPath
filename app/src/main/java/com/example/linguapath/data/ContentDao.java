@@ -15,7 +15,9 @@ public interface ContentDao {
 
     @Insert
     void insertWords(List<WordEntity> words);
-
+    // The words from stages the user has finished (stage numbers below "count")
+    @Query("SELECT words.word FROM words INNER JOIN stages ON words.stageId = stages.id WHERE stages.language = :language AND stages.orderIndex < :count")
+    List<String> getLearnedWordTexts(String language, int count);
     @Query("SELECT COUNT(*) FROM stages")
     int countStages();
     // Every word of one language: the pool for wrong answer options
