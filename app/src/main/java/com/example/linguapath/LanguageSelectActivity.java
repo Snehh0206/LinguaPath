@@ -14,6 +14,8 @@ import com.example.linguapath.data.AuthRepository;
 import com.example.linguapath.databinding.ActivityLanguageSelectBinding;
 import com.example.linguapath.view.Motion;
 import com.example.linguapath.view.TouchBounce;
+import com.example.linguapath.databinding.DialogLanguageChoiceBinding;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 public class LanguageSelectActivity extends AppCompatActivity {
 
@@ -43,17 +45,29 @@ public class LanguageSelectActivity extends AppCompatActivity {
         Motion.fadeSlideIn(binding.cardSpanish, 220);
         TouchBounce.attach(binding.cardKorean);
         TouchBounce.attach(binding.cardSpanish);
-        binding.cardTopics.setOnClickListener(v ->
-                startActivity(new Intent(this, TopicsActivity.class)));
-        Motion.fadeSlideIn(binding.cardTopics, 340);
-        TouchBounce.attach(binding.cardTopics);
+
     }
 
     private void onLanguagePicked(String languageName) {
         Log.d(TAG, "Picked: " + languageName);
-        Intent intent = new Intent(this, LanguageDashboardActivity.class);
-        intent.putExtra(LanguageDashboardActivity.EXTRA_LANGUAGE, languageName);
-        startActivity(intent);
+        BottomSheetDialog sheet = new BottomSheetDialog(this);
+        DialogLanguageChoiceBinding b = DialogLanguageChoiceBinding.inflate(getLayoutInflater());
+        sheet.setContentView(b.getRoot());
+        b.textChoiceTitle.setText(languageName);
+
+        b.cardChoiceStages.setOnClickListener(v -> {
+            sheet.dismiss();
+            Intent intent = new Intent(this, LanguageDashboardActivity.class);
+            intent.putExtra(LanguageDashboardActivity.EXTRA_LANGUAGE, languageName);
+            startActivity(intent);
+        });
+        b.cardChoiceTopics.setOnClickListener(v -> {
+            sheet.dismiss();
+            Intent intent = new Intent(this, TopicsActivity.class);
+            intent.putExtra(TopicsActivity.EXTRA_LANGUAGE, languageName);
+            startActivity(intent);
+        });
+        sheet.show();
     }
 
     // The three-dots menu: shows who is signed in, and offers Log out
@@ -66,6 +80,10 @@ public class LanguageSelectActivity extends AppCompatActivity {
                 .setTitle(getString(R.string.signed_in_as, email == null ? "" : email));
 
         popup.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.menu_credits) {
+                startActivity(new Intent(this, CreditsActivity.class));
+                return true;
+            }
             if (item.getItemId() == R.id.menu_chat) {
                 startActivity(new Intent(this, ChatRoomsActivity.class));
                 return true;

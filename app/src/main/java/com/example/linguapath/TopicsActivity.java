@@ -18,11 +18,13 @@ import java.util.List;
 public class TopicsActivity extends AppCompatActivity {
 
     private static final String STATE_LANGUAGE = "state_language";
+    public static final String EXTRA_LANGUAGE = "extra_language";
 
     private ActivityTopicsBinding binding;
     private TopicAdapter adapter;
     private List<Topic> topics = new ArrayList<>();
     private String language = "Spanish";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +35,11 @@ public class TopicsActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             language = savedInstanceState.getString(STATE_LANGUAGE, "Spanish");
         } else {
+            String fromIntent = getIntent().getStringExtra(EXTRA_LANGUAGE);
             String last = new ReminderSettings(this).getLastLanguage();
-            if (last != null) {
+            if (fromIntent != null) {
+                language = fromIntent;
+            } else if (last != null) {
                 language = last;
             }
         }

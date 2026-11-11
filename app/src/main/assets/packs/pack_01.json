@@ -1,0 +1,2934 @@
+{
+ "languages": [
+  {
+   "name": "Spanish",
+   "stages": [
+    {
+     "title": "Family",
+     "level": "A1",
+     "words": [
+      {
+       "word": "madre",
+       "romanization": "",
+       "meaning": "mother",
+       "example": "Mi madre cocina muy bien.",
+       "exampleMeaning": "My mother cooks very well."
+      },
+      {
+       "word": "padre",
+       "romanization": "",
+       "meaning": "father",
+       "example": "Mi padre trabaja en un banco.",
+       "exampleMeaning": "My father works in a bank."
+      },
+      {
+       "word": "hermano",
+       "romanization": "",
+       "meaning": "brother",
+       "example": "Mi hermano tiene diez años.",
+       "exampleMeaning": "My brother is ten years old."
+      },
+      {
+       "word": "hermana",
+       "romanization": "",
+       "meaning": "sister",
+       "example": "Mi hermana estudia medicina.",
+       "exampleMeaning": "My sister studies medicine."
+      },
+      {
+       "word": "hijo",
+       "romanization": "",
+       "meaning": "son",
+       "example": "Su hijo juega al fútbol.",
+       "exampleMeaning": "Her son plays soccer."
+      },
+      {
+       "word": "hija",
+       "romanization": "",
+       "meaning": "daughter",
+       "example": "Mi hija lee un libro.",
+       "exampleMeaning": "My daughter is reading a book."
+      },
+      {
+       "word": "abuelo",
+       "romanization": "",
+       "meaning": "grandfather",
+       "example": "Mi abuelo vive en el campo.",
+       "exampleMeaning": "My grandfather lives in the countryside."
+      },
+      {
+       "word": "abuela",
+       "romanization": "",
+       "meaning": "grandmother",
+       "example": "Mi abuela hace pan.",
+       "exampleMeaning": "My grandmother makes bread."
+      },
+      {
+       "word": "tío",
+       "romanization": "",
+       "meaning": "uncle",
+       "example": "Mi tío viaja mucho.",
+       "exampleMeaning": "My uncle travels a lot."
+      },
+      {
+       "word": "tía",
+       "romanization": "",
+       "meaning": "aunt",
+       "example": "Mi tía vive en Madrid.",
+       "exampleMeaning": "My aunt lives in Madrid."
+      },
+      {
+       "word": "primo",
+       "romanization": "",
+       "meaning": "cousin (male)",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "prima",
+       "romanization": "",
+       "meaning": "cousin (female)",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "esposo",
+       "romanization": "",
+       "meaning": "husband",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "esposa",
+       "romanization": "",
+       "meaning": "wife",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "nieto",
+       "romanization": "",
+       "meaning": "grandson",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "nieta",
+       "romanization": "",
+       "meaning": "granddaughter",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "sobrino",
+       "romanization": "",
+       "meaning": "nephew",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "sobrina",
+       "romanization": "",
+       "meaning": "niece",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "padres",
+       "romanization": "",
+       "meaning": "parents",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "hijos",
+       "romanization": "",
+       "meaning": "children",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Colors",
+     "level": "A1",
+     "words": [
+      {
+       "word": "rojo",
+       "romanization": "",
+       "meaning": "red",
+       "example": "Tengo un coche rojo.",
+       "exampleMeaning": "I have a red car."
+      },
+      {
+       "word": "azul",
+       "romanization": "",
+       "meaning": "blue",
+       "example": "El cielo es azul.",
+       "exampleMeaning": "The sky is blue."
+      },
+      {
+       "word": "verde",
+       "romanization": "",
+       "meaning": "green",
+       "example": "El árbol es verde.",
+       "exampleMeaning": "The tree is green."
+      },
+      {
+       "word": "amarillo",
+       "romanization": "",
+       "meaning": "yellow",
+       "example": "El sol es amarillo.",
+       "exampleMeaning": "The sun is yellow."
+      },
+      {
+       "word": "negro",
+       "romanization": "",
+       "meaning": "black",
+       "example": "Mi gato es negro.",
+       "exampleMeaning": "My cat is black."
+      },
+      {
+       "word": "blanco",
+       "romanization": "",
+       "meaning": "white",
+       "example": "Tengo una camisa blanca.",
+       "exampleMeaning": "I have a white shirt."
+      },
+      {
+       "word": "gris",
+       "romanization": "",
+       "meaning": "gray",
+       "example": "El día está gris.",
+       "exampleMeaning": "The day is gray."
+      },
+      {
+       "word": "naranja",
+       "romanization": "",
+       "meaning": "orange (color)",
+       "example": "Esta flor es naranja.",
+       "exampleMeaning": "This flower is orange."
+      },
+      {
+       "word": "rosa",
+       "romanization": "",
+       "meaning": "pink",
+       "example": "Ella lleva un vestido rosa.",
+       "exampleMeaning": "She wears a pink dress."
+      },
+      {
+       "word": "morado",
+       "romanization": "",
+       "meaning": "purple",
+       "example": "Mi mochila es morada.",
+       "exampleMeaning": "My backpack is purple."
+      },
+      {
+       "word": "marrón",
+       "romanization": "",
+       "meaning": "brown",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "dorado",
+       "romanization": "",
+       "meaning": "golden",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "plateado",
+       "romanization": "",
+       "meaning": "silver",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "claro",
+       "romanization": "",
+       "meaning": "light (color)",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "oscuro",
+       "romanization": "",
+       "meaning": "dark",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "color",
+       "romanization": "",
+       "meaning": "color",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "pintura",
+       "romanization": "",
+       "meaning": "paint",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "pintar",
+       "romanization": "",
+       "meaning": "to paint",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "brillante",
+       "romanization": "",
+       "meaning": "bright, shiny",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "beige",
+       "romanization": "",
+       "meaning": "beige",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Body",
+     "level": "A1",
+     "words": [
+      {
+       "word": "cabeza",
+       "romanization": "",
+       "meaning": "head",
+       "example": "Me duele la cabeza.",
+       "exampleMeaning": "My head hurts."
+      },
+      {
+       "word": "cara",
+       "romanization": "",
+       "meaning": "face",
+       "example": "Tiene una cara amable.",
+       "exampleMeaning": "He has a kind face."
+      },
+      {
+       "word": "ojo",
+       "romanization": "",
+       "meaning": "eye",
+       "example": "Mi hermana tiene los ojos azules.",
+       "exampleMeaning": "My sister has blue eyes."
+      },
+      {
+       "word": "nariz",
+       "romanization": "",
+       "meaning": "nose",
+       "example": "Mi nariz está fría.",
+       "exampleMeaning": "My nose is cold."
+      },
+      {
+       "word": "boca",
+       "romanization": "",
+       "meaning": "mouth",
+       "example": "Abre la boca, por favor.",
+       "exampleMeaning": "Open your mouth, please."
+      },
+      {
+       "word": "oreja",
+       "romanization": "",
+       "meaning": "ear",
+       "example": "El perro tiene orejas largas.",
+       "exampleMeaning": "The dog has long ears."
+      },
+      {
+       "word": "mano",
+       "romanization": "",
+       "meaning": "hand",
+       "example": "Lávate las manos.",
+       "exampleMeaning": "Wash your hands."
+      },
+      {
+       "word": "pie",
+       "romanization": "",
+       "meaning": "foot",
+       "example": "Me duele el pie.",
+       "exampleMeaning": "My foot hurts."
+      },
+      {
+       "word": "brazo",
+       "romanization": "",
+       "meaning": "arm",
+       "example": "Levanta el brazo.",
+       "exampleMeaning": "Raise your arm."
+      },
+      {
+       "word": "pierna",
+       "romanization": "",
+       "meaning": "leg",
+       "example": "Me duele la pierna derecha.",
+       "exampleMeaning": "My right leg hurts."
+      },
+      {
+       "word": "dedo",
+       "romanization": "",
+       "meaning": "finger",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "pelo",
+       "romanization": "",
+       "meaning": "hair",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "diente",
+       "romanization": "",
+       "meaning": "tooth",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "cuello",
+       "romanization": "",
+       "meaning": "neck",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "espalda",
+       "romanization": "",
+       "meaning": "back",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "estómago",
+       "romanization": "",
+       "meaning": "stomach",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "corazón",
+       "romanization": "",
+       "meaning": "heart",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "rodilla",
+       "romanization": "",
+       "meaning": "knee",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "hombro",
+       "romanization": "",
+       "meaning": "shoulder",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "lengua",
+       "romanization": "",
+       "meaning": "tongue",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Clothes",
+     "level": "A1",
+     "words": [
+      {
+       "word": "ropa",
+       "romanization": "",
+       "meaning": "clothes",
+       "example": "Compro ropa nueva.",
+       "exampleMeaning": "I buy new clothes."
+      },
+      {
+       "word": "camiseta",
+       "romanization": "",
+       "meaning": "T-shirt",
+       "example": "Llevo una camiseta roja.",
+       "exampleMeaning": "I am wearing a red T-shirt."
+      },
+      {
+       "word": "pantalones",
+       "romanization": "",
+       "meaning": "pants",
+       "example": "Estos pantalones son largos.",
+       "exampleMeaning": "These pants are long."
+      },
+      {
+       "word": "falda",
+       "romanization": "",
+       "meaning": "skirt",
+       "example": "Ella lleva una falda corta.",
+       "exampleMeaning": "She is wearing a short skirt."
+      },
+      {
+       "word": "vestido",
+       "romanization": "",
+       "meaning": "dress",
+       "example": "Mi vestido es azul.",
+       "exampleMeaning": "My dress is blue."
+      },
+      {
+       "word": "chaqueta",
+       "romanization": "",
+       "meaning": "jacket",
+       "example": "Hace frío, toma tu chaqueta.",
+       "exampleMeaning": "It is cold, take your jacket."
+      },
+      {
+       "word": "abrigo",
+       "romanization": "",
+       "meaning": "coat",
+       "example": "Necesito un abrigo para el invierno.",
+       "exampleMeaning": "I need a coat for winter."
+      },
+      {
+       "word": "sombrero",
+       "romanization": "",
+       "meaning": "hat",
+       "example": "El sombrero es muy grande.",
+       "exampleMeaning": "The hat is very big."
+      },
+      {
+       "word": "calcetines",
+       "romanization": "",
+       "meaning": "socks",
+       "example": "Mis calcetines están sucios.",
+       "exampleMeaning": "My socks are dirty."
+      },
+      {
+       "word": "bufanda",
+       "romanization": "",
+       "meaning": "scarf",
+       "example": "Uso una bufanda en invierno.",
+       "exampleMeaning": "I wear a scarf in winter."
+      },
+      {
+       "word": "guantes",
+       "romanization": "",
+       "meaning": "gloves",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "cinturón",
+       "romanization": "",
+       "meaning": "belt",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "corbata",
+       "romanization": "",
+       "meaning": "tie",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "gafas",
+       "romanization": "",
+       "meaning": "glasses",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "reloj",
+       "romanization": "",
+       "meaning": "watch",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "bolso",
+       "romanization": "",
+       "meaning": "handbag",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "botas",
+       "romanization": "",
+       "meaning": "boots",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "sandalias",
+       "romanization": "",
+       "meaning": "sandals",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "traje",
+       "romanization": "",
+       "meaning": "suit",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "pijama",
+       "romanization": "",
+       "meaning": "pajamas",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Home",
+     "level": "A1",
+     "words": [
+      {
+       "word": "cocina",
+       "romanization": "",
+       "meaning": "kitchen",
+       "example": "Mi madre está en la cocina.",
+       "exampleMeaning": "My mother is in the kitchen."
+      },
+      {
+       "word": "baño",
+       "romanization": "",
+       "meaning": "bathroom",
+       "example": "El baño está al lado.",
+       "exampleMeaning": "The bathroom is next door."
+      },
+      {
+       "word": "dormitorio",
+       "romanization": "",
+       "meaning": "bedroom",
+       "example": "Mi dormitorio es pequeño.",
+       "exampleMeaning": "My bedroom is small."
+      },
+      {
+       "word": "sala",
+       "romanization": "",
+       "meaning": "living room",
+       "example": "Veo la tele en la sala.",
+       "exampleMeaning": "I watch TV in the living room."
+      },
+      {
+       "word": "ventana",
+       "romanization": "",
+       "meaning": "window",
+       "example": "Abre la ventana, por favor.",
+       "exampleMeaning": "Open the window, please."
+      },
+      {
+       "word": "puerta",
+       "romanization": "",
+       "meaning": "door",
+       "example": "Cierra la puerta.",
+       "exampleMeaning": "Close the door."
+      },
+      {
+       "word": "mesa",
+       "romanization": "",
+       "meaning": "table",
+       "example": "La cena está en la mesa.",
+       "exampleMeaning": "Dinner is on the table."
+      },
+      {
+       "word": "silla",
+       "romanization": "",
+       "meaning": "chair",
+       "example": "Hay una silla libre.",
+       "exampleMeaning": "There is a free chair."
+      },
+      {
+       "word": "cama",
+       "romanization": "",
+       "meaning": "bed",
+       "example": "Voy a la cama temprano.",
+       "exampleMeaning": "I go to bed early."
+      },
+      {
+       "word": "sofá",
+       "romanization": "",
+       "meaning": "sofa",
+       "example": "El gato duerme en el sofá.",
+       "exampleMeaning": "The cat sleeps on the sofa."
+      },
+      {
+       "word": "lámpara",
+       "romanization": "",
+       "meaning": "lamp",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "espejo",
+       "romanization": "",
+       "meaning": "mirror",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "techo",
+       "romanization": "",
+       "meaning": "ceiling, roof",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "suelo",
+       "romanization": "",
+       "meaning": "floor",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "pared",
+       "romanization": "",
+       "meaning": "wall",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "jardín",
+       "romanization": "",
+       "meaning": "garden",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "escalera",
+       "romanization": "",
+       "meaning": "stairs",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "llave",
+       "romanization": "",
+       "meaning": "key",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "armario",
+       "romanization": "",
+       "meaning": "wardrobe",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "televisión",
+       "romanization": "",
+       "meaning": "television",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Animals",
+     "level": "A1",
+     "words": [
+      {
+       "word": "perro",
+       "romanization": "",
+       "meaning": "dog",
+       "example": "Mi perro corre en el parque.",
+       "exampleMeaning": "My dog runs in the park."
+      },
+      {
+       "word": "gato",
+       "romanization": "",
+       "meaning": "cat",
+       "example": "El gato bebe leche.",
+       "exampleMeaning": "The cat drinks milk."
+      },
+      {
+       "word": "pájaro",
+       "romanization": "",
+       "meaning": "bird",
+       "example": "Un pájaro canta en el árbol.",
+       "exampleMeaning": "A bird sings in the tree."
+      },
+      {
+       "word": "pez",
+       "romanization": "",
+       "meaning": "fish",
+       "example": "El pez nada en el agua.",
+       "exampleMeaning": "The fish swims in the water."
+      },
+      {
+       "word": "caballo",
+       "romanization": "",
+       "meaning": "horse",
+       "example": "El caballo es muy rápido.",
+       "exampleMeaning": "The horse is very fast."
+      },
+      {
+       "word": "vaca",
+       "romanization": "",
+       "meaning": "cow",
+       "example": "La vaca da leche.",
+       "exampleMeaning": "The cow gives milk."
+      },
+      {
+       "word": "cerdo",
+       "romanization": "",
+       "meaning": "pig",
+       "example": "El cerdo vive en la granja.",
+       "exampleMeaning": "The pig lives on the farm."
+      },
+      {
+       "word": "oveja",
+       "romanization": "",
+       "meaning": "sheep",
+       "example": "La oveja come hierba.",
+       "exampleMeaning": "The sheep eats grass."
+      },
+      {
+       "word": "conejo",
+       "romanization": "",
+       "meaning": "rabbit",
+       "example": "El conejo salta mucho.",
+       "exampleMeaning": "The rabbit jumps a lot."
+      },
+      {
+       "word": "ratón",
+       "romanization": "",
+       "meaning": "mouse",
+       "example": "Hay un ratón en la cocina.",
+       "exampleMeaning": "There is a mouse in the kitchen."
+      },
+      {
+       "word": "gallina",
+       "romanization": "",
+       "meaning": "hen",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "pato",
+       "romanization": "",
+       "meaning": "duck",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "elefante",
+       "romanization": "",
+       "meaning": "elephant",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "león",
+       "romanization": "",
+       "meaning": "lion",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "tigre",
+       "romanization": "",
+       "meaning": "tiger",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "mono",
+       "romanization": "",
+       "meaning": "monkey",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "oso",
+       "romanization": "",
+       "meaning": "bear",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "lobo",
+       "romanization": "",
+       "meaning": "wolf",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "serpiente",
+       "romanization": "",
+       "meaning": "snake",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "mariposa",
+       "romanization": "",
+       "meaning": "butterfly",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Weather",
+     "level": "A1",
+     "words": [
+      {
+       "word": "clima",
+       "romanization": "",
+       "meaning": "weather, climate",
+       "example": "El clima es agradable hoy.",
+       "exampleMeaning": "The weather is pleasant today."
+      },
+      {
+       "word": "sol",
+       "romanization": "",
+       "meaning": "sun",
+       "example": "Hoy hay mucho sol.",
+       "exampleMeaning": "There is a lot of sun today."
+      },
+      {
+       "word": "lluvia",
+       "romanization": "",
+       "meaning": "rain",
+       "example": "La lluvia empieza por la tarde.",
+       "exampleMeaning": "The rain starts in the afternoon."
+      },
+      {
+       "word": "nieve",
+       "romanization": "",
+       "meaning": "snow",
+       "example": "Me gusta jugar en la nieve.",
+       "exampleMeaning": "I like playing in the snow."
+      },
+      {
+       "word": "viento",
+       "romanization": "",
+       "meaning": "wind",
+       "example": "Hoy hace mucho viento.",
+       "exampleMeaning": "It is very windy today."
+      },
+      {
+       "word": "nube",
+       "romanization": "",
+       "meaning": "cloud",
+       "example": "No hay ni una nube.",
+       "exampleMeaning": "There is not a single cloud."
+      },
+      {
+       "word": "tormenta",
+       "romanization": "",
+       "meaning": "storm",
+       "example": "Esta noche habrá tormenta.",
+       "exampleMeaning": "There will be a storm tonight."
+      },
+      {
+       "word": "calor",
+       "romanization": "",
+       "meaning": "heat",
+       "example": "En verano hace calor.",
+       "exampleMeaning": "In summer it is hot."
+      },
+      {
+       "word": "frío",
+       "romanization": "",
+       "meaning": "cold",
+       "example": "En invierno hace frío.",
+       "exampleMeaning": "In winter it is cold."
+      },
+      {
+       "word": "niebla",
+       "romanization": "",
+       "meaning": "fog",
+       "example": "Hay niebla en la carretera.",
+       "exampleMeaning": "There is fog on the road."
+      },
+      {
+       "word": "temperatura",
+       "romanization": "",
+       "meaning": "temperature",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "cielo",
+       "romanization": "",
+       "meaning": "sky",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "relámpago",
+       "romanization": "",
+       "meaning": "lightning",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "trueno",
+       "romanization": "",
+       "meaning": "thunder",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "hielo",
+       "romanization": "",
+       "meaning": "ice",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "humedad",
+       "romanization": "",
+       "meaning": "humidity",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "seco",
+       "romanization": "",
+       "meaning": "dry",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "mojado",
+       "romanization": "",
+       "meaning": "wet",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "llover",
+       "romanization": "",
+       "meaning": "to rain",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "nevar",
+       "romanization": "",
+       "meaning": "to snow",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Days and Months",
+     "level": "A1",
+     "words": [
+      {
+       "word": "lunes",
+       "romanization": "",
+       "meaning": "Monday",
+       "example": "El lunes tengo clase.",
+       "exampleMeaning": "On Monday I have class."
+      },
+      {
+       "word": "martes",
+       "romanization": "",
+       "meaning": "Tuesday",
+       "example": "El martes voy al médico.",
+       "exampleMeaning": "On Tuesday I go to the doctor."
+      },
+      {
+       "word": "miércoles",
+       "romanization": "",
+       "meaning": "Wednesday",
+       "example": "Los miércoles juego al tenis.",
+       "exampleMeaning": "On Wednesdays I play tennis."
+      },
+      {
+       "word": "jueves",
+       "romanization": "",
+       "meaning": "Thursday",
+       "example": "El jueves llega mi amigo.",
+       "exampleMeaning": "My friend arrives on Thursday."
+      },
+      {
+       "word": "viernes",
+       "romanization": "",
+       "meaning": "Friday",
+       "example": "El viernes salimos a cenar.",
+       "exampleMeaning": "On Friday we go out to dinner."
+      },
+      {
+       "word": "sábado",
+       "romanization": "",
+       "meaning": "Saturday",
+       "example": "El sábado no trabajo.",
+       "exampleMeaning": "I do not work on Saturday."
+      },
+      {
+       "word": "domingo",
+       "romanization": "",
+       "meaning": "Sunday",
+       "example": "El domingo descanso en casa.",
+       "exampleMeaning": "On Sunday I rest at home."
+      },
+      {
+       "word": "semana",
+       "romanization": "",
+       "meaning": "week",
+       "example": "Esta semana estoy ocupado.",
+       "exampleMeaning": "This week I am busy."
+      },
+      {
+       "word": "mes",
+       "romanization": "",
+       "meaning": "month",
+       "example": "El mes pasado viajé a Perú.",
+       "exampleMeaning": "Last month I travelled to Peru."
+      },
+      {
+       "word": "año",
+       "romanization": "",
+       "meaning": "year",
+       "example": "Este año estudio español.",
+       "exampleMeaning": "This year I am studying Spanish."
+      },
+      {
+       "word": "hoy",
+       "romanization": "",
+       "meaning": "today",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "ayer",
+       "romanization": "",
+       "meaning": "yesterday",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "enero",
+       "romanization": "",
+       "meaning": "January",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "febrero",
+       "romanization": "",
+       "meaning": "February",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "marzo",
+       "romanization": "",
+       "meaning": "March",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "abril",
+       "romanization": "",
+       "meaning": "April",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "mayo",
+       "romanization": "",
+       "meaning": "May",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "junio",
+       "romanization": "",
+       "meaning": "June",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "julio",
+       "romanization": "",
+       "meaning": "July",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "agosto",
+       "romanization": "",
+       "meaning": "August",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Common Verbs",
+     "level": "A1",
+     "words": [
+      {
+       "word": "ser",
+       "romanization": "",
+       "meaning": "to be",
+       "example": "Yo soy estudiante.",
+       "exampleMeaning": "I am a student."
+      },
+      {
+       "word": "estar",
+       "romanization": "",
+       "meaning": "to be (state, place)",
+       "example": "Estoy en casa.",
+       "exampleMeaning": "I am at home."
+      },
+      {
+       "word": "tener",
+       "romanization": "",
+       "meaning": "to have",
+       "example": "Tengo dos hermanos.",
+       "exampleMeaning": "I have two brothers."
+      },
+      {
+       "word": "hacer",
+       "romanization": "",
+       "meaning": "to do, to make",
+       "example": "Hago la tarea por la tarde.",
+       "exampleMeaning": "I do homework in the afternoon."
+      },
+      {
+       "word": "ir",
+       "romanization": "",
+       "meaning": "to go",
+       "example": "Voy al mercado.",
+       "exampleMeaning": "I go to the market."
+      },
+      {
+       "word": "venir",
+       "romanization": "",
+       "meaning": "to come",
+       "example": "¿Vienes a mi fiesta?",
+       "exampleMeaning": "Are you coming to my party?"
+      },
+      {
+       "word": "querer",
+       "romanization": "",
+       "meaning": "to want",
+       "example": "Quiero aprender español.",
+       "exampleMeaning": "I want to learn Spanish."
+      },
+      {
+       "word": "poder",
+       "romanization": "",
+       "meaning": "to be able to",
+       "example": "¿Puedo entrar?",
+       "exampleMeaning": "May I come in?"
+      },
+      {
+       "word": "ver",
+       "romanization": "",
+       "meaning": "to see, to watch",
+       "example": "Veo una película.",
+       "exampleMeaning": "I am watching a movie."
+      },
+      {
+       "word": "dar",
+       "romanization": "",
+       "meaning": "to give",
+       "example": "Te doy mi número.",
+       "exampleMeaning": "I give you my number."
+      },
+      {
+       "word": "decir",
+       "romanization": "",
+       "meaning": "to say",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "saber",
+       "romanization": "",
+       "meaning": "to know (a fact)",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "comer",
+       "romanization": "",
+       "meaning": "to eat",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "beber",
+       "romanization": "",
+       "meaning": "to drink",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "dormir",
+       "romanization": "",
+       "meaning": "to sleep",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "hablar",
+       "romanization": "",
+       "meaning": "to speak",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "vivir",
+       "romanization": "",
+       "meaning": "to live",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "trabajar",
+       "romanization": "",
+       "meaning": "to work",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "estudiar",
+       "romanization": "",
+       "meaning": "to study",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "leer",
+       "romanization": "",
+       "meaning": "to read",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Common Adjectives",
+     "level": "A1",
+     "words": [
+      {
+       "word": "grande",
+       "romanization": "",
+       "meaning": "big",
+       "example": "Tengo una casa grande.",
+       "exampleMeaning": "I have a big house."
+      },
+      {
+       "word": "pequeño",
+       "romanization": "",
+       "meaning": "small",
+       "example": "El perro es pequeño.",
+       "exampleMeaning": "The dog is small."
+      },
+      {
+       "word": "bueno",
+       "romanization": "",
+       "meaning": "good",
+       "example": "Es un libro muy bueno.",
+       "exampleMeaning": "It is a very good book."
+      },
+      {
+       "word": "malo",
+       "romanization": "",
+       "meaning": "bad",
+       "example": "El tiempo es malo hoy.",
+       "exampleMeaning": "The weather is bad today."
+      },
+      {
+       "word": "nuevo",
+       "romanization": "",
+       "meaning": "new",
+       "example": "Tengo un teléfono nuevo.",
+       "exampleMeaning": "I have a new phone."
+      },
+      {
+       "word": "viejo",
+       "romanization": "",
+       "meaning": "old",
+       "example": "Mi coche es viejo.",
+       "exampleMeaning": "My car is old."
+      },
+      {
+       "word": "bonito",
+       "romanization": "",
+       "meaning": "pretty",
+       "example": "Qué bonito es este lugar.",
+       "exampleMeaning": "How pretty this place is."
+      },
+      {
+       "word": "feo",
+       "romanization": "",
+       "meaning": "ugly",
+       "example": "Ese edificio es feo.",
+       "exampleMeaning": "That building is ugly."
+      },
+      {
+       "word": "fácil",
+       "romanization": "",
+       "meaning": "easy",
+       "example": "El examen es fácil.",
+       "exampleMeaning": "The exam is easy."
+      },
+      {
+       "word": "difícil",
+       "romanization": "",
+       "meaning": "difficult",
+       "example": "Esta palabra es difícil.",
+       "exampleMeaning": "This word is difficult."
+      },
+      {
+       "word": "rápido",
+       "romanization": "",
+       "meaning": "fast",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "lento",
+       "romanization": "",
+       "meaning": "slow",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "caro",
+       "romanization": "",
+       "meaning": "expensive",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "barato",
+       "romanization": "",
+       "meaning": "cheap",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "alto",
+       "romanization": "",
+       "meaning": "tall",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "bajo",
+       "romanization": "",
+       "meaning": "short, low",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "joven",
+       "romanization": "",
+       "meaning": "young",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "feliz",
+       "romanization": "",
+       "meaning": "happy",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "triste",
+       "romanization": "",
+       "meaning": "sad",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "cansado",
+       "romanization": "",
+       "meaning": "tired",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Korean",
+   "stages": [
+    {
+     "title": "Family",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "어머니",
+       "romanization": "eomeoni",
+       "meaning": "mother",
+       "example": "어머니는 요리를 잘해요.",
+       "exampleMeaning": "My mother cooks well."
+      },
+      {
+       "word": "아버지",
+       "romanization": "abeoji",
+       "meaning": "father",
+       "example": "아버지는 회사에 가요.",
+       "exampleMeaning": "My father goes to work."
+      },
+      {
+       "word": "형",
+       "romanization": "hyeong",
+       "meaning": "older brother (said by a man)",
+       "example": "형은 대학생이에요.",
+       "exampleMeaning": "My older brother is a university student."
+      },
+      {
+       "word": "누나",
+       "romanization": "nuna",
+       "meaning": "older sister (said by a man)",
+       "example": "누나는 노래를 잘해요.",
+       "exampleMeaning": "My older sister sings well."
+      },
+      {
+       "word": "오빠",
+       "romanization": "oppa",
+       "meaning": "older brother (said by a woman)",
+       "example": "오빠는 키가 커요.",
+       "exampleMeaning": "My older brother is tall."
+      },
+      {
+       "word": "언니",
+       "romanization": "eonni",
+       "meaning": "older sister (said by a woman)",
+       "example": "언니는 선생님이에요.",
+       "exampleMeaning": "My older sister is a teacher."
+      },
+      {
+       "word": "동생",
+       "romanization": "dongsaeng",
+       "meaning": "younger sibling",
+       "example": "동생은 아홉 살이에요.",
+       "exampleMeaning": "My younger sibling is nine years old."
+      },
+      {
+       "word": "아들",
+       "romanization": "adeul",
+       "meaning": "son",
+       "example": "아들이 공부해요.",
+       "exampleMeaning": "My son is studying."
+      },
+      {
+       "word": "딸",
+       "romanization": "ttal",
+       "meaning": "daughter",
+       "example": "딸은 그림을 그려요.",
+       "exampleMeaning": "My daughter draws pictures."
+      },
+      {
+       "word": "할머니",
+       "romanization": "halmeoni",
+       "meaning": "grandmother",
+       "example": "할머니는 시골에 살아요.",
+       "exampleMeaning": "My grandmother lives in the countryside."
+      },
+      {
+       "word": "할아버지",
+       "romanization": "harabeoji",
+       "meaning": "grandfather",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "부모님",
+       "romanization": "bumonim",
+       "meaning": "parents",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "가족",
+       "romanization": "gajok",
+       "meaning": "family",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "남편",
+       "romanization": "nampyeon",
+       "meaning": "husband",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "아내",
+       "romanization": "anae",
+       "meaning": "wife",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "삼촌",
+       "romanization": "samchon",
+       "meaning": "uncle (father's brother)",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "이모",
+       "romanization": "imo",
+       "meaning": "aunt (mother's sister)",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "고모",
+       "romanization": "gomo",
+       "meaning": "aunt (father's sister)",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "친척",
+       "romanization": "chincheok",
+       "meaning": "relatives",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "손자",
+       "romanization": "sonja",
+       "meaning": "grandson",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Colors",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "빨간색",
+       "romanization": "ppalgansaek",
+       "meaning": "red",
+       "example": "저는 빨간색을 좋아해요.",
+       "exampleMeaning": "I like red."
+      },
+      {
+       "word": "파란색",
+       "romanization": "paransaek",
+       "meaning": "blue",
+       "example": "하늘이 파란색이에요.",
+       "exampleMeaning": "The sky is blue."
+      },
+      {
+       "word": "초록색",
+       "romanization": "choroksaek",
+       "meaning": "green",
+       "example": "잎이 초록색이에요.",
+       "exampleMeaning": "The leaves are green."
+      },
+      {
+       "word": "노란색",
+       "romanization": "noransaek",
+       "meaning": "yellow",
+       "example": "바나나는 노란색이에요.",
+       "exampleMeaning": "Bananas are yellow."
+      },
+      {
+       "word": "검은색",
+       "romanization": "geomeunsaek",
+       "meaning": "black",
+       "example": "제 가방은 검은색이에요.",
+       "exampleMeaning": "My bag is black."
+      },
+      {
+       "word": "하얀색",
+       "romanization": "hayansaek",
+       "meaning": "white",
+       "example": "눈은 하얀색이에요.",
+       "exampleMeaning": "Snow is white."
+      },
+      {
+       "word": "회색",
+       "romanization": "hoesaek",
+       "meaning": "gray",
+       "example": "오늘 하늘이 회색이에요.",
+       "exampleMeaning": "The sky is gray today."
+      },
+      {
+       "word": "주황색",
+       "romanization": "juhwangsaek",
+       "meaning": "orange (color)",
+       "example": "이 꽃은 주황색이에요.",
+       "exampleMeaning": "This flower is orange."
+      },
+      {
+       "word": "분홍색",
+       "romanization": "bunhongsaek",
+       "meaning": "pink",
+       "example": "분홍색 치마를 입었어요.",
+       "exampleMeaning": "I wore a pink skirt."
+      },
+      {
+       "word": "보라색",
+       "romanization": "borasaek",
+       "meaning": "purple",
+       "example": "보라색이 예뻐요.",
+       "exampleMeaning": "Purple is pretty."
+      },
+      {
+       "word": "갈색",
+       "romanization": "galsaek",
+       "meaning": "brown",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "금색",
+       "romanization": "geumsaek",
+       "meaning": "gold",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "은색",
+       "romanization": "eunsaek",
+       "meaning": "silver",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "색",
+       "romanization": "saek",
+       "meaning": "color",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "밝다",
+       "romanization": "bakda",
+       "meaning": "to be bright",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "어둡다",
+       "romanization": "eodupda",
+       "meaning": "to be dark",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "진하다",
+       "romanization": "jinhada",
+       "meaning": "to be deep (color)",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "연하다",
+       "romanization": "yeonhada",
+       "meaning": "to be light, pale",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "무늬",
+       "romanization": "munui",
+       "meaning": "pattern",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "물감",
+       "romanization": "mulgam",
+       "meaning": "paint",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Body",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "머리",
+       "romanization": "meori",
+       "meaning": "head",
+       "example": "머리가 아파요.",
+       "exampleMeaning": "My head hurts."
+      },
+      {
+       "word": "얼굴",
+       "romanization": "eolgul",
+       "meaning": "face",
+       "example": "얼굴이 예뻐요.",
+       "exampleMeaning": "Her face is pretty."
+      },
+      {
+       "word": "눈",
+       "romanization": "nun",
+       "meaning": "eye; snow",
+       "example": "눈이 커요.",
+       "exampleMeaning": "Her eyes are big."
+      },
+      {
+       "word": "코",
+       "romanization": "ko",
+       "meaning": "nose",
+       "example": "코가 막혔어요.",
+       "exampleMeaning": "My nose is stuffed up."
+      },
+      {
+       "word": "입",
+       "romanization": "ip",
+       "meaning": "mouth",
+       "example": "입을 벌리세요.",
+       "exampleMeaning": "Please open your mouth."
+      },
+      {
+       "word": "귀",
+       "romanization": "gwi",
+       "meaning": "ear",
+       "example": "귀가 아파요.",
+       "exampleMeaning": "My ear hurts."
+      },
+      {
+       "word": "손",
+       "romanization": "son",
+       "meaning": "hand",
+       "example": "손을 씻으세요.",
+       "exampleMeaning": "Please wash your hands."
+      },
+      {
+       "word": "발",
+       "romanization": "bal",
+       "meaning": "foot",
+       "example": "발이 아파요.",
+       "exampleMeaning": "My foot hurts."
+      },
+      {
+       "word": "팔",
+       "romanization": "pal",
+       "meaning": "arm",
+       "example": "팔을 들어요.",
+       "exampleMeaning": "I raise my arm."
+      },
+      {
+       "word": "다리",
+       "romanization": "dari",
+       "meaning": "leg",
+       "example": "다리가 길어요.",
+       "exampleMeaning": "Her legs are long."
+      },
+      {
+       "word": "손가락",
+       "romanization": "songarak",
+       "meaning": "finger",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "머리카락",
+       "romanization": "meorikarak",
+       "meaning": "hair",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "치아",
+       "romanization": "chia",
+       "meaning": "tooth",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "목",
+       "romanization": "mok",
+       "meaning": "neck",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "등",
+       "romanization": "deung",
+       "meaning": "back",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "위",
+       "romanization": "wi",
+       "meaning": "stomach",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "심장",
+       "romanization": "simjang",
+       "meaning": "heart",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "무릎",
+       "romanization": "mureup",
+       "meaning": "knee",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "어깨",
+       "romanization": "eokkae",
+       "meaning": "shoulder",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "혀",
+       "romanization": "hyeo",
+       "meaning": "tongue",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Clothes",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "옷",
+       "romanization": "ot",
+       "meaning": "clothes",
+       "example": "새 옷을 샀어요.",
+       "exampleMeaning": "I bought new clothes."
+      },
+      {
+       "word": "티셔츠",
+       "romanization": "tisyeocheu",
+       "meaning": "T-shirt",
+       "example": "빨간 티셔츠를 입어요.",
+       "exampleMeaning": "I wear a red T-shirt."
+      },
+      {
+       "word": "청바지",
+       "romanization": "cheongbaji",
+       "meaning": "jeans",
+       "example": "청바지가 편해요.",
+       "exampleMeaning": "Jeans are comfortable."
+      },
+      {
+       "word": "치마",
+       "romanization": "chima",
+       "meaning": "skirt",
+       "example": "짧은 치마를 입었어요.",
+       "exampleMeaning": "She wore a short skirt."
+      },
+      {
+       "word": "원피스",
+       "romanization": "wonpiseu",
+       "meaning": "dress",
+       "example": "원피스가 예뻐요.",
+       "exampleMeaning": "The dress is pretty."
+      },
+      {
+       "word": "재킷",
+       "romanization": "jaekit",
+       "meaning": "jacket",
+       "example": "재킷을 입으세요.",
+       "exampleMeaning": "Please wear a jacket."
+      },
+      {
+       "word": "코트",
+       "romanization": "koteu",
+       "meaning": "coat",
+       "example": "겨울에 코트가 필요해요.",
+       "exampleMeaning": "I need a coat in winter."
+      },
+      {
+       "word": "모자",
+       "romanization": "moja",
+       "meaning": "hat",
+       "example": "모자를 썼어요.",
+       "exampleMeaning": "I put on a hat."
+      },
+      {
+       "word": "양말",
+       "romanization": "yangmal",
+       "meaning": "socks",
+       "example": "양말이 더러워요.",
+       "exampleMeaning": "My socks are dirty."
+      },
+      {
+       "word": "목도리",
+       "romanization": "mokdori",
+       "meaning": "scarf",
+       "example": "목도리를 했어요.",
+       "exampleMeaning": "I wore a scarf."
+      },
+      {
+       "word": "장갑",
+       "romanization": "janggap",
+       "meaning": "gloves",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "벨트",
+       "romanization": "belteu",
+       "meaning": "belt",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "넥타이",
+       "romanization": "nektai",
+       "meaning": "tie",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "안경",
+       "romanization": "angyeong",
+       "meaning": "glasses",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "시계",
+       "romanization": "sigye",
+       "meaning": "watch",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "가방",
+       "romanization": "gabang",
+       "meaning": "bag",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "부츠",
+       "romanization": "buchu",
+       "meaning": "boots",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "샌들",
+       "romanization": "saendeul",
+       "meaning": "sandals",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "양복",
+       "romanization": "yangbok",
+       "meaning": "suit",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "잠옷",
+       "romanization": "jamot",
+       "meaning": "pajamas",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Home",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "부엌",
+       "romanization": "bueok",
+       "meaning": "kitchen",
+       "example": "어머니는 부엌에 계세요.",
+       "exampleMeaning": "My mother is in the kitchen."
+      },
+      {
+       "word": "화장실",
+       "romanization": "hwajangsil",
+       "meaning": "bathroom",
+       "example": "화장실은 어디예요?",
+       "exampleMeaning": "Where is the bathroom?"
+      },
+      {
+       "word": "침실",
+       "romanization": "chimsil",
+       "meaning": "bedroom",
+       "example": "제 침실은 작아요.",
+       "exampleMeaning": "My bedroom is small."
+      },
+      {
+       "word": "거실",
+       "romanization": "geosil",
+       "meaning": "living room",
+       "example": "거실에서 텔레비전을 봐요.",
+       "exampleMeaning": "I watch TV in the living room."
+      },
+      {
+       "word": "창문",
+       "romanization": "changmun",
+       "meaning": "window",
+       "example": "창문을 열어 주세요.",
+       "exampleMeaning": "Please open the window."
+      },
+      {
+       "word": "문",
+       "romanization": "mun",
+       "meaning": "door",
+       "example": "문을 닫으세요.",
+       "exampleMeaning": "Please close the door."
+      },
+      {
+       "word": "탁자",
+       "romanization": "takja",
+       "meaning": "table",
+       "example": "탁자 위에 책이 있어요.",
+       "exampleMeaning": "There is a book on the table."
+      },
+      {
+       "word": "의자",
+       "romanization": "uija",
+       "meaning": "chair",
+       "example": "의자가 편해요.",
+       "exampleMeaning": "The chair is comfortable."
+      },
+      {
+       "word": "침대",
+       "romanization": "chimdae",
+       "meaning": "bed",
+       "example": "침대에서 자요.",
+       "exampleMeaning": "I sleep in bed."
+      },
+      {
+       "word": "소파",
+       "romanization": "sopa",
+       "meaning": "sofa",
+       "example": "고양이가 소파에 있어요.",
+       "exampleMeaning": "The cat is on the sofa."
+      },
+      {
+       "word": "전등",
+       "romanization": "jeondeung",
+       "meaning": "lamp",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "거울",
+       "romanization": "geoul",
+       "meaning": "mirror",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "지붕",
+       "romanization": "jibung",
+       "meaning": "roof",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "바닥",
+       "romanization": "badak",
+       "meaning": "floor",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "벽",
+       "romanization": "byeok",
+       "meaning": "wall",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "정원",
+       "romanization": "jeongwon",
+       "meaning": "garden",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "계단",
+       "romanization": "gyedan",
+       "meaning": "stairs",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "열쇠",
+       "romanization": "yeolsoe",
+       "meaning": "key",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "옷장",
+       "romanization": "otjang",
+       "meaning": "wardrobe",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "텔레비전",
+       "romanization": "tellebijeon",
+       "meaning": "television",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Animals",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "개",
+       "romanization": "gae",
+       "meaning": "dog",
+       "example": "제 개는 공원에서 달려요.",
+       "exampleMeaning": "My dog runs in the park."
+      },
+      {
+       "word": "고양이",
+       "romanization": "goyangi",
+       "meaning": "cat",
+       "example": "고양이가 우유를 마셔요.",
+       "exampleMeaning": "The cat drinks milk."
+      },
+      {
+       "word": "새",
+       "romanization": "sae",
+       "meaning": "bird",
+       "example": "새가 노래해요.",
+       "exampleMeaning": "The bird sings."
+      },
+      {
+       "word": "물고기",
+       "romanization": "mulgogi",
+       "meaning": "fish",
+       "example": "물고기가 헤엄쳐요.",
+       "exampleMeaning": "The fish swims."
+      },
+      {
+       "word": "말",
+       "romanization": "mal",
+       "meaning": "horse",
+       "example": "말이 빨라요.",
+       "exampleMeaning": "The horse is fast."
+      },
+      {
+       "word": "소",
+       "romanization": "so",
+       "meaning": "cow",
+       "example": "소가 풀을 먹어요.",
+       "exampleMeaning": "The cow eats grass."
+      },
+      {
+       "word": "돼지",
+       "romanization": "dwaeji",
+       "meaning": "pig",
+       "example": "돼지는 농장에 있어요.",
+       "exampleMeaning": "The pig is on the farm."
+      },
+      {
+       "word": "양",
+       "romanization": "yang",
+       "meaning": "sheep",
+       "example": "양이 많아요.",
+       "exampleMeaning": "There are many sheep."
+      },
+      {
+       "word": "토끼",
+       "romanization": "tokki",
+       "meaning": "rabbit",
+       "example": "토끼가 깡충깡충 뛰어요.",
+       "exampleMeaning": "The rabbit hops."
+      },
+      {
+       "word": "쥐",
+       "romanization": "jwi",
+       "meaning": "mouse",
+       "example": "부엌에 쥐가 있어요.",
+       "exampleMeaning": "There is a mouse in the kitchen."
+      },
+      {
+       "word": "닭",
+       "romanization": "dak",
+       "meaning": "chicken (animal)",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "오리",
+       "romanization": "ori",
+       "meaning": "duck",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "코끼리",
+       "romanization": "kokkiri",
+       "meaning": "elephant",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "사자",
+       "romanization": "saja",
+       "meaning": "lion",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "호랑이",
+       "romanization": "horangi",
+       "meaning": "tiger",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "원숭이",
+       "romanization": "wonsungi",
+       "meaning": "monkey",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "곰",
+       "romanization": "gom",
+       "meaning": "bear",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "늑대",
+       "romanization": "neukdae",
+       "meaning": "wolf",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "뱀",
+       "romanization": "baem",
+       "meaning": "snake",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "나비",
+       "romanization": "nabi",
+       "meaning": "butterfly",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Weather",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "날씨",
+       "romanization": "nalssi",
+       "meaning": "weather",
+       "example": "오늘 날씨가 좋아요.",
+       "exampleMeaning": "The weather is nice today."
+      },
+      {
+       "word": "해",
+       "romanization": "hae",
+       "meaning": "sun",
+       "example": "해가 떠요.",
+       "exampleMeaning": "The sun rises."
+      },
+      {
+       "word": "비",
+       "romanization": "bi",
+       "meaning": "rain",
+       "example": "비가 와요.",
+       "exampleMeaning": "It is raining."
+      },
+      {
+       "word": "바람",
+       "romanization": "baram",
+       "meaning": "wind",
+       "example": "바람이 많이 불어요.",
+       "exampleMeaning": "The wind is blowing a lot."
+      },
+      {
+       "word": "구름",
+       "romanization": "gureum",
+       "meaning": "cloud",
+       "example": "구름이 많아요.",
+       "exampleMeaning": "There are many clouds."
+      },
+      {
+       "word": "폭풍",
+       "romanization": "pokpung",
+       "meaning": "storm",
+       "example": "오늘 밤에 폭풍이 와요.",
+       "exampleMeaning": "A storm is coming tonight."
+      },
+      {
+       "word": "더위",
+       "romanization": "deowi",
+       "meaning": "heat",
+       "example": "더위 때문에 힘들어요.",
+       "exampleMeaning": "I am struggling because of the heat."
+      },
+      {
+       "word": "추위",
+       "romanization": "chuwi",
+       "meaning": "cold (weather)",
+       "example": "추위가 심해요.",
+       "exampleMeaning": "The cold is severe."
+      },
+      {
+       "word": "안개",
+       "romanization": "angae",
+       "meaning": "fog",
+       "example": "안개가 꼈어요.",
+       "exampleMeaning": "It is foggy."
+      },
+      {
+       "word": "하늘",
+       "romanization": "haneul",
+       "meaning": "sky",
+       "example": "하늘이 맑아요.",
+       "exampleMeaning": "The sky is clear."
+      },
+      {
+       "word": "온도",
+       "romanization": "ondo",
+       "meaning": "temperature",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "번개",
+       "romanization": "beongae",
+       "meaning": "lightning",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "천둥",
+       "romanization": "cheondung",
+       "meaning": "thunder",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "얼음",
+       "romanization": "eoreum",
+       "meaning": "ice",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "습도",
+       "romanization": "seupdo",
+       "meaning": "humidity",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "맑다",
+       "romanization": "makda",
+       "meaning": "to be clear",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "흐리다",
+       "romanization": "heurida",
+       "meaning": "to be cloudy",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "덥다",
+       "romanization": "deopda",
+       "meaning": "to be hot",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "춥다",
+       "romanization": "chupda",
+       "meaning": "to be cold",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "시원하다",
+       "romanization": "siwonhada",
+       "meaning": "to be cool",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Days and Months",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "월요일",
+       "romanization": "woryoil",
+       "meaning": "Monday",
+       "example": "월요일에 수업이 있어요.",
+       "exampleMeaning": "I have class on Monday."
+      },
+      {
+       "word": "화요일",
+       "romanization": "hwayoil",
+       "meaning": "Tuesday",
+       "example": "화요일에 병원에 가요.",
+       "exampleMeaning": "I go to the hospital on Tuesday."
+      },
+      {
+       "word": "수요일",
+       "romanization": "suyoil",
+       "meaning": "Wednesday",
+       "example": "수요일마다 운동해요.",
+       "exampleMeaning": "I exercise every Wednesday."
+      },
+      {
+       "word": "목요일",
+       "romanization": "mogyoil",
+       "meaning": "Thursday",
+       "example": "목요일에 친구가 와요.",
+       "exampleMeaning": "My friend comes on Thursday."
+      },
+      {
+       "word": "금요일",
+       "romanization": "geumyoil",
+       "meaning": "Friday",
+       "example": "금요일에 같이 저녁을 먹어요.",
+       "exampleMeaning": "We have dinner together on Friday."
+      },
+      {
+       "word": "토요일",
+       "romanization": "toyoil",
+       "meaning": "Saturday",
+       "example": "토요일에는 일하지 않아요.",
+       "exampleMeaning": "I do not work on Saturday."
+      },
+      {
+       "word": "일요일",
+       "romanization": "iryoil",
+       "meaning": "Sunday",
+       "example": "일요일에 집에서 쉬어요.",
+       "exampleMeaning": "I rest at home on Sunday."
+      },
+      {
+       "word": "주",
+       "romanization": "ju",
+       "meaning": "week",
+       "example": "이번 주에 바빠요.",
+       "exampleMeaning": "I am busy this week."
+      },
+      {
+       "word": "달",
+       "romanization": "dal",
+       "meaning": "month",
+       "example": "지난달에 여행했어요.",
+       "exampleMeaning": "I travelled last month."
+      },
+      {
+       "word": "년",
+       "romanization": "nyeon",
+       "meaning": "year",
+       "example": "일 년 동안 한국어를 공부했어요.",
+       "exampleMeaning": "I studied Korean for a year."
+      },
+      {
+       "word": "오늘",
+       "romanization": "oneul",
+       "meaning": "today",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "내일",
+       "romanization": "naeil",
+       "meaning": "tomorrow",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "어제",
+       "romanization": "eoje",
+       "meaning": "yesterday",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "일월",
+       "romanization": "irwol",
+       "meaning": "January",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "이월",
+       "romanization": "iwol",
+       "meaning": "February",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "삼월",
+       "romanization": "samwol",
+       "meaning": "March",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "사월",
+       "romanization": "sawol",
+       "meaning": "April",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "오월",
+       "romanization": "owol",
+       "meaning": "May",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "유월",
+       "romanization": "yuwol",
+       "meaning": "June",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "칠월",
+       "romanization": "chilwol",
+       "meaning": "July",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Common Verbs",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "이다",
+       "romanization": "ida",
+       "meaning": "to be",
+       "example": "이것은 책이에요.",
+       "exampleMeaning": "This is a book."
+      },
+      {
+       "word": "있다",
+       "romanization": "itda",
+       "meaning": "to exist, to have",
+       "example": "집에 고양이가 있어요.",
+       "exampleMeaning": "There is a cat at home."
+      },
+      {
+       "word": "하다",
+       "romanization": "hada",
+       "meaning": "to do",
+       "example": "저는 숙제를 해요.",
+       "exampleMeaning": "I do homework."
+      },
+      {
+       "word": "가다",
+       "romanization": "gada",
+       "meaning": "to go",
+       "example": "학교에 가요.",
+       "exampleMeaning": "I go to school."
+      },
+      {
+       "word": "오다",
+       "romanization": "oda",
+       "meaning": "to come",
+       "example": "친구가 우리 집에 와요.",
+       "exampleMeaning": "My friend comes to our house."
+      },
+      {
+       "word": "보다",
+       "romanization": "boda",
+       "meaning": "to see, to watch",
+       "example": "영화를 봐요.",
+       "exampleMeaning": "I watch a movie."
+      },
+      {
+       "word": "주다",
+       "romanization": "juda",
+       "meaning": "to give",
+       "example": "친구에게 선물을 줘요.",
+       "exampleMeaning": "I give a gift to my friend."
+      },
+      {
+       "word": "알다",
+       "romanization": "alda",
+       "meaning": "to know",
+       "example": "저는 그 사람을 알아요.",
+       "exampleMeaning": "I know that person."
+      },
+      {
+       "word": "먹다",
+       "romanization": "meokda",
+       "meaning": "to eat",
+       "example": "아침에 빵을 먹어요.",
+       "exampleMeaning": "I eat bread in the morning."
+      },
+      {
+       "word": "마시다",
+       "romanization": "masida",
+       "meaning": "to drink",
+       "example": "우유를 마셔요.",
+       "exampleMeaning": "I drink milk."
+      },
+      {
+       "word": "자다",
+       "romanization": "jada",
+       "meaning": "to sleep",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "말하다",
+       "romanization": "malhada",
+       "meaning": "to speak",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "살다",
+       "romanization": "salda",
+       "meaning": "to live",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "일하다",
+       "romanization": "ilhada",
+       "meaning": "to work",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "공부하다",
+       "romanization": "gongbuhada",
+       "meaning": "to study",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "읽다",
+       "romanization": "ikda",
+       "meaning": "to read",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "쓰다",
+       "romanization": "sseuda",
+       "meaning": "to write",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "듣다",
+       "romanization": "deutda",
+       "meaning": "to listen",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "사다",
+       "romanization": "sada",
+       "meaning": "to buy",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "만나다",
+       "romanization": "mannada",
+       "meaning": "to meet",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Common Adjectives",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "크다",
+       "romanization": "keuda",
+       "meaning": "to be big",
+       "example": "우리 집은 커요.",
+       "exampleMeaning": "Our house is big."
+      },
+      {
+       "word": "작다",
+       "romanization": "jakda",
+       "meaning": "to be small",
+       "example": "강아지가 작아요.",
+       "exampleMeaning": "The puppy is small."
+      },
+      {
+       "word": "좋다",
+       "romanization": "jota",
+       "meaning": "to be good",
+       "example": "이 책은 정말 좋아요.",
+       "exampleMeaning": "This book is really good."
+      },
+      {
+       "word": "나쁘다",
+       "romanization": "nappeuda",
+       "meaning": "to be bad",
+       "example": "오늘 날씨가 나빠요.",
+       "exampleMeaning": "The weather is bad today."
+      },
+      {
+       "word": "새롭다",
+       "romanization": "saeropda",
+       "meaning": "to be new",
+       "example": "새로운 친구를 만났어요.",
+       "exampleMeaning": "I met a new friend."
+      },
+      {
+       "word": "낡다",
+       "romanization": "nakda",
+       "meaning": "to be old (things)",
+       "example": "제 차는 낡았어요.",
+       "exampleMeaning": "My car is old."
+      },
+      {
+       "word": "예쁘다",
+       "romanization": "yeppeuda",
+       "meaning": "to be pretty",
+       "example": "이 꽃이 예뻐요.",
+       "exampleMeaning": "This flower is pretty."
+      },
+      {
+       "word": "못생기다",
+       "romanization": "motsaenggida",
+       "meaning": "to be ugly",
+       "example": "그 건물은 못생겼어요.",
+       "exampleMeaning": "That building is ugly."
+      },
+      {
+       "word": "쉽다",
+       "romanization": "swipda",
+       "meaning": "to be easy",
+       "example": "시험이 쉬워요.",
+       "exampleMeaning": "The exam is easy."
+      },
+      {
+       "word": "어렵다",
+       "romanization": "eoryeopda",
+       "meaning": "to be difficult",
+       "example": "이 단어는 어려워요.",
+       "exampleMeaning": "This word is difficult."
+      },
+      {
+       "word": "빠르다",
+       "romanization": "ppareuda",
+       "meaning": "to be fast",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "느리다",
+       "romanization": "neurida",
+       "meaning": "to be slow",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "비싸다",
+       "romanization": "bissada",
+       "meaning": "to be expensive",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "싸다",
+       "romanization": "ssada",
+       "meaning": "to be cheap",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "높다",
+       "romanization": "nopda",
+       "meaning": "to be high, tall",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "낮다",
+       "romanization": "natda",
+       "meaning": "to be low",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "젊다",
+       "romanization": "jeomda",
+       "meaning": "to be young",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "행복하다",
+       "romanization": "haengbokhada",
+       "meaning": "to be happy",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "슬프다",
+       "romanization": "seulpeuda",
+       "meaning": "to be sad",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "피곤하다",
+       "romanization": "pigonhada",
+       "meaning": "to be tired",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

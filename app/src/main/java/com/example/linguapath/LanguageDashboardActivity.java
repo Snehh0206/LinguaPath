@@ -90,11 +90,7 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         });
         binding.fabContinue.setOnClickListener(v -> continueLearning());
         binding.textSyncStatus.setOnClickListener(v -> syncWithCloud());
-        binding.buttonWodSpeak.setOnClickListener(v -> {
-            if (todaysWord != null && speech != null) {
-                speech.speak(todaysWord.translated, language);
-            }
-        });
+        binding.buttonWod.setOnClickListener(v -> showWordOfDay());
 
         // Things float in one after another
         Motion.fadeSlideIn(binding.textLanguageTitle, 0);
@@ -169,14 +165,26 @@ public class LanguageDashboardActivity extends AppCompatActivity {
                 return;
             }
             todaysWord = word;
-            if (word == null) {
-                binding.cardWordOfDay.setVisibility(View.GONE);
-            } else {
-                binding.textWodWord.setText(word.translated);
-                binding.textWodEnglish.setText(word.english);
-                binding.cardWordOfDay.setVisibility(View.VISIBLE);
-            }
+            binding.buttonWod.setVisibility(word == null ? View.GONE : View.VISIBLE);
         });
+    }
+
+    // The word pops out in a small dialog, with a Listen button
+    private void showWordOfDay() {
+        if (todaysWord == null) {
+            return;
+        }
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.wod_label)
+                .setMessage(todaysWord.translated + "\n" + todaysWord.english
+                        + "\n\n" + getString(R.string.wod_credit))
+                .setPositiveButton(R.string.wod_listen, (dialog, which) -> {
+                    if (speech != null) {
+                        speech.speak(todaysWord.translated, language);
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .show();
     }
 
     // ---- Study time ("Today: 12 min 34 s") ----

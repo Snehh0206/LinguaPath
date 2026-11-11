@@ -1,0 +1,2934 @@
+{
+ "languages": [
+  {
+   "name": "Spanish",
+   "stages": [
+    {
+     "title": "Fruits",
+     "level": "A1",
+     "words": [
+      {
+       "word": "plátano",
+       "romanization": "",
+       "meaning": "banana",
+       "example": "Desayuno un plátano.",
+       "exampleMeaning": "I have a banana for breakfast."
+      },
+      {
+       "word": "fresa",
+       "romanization": "",
+       "meaning": "strawberry",
+       "example": "Me encantan las fresas.",
+       "exampleMeaning": "I love strawberries."
+      },
+      {
+       "word": "uva",
+       "romanization": "",
+       "meaning": "grape",
+       "example": "Las uvas son dulces.",
+       "exampleMeaning": "The grapes are sweet."
+      },
+      {
+       "word": "limón",
+       "romanization": "",
+       "meaning": "lemon",
+       "example": "Pongo limón en el té.",
+       "exampleMeaning": "I put lemon in my tea."
+      },
+      {
+       "word": "pera",
+       "romanization": "",
+       "meaning": "pear",
+       "example": "Esta pera está madura.",
+       "exampleMeaning": "This pear is ripe."
+      },
+      {
+       "word": "piña",
+       "romanization": "",
+       "meaning": "pineapple",
+       "example": "La piña es muy dulce.",
+       "exampleMeaning": "The pineapple is very sweet."
+      },
+      {
+       "word": "sandía",
+       "romanization": "",
+       "meaning": "watermelon",
+       "example": "En verano comemos sandía.",
+       "exampleMeaning": "In summer we eat watermelon."
+      },
+      {
+       "word": "melón",
+       "romanization": "",
+       "meaning": "melon",
+       "example": "El melón está fresco.",
+       "exampleMeaning": "The melon is fresh."
+      },
+      {
+       "word": "cereza",
+       "romanization": "",
+       "meaning": "cherry",
+       "example": "El pastel tiene una cereza.",
+       "exampleMeaning": "The cake has a cherry."
+      },
+      {
+       "word": "durazno",
+       "romanization": "",
+       "meaning": "peach",
+       "example": "Quiero un durazno jugoso.",
+       "exampleMeaning": "I want a juicy peach."
+      },
+      {
+       "word": "mandarina",
+       "romanization": "",
+       "meaning": "tangerine",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "mango",
+       "romanization": "",
+       "meaning": "mango",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "coco",
+       "romanization": "",
+       "meaning": "coconut",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "kiwi",
+       "romanization": "",
+       "meaning": "kiwi",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "aguacate",
+       "romanization": "",
+       "meaning": "avocado",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "fruta",
+       "romanization": "",
+       "meaning": "fruit",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "semilla",
+       "romanization": "",
+       "meaning": "seed",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "jugoso",
+       "romanization": "",
+       "meaning": "juicy",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "maduro",
+       "romanization": "",
+       "meaning": "ripe",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "dulce",
+       "romanization": "",
+       "meaning": "sweet",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Vegetables and Meat",
+     "level": "A1",
+     "words": [
+      {
+       "word": "verdura",
+       "romanization": "",
+       "meaning": "vegetable",
+       "example": "Como verdura todos los días.",
+       "exampleMeaning": "I eat vegetables every day."
+      },
+      {
+       "word": "tomate",
+       "romanization": "",
+       "meaning": "tomato",
+       "example": "El tomate está en la ensalada.",
+       "exampleMeaning": "The tomato is in the salad."
+      },
+      {
+       "word": "cebolla",
+       "romanization": "",
+       "meaning": "onion",
+       "example": "Corto una cebolla para la sopa.",
+       "exampleMeaning": "I cut an onion for the soup."
+      },
+      {
+       "word": "ajo",
+       "romanization": "",
+       "meaning": "garlic",
+       "example": "Me gusta el ajo.",
+       "exampleMeaning": "I like garlic."
+      },
+      {
+       "word": "papa",
+       "romanization": "",
+       "meaning": "potato",
+       "example": "Cocino papas fritas.",
+       "exampleMeaning": "I cook french fries."
+      },
+      {
+       "word": "zanahoria",
+       "romanization": "",
+       "meaning": "carrot",
+       "example": "El conejo come zanahoria.",
+       "exampleMeaning": "The rabbit eats carrots."
+      },
+      {
+       "word": "lechuga",
+       "romanization": "",
+       "meaning": "lettuce",
+       "example": "Compro lechuga fresca.",
+       "exampleMeaning": "I buy fresh lettuce."
+      },
+      {
+       "word": "maíz",
+       "romanization": "",
+       "meaning": "corn",
+       "example": "El maíz es amarillo.",
+       "exampleMeaning": "Corn is yellow."
+      },
+      {
+       "word": "carne",
+       "romanization": "",
+       "meaning": "meat",
+       "example": "No como mucha carne.",
+       "exampleMeaning": "I do not eat much meat."
+      },
+      {
+       "word": "pollo",
+       "romanization": "",
+       "meaning": "chicken (food)",
+       "example": "Hoy cenamos pollo.",
+       "exampleMeaning": "Tonight we are having chicken."
+      },
+      {
+       "word": "pescado",
+       "romanization": "",
+       "meaning": "fish (food)",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "jamón",
+       "romanization": "",
+       "meaning": "ham",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "huevo",
+       "romanization": "",
+       "meaning": "egg",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "queso",
+       "romanization": "",
+       "meaning": "cheese",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "arroz",
+       "romanization": "",
+       "meaning": "rice",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "sopa",
+       "romanization": "",
+       "meaning": "soup",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "ensalada",
+       "romanization": "",
+       "meaning": "salad",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "frijoles",
+       "romanization": "",
+       "meaning": "beans",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "mantequilla",
+       "romanization": "",
+       "meaning": "butter",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "sal",
+       "romanization": "",
+       "meaning": "salt",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "At the Restaurant",
+     "level": "A1",
+     "words": [
+      {
+       "word": "restaurante",
+       "romanization": "",
+       "meaning": "restaurant",
+       "example": "Cenamos en un restaurante.",
+       "exampleMeaning": "We have dinner at a restaurant."
+      },
+      {
+       "word": "menú",
+       "romanization": "",
+       "meaning": "menu",
+       "example": "¿Puedo ver el menú?",
+       "exampleMeaning": "Can I see the menu?"
+      },
+      {
+       "word": "camarero",
+       "romanization": "",
+       "meaning": "waiter",
+       "example": "El camarero trae la comida.",
+       "exampleMeaning": "The waiter brings the food."
+      },
+      {
+       "word": "propina",
+       "romanization": "",
+       "meaning": "tip",
+       "example": "Dejo una propina.",
+       "exampleMeaning": "I leave a tip."
+      },
+      {
+       "word": "plato",
+       "romanization": "",
+       "meaning": "dish, plate",
+       "example": "Este plato es muy rico.",
+       "exampleMeaning": "This dish is very tasty."
+      },
+      {
+       "word": "vaso",
+       "romanization": "",
+       "meaning": "glass",
+       "example": "Necesito otro vaso.",
+       "exampleMeaning": "I need another glass."
+      },
+      {
+       "word": "taza",
+       "romanization": "",
+       "meaning": "cup",
+       "example": "Una taza de té, por favor.",
+       "exampleMeaning": "A cup of tea, please."
+      },
+      {
+       "word": "cuchara",
+       "romanization": "",
+       "meaning": "spoon",
+       "example": "Uso la cuchara para la sopa.",
+       "exampleMeaning": "I use the spoon for soup."
+      },
+      {
+       "word": "tenedor",
+       "romanization": "",
+       "meaning": "fork",
+       "example": "Falta un tenedor.",
+       "exampleMeaning": "A fork is missing."
+      },
+      {
+       "word": "cuchillo",
+       "romanization": "",
+       "meaning": "knife",
+       "example": "El cuchillo corta bien.",
+       "exampleMeaning": "The knife cuts well."
+      },
+      {
+       "word": "desayuno",
+       "romanization": "",
+       "meaning": "breakfast",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "almuerzo",
+       "romanization": "",
+       "meaning": "lunch",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "cena",
+       "romanization": "",
+       "meaning": "dinner",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "postre",
+       "romanization": "",
+       "meaning": "dessert",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "bebida",
+       "romanization": "",
+       "meaning": "drink",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "reserva",
+       "romanization": "",
+       "meaning": "reservation",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "hambre",
+       "romanization": "",
+       "meaning": "hunger",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "sed",
+       "romanization": "",
+       "meaning": "thirst",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "delicioso",
+       "romanization": "",
+       "meaning": "delicious",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "picante",
+       "romanization": "",
+       "meaning": "spicy",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "In the City",
+     "level": "A1",
+     "words": [
+      {
+       "word": "calle",
+       "romanization": "",
+       "meaning": "street",
+       "example": "Vivo en esta calle.",
+       "exampleMeaning": "I live on this street."
+      },
+      {
+       "word": "plaza",
+       "romanization": "",
+       "meaning": "square",
+       "example": "Nos vemos en la plaza.",
+       "exampleMeaning": "We meet in the square."
+      },
+      {
+       "word": "parque",
+       "romanization": "",
+       "meaning": "park",
+       "example": "Los niños juegan en el parque.",
+       "exampleMeaning": "The children play in the park."
+      },
+      {
+       "word": "banco",
+       "romanization": "",
+       "meaning": "bank",
+       "example": "El banco abre a las nueve.",
+       "exampleMeaning": "The bank opens at nine."
+      },
+      {
+       "word": "hospital",
+       "romanization": "",
+       "meaning": "hospital",
+       "example": "El hospital está lejos.",
+       "exampleMeaning": "The hospital is far."
+      },
+      {
+       "word": "escuela",
+       "romanization": "",
+       "meaning": "school",
+       "example": "Mi escuela es grande.",
+       "exampleMeaning": "My school is big."
+      },
+      {
+       "word": "iglesia",
+       "romanization": "",
+       "meaning": "church",
+       "example": "La iglesia es muy antigua.",
+       "exampleMeaning": "The church is very old."
+      },
+      {
+       "word": "museo",
+       "romanization": "",
+       "meaning": "museum",
+       "example": "Visitamos el museo hoy.",
+       "exampleMeaning": "We are visiting the museum today."
+      },
+      {
+       "word": "mercado",
+       "romanization": "",
+       "meaning": "market",
+       "example": "Compro fruta en el mercado.",
+       "exampleMeaning": "I buy fruit at the market."
+      },
+      {
+       "word": "farmacia",
+       "romanization": "",
+       "meaning": "pharmacy",
+       "example": "La farmacia está cerrada.",
+       "exampleMeaning": "The pharmacy is closed."
+      },
+      {
+       "word": "edificio",
+       "romanization": "",
+       "meaning": "building",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "puente",
+       "romanization": "",
+       "meaning": "bridge",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "esquina",
+       "romanization": "",
+       "meaning": "corner",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "semáforo",
+       "romanization": "",
+       "meaning": "traffic light",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "biblioteca",
+       "romanization": "",
+       "meaning": "library",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "oficina",
+       "romanization": "",
+       "meaning": "office",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "panadería",
+       "romanization": "",
+       "meaning": "bakery",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "supermercado",
+       "romanization": "",
+       "meaning": "supermarket",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "correo",
+       "romanization": "",
+       "meaning": "post office, mail",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "estación",
+       "romanization": "",
+       "meaning": "station",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Transport",
+     "level": "A1",
+     "words": [
+      {
+       "word": "coche",
+       "romanization": "",
+       "meaning": "car",
+       "example": "Mi coche es nuevo.",
+       "exampleMeaning": "My car is new."
+      },
+      {
+       "word": "bicicleta",
+       "romanization": "",
+       "meaning": "bicycle",
+       "example": "Voy al trabajo en bicicleta.",
+       "exampleMeaning": "I go to work by bicycle."
+      },
+      {
+       "word": "moto",
+       "romanization": "",
+       "meaning": "motorcycle",
+       "example": "Él tiene una moto negra.",
+       "exampleMeaning": "He has a black motorcycle."
+      },
+      {
+       "word": "barco",
+       "romanization": "",
+       "meaning": "boat",
+       "example": "El barco sale a las diez.",
+       "exampleMeaning": "The boat leaves at ten."
+      },
+      {
+       "word": "metro",
+       "romanization": "",
+       "meaning": "subway",
+       "example": "Tomo el metro cada día.",
+       "exampleMeaning": "I take the subway every day."
+      },
+      {
+       "word": "taxi",
+       "romanization": "",
+       "meaning": "taxi",
+       "example": "Necesito un taxi.",
+       "exampleMeaning": "I need a taxi."
+      },
+      {
+       "word": "camión",
+       "romanization": "",
+       "meaning": "truck",
+       "example": "El camión es muy grande.",
+       "exampleMeaning": "The truck is very big."
+      },
+      {
+       "word": "carretera",
+       "romanization": "",
+       "meaning": "highway",
+       "example": "La carretera está cerrada.",
+       "exampleMeaning": "The highway is closed."
+      },
+      {
+       "word": "parada",
+       "romanization": "",
+       "meaning": "stop",
+       "example": "La parada está cerca.",
+       "exampleMeaning": "The stop is near."
+      },
+      {
+       "word": "conductor",
+       "romanization": "",
+       "meaning": "driver",
+       "example": "El conductor es amable.",
+       "exampleMeaning": "The driver is kind."
+      },
+      {
+       "word": "pasajero",
+       "romanization": "",
+       "meaning": "passenger",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "tráfico",
+       "romanization": "",
+       "meaning": "traffic",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "gasolina",
+       "romanization": "",
+       "meaning": "gasoline",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "llanta",
+       "romanization": "",
+       "meaning": "tire",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "velocidad",
+       "romanization": "",
+       "meaning": "speed",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "motor",
+       "romanization": "",
+       "meaning": "engine",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "viaje",
+       "romanization": "",
+       "meaning": "trip",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "lejos",
+       "romanization": "",
+       "meaning": "far",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "cerca",
+       "romanization": "",
+       "meaning": "near",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "boleto",
+       "romanization": "",
+       "meaning": "ticket",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Shopping",
+     "level": "A2",
+     "words": [
+      {
+       "word": "comprar",
+       "romanization": "",
+       "meaning": "to buy",
+       "example": "Quiero comprar un libro.",
+       "exampleMeaning": "I want to buy a book."
+      },
+      {
+       "word": "vender",
+       "romanization": "",
+       "meaning": "to sell",
+       "example": "Ellos venden frutas.",
+       "exampleMeaning": "They sell fruit."
+      },
+      {
+       "word": "pagar",
+       "romanization": "",
+       "meaning": "to pay",
+       "example": "Voy a pagar con tarjeta.",
+       "exampleMeaning": "I am going to pay by card."
+      },
+      {
+       "word": "costar",
+       "romanization": "",
+       "meaning": "to cost",
+       "example": "¿Cuánto cuesta esto?",
+       "exampleMeaning": "How much does this cost?"
+      },
+      {
+       "word": "gastar",
+       "romanization": "",
+       "meaning": "to spend",
+       "example": "No quiero gastar mucho.",
+       "exampleMeaning": "I do not want to spend much."
+      },
+      {
+       "word": "descuento",
+       "romanization": "",
+       "meaning": "discount",
+       "example": "Hay un descuento hoy.",
+       "exampleMeaning": "There is a discount today."
+      },
+      {
+       "word": "oferta",
+       "romanization": "",
+       "meaning": "offer, sale",
+       "example": "Esta oferta termina mañana.",
+       "exampleMeaning": "This offer ends tomorrow."
+      },
+      {
+       "word": "talla",
+       "romanization": "",
+       "meaning": "size",
+       "example": "¿Qué talla usas?",
+       "exampleMeaning": "What size do you wear?"
+      },
+      {
+       "word": "cambio",
+       "romanization": "",
+       "meaning": "change",
+       "example": "Aquí está su cambio.",
+       "exampleMeaning": "Here is your change."
+      },
+      {
+       "word": "recibo",
+       "romanization": "",
+       "meaning": "receipt",
+       "example": "Guarde el recibo, por favor.",
+       "exampleMeaning": "Keep the receipt, please."
+      },
+      {
+       "word": "tienda",
+       "romanization": "",
+       "meaning": "shop",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "carrito",
+       "romanization": "",
+       "meaning": "cart",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "cajero",
+       "romanization": "",
+       "meaning": "cashier",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "efectivo",
+       "romanization": "",
+       "meaning": "cash",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "devolver",
+       "romanization": "",
+       "meaning": "to return",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "probarse",
+       "romanization": "",
+       "meaning": "to try on",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "cola",
+       "romanization": "",
+       "meaning": "line, queue",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "marca",
+       "romanization": "",
+       "meaning": "brand",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "etiqueta",
+       "romanization": "",
+       "meaning": "tag, label",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "rebaja",
+       "romanization": "",
+       "meaning": "markdown",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "School",
+     "level": "A2",
+     "words": [
+      {
+       "word": "clase",
+       "romanization": "",
+       "meaning": "class",
+       "example": "La clase empieza a las ocho.",
+       "exampleMeaning": "Class starts at eight."
+      },
+      {
+       "word": "maestro",
+       "romanization": "",
+       "meaning": "teacher",
+       "example": "Mi maestro es muy paciente.",
+       "exampleMeaning": "My teacher is very patient."
+      },
+      {
+       "word": "estudiante",
+       "romanization": "",
+       "meaning": "student",
+       "example": "Ella es una buena estudiante.",
+       "exampleMeaning": "She is a good student."
+      },
+      {
+       "word": "libro",
+       "romanization": "",
+       "meaning": "book",
+       "example": "Leo un libro interesante.",
+       "exampleMeaning": "I am reading an interesting book."
+      },
+      {
+       "word": "cuaderno",
+       "romanization": "",
+       "meaning": "notebook",
+       "example": "Escribo en mi cuaderno.",
+       "exampleMeaning": "I write in my notebook."
+      },
+      {
+       "word": "lápiz",
+       "romanization": "",
+       "meaning": "pencil",
+       "example": "Necesito un lápiz.",
+       "exampleMeaning": "I need a pencil."
+      },
+      {
+       "word": "bolígrafo",
+       "romanization": "",
+       "meaning": "pen",
+       "example": "Este bolígrafo no escribe.",
+       "exampleMeaning": "This pen does not write."
+      },
+      {
+       "word": "examen",
+       "romanization": "",
+       "meaning": "exam",
+       "example": "Mañana tengo un examen.",
+       "exampleMeaning": "I have an exam tomorrow."
+      },
+      {
+       "word": "tarea",
+       "romanization": "",
+       "meaning": "homework",
+       "example": "Hago la tarea después de cenar.",
+       "exampleMeaning": "I do homework after dinner."
+      },
+      {
+       "word": "pizarra",
+       "romanization": "",
+       "meaning": "board",
+       "example": "El maestro escribe en la pizarra.",
+       "exampleMeaning": "The teacher writes on the board."
+      },
+      {
+       "word": "lección",
+       "romanization": "",
+       "meaning": "lesson",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "pregunta",
+       "romanization": "",
+       "meaning": "question",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "respuesta",
+       "romanization": "",
+       "meaning": "answer",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "nota",
+       "romanization": "",
+       "meaning": "grade, note",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "palabra",
+       "romanization": "",
+       "meaning": "word",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "frase",
+       "romanization": "",
+       "meaning": "sentence",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "idioma",
+       "romanization": "",
+       "meaning": "language",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "diccionario",
+       "romanization": "",
+       "meaning": "dictionary",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "mochila",
+       "romanization": "",
+       "meaning": "backpack",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "universidad",
+       "romanization": "",
+       "meaning": "university",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Jobs",
+     "level": "A2",
+     "words": [
+      {
+       "word": "médico",
+       "romanization": "",
+       "meaning": "doctor",
+       "example": "El médico habla con el paciente.",
+       "exampleMeaning": "The doctor talks to the patient."
+      },
+      {
+       "word": "enfermero",
+       "romanization": "",
+       "meaning": "nurse",
+       "example": "El enfermero es muy amable.",
+       "exampleMeaning": "The nurse is very kind."
+      },
+      {
+       "word": "abogado",
+       "romanization": "",
+       "meaning": "lawyer",
+       "example": "Mi tío es abogado.",
+       "exampleMeaning": "My uncle is a lawyer."
+      },
+      {
+       "word": "ingeniero",
+       "romanization": "",
+       "meaning": "engineer",
+       "example": "Mi padre es ingeniero.",
+       "exampleMeaning": "My father is an engineer."
+      },
+      {
+       "word": "cocinero",
+       "romanization": "",
+       "meaning": "cook",
+       "example": "El cocinero prepara la cena.",
+       "exampleMeaning": "The cook prepares dinner."
+      },
+      {
+       "word": "policía",
+       "romanization": "",
+       "meaning": "police officer",
+       "example": "El policía ayuda a la gente.",
+       "exampleMeaning": "The police officer helps people."
+      },
+      {
+       "word": "bombero",
+       "romanization": "",
+       "meaning": "firefighter",
+       "example": "El bombero apaga el fuego.",
+       "exampleMeaning": "The firefighter puts out the fire."
+      },
+      {
+       "word": "piloto",
+       "romanization": "",
+       "meaning": "pilot",
+       "example": "El piloto vuela a Chile.",
+       "exampleMeaning": "The pilot flies to Chile."
+      },
+      {
+       "word": "profesor",
+       "romanization": "",
+       "meaning": "professor",
+       "example": "El profesor explica la lección.",
+       "exampleMeaning": "The professor explains the lesson."
+      },
+      {
+       "word": "artista",
+       "romanization": "",
+       "meaning": "artist",
+       "example": "Ella es una artista famosa.",
+       "exampleMeaning": "She is a famous artist."
+      },
+      {
+       "word": "arquitecto",
+       "romanization": "",
+       "meaning": "architect",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "programador",
+       "romanization": "",
+       "meaning": "programmer",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "mecánico",
+       "romanization": "",
+       "meaning": "mechanic",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "peluquero",
+       "romanization": "",
+       "meaning": "hairdresser",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "granjero",
+       "romanization": "",
+       "meaning": "farmer",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "escritor",
+       "romanization": "",
+       "meaning": "writer",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "cantante",
+       "romanization": "",
+       "meaning": "singer",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "actor",
+       "romanization": "",
+       "meaning": "actor",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "vendedor",
+       "romanization": "",
+       "meaning": "salesperson",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "secretario",
+       "romanization": "",
+       "meaning": "secretary",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Feelings",
+     "level": "A2",
+     "words": [
+      {
+       "word": "amor",
+       "romanization": "",
+       "meaning": "love",
+       "example": "El amor es importante.",
+       "exampleMeaning": "Love is important."
+      },
+      {
+       "word": "miedo",
+       "romanization": "",
+       "meaning": "fear",
+       "example": "Tengo miedo de las arañas.",
+       "exampleMeaning": "I am afraid of spiders."
+      },
+      {
+       "word": "enojo",
+       "romanization": "",
+       "meaning": "anger",
+       "example": "Su enojo pasó rápido.",
+       "exampleMeaning": "His anger passed quickly."
+      },
+      {
+       "word": "sorpresa",
+       "romanization": "",
+       "meaning": "surprise",
+       "example": "¡Qué sorpresa verte aquí!",
+       "exampleMeaning": "What a surprise to see you here!"
+      },
+      {
+       "word": "sueño",
+       "romanization": "",
+       "meaning": "sleepiness, dream",
+       "example": "Tengo mucho sueño.",
+       "exampleMeaning": "I am very sleepy."
+      },
+      {
+       "word": "esperanza",
+       "romanization": "",
+       "meaning": "hope",
+       "example": "Tengo esperanza en el futuro.",
+       "exampleMeaning": "I have hope for the future."
+      },
+      {
+       "word": "orgullo",
+       "romanization": "",
+       "meaning": "pride",
+       "example": "Siento orgullo por mi hijo.",
+       "exampleMeaning": "I feel pride in my son."
+      },
+      {
+       "word": "vergüenza",
+       "romanization": "",
+       "meaning": "shame, embarrassment",
+       "example": "Me da vergüenza hablar.",
+       "exampleMeaning": "I feel embarrassed to speak."
+      },
+      {
+       "word": "preocupación",
+       "romanization": "",
+       "meaning": "worry",
+       "example": "Su preocupación es normal.",
+       "exampleMeaning": "Her worry is normal."
+      },
+      {
+       "word": "emoción",
+       "romanization": "",
+       "meaning": "excitement",
+       "example": "Siento mucha emoción.",
+       "exampleMeaning": "I feel great excitement."
+      },
+      {
+       "word": "contento",
+       "romanization": "",
+       "meaning": "glad",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "nervioso",
+       "romanization": "",
+       "meaning": "nervous",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "tranquilo",
+       "romanization": "",
+       "meaning": "calm",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "aburrido",
+       "romanization": "",
+       "meaning": "bored",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "enojado",
+       "romanization": "",
+       "meaning": "angry",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "asustado",
+       "romanization": "",
+       "meaning": "scared",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "solo",
+       "romanization": "",
+       "meaning": "alone",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "sorprendido",
+       "romanization": "",
+       "meaning": "surprised",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "celoso",
+       "romanization": "",
+       "meaning": "jealous",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "confundido",
+       "romanization": "",
+       "meaning": "confused",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Time and Routine",
+     "level": "A2",
+     "words": [
+      {
+       "word": "hora",
+       "romanization": "",
+       "meaning": "hour, time of day",
+       "example": "¿Qué hora es?",
+       "exampleMeaning": "What time is it?"
+      },
+      {
+       "word": "minuto",
+       "romanization": "",
+       "meaning": "minute",
+       "example": "Espera un minuto.",
+       "exampleMeaning": "Wait a minute."
+      },
+      {
+       "word": "segundo",
+       "romanization": "",
+       "meaning": "second",
+       "example": "Solo un segundo, por favor.",
+       "exampleMeaning": "Just a second, please."
+      },
+      {
+       "word": "mañana",
+       "romanization": "",
+       "meaning": "morning, tomorrow",
+       "example": "Estudio por la mañana.",
+       "exampleMeaning": "I study in the morning."
+      },
+      {
+       "word": "tarde",
+       "romanization": "",
+       "meaning": "afternoon, late",
+       "example": "Trabajo por la tarde.",
+       "exampleMeaning": "I work in the afternoon."
+      },
+      {
+       "word": "noche",
+       "romanization": "",
+       "meaning": "night",
+       "example": "Buenas noches, hasta mañana.",
+       "exampleMeaning": "Good night, see you tomorrow."
+      },
+      {
+       "word": "temprano",
+       "romanization": "",
+       "meaning": "early",
+       "example": "Me levanto temprano.",
+       "exampleMeaning": "I get up early."
+      },
+      {
+       "word": "siempre",
+       "romanization": "",
+       "meaning": "always",
+       "example": "Siempre desayuno en casa.",
+       "exampleMeaning": "I always have breakfast at home."
+      },
+      {
+       "word": "nunca",
+       "romanization": "",
+       "meaning": "never",
+       "example": "Nunca llego tarde.",
+       "exampleMeaning": "I never arrive late."
+      },
+      {
+       "word": "a veces",
+       "romanization": "",
+       "meaning": "sometimes",
+       "example": "A veces camino al trabajo.",
+       "exampleMeaning": "Sometimes I walk to work."
+      },
+      {
+       "word": "despertarse",
+       "romanization": "",
+       "meaning": "to wake up",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "levantarse",
+       "romanization": "",
+       "meaning": "to get up",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "ducharse",
+       "romanization": "",
+       "meaning": "to shower",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "desayunar",
+       "romanization": "",
+       "meaning": "to have breakfast",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "almorzar",
+       "romanization": "",
+       "meaning": "to have lunch",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "cenar",
+       "romanization": "",
+       "meaning": "to have dinner",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "septiembre",
+       "romanization": "",
+       "meaning": "September",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "octubre",
+       "romanization": "",
+       "meaning": "October",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "noviembre",
+       "romanization": "",
+       "meaning": "November",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "diciembre",
+       "romanization": "",
+       "meaning": "December",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Korean",
+   "stages": [
+    {
+     "title": "Fruits",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "바나나",
+       "romanization": "banana",
+       "meaning": "banana",
+       "example": "아침에 바나나를 먹어요.",
+       "exampleMeaning": "I eat a banana in the morning."
+      },
+      {
+       "word": "딸기",
+       "romanization": "ttalgi",
+       "meaning": "strawberry",
+       "example": "딸기를 좋아해요.",
+       "exampleMeaning": "I like strawberries."
+      },
+      {
+       "word": "포도",
+       "romanization": "podo",
+       "meaning": "grape",
+       "example": "포도가 달아요.",
+       "exampleMeaning": "The grapes are sweet."
+      },
+      {
+       "word": "레몬",
+       "romanization": "remon",
+       "meaning": "lemon",
+       "example": "차에 레몬을 넣어요.",
+       "exampleMeaning": "I put lemon in my tea."
+      },
+      {
+       "word": "배",
+       "romanization": "bae",
+       "meaning": "pear",
+       "example": "이 배는 맛있어요.",
+       "exampleMeaning": "This pear is delicious."
+      },
+      {
+       "word": "파인애플",
+       "romanization": "paineaepeul",
+       "meaning": "pineapple",
+       "example": "파인애플은 아주 달아요.",
+       "exampleMeaning": "Pineapple is very sweet."
+      },
+      {
+       "word": "수박",
+       "romanization": "subak",
+       "meaning": "watermelon",
+       "example": "여름에는 수박을 먹어요.",
+       "exampleMeaning": "We eat watermelon in summer."
+      },
+      {
+       "word": "멜론",
+       "romanization": "mellon",
+       "meaning": "melon",
+       "example": "멜론이 시원해요.",
+       "exampleMeaning": "The melon is cool."
+      },
+      {
+       "word": "체리",
+       "romanization": "cheri",
+       "meaning": "cherry",
+       "example": "케이크에 체리가 있어요.",
+       "exampleMeaning": "There is a cherry on the cake."
+      },
+      {
+       "word": "복숭아",
+       "romanization": "boksunga",
+       "meaning": "peach",
+       "example": "복숭아를 사고 싶어요.",
+       "exampleMeaning": "I want to buy peaches."
+      },
+      {
+       "word": "귤",
+       "romanization": "gyul",
+       "meaning": "tangerine",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "망고",
+       "romanization": "manggo",
+       "meaning": "mango",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "코코넛",
+       "romanization": "kokoneot",
+       "meaning": "coconut",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "키위",
+       "romanization": "kiwi",
+       "meaning": "kiwi",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "아보카도",
+       "romanization": "abokado",
+       "meaning": "avocado",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "과일",
+       "romanization": "gwail",
+       "meaning": "fruit",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "씨",
+       "romanization": "ssi",
+       "meaning": "seed",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "과즙",
+       "romanization": "gwajeup",
+       "meaning": "fruit juice",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "익다",
+       "romanization": "ikda",
+       "meaning": "to be ripe",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "달다",
+       "romanization": "dalda",
+       "meaning": "to be sweet",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Vegetables and Meat",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "채소",
+       "romanization": "chaeso",
+       "meaning": "vegetables",
+       "example": "매일 채소를 먹어요.",
+       "exampleMeaning": "I eat vegetables every day."
+      },
+      {
+       "word": "토마토",
+       "romanization": "tomato",
+       "meaning": "tomato",
+       "example": "샐러드에 토마토가 있어요.",
+       "exampleMeaning": "There are tomatoes in the salad."
+      },
+      {
+       "word": "양파",
+       "romanization": "yangpa",
+       "meaning": "onion",
+       "example": "양파를 썰어요.",
+       "exampleMeaning": "I cut an onion."
+      },
+      {
+       "word": "마늘",
+       "romanization": "maneul",
+       "meaning": "garlic",
+       "example": "저는 마늘을 좋아해요.",
+       "exampleMeaning": "I like garlic."
+      },
+      {
+       "word": "감자",
+       "romanization": "gamja",
+       "meaning": "potato",
+       "example": "감자를 삶아요.",
+       "exampleMeaning": "I boil potatoes."
+      },
+      {
+       "word": "당근",
+       "romanization": "danggeun",
+       "meaning": "carrot",
+       "example": "토끼는 당근을 먹어요.",
+       "exampleMeaning": "Rabbits eat carrots."
+      },
+      {
+       "word": "상추",
+       "romanization": "sangchu",
+       "meaning": "lettuce",
+       "example": "상추에 고기를 싸요.",
+       "exampleMeaning": "I wrap meat in lettuce."
+      },
+      {
+       "word": "옥수수",
+       "romanization": "oksusu",
+       "meaning": "corn",
+       "example": "옥수수는 노란색이에요.",
+       "exampleMeaning": "Corn is yellow."
+      },
+      {
+       "word": "고기",
+       "romanization": "gogi",
+       "meaning": "meat",
+       "example": "고기를 많이 안 먹어요.",
+       "exampleMeaning": "I do not eat much meat."
+      },
+      {
+       "word": "닭고기",
+       "romanization": "dakgogi",
+       "meaning": "chicken (food)",
+       "example": "오늘 저녁은 닭고기예요.",
+       "exampleMeaning": "Tonight's dinner is chicken."
+      },
+      {
+       "word": "생선",
+       "romanization": "saengseon",
+       "meaning": "fish (food)",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "햄",
+       "romanization": "haem",
+       "meaning": "ham",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "달걀",
+       "romanization": "dalgyal",
+       "meaning": "egg",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "치즈",
+       "romanization": "chijeu",
+       "meaning": "cheese",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "쌀",
+       "romanization": "ssal",
+       "meaning": "rice (uncooked)",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "국",
+       "romanization": "guk",
+       "meaning": "soup",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "샐러드",
+       "romanization": "saelleodeu",
+       "meaning": "salad",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "콩",
+       "romanization": "kong",
+       "meaning": "beans",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "버터",
+       "romanization": "beoteo",
+       "meaning": "butter",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "소금",
+       "romanization": "sogeum",
+       "meaning": "salt",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "At the Restaurant",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "식당",
+       "romanization": "sikdang",
+       "meaning": "restaurant",
+       "example": "식당에서 저녁을 먹어요.",
+       "exampleMeaning": "We eat dinner at a restaurant."
+      },
+      {
+       "word": "메뉴",
+       "romanization": "menyu",
+       "meaning": "menu",
+       "example": "메뉴를 보여 주세요.",
+       "exampleMeaning": "Please show me the menu."
+      },
+      {
+       "word": "종업원",
+       "romanization": "jongeobwon",
+       "meaning": "waiter",
+       "example": "종업원이 음식을 가져와요.",
+       "exampleMeaning": "The waiter brings the food."
+      },
+      {
+       "word": "팁",
+       "romanization": "tip",
+       "meaning": "tip",
+       "example": "팁을 조금 놓았어요.",
+       "exampleMeaning": "I left a small tip."
+      },
+      {
+       "word": "접시",
+       "romanization": "jeopsi",
+       "meaning": "plate",
+       "example": "접시가 더 필요해요.",
+       "exampleMeaning": "I need more plates."
+      },
+      {
+       "word": "컵",
+       "romanization": "keop",
+       "meaning": "cup, glass",
+       "example": "컵을 하나 더 주세요.",
+       "exampleMeaning": "Please give me one more cup."
+      },
+      {
+       "word": "숟가락",
+       "romanization": "sutgarak",
+       "meaning": "spoon",
+       "example": "숟가락으로 국을 먹어요.",
+       "exampleMeaning": "I eat soup with a spoon."
+      },
+      {
+       "word": "젓가락",
+       "romanization": "jeotgarak",
+       "meaning": "chopsticks",
+       "example": "젓가락이 없어요.",
+       "exampleMeaning": "There are no chopsticks."
+      },
+      {
+       "word": "포크",
+       "romanization": "pokeu",
+       "meaning": "fork",
+       "example": "포크를 주세요.",
+       "exampleMeaning": "Please give me a fork."
+      },
+      {
+       "word": "칼",
+       "romanization": "kal",
+       "meaning": "knife",
+       "example": "칼이 잘 들어요.",
+       "exampleMeaning": "The knife cuts well."
+      },
+      {
+       "word": "아침",
+       "romanization": "achim",
+       "meaning": "breakfast, morning",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "점심",
+       "romanization": "jeomsim",
+       "meaning": "lunch",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "저녁",
+       "romanization": "jeonyeok",
+       "meaning": "dinner, evening",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "디저트",
+       "romanization": "dijeoteu",
+       "meaning": "dessert",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "음료",
+       "romanization": "eumnyo",
+       "meaning": "drink",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "예약",
+       "romanization": "yeyak",
+       "meaning": "reservation",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "배고프다",
+       "romanization": "baegopeuda",
+       "meaning": "to be hungry",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "목마르다",
+       "romanization": "mongmareuda",
+       "meaning": "to be thirsty",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "맛있다",
+       "romanization": "masitda",
+       "meaning": "to be delicious",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "맵다",
+       "romanization": "maepda",
+       "meaning": "to be spicy",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "In the City",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "거리",
+       "romanization": "geori",
+       "meaning": "street",
+       "example": "이 거리에 살아요.",
+       "exampleMeaning": "I live on this street."
+      },
+      {
+       "word": "광장",
+       "romanization": "gwangjang",
+       "meaning": "square",
+       "example": "광장에서 만나요.",
+       "exampleMeaning": "Let's meet in the square."
+      },
+      {
+       "word": "공원",
+       "romanization": "gongwon",
+       "meaning": "park",
+       "example": "아이들이 공원에서 놀아요.",
+       "exampleMeaning": "The children play in the park."
+      },
+      {
+       "word": "은행",
+       "romanization": "eunhaeng",
+       "meaning": "bank",
+       "example": "은행은 아홉 시에 열어요.",
+       "exampleMeaning": "The bank opens at nine."
+      },
+      {
+       "word": "병원",
+       "romanization": "byeongwon",
+       "meaning": "hospital",
+       "example": "병원이 멀어요.",
+       "exampleMeaning": "The hospital is far."
+      },
+      {
+       "word": "학교",
+       "romanization": "hakgyo",
+       "meaning": "school",
+       "example": "우리 학교는 커요.",
+       "exampleMeaning": "Our school is big."
+      },
+      {
+       "word": "교회",
+       "romanization": "gyohoe",
+       "meaning": "church",
+       "example": "교회가 아주 오래됐어요.",
+       "exampleMeaning": "The church is very old."
+      },
+      {
+       "word": "박물관",
+       "romanization": "bangmulgwan",
+       "meaning": "museum",
+       "example": "오늘 박물관에 가요.",
+       "exampleMeaning": "We go to the museum today."
+      },
+      {
+       "word": "시장",
+       "romanization": "sijang",
+       "meaning": "market",
+       "example": "시장에서 과일을 사요.",
+       "exampleMeaning": "I buy fruit at the market."
+      },
+      {
+       "word": "약국",
+       "romanization": "yakguk",
+       "meaning": "pharmacy",
+       "example": "약국이 문을 닫았어요.",
+       "exampleMeaning": "The pharmacy is closed."
+      },
+      {
+       "word": "건물",
+       "romanization": "geonmul",
+       "meaning": "building",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "대로",
+       "romanization": "daero",
+       "meaning": "avenue",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "모퉁이",
+       "romanization": "motungi",
+       "meaning": "corner",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "신호등",
+       "romanization": "sinhodeung",
+       "meaning": "traffic light",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "도서관",
+       "romanization": "doseogwan",
+       "meaning": "library",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "사무실",
+       "romanization": "samusil",
+       "meaning": "office",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "빵집",
+       "romanization": "ppangjip",
+       "meaning": "bakery",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "마트",
+       "romanization": "mateu",
+       "meaning": "supermarket",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "우체국",
+       "romanization": "ucheguk",
+       "meaning": "post office",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "역",
+       "romanization": "yeok",
+       "meaning": "station",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Transport",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "자동차",
+       "romanization": "jadongcha",
+       "meaning": "car",
+       "example": "제 자동차는 새것이에요.",
+       "exampleMeaning": "My car is new."
+      },
+      {
+       "word": "자전거",
+       "romanization": "jajeongeo",
+       "meaning": "bicycle",
+       "example": "자전거로 출근해요.",
+       "exampleMeaning": "I go to work by bicycle."
+      },
+      {
+       "word": "오토바이",
+       "romanization": "otobai",
+       "meaning": "motorcycle",
+       "example": "그는 검은 오토바이가 있어요.",
+       "exampleMeaning": "He has a black motorcycle."
+      },
+      {
+       "word": "보트",
+       "romanization": "boteu",
+       "meaning": "boat",
+       "example": "보트가 열 시에 출발해요.",
+       "exampleMeaning": "The boat leaves at ten."
+      },
+      {
+       "word": "택시",
+       "romanization": "taeksi",
+       "meaning": "taxi",
+       "example": "택시가 필요해요.",
+       "exampleMeaning": "I need a taxi."
+      },
+      {
+       "word": "버스",
+       "romanization": "beoseu",
+       "meaning": "bus",
+       "example": "버스를 타요.",
+       "exampleMeaning": "I take the bus."
+      },
+      {
+       "word": "트럭",
+       "romanization": "teureok",
+       "meaning": "truck",
+       "example": "트럭이 아주 커요.",
+       "exampleMeaning": "The truck is very big."
+      },
+      {
+       "word": "고속도로",
+       "romanization": "gosokdoro",
+       "meaning": "highway",
+       "example": "고속도로가 막혀요.",
+       "exampleMeaning": "The highway is jammed."
+      },
+      {
+       "word": "정류장",
+       "romanization": "jeongnyujang",
+       "meaning": "bus stop",
+       "example": "정류장이 가까워요.",
+       "exampleMeaning": "The bus stop is near."
+      },
+      {
+       "word": "운전사",
+       "romanization": "unjeonsa",
+       "meaning": "driver",
+       "example": "운전사가 친절해요.",
+       "exampleMeaning": "The driver is kind."
+      },
+      {
+       "word": "승객",
+       "romanization": "seunggaek",
+       "meaning": "passenger",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "교통",
+       "romanization": "gyotong",
+       "meaning": "traffic",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "휘발유",
+       "romanization": "hwibaryu",
+       "meaning": "gasoline",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "타이어",
+       "romanization": "taieo",
+       "meaning": "tire",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "속도",
+       "romanization": "sokdo",
+       "meaning": "speed",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "엔진",
+       "romanization": "enjin",
+       "meaning": "engine",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "여행",
+       "romanization": "yeohaeng",
+       "meaning": "trip",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "멀다",
+       "romanization": "meolda",
+       "meaning": "to be far",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "가깝다",
+       "romanization": "gakkapda",
+       "meaning": "to be near",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "티켓",
+       "romanization": "tiket",
+       "meaning": "ticket",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Shopping",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "팔다",
+       "romanization": "palda",
+       "meaning": "to sell",
+       "example": "그 가게는 과일을 팔아요.",
+       "exampleMeaning": "That shop sells fruit."
+      },
+      {
+       "word": "계산하다",
+       "romanization": "gyesanhada",
+       "meaning": "to pay, to check out",
+       "example": "카드로 계산할게요.",
+       "exampleMeaning": "I will pay by card."
+      },
+      {
+       "word": "깎다",
+       "romanization": "kkakda",
+       "meaning": "to haggle, to cut the price",
+       "example": "값을 좀 깎아 주세요.",
+       "exampleMeaning": "Please lower the price a bit."
+      },
+      {
+       "word": "할인",
+       "romanization": "harin",
+       "meaning": "discount",
+       "example": "오늘 할인이 있어요.",
+       "exampleMeaning": "There is a discount today."
+      },
+      {
+       "word": "세일",
+       "romanization": "seil",
+       "meaning": "sale",
+       "example": "이 옷은 세일 중이에요.",
+       "exampleMeaning": "This clothing is on sale."
+      },
+      {
+       "word": "사이즈",
+       "romanization": "saijeu",
+       "meaning": "size",
+       "example": "사이즈가 어떻게 되세요?",
+       "exampleMeaning": "What size are you?"
+      },
+      {
+       "word": "거스름돈",
+       "romanization": "geoseureumdon",
+       "meaning": "change (money)",
+       "example": "여기 거스름돈이에요.",
+       "exampleMeaning": "Here is your change."
+      },
+      {
+       "word": "영수증",
+       "romanization": "yeongsujeung",
+       "meaning": "receipt",
+       "example": "영수증을 주세요.",
+       "exampleMeaning": "Please give me the receipt."
+      },
+      {
+       "word": "환불",
+       "romanization": "hwanbul",
+       "meaning": "refund",
+       "example": "환불하고 싶어요.",
+       "exampleMeaning": "I would like a refund."
+      },
+      {
+       "word": "포장",
+       "romanization": "pojang",
+       "meaning": "wrapping, packaging",
+       "example": "선물 포장해 주세요.",
+       "exampleMeaning": "Please gift-wrap it."
+      },
+      {
+       "word": "상점",
+       "romanization": "sangjeom",
+       "meaning": "shop",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "카트",
+       "romanization": "kateu",
+       "meaning": "cart",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "점원",
+       "romanization": "jeomwon",
+       "meaning": "clerk",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "현금",
+       "romanization": "hyeongeum",
+       "meaning": "cash",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "반품",
+       "romanization": "banpum",
+       "meaning": "return (of goods)",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "입어 보다",
+       "romanization": "ibeo boda",
+       "meaning": "to try on",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "줄",
+       "romanization": "jul",
+       "meaning": "line, queue",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "브랜드",
+       "romanization": "beurendeu",
+       "meaning": "brand",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "가격표",
+       "romanization": "gagyeokpyo",
+       "meaning": "price tag",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "쇼핑",
+       "romanization": "syoping",
+       "meaning": "shopping",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "School",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "수업",
+       "romanization": "sueop",
+       "meaning": "class, lesson",
+       "example": "수업은 여덟 시에 시작해요.",
+       "exampleMeaning": "Class starts at eight."
+      },
+      {
+       "word": "선생님",
+       "romanization": "seonsaengnim",
+       "meaning": "teacher",
+       "example": "선생님이 아주 친절해요.",
+       "exampleMeaning": "The teacher is very kind."
+      },
+      {
+       "word": "학생",
+       "romanization": "haksaeng",
+       "meaning": "student",
+       "example": "그는 좋은 학생이에요.",
+       "exampleMeaning": "He is a good student."
+      },
+      {
+       "word": "책",
+       "romanization": "chaek",
+       "meaning": "book",
+       "example": "재미있는 책을 읽어요.",
+       "exampleMeaning": "I read an interesting book."
+      },
+      {
+       "word": "공책",
+       "romanization": "gongchaek",
+       "meaning": "notebook",
+       "example": "공책에 써요.",
+       "exampleMeaning": "I write in my notebook."
+      },
+      {
+       "word": "연필",
+       "romanization": "yeonpil",
+       "meaning": "pencil",
+       "example": "연필이 필요해요.",
+       "exampleMeaning": "I need a pencil."
+      },
+      {
+       "word": "볼펜",
+       "romanization": "bolpen",
+       "meaning": "pen",
+       "example": "이 볼펜은 안 써져요.",
+       "exampleMeaning": "This pen does not write."
+      },
+      {
+       "word": "시험",
+       "romanization": "siheom",
+       "meaning": "exam",
+       "example": "내일 시험이 있어요.",
+       "exampleMeaning": "I have an exam tomorrow."
+      },
+      {
+       "word": "숙제",
+       "romanization": "sukje",
+       "meaning": "homework",
+       "example": "저녁 먹고 숙제를 해요.",
+       "exampleMeaning": "I do homework after dinner."
+      },
+      {
+       "word": "칠판",
+       "romanization": "chilpan",
+       "meaning": "blackboard",
+       "example": "선생님이 칠판에 써요.",
+       "exampleMeaning": "The teacher writes on the blackboard."
+      },
+      {
+       "word": "질문",
+       "romanization": "jilmun",
+       "meaning": "question",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "대답",
+       "romanization": "daedap",
+       "meaning": "answer",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "성적",
+       "romanization": "seongjeok",
+       "meaning": "grade",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "단어",
+       "romanization": "daneo",
+       "meaning": "word",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "문장",
+       "romanization": "munjang",
+       "meaning": "sentence",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "언어",
+       "romanization": "eoneo",
+       "meaning": "language",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "사전",
+       "romanization": "sajeon",
+       "meaning": "dictionary",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "책가방",
+       "romanization": "chaekgabang",
+       "meaning": "school bag",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "대학교",
+       "romanization": "daehakgyo",
+       "meaning": "university",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "교실",
+       "romanization": "gyosil",
+       "meaning": "classroom",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Jobs",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "의사",
+       "romanization": "uisa",
+       "meaning": "doctor",
+       "example": "의사가 환자와 이야기해요.",
+       "exampleMeaning": "The doctor talks with the patient."
+      },
+      {
+       "word": "간호사",
+       "romanization": "ganhosa",
+       "meaning": "nurse",
+       "example": "간호사가 친절해요.",
+       "exampleMeaning": "The nurse is kind."
+      },
+      {
+       "word": "변호사",
+       "romanization": "byeonhosa",
+       "meaning": "lawyer",
+       "example": "삼촌은 변호사예요.",
+       "exampleMeaning": "My uncle is a lawyer."
+      },
+      {
+       "word": "엔지니어",
+       "romanization": "enjinieo",
+       "meaning": "engineer",
+       "example": "아버지는 엔지니어예요.",
+       "exampleMeaning": "My father is an engineer."
+      },
+      {
+       "word": "요리사",
+       "romanization": "yorisa",
+       "meaning": "cook",
+       "example": "요리사가 저녁을 준비해요.",
+       "exampleMeaning": "The cook prepares dinner."
+      },
+      {
+       "word": "경찰관",
+       "romanization": "gyeongchalgwan",
+       "meaning": "police officer",
+       "example": "경찰관이 사람들을 도와요.",
+       "exampleMeaning": "The police officer helps people."
+      },
+      {
+       "word": "소방관",
+       "romanization": "sobanggwan",
+       "meaning": "firefighter",
+       "example": "소방관이 불을 꺼요.",
+       "exampleMeaning": "The firefighter puts out the fire."
+      },
+      {
+       "word": "조종사",
+       "romanization": "jojongsa",
+       "meaning": "pilot",
+       "example": "조종사가 비행기를 몰아요.",
+       "exampleMeaning": "The pilot flies the plane."
+      },
+      {
+       "word": "교수",
+       "romanization": "gyosu",
+       "meaning": "professor",
+       "example": "교수님이 수업을 설명해요.",
+       "exampleMeaning": "The professor explains the lesson."
+      },
+      {
+       "word": "예술가",
+       "romanization": "yesulga",
+       "meaning": "artist",
+       "example": "그녀는 유명한 예술가예요.",
+       "exampleMeaning": "She is a famous artist."
+      },
+      {
+       "word": "건축가",
+       "romanization": "geonchukga",
+       "meaning": "architect",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "프로그래머",
+       "romanization": "peurogeuraemeo",
+       "meaning": "programmer",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "정비사",
+       "romanization": "jeongbisa",
+       "meaning": "mechanic",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "미용사",
+       "romanization": "miyongsa",
+       "meaning": "hairdresser",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "농부",
+       "romanization": "nongbu",
+       "meaning": "farmer",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "작가",
+       "romanization": "jakga",
+       "meaning": "writer",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "가수",
+       "romanization": "gasu",
+       "meaning": "singer",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "배우",
+       "romanization": "baeu",
+       "meaning": "actor",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "판매원",
+       "romanization": "panmaewon",
+       "meaning": "salesperson",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "비서",
+       "romanization": "biseo",
+       "meaning": "secretary",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Feelings",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "사랑",
+       "romanization": "sarang",
+       "meaning": "love",
+       "example": "사랑은 중요해요.",
+       "exampleMeaning": "Love is important."
+      },
+      {
+       "word": "두려움",
+       "romanization": "duryeoum",
+       "meaning": "fear",
+       "example": "저는 두려움을 느꼈어요.",
+       "exampleMeaning": "I felt fear."
+      },
+      {
+       "word": "화",
+       "romanization": "hwa",
+       "meaning": "anger",
+       "example": "화가 났어요.",
+       "exampleMeaning": "I got angry."
+      },
+      {
+       "word": "놀람",
+       "romanization": "nollam",
+       "meaning": "surprise",
+       "example": "놀람으로 말이 안 나왔어요.",
+       "exampleMeaning": "I was speechless from surprise."
+      },
+      {
+       "word": "졸림",
+       "romanization": "jollim",
+       "meaning": "sleepiness",
+       "example": "졸림이 심해요.",
+       "exampleMeaning": "My sleepiness is severe."
+      },
+      {
+       "word": "희망",
+       "romanization": "huimang",
+       "meaning": "hope",
+       "example": "저는 미래에 희망이 있어요.",
+       "exampleMeaning": "I have hope for the future."
+      },
+      {
+       "word": "자랑스러움",
+       "romanization": "jarangseureoum",
+       "meaning": "pride",
+       "example": "자랑스러움을 느껴요.",
+       "exampleMeaning": "I feel proud."
+      },
+      {
+       "word": "부끄러움",
+       "romanization": "bukkeureoum",
+       "meaning": "embarrassment",
+       "example": "부끄러움 때문에 말을 못 했어요.",
+       "exampleMeaning": "I could not speak because of embarrassment."
+      },
+      {
+       "word": "걱정",
+       "romanization": "geokjeong",
+       "meaning": "worry",
+       "example": "걱정이 많아요.",
+       "exampleMeaning": "I have many worries."
+      },
+      {
+       "word": "설렘",
+       "romanization": "seollem",
+       "meaning": "excitement",
+       "example": "설렘으로 잠이 안 와요.",
+       "exampleMeaning": "I cannot sleep from excitement."
+      },
+      {
+       "word": "기쁘다",
+       "romanization": "gippeuda",
+       "meaning": "to be glad",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "긴장하다",
+       "romanization": "ginjanghada",
+       "meaning": "to be nervous",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "편안하다",
+       "romanization": "pyeonanhada",
+       "meaning": "to be calm",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "지루하다",
+       "romanization": "jiruhada",
+       "meaning": "to be bored",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "화나다",
+       "romanization": "hwanada",
+       "meaning": "to get angry",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "무섭다",
+       "romanization": "museopda",
+       "meaning": "to be scary, to be afraid",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "외롭다",
+       "romanization": "oeropda",
+       "meaning": "to be lonely",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "놀라다",
+       "romanization": "nollada",
+       "meaning": "to be surprised",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "질투하다",
+       "romanization": "jiltuhada",
+       "meaning": "to be jealous",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "헷갈리다",
+       "romanization": "hetgallida",
+       "meaning": "to be confused",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    },
+    {
+     "title": "Time and Routine",
+     "level": "Level 1",
+     "words": [
+      {
+       "word": "시간",
+       "romanization": "sigan",
+       "meaning": "time",
+       "example": "시간이 없어요.",
+       "exampleMeaning": "I do not have time."
+      },
+      {
+       "word": "분",
+       "romanization": "bun",
+       "meaning": "minute",
+       "example": "오 분만 기다리세요.",
+       "exampleMeaning": "Please wait five minutes."
+      },
+      {
+       "word": "초",
+       "romanization": "cho",
+       "meaning": "second",
+       "example": "몇 초만 주세요.",
+       "exampleMeaning": "Please give me a few seconds."
+      },
+      {
+       "word": "오전",
+       "romanization": "ojeon",
+       "meaning": "morning (a.m.)",
+       "example": "오전에 공부해요.",
+       "exampleMeaning": "I study in the morning."
+      },
+      {
+       "word": "오후",
+       "romanization": "ohu",
+       "meaning": "afternoon (p.m.)",
+       "example": "오후에 일해요.",
+       "exampleMeaning": "I work in the afternoon."
+      },
+      {
+       "word": "밤",
+       "romanization": "bam",
+       "meaning": "night",
+       "example": "밤에 잘 자요.",
+       "exampleMeaning": "I sleep well at night."
+      },
+      {
+       "word": "일찍",
+       "romanization": "iljjik",
+       "meaning": "early",
+       "example": "일찍 일어나요.",
+       "exampleMeaning": "I get up early."
+      },
+      {
+       "word": "늦게",
+       "romanization": "neutge",
+       "meaning": "late",
+       "example": "늦게 도착했어요.",
+       "exampleMeaning": "I arrived late."
+      },
+      {
+       "word": "항상",
+       "romanization": "hangsang",
+       "meaning": "always",
+       "example": "항상 집에서 아침을 먹어요.",
+       "exampleMeaning": "I always have breakfast at home."
+      },
+      {
+       "word": "가끔",
+       "romanization": "gakkeum",
+       "meaning": "sometimes",
+       "example": "가끔 걸어서 출근해요.",
+       "exampleMeaning": "Sometimes I walk to work."
+      },
+      {
+       "word": "절대",
+       "romanization": "jeoldae",
+       "meaning": "never (with a negative)",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "일어나다",
+       "romanization": "ireonada",
+       "meaning": "to get up",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "씻다",
+       "romanization": "ssitda",
+       "meaning": "to wash",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "샤워하다",
+       "romanization": "syawohada",
+       "meaning": "to shower",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "출근하다",
+       "romanization": "chulgeunhada",
+       "meaning": "to go to work",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "퇴근하다",
+       "romanization": "toegeunhada",
+       "meaning": "to leave work",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "구월",
+       "romanization": "guwol",
+       "meaning": "September",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "시월",
+       "romanization": "siwol",
+       "meaning": "October",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "십일월",
+       "romanization": "sibirwol",
+       "meaning": "November",
+       "example": "",
+       "exampleMeaning": ""
+      },
+      {
+       "word": "십이월",
+       "romanization": "sibiwol",
+       "meaning": "December",
+       "example": "",
+       "exampleMeaning": ""
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
