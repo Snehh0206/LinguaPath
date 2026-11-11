@@ -83,6 +83,7 @@ public class QuizActivity extends AppCompatActivity {
         }
 
         binding.buttonNext.setOnClickListener(v -> next());
+        binding.buttonCheck.setOnClickListener(v -> checkBuild());
         binding.buttonListen.setOnClickListener(v -> {
             if (speech != null) {
                 speech.speak(current().speakText, language);
@@ -155,8 +156,10 @@ public class QuizActivity extends AppCompatActivity {
         Motion.animateProgress(binding.progressQuiz, viewModel.index, total);
 
         boolean listen = q.type == QuizQuestion.TYPE_LISTEN;
+        boolean build = q.type == QuizQuestion.TYPE_BUILD;
         int typeText = (q.type == QuizQuestion.TYPE_WORD) ? R.string.quiz_type_word
-                : listen ? R.string.quiz_type_listen : R.string.quiz_type_meaning;
+                : listen ? R.string.quiz_type_listen
+                : build ? R.string.quiz_type_build : R.string.quiz_type_meaning;
         binding.textQuestionType.setText(typeText);
 
         // Listening: the word stays hidden until answered, or until "Show the word" is tapped
@@ -171,7 +174,7 @@ public class QuizActivity extends AppCompatActivity {
                 (q.promptSub.isEmpty() || hideWord) ? View.GONE : View.VISIBLE);
 
         for (int i = 0; i < optionViews.length; i++) {
-            if (i < q.options.size()) {
+            if (!build && i < q.options.size()) {
                 optionViews[i].setVisibility(View.VISIBLE);
                 optionViews[i].setText(q.options.get(i));
                 optionViews[i].setBackgroundResource(R.drawable.bg_word_card);
@@ -182,6 +185,12 @@ public class QuizActivity extends AppCompatActivity {
         }
         binding.textFeedback.setText("");
         binding.buttonNext.setVisibility(View.GONE);
+
+        binding.textPrompt.setTextSize(build ? 20 : 32);
+        binding.groupBuild.setVisibility(build ? View.VISIBLE : View.GONE);
+        if (build) {
+            renderBuild(q);
+        }
 
         if (viewModel.selected != -1) {
             applyFeedback(q); // for example after a rotation: show the answer again
@@ -207,6 +216,10 @@ public class QuizActivity extends AppCompatActivity {
 
     // Green for the right answer, red for a wrong pick
     private void applyFeedback(QuizQuestion q) {
+        if (q.type == QuizQuestion.TYPE_BUILD) {
+            applyBuildFeedback(q);
+            return;
+        }
         binding.textPrompt.setVisibility(View.VISIBLE);
         binding.buttonShowWord.setVisibility(View.GONE);
         binding.textPromptSub.setVisibility(q.promptSub.isEmpty() ? View.GONE : View.VISIBLE);
@@ -238,7 +251,92 @@ public class QuizActivity extends AppCompatActivity {
         viewModel.index++;
         viewModel.revealed = false;
         viewModel.selected = -1;
+        viewModel.buildPlaced.clear();
         showQuestion(true);
+    }
+
+    // ---- Build the sentence ----
+
+    // Draws the answer area and the word bank from the saved state (so a rotation keeps everything)
+    private void renderBuild(QuizQuestion q) {
+        boolean answered = viewModel.selected != -1;
+        binding.flowAnswer.removeAllViews();
+        binding.flowBank.removeAllViews();
+        binding.flowAnswer.setBackgroundResource(R.drawable.bg_word_card);
+
+        for (int index : viewModel.buildPlaced) {
+            binding.flowAnswer.addView(makeBlock(q.options.get(index), R.drawable.bg_card_sky, () -> {
+                if (viewModel.selected == -1) {
+                    viewModel.buildPlaced.remove(Integer.valueOf(index)); // back to the bank
+                    renderBuild(q);
+                }
+            }));
+        }
+        for (int i = 0; i < q.options.size(); i++) {
+            if (viewModel.buildPlaced.contains(i)) {
+                continue; // already placed
+            }
+            final int index = i;
+            binding.flowBank.addView(makeBlock(q.options.get(i), R.drawable.bg_card_butter, () -> {
+                if (viewModel.selected == -1) {
+                    viewModel.buildPlaced.add(index); // into the answer
+                    renderBuild(q);
+                }
+            }));
+        }
+        binding.buttonCheck.setVisibility(answered ? View.GONE : View.VISIBLE);
+        binding.buttonCheck.setEnabled(!viewModel.buildPlaced.isEmpty());
+    }
+
+    private TextView makeBlock(String text, int backgroundRes, Runnable onClick) {
+        TextView block = new TextView(this);
+        block.setText(text);
+        block.setTextSize(18);
+        block.setTextColor(getColor(R.color.ink));
+        block.setBackgroundResource(backgroundRes);
+        block.setElevation(dp(2));
+        block.setPadding(dp(14), dp(8), dp(14), dp(8));
+        block.setOnClickListener(v -> onClick.run());
+        return block;
+    }
+
+    private int dp(int value) {
+        return (int) (value * getResources().getDisplayMetrics().density);
+    }
+
+    private void checkBuild() {
+        if (viewModel.selected != -1 || viewModel.buildPlaced.isEmpty()) {
+            return;
+        }
+        QuizQuestion q = current();
+        List<String> chosen = new java.util.ArrayList<>();
+        for (int index : viewModel.buildPlaced) {
+            chosen.add(q.options.get(index));
+        }
+        boolean right = String.join(" ", chosen).equals(String.join(" ", q.answer));
+        viewModel.selected = right ? 1 : 0; // counts like any other answered question
+        if (right) {
+            viewModel.score++;
+            viewModel.correctIds.add(q.wordId);
+        } else {
+            viewModel.wrongIds.add(q.wordId); // remembered for revision
+        }
+        renderBuild(q);
+        applyBuildFeedback(q);
+    }
+
+    private void applyBuildFeedback(QuizQuestion q) {
+        boolean right = viewModel.selected == 1;
+        binding.flowAnswer.setBackgroundResource(right ? R.drawable.bg_option_correct : R.drawable.bg_option_wrong);
+        binding.buttonCheck.setVisibility(View.GONE);
+        binding.buttonListen.setVisibility(View.VISIBLE); // hear the full sentence (speakText)
+        binding.textFeedback.setText(right
+                ? getString(R.string.quiz_correct)
+                : getString(R.string.quiz_wrong, q.speakText));
+
+        boolean last = viewModel.index + 1 >= viewModel.getQuestions().getValue().size();
+        binding.buttonNext.setText(last ? R.string.quiz_see_results : R.string.quiz_next);
+        binding.buttonNext.setVisibility(View.VISIBLE);
     }
 
     @Override

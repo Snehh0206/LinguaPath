@@ -151,6 +151,10 @@
             android:name=".ScenarioActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"

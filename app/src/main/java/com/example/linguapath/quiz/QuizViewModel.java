@@ -29,6 +29,7 @@ public class QuizViewModel extends ViewModel {
     public int percent = 0;
     public int xpGained = 0;
     public boolean newBest = false;
+    public final List<Integer> buildPlaced = new ArrayList<>(); // sentence question: blocks placed so far, in order
 
     // Which words were answered right and wrong (for the revision list)
     public final List<Integer> correctIds = new ArrayList<>();
@@ -71,6 +72,7 @@ public class QuizViewModel extends ViewModel {
         xpGained = 0;
         newBest = false;
         correctIds.clear();
+        buildPlaced.clear();
         wrongIds.clear();
         started = false;
         resultReady.setValue(false);

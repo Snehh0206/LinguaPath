@@ -52,7 +52,7 @@ public class LanguageSelectActivity extends AppCompatActivity {
         });
         binding.cardKorean.setOnClickListener(v -> onLanguagePicked("Korean"));
         binding.cardSpanish.setOnClickListener(v -> onLanguagePicked("Spanish"));
-        binding.buttonMenu.setOnClickListener(this::showAccountMenu);
+        binding.buttonMenu.setOnClickListener(v -> startActivity(new Intent(this, MenuActivity.class)));
 
         // Cards float in, and tilt in 3D when touched
         Motion.fadeSlideIn(binding.cardKorean, 100);
