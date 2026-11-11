@@ -404,5 +404,31 @@
     <string name="invite_chooser">Invite with</string>
     <string name="invite_no_app">No app found to send the invitation.</string>
     <string name="topics_subtitle_language">Words for the places you will go · %1$s</string>
+    <string name="sign_dir_to_english">Sign in %1$s → English  ⇄</string>
+    <string name="sign_dir_from_english">English sign → %1$s  ⇄</string>
+    <string name="sign_label_into">Translate into</string>
+    <string name="sign_result_foreign">In %1$s</string>
 
+    <string name="menu_account_page">My account</string>
+    <string name="menu_quests">Daily quests</string>
+    <string name="account_name_loading">Loading name…</string>
+    <string name="account_no_name">No nickname yet (pick one in Chat)</string>
+    <string name="account_level">Level %1$d</string>
+    <string name="account_to_next">%1$d / %2$d XP to level %3$d</string>
+    <string name="account_xp">⚡ %1$d XP</string>
+    <string name="account_points">⭐ %1$d points</string>
+    <string name="account_stages">%1$d stages finished in total</string>
+    <string name="account_lang_row">%1$s · %2$d stages · quiz average %3$d%%</string>
+    <string name="account_lang_none">%1$s · not started yet</string>
+    <string name="account_open_quests">🎯 Daily quests</string>
+
+    <string name="quests_title">Daily quests</string>
+    <string name="quests_subtitle">New quests every day. XP is added automatically.</string>
+    <string name="quest_quizzes_title">Finish 2 quizzes</string>
+    <string name="quest_minutes_title">Study for 10 minutes</string>
+    <string name="quest_progress">%1$d / %2$d</string>
+    <string name="quest_reward">Reward: +%1$d XP</string>
+    <string name="quest_earned">✅ +%1$d XP earned today</string>
+    <string name="quest_toast">Quest complete! +%1$d XP ⚡</string>
+    <string name="quests_leaderboard_button">🏆 Leaderboard</string>
 </resources>

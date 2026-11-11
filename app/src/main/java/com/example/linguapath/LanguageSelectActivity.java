@@ -102,6 +102,14 @@ public class LanguageSelectActivity extends AppCompatActivity {
                 startActivity(new Intent(this, CreditsActivity.class));
                 return true;
             }
+            if (item.getItemId() == R.id.menu_account_page) {
+                startActivity(new Intent(this, AccountActivity.class));
+                return true;
+            }
+            if (item.getItemId() == R.id.menu_quests) {
+                startActivity(new Intent(this, QuestsActivity.class));
+                return true;
+            }
             if (item.getItemId() == R.id.menu_chat) {
                 startActivity(new Intent(this, ChatRoomsActivity.class));
                 return true;

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.linguapath.data.QuestRepository;
 import com.example.linguapath.data.CloudSyncRepository;
 import com.example.linguapath.data.ProgressStore;
 import com.example.linguapath.databinding.ActivityQuizBinding;
@@ -290,6 +291,7 @@ public class QuizActivity extends AppCompatActivity {
                 new CloudSyncRepository().uploadProgress(language, store.getCompletedCount(language));
             }
             viewModel.xpGained = xp;
+            QuestRepository.onQuizFinished(this); // counts the quiz for the daily quest and syncs XP
 
             // Topic words are not lesson words, so they must not enter the word scores
             if (!topicQuiz) {

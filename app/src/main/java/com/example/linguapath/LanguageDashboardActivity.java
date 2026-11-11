@@ -31,6 +31,8 @@ import com.example.linguapath.data.QuizHistoryRepository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import android.widget.Toast;
+import com.example.linguapath.data.QuestRepository;
 
 public class LanguageDashboardActivity extends AppCompatActivity {
 
@@ -142,6 +144,14 @@ public class LanguageDashboardActivity extends AppCompatActivity {
             fabFloat = Motion.startFloat(binding.fabContinue, 4, 1400);
         }
         refreshProgress();
+        QuestRepository.restoreAndRefresh(this, paid -> {
+            if (isFinishing() || isDestroyed()) {
+                return;
+            }
+            for (QuestRepository.Quest q : paid) {
+                Toast.makeText(this, getString(R.string.quest_toast, q.rewardXp), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
