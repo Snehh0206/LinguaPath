@@ -299,7 +299,7 @@ public class ScoreModeController {
     }
 
     private void chooseLanguage() {
-        String[] languages = {"Spanish", "Korean"};
+        String[] languages = {"Spanish", "Korean", "Bangla", "Japanese", "French"};
         new AlertDialog.Builder(activity)
                 .setTitle(R.string.score_pick_language)
                 .setItems(languages, (d, which) -> tryRequest(languages[which]))

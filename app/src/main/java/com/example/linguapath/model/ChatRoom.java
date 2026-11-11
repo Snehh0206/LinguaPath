@@ -22,6 +22,12 @@ public class ChatRoom {
     }
 
     public static final List<ChatRoom> ALL = Collections.unmodifiableList(Arrays.asList(
+            new ChatRoom("bn_everyday", R.string.room_bn_everyday, "Bangla", "☕"),
+            new ChatRoom("bn_travel", R.string.room_bn_travel, "Bangla", "✈️"),
+            new ChatRoom("ja_everyday", R.string.room_ja_everyday, "Japanese", "☕"),
+            new ChatRoom("ja_travel", R.string.room_ja_travel, "Japanese", "✈️"),
+            new ChatRoom("fr_everyday", R.string.room_fr_everyday, "French", "☕"),
+            new ChatRoom("fr_travel", R.string.room_fr_travel, "French", "✈️"),
             new ChatRoom("es_everyday", R.string.room_es_everyday, "Spanish", "☕"),
             new ChatRoom("es_travel", R.string.room_es_travel, "Spanish", "✈️"),
             new ChatRoom("ko_everyday", R.string.room_ko_everyday, "Korean", "☕"),

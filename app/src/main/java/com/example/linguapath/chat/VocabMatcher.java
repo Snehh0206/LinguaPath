@@ -16,8 +16,12 @@ public class VocabMatcher {
     public static final int MAX_WORDS_PER_MESSAGE = 3;
 
     public static List<String> findWords(String message, Collection<String> knownWords, String language) {
-        boolean korean = "Korean".equals(language);
-        String text = normalize(message, !korean);
+        // Korean, Japanese and Bangla attach endings or have no spaces, so we look inside the text
+        boolean attached = "Korean".equals(language) || "Japanese".equals(language)
+                || "Bangla".equals(language);
+        int minInside = "Korean".equals(language) ? 2 : "Bangla".equals(language) ? 3 : 1;
+        boolean latin = !attached; // accents are removed only for Spanish and French
+        String text = normalize(message, latin);
         if (text.isEmpty()) {
             return new ArrayList<>();
         }
@@ -25,17 +29,15 @@ public class VocabMatcher {
 
         Set<String> found = new LinkedHashSet<>();
         for (String known : knownWords) {
-            String word = normalize(known, !korean);
+            String word = normalize(known, latin);
             if (word.isEmpty()) {
                 continue;
             }
             boolean match;
-            if (korean) {
-                // Korean attaches endings to words (커피를), so look inside the text.
-                // One-letter words (물, 밥) must start a word, to avoid false matches.
-                match = (word.length() >= 2) ? text.contains(word) : startsAToken(tokens, word);
+            if (attached) {
+                match = (word.length() >= minInside) ? text.contains(word) : startsAToken(tokens, word);
             } else if (word.contains(" ")) {
-                match = (" " + text + " ").contains(" " + word + " "); // a phrase, like "buenos dias"
+                match = (" " + text + " ").contains(" " + word + " "); // a phrase
             } else {
                 match = tokens.contains(word); // a whole word
             }
@@ -65,6 +67,6 @@ public class VocabMatcher {
         if (stripAccents) {
             t = Normalizer.normalize(t, Normalizer.Form.NFD).replaceAll("\\p{M}+", "");
         }
-        return t.replaceAll("[^\\p{L}\\p{N}]+", " ").trim();
+        return t.replaceAll("[^\\p{L}\\p{M}\\p{N}]+", " ").trim();
     }
 }

@@ -17,6 +17,7 @@ import android.os.PowerManager;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.util.Log;
+import com.example.linguapath.speech.SpeechHelper;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.ServiceCompat;
@@ -263,8 +264,7 @@ public class PlaybackService extends Service {
     // ---- Speaking ----
 
     private List<Step> stepsFor(Word w) {
-        Locale target = "Korean".equals(language)
-                ? Locale.forLanguageTag("ko-KR") : Locale.forLanguageTag("es-ES");
+        Locale target = SpeechHelper.localeFor(language);
         Locale english = Locale.forLanguageTag("en-US");
 
         List<Step> steps = new ArrayList<>();

@@ -71,13 +71,12 @@ public class SpeechHelper implements TextToSpeech.OnInitListener {
         ready = false;
     }
 
-    private Locale localeFor(String language) {
-        if ("Korean".equals(language)) {
-            return Locale.forLanguageTag("ko-KR");
-        }
-        if ("English".equals(language)) {
-            return Locale.forLanguageTag("en-US");
-        }
+    public static Locale localeFor(String language) {
+        if ("English".equals(language)) return Locale.forLanguageTag("en-US");
+        if ("Korean".equals(language)) return Locale.forLanguageTag("ko-KR");
+        if ("Bangla".equals(language)) return Locale.forLanguageTag("bn-BD");
+        if ("Japanese".equals(language)) return Locale.forLanguageTag("ja-JP");
+        if ("French".equals(language)) return Locale.forLanguageTag("fr-FR");
         return Locale.forLanguageTag("es-ES");
     }
 

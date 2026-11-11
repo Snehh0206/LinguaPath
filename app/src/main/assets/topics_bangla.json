@@ -1,0 +1,72 @@
+{
+  "cafe": [
+    {"word": "কফি", "romanization": "kofi", "meaning": "coffee", "emoji": "☕"},
+    {"word": "চা", "romanization": "cha", "meaning": "tea", "emoji": "🍵"},
+    {"word": "দুধ", "romanization": "dudh", "meaning": "milk", "emoji": "🥛"},
+    {"word": "জুস", "romanization": "jus", "meaning": "juice", "emoji": "🧃"},
+    {"word": "কেক", "romanization": "kek", "meaning": "cake", "emoji": "🍰"},
+    {"word": "বিস্কুট", "romanization": "biskut", "meaning": "cookie", "emoji": "🍪"},
+    {"word": "বিল", "romanization": "bil", "meaning": "the bill", "emoji": "🧾"},
+    {"word": "পানি", "romanization": "pani", "meaning": "water", "emoji": "💧"}
+  ],
+  "airport": [
+    {"word": "বিমানবন্দর", "romanization": "bimanbondor", "meaning": "airport", "emoji": "✈️"},
+    {"word": "বিমান", "romanization": "biman", "meaning": "airplane", "emoji": "🛩️"},
+    {"word": "লাগেজ", "romanization": "lagej", "meaning": "luggage", "emoji": "🧳"},
+    {"word": "পাসপোর্ট", "romanization": "pasport", "meaning": "passport", "emoji": "🛂"},
+    {"word": "টিকিট", "romanization": "tikit", "meaning": "ticket", "emoji": "🎫"},
+    {"word": "গেট", "romanization": "get", "meaning": "gate", "emoji": "🚪"},
+    {"word": "আগমন", "romanization": "agomon", "meaning": "arrival", "emoji": "🛬"},
+    {"word": "প্রস্থান", "romanization": "prosthan", "meaning": "departure", "emoji": "🛫"}
+  ],
+  "shop": [
+    {"word": "দোকান", "romanization": "dokan", "meaning": "shop", "emoji": "🏪"},
+    {"word": "দাম", "romanization": "dam", "meaning": "price", "emoji": "🏷️"},
+    {"word": "টাকা", "romanization": "taka", "meaning": "money", "emoji": "💵"},
+    {"word": "শার্ট", "romanization": "shart", "meaning": "shirt", "emoji": "👕"},
+    {"word": "জুতা", "romanization": "juta", "meaning": "shoes", "emoji": "👟"},
+    {"word": "ব্যাগ", "romanization": "byag", "meaning": "bag", "emoji": "🛍️"},
+    {"word": "উপহার", "romanization": "upohar", "meaning": "gift", "emoji": "🎁"},
+    {"word": "কার্ড", "romanization": "kard", "meaning": "card", "emoji": "💳"}
+  ],
+  "festival": [
+    {"word": "উৎসব", "romanization": "utshob", "meaning": "festival", "emoji": "🎉"},
+    {"word": "গান", "romanization": "gan", "meaning": "music, song", "emoji": "🎵"},
+    {"word": "নাচ", "romanization": "nach", "meaning": "dance", "emoji": "💃"},
+    {"word": "আতশবাজি", "romanization": "atoshbaji", "meaning": "fireworks", "emoji": "🎆"},
+    {"word": "লণ্ঠন", "romanization": "lonthon", "meaning": "lantern", "emoji": "🏮"},
+    {"word": "খাবার", "romanization": "khabar", "meaning": "food", "emoji": "🍲"},
+    {"word": "মুখোশ", "romanization": "mukhosh", "meaning": "mask", "emoji": "🎭"},
+    {"word": "বন্ধু", "romanization": "bondhu", "meaning": "friend", "emoji": "🧑‍🤝‍🧑"}
+  ],
+  "travel": [
+    {"word": "হোটেল", "romanization": "hotel", "meaning": "hotel", "emoji": "🏨"},
+    {"word": "ঘর", "romanization": "ghor", "meaning": "room", "emoji": "🛏️"},
+    {"word": "মানচিত্র", "romanization": "manchitro", "meaning": "map", "emoji": "🗺️"},
+    {"word": "ট্রেন", "romanization": "tren", "meaning": "train", "emoji": "🚆"},
+    {"word": "বাস", "romanization": "bas", "meaning": "bus", "emoji": "🚌"},
+    {"word": "সমুদ্রসৈকত", "romanization": "shomudroshoikot", "meaning": "beach", "emoji": "🏖️"},
+    {"word": "পাহাড়", "romanization": "pahar", "meaning": "mountain", "emoji": "⛰️"},
+    {"word": "শহর", "romanization": "shohor", "meaning": "city", "emoji": "🏙️"}
+  ],
+  "business": [
+    {"word": "সভা", "romanization": "shobha", "meaning": "meeting", "emoji": "👥"},
+    {"word": "কাজ", "romanization": "kaj", "meaning": "work, job", "emoji": "💼"},
+    {"word": "কোম্পানি", "romanization": "kompani", "meaning": "company", "emoji": "🏢"},
+    {"word": "বস", "romanization": "bos", "meaning": "boss", "emoji": "👔"},
+    {"word": "ইমেইল", "romanization": "imeil", "meaning": "email", "emoji": "📧"},
+    {"word": "চুক্তি", "romanization": "chukti", "meaning": "contract", "emoji": "📄"},
+    {"word": "কম্পিউটার", "romanization": "kompiutar", "meaning": "computer", "emoji": "💻"},
+    {"word": "গ্রাহক", "romanization": "grahok", "meaning": "customer", "emoji": "🧑‍💼"}
+  ],
+  "people": [
+    {"word": "হ্যালো", "romanization": "hyalo", "meaning": "hello", "emoji": "👋"},
+    {"word": "ধন্যবাদ", "romanization": "dhonnobad", "meaning": "thank you", "emoji": "🙏"},
+    {"word": "নাম", "romanization": "nam", "meaning": "name", "emoji": "🏷️"},
+    {"word": "বন্ধু", "romanization": "bondhu", "meaning": "friend", "emoji": "🧑‍🤝‍🧑"},
+    {"word": "স্বাগতম", "romanization": "shagotom", "meaning": "welcome", "emoji": "🤗"},
+    {"word": "দুঃখিত", "romanization": "dukkhito", "meaning": "sorry", "emoji": "😔"},
+    {"word": "অনুগ্রহ করে", "romanization": "onugroho kore", "meaning": "please", "emoji": "🙂"},
+    {"word": "বিদায়", "romanization": "biday", "meaning": "goodbye", "emoji": "👋"}
+  ]
+}

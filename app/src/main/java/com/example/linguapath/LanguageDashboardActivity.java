@@ -261,9 +261,13 @@ public class LanguageDashboardActivity extends AppCompatActivity {
         long minutes = progressStore.getStudyMillisToday() / 60000;
         int pick = random.nextInt(minutes > 0 ? 4 : 3);
         if (pick == 0) {
-            return getString(language.equals("Korean")
-                    ? R.string.sprig_hello_korean
-                    : R.string.sprig_hello_spanish);
+            switch (language) {
+                case "Korean": return getString(R.string.sprig_hello_korean);
+                case "Bangla": return getString(R.string.sprig_hello_bangla);
+                case "Japanese": return getString(R.string.sprig_hello_japanese);
+                case "French": return getString(R.string.sprig_hello_french);
+                default: return getString(R.string.sprig_hello_spanish);
+            }
         } else if (pick == 1) {
             return getString(R.string.sprig_next, stages.get(completed).getTitle());
         } else if (pick == 3) {

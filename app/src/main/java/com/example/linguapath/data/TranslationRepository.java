@@ -142,7 +142,13 @@ public class TranslationRepository {
     }
 
     private static String languageCode(String language) {
-        return "Korean".equals(language) ? "ko" : "es";
+        switch (language) {
+            case "Korean": return "ko";
+            case "Bangla": return "bn";
+            case "Japanese": return "ja";
+            case "French": return "fr";
+            default: return "es";
+        }
     }
 
     // One GET request, then read the JSON answer:

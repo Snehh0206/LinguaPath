@@ -506,4 +506,19 @@
     <string name="quiz_build_answer_label">Your sentence (tap a word to take it back)</string>
     <string name="quiz_build_bank_label">Word blocks</string>
     <string name="quiz_check">Check</string>
+    <string name="lang_bangla_native">বাংলা</string>
+    <string name="lang_bangla">Bangla</string>
+    <string name="lang_japanese_native">日本語</string>
+    <string name="lang_japanese">Japanese</string>
+    <string name="lang_french_native">Français</string>
+    <string name="lang_french">French</string>
+    <string name="sprig_hello_bangla">Nomoshkar! Ready for some Bangla today?</string>
+    <string name="sprig_hello_japanese">Konnichiwa! Ready for some Japanese today?</string>
+    <string name="sprig_hello_french">Bonjour! Ready for some French today?</string>
+    <string name="room_bn_everyday">Bangla · Everyday</string>
+    <string name="room_bn_travel">Bangla · Travel</string>
+    <string name="room_ja_everyday">Japanese · Everyday</string>
+    <string name="room_ja_travel">Japanese · Travel</string>
+    <string name="room_fr_everyday">French · Everyday</string>
+    <string name="room_fr_travel">French · Travel</string>
 </resources>

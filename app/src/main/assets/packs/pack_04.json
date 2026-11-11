@@ -1,0 +1,1469 @@
+{
+ "languages": [
+  {
+   "name": "Japanese",
+   "stages": [
+    {
+     "title": "Family",
+     "level": "A1",
+     "words": [
+      {
+       "word": "お母さん",
+       "romanization": "okāsan",
+       "meaning": "mother",
+       "example": "お母さんは料理が上手です。",
+       "exampleMeaning": "My mother is good at cooking."
+      },
+      {
+       "word": "お父さん",
+       "romanization": "otōsan",
+       "meaning": "father",
+       "example": "お父さんは会社で働いています。",
+       "exampleMeaning": "My father works at a company."
+      },
+      {
+       "word": "兄",
+       "romanization": "ani",
+       "meaning": "older brother",
+       "example": "兄は大学生です。",
+       "exampleMeaning": "My older brother is a university student."
+      },
+      {
+       "word": "姉",
+       "romanization": "ane",
+       "meaning": "older sister",
+       "example": "姉は先生です。",
+       "exampleMeaning": "My older sister is a teacher."
+      },
+      {
+       "word": "弟",
+       "romanization": "otōto",
+       "meaning": "younger brother",
+       "example": "弟は十歳です。",
+       "exampleMeaning": "My younger brother is ten years old."
+      },
+      {
+       "word": "妹",
+       "romanization": "imōto",
+       "meaning": "younger sister",
+       "example": "妹は歌が好きです。",
+       "exampleMeaning": "My younger sister likes singing."
+      },
+      {
+       "word": "息子",
+       "romanization": "musuko",
+       "meaning": "son",
+       "example": "息子はサッカーをします。",
+       "exampleMeaning": "My son plays soccer."
+      },
+      {
+       "word": "娘",
+       "romanization": "musume",
+       "meaning": "daughter",
+       "example": "娘は本を読んでいます。",
+       "exampleMeaning": "My daughter is reading a book."
+      },
+      {
+       "word": "おじいさん",
+       "romanization": "ojīsan",
+       "meaning": "grandfather",
+       "example": "おじいさんは田舎に住んでいます。",
+       "exampleMeaning": "My grandfather lives in the countryside."
+      },
+      {
+       "word": "おばあさん",
+       "romanization": "obāsan",
+       "meaning": "grandmother",
+       "example": "おばあさんはパンを作ります。",
+       "exampleMeaning": "My grandmother makes bread."
+      },
+      {
+       "word": "おじさん",
+       "romanization": "ojisan",
+       "meaning": "uncle",
+       "example": "おじさんはよく旅行します。",
+       "exampleMeaning": "My uncle often travels."
+      },
+      {
+       "word": "おばさん",
+       "romanization": "obasan",
+       "meaning": "aunt",
+       "example": "おばさんは東京に住んでいます。",
+       "exampleMeaning": "My aunt lives in Tokyo."
+      },
+      {
+       "word": "夫",
+       "romanization": "otto",
+       "meaning": "husband",
+       "example": "夫は銀行で働いています。",
+       "exampleMeaning": "My husband works at a bank."
+      },
+      {
+       "word": "妻",
+       "romanization": "tsuma",
+       "meaning": "wife",
+       "example": "妻は医者です。",
+       "exampleMeaning": "My wife is a doctor."
+      },
+      {
+       "word": "両親",
+       "romanization": "ryōshin",
+       "meaning": "parents",
+       "example": "両親は元気です。",
+       "exampleMeaning": "My parents are well."
+      },
+      {
+       "word": "家族",
+       "romanization": "kazoku",
+       "meaning": "family",
+       "example": "私の家族は五人です。",
+       "exampleMeaning": "There are five people in my family."
+      },
+      {
+       "word": "子供",
+       "romanization": "kodomo",
+       "meaning": "child",
+       "example": "子供が公園で遊んでいます。",
+       "exampleMeaning": "The children are playing in the park."
+      },
+      {
+       "word": "赤ちゃん",
+       "romanization": "akachan",
+       "meaning": "baby",
+       "example": "赤ちゃんが寝ています。",
+       "exampleMeaning": "The baby is sleeping."
+      },
+      {
+       "word": "いとこ",
+       "romanization": "itoko",
+       "meaning": "cousin",
+       "example": "いとこは大阪に住んでいます。",
+       "exampleMeaning": "My cousin lives in Osaka."
+      },
+      {
+       "word": "親戚",
+       "romanization": "shinseki",
+       "meaning": "relative",
+       "example": "お正月に親戚が来ます。",
+       "exampleMeaning": "Relatives come at New Year."
+      }
+     ]
+    },
+    {
+     "title": "Colors",
+     "level": "A1",
+     "words": [
+      {
+       "word": "赤",
+       "romanization": "aka",
+       "meaning": "red",
+       "example": "私は赤い車を持っています。",
+       "exampleMeaning": "I have a red car."
+      },
+      {
+       "word": "青",
+       "romanization": "ao",
+       "meaning": "blue",
+       "example": "空は青いです。",
+       "exampleMeaning": "The sky is blue."
+      },
+      {
+       "word": "緑",
+       "romanization": "midori",
+       "meaning": "green",
+       "example": "木の葉は緑です。",
+       "exampleMeaning": "The leaves of the tree are green."
+      },
+      {
+       "word": "黄色",
+       "romanization": "kiiro",
+       "meaning": "yellow",
+       "example": "バナナは黄色です。",
+       "exampleMeaning": "Bananas are yellow."
+      },
+      {
+       "word": "黒",
+       "romanization": "kuro",
+       "meaning": "black",
+       "example": "私の猫は黒いです。",
+       "exampleMeaning": "My cat is black."
+      },
+      {
+       "word": "白",
+       "romanization": "shiro",
+       "meaning": "white",
+       "example": "雪は白いです。",
+       "exampleMeaning": "Snow is white."
+      },
+      {
+       "word": "灰色",
+       "romanization": "haiiro",
+       "meaning": "gray",
+       "example": "今日の空は灰色です。",
+       "exampleMeaning": "The sky is gray today."
+      },
+      {
+       "word": "オレンジ",
+       "romanization": "orenji",
+       "meaning": "orange (color)",
+       "example": "このオレンジの花はきれいです。",
+       "exampleMeaning": "This orange flower is pretty."
+      },
+      {
+       "word": "ピンク",
+       "romanization": "pinku",
+       "meaning": "pink",
+       "example": "彼女はピンクのワンピースを着ています。",
+       "exampleMeaning": "She is wearing a pink dress."
+      },
+      {
+       "word": "紫",
+       "romanization": "murasaki",
+       "meaning": "purple",
+       "example": "紫のかばんが好きです。",
+       "exampleMeaning": "I like the purple bag."
+      },
+      {
+       "word": "茶色",
+       "romanization": "chairo",
+       "meaning": "brown",
+       "example": "犬は茶色です。",
+       "exampleMeaning": "The dog is brown."
+      },
+      {
+       "word": "金色",
+       "romanization": "kin'iro",
+       "meaning": "gold",
+       "example": "金色の時計を持っています。",
+       "exampleMeaning": "I have a gold watch."
+      },
+      {
+       "word": "銀色",
+       "romanization": "gin'iro",
+       "meaning": "silver",
+       "example": "銀色の車が好きです。",
+       "exampleMeaning": "I like silver cars."
+      },
+      {
+       "word": "色",
+       "romanization": "iro",
+       "meaning": "color",
+       "example": "好きな色は何ですか。",
+       "exampleMeaning": "What is your favorite color?"
+      },
+      {
+       "word": "水色",
+       "romanization": "mizuiro",
+       "meaning": "light blue",
+       "example": "水色のシャツを買いました。",
+       "exampleMeaning": "I bought a light blue shirt."
+      },
+      {
+       "word": "ベージュ",
+       "romanization": "bēju",
+       "meaning": "beige",
+       "example": "ベージュのコートが欲しいです。",
+       "exampleMeaning": "I want a beige coat."
+      },
+      {
+       "word": "虹",
+       "romanization": "niji",
+       "meaning": "rainbow",
+       "example": "空に虹が出ています。",
+       "exampleMeaning": "There is a rainbow in the sky."
+      },
+      {
+       "word": "クレヨン",
+       "romanization": "kureyon",
+       "meaning": "crayon",
+       "example": "子供はクレヨンで絵をかいています。",
+       "exampleMeaning": "The child is drawing a picture with crayons."
+      },
+      {
+       "word": "筆",
+       "romanization": "fude",
+       "meaning": "brush (for writing or painting)",
+       "example": "筆で字を書きます。",
+       "exampleMeaning": "I write characters with a brush."
+      },
+      {
+       "word": "カラフル",
+       "romanization": "karafuru",
+       "meaning": "colorful",
+       "example": "このかばんはカラフルです。",
+       "exampleMeaning": "This bag is colorful."
+      }
+     ]
+    },
+    {
+     "title": "Body",
+     "level": "A1",
+     "words": [
+      {
+       "word": "頭",
+       "romanization": "atama",
+       "meaning": "head",
+       "example": "頭が痛いです。",
+       "exampleMeaning": "I have a headache."
+      },
+      {
+       "word": "顔",
+       "romanization": "kao",
+       "meaning": "face",
+       "example": "彼女は顔がきれいです。",
+       "exampleMeaning": "She has a pretty face."
+      },
+      {
+       "word": "目",
+       "romanization": "me",
+       "meaning": "eye",
+       "example": "妹は目が大きいです。",
+       "exampleMeaning": "My younger sister has big eyes."
+      },
+      {
+       "word": "鼻",
+       "romanization": "hana",
+       "meaning": "nose",
+       "example": "鼻が冷たいです。",
+       "exampleMeaning": "My nose is cold."
+      },
+      {
+       "word": "口",
+       "romanization": "kuchi",
+       "meaning": "mouth",
+       "example": "口を開けてください。",
+       "exampleMeaning": "Please open your mouth."
+      },
+      {
+       "word": "耳",
+       "romanization": "mimi",
+       "meaning": "ear",
+       "example": "うさぎは耳が長いです。",
+       "exampleMeaning": "Rabbits have long ears."
+      },
+      {
+       "word": "歯",
+       "romanization": "ha",
+       "meaning": "tooth",
+       "example": "毎日歯をみがきます。",
+       "exampleMeaning": "I brush my teeth every day."
+      },
+      {
+       "word": "髪",
+       "romanization": "kami",
+       "meaning": "hair",
+       "example": "彼女は髪が長いです。",
+       "exampleMeaning": "She has long hair."
+      },
+      {
+       "word": "首",
+       "romanization": "kubi",
+       "meaning": "neck",
+       "example": "首が痛いです。",
+       "exampleMeaning": "My neck hurts."
+      },
+      {
+       "word": "肩",
+       "romanization": "kata",
+       "meaning": "shoulder",
+       "example": "肩が痛いです。",
+       "exampleMeaning": "My shoulder hurts."
+      },
+      {
+       "word": "手",
+       "romanization": "te",
+       "meaning": "hand",
+       "example": "手を洗ってください。",
+       "exampleMeaning": "Please wash your hands."
+      },
+      {
+       "word": "指",
+       "romanization": "yubi",
+       "meaning": "finger",
+       "example": "指に指輪をしています。",
+       "exampleMeaning": "I am wearing a ring on my finger."
+      },
+      {
+       "word": "足",
+       "romanization": "ashi",
+       "meaning": "leg, foot",
+       "example": "足が長いですね。",
+       "exampleMeaning": "You have long legs."
+      },
+      {
+       "word": "膝",
+       "romanization": "hiza",
+       "meaning": "knee",
+       "example": "膝をけがしました。",
+       "exampleMeaning": "I hurt my knee."
+      },
+      {
+       "word": "背中",
+       "romanization": "senaka",
+       "meaning": "back",
+       "example": "背中がかゆいです。",
+       "exampleMeaning": "My back is itchy."
+      },
+      {
+       "word": "お腹",
+       "romanization": "onaka",
+       "meaning": "stomach, belly",
+       "example": "お腹がすきました。",
+       "exampleMeaning": "I am hungry."
+      },
+      {
+       "word": "胸",
+       "romanization": "mune",
+       "meaning": "chest",
+       "example": "胸がどきどきします。",
+       "exampleMeaning": "My heart is pounding."
+      },
+      {
+       "word": "腕",
+       "romanization": "ude",
+       "meaning": "arm",
+       "example": "腕を上げてください。",
+       "exampleMeaning": "Please raise your arm."
+      },
+      {
+       "word": "舌",
+       "romanization": "shita",
+       "meaning": "tongue",
+       "example": "猫の舌はざらざらです。",
+       "exampleMeaning": "A cat's tongue is rough."
+      },
+      {
+       "word": "骨",
+       "romanization": "hone",
+       "meaning": "bone",
+       "example": "犬が骨をかんでいます。",
+       "exampleMeaning": "The dog is chewing a bone."
+      }
+     ]
+    },
+    {
+     "title": "Clothes",
+     "level": "A1",
+     "words": [
+      {
+       "word": "服",
+       "romanization": "fuku",
+       "meaning": "clothes",
+       "example": "新しい服を買いました。",
+       "exampleMeaning": "I bought new clothes."
+      },
+      {
+       "word": "シャツ",
+       "romanization": "shatsu",
+       "meaning": "shirt",
+       "example": "このシャツは青いです。",
+       "exampleMeaning": "This shirt is blue."
+      },
+      {
+       "word": "Tシャツ",
+       "romanization": "tīshatsu",
+       "meaning": "T-shirt",
+       "example": "赤いTシャツを着ています。",
+       "exampleMeaning": "I am wearing a red T-shirt."
+      },
+      {
+       "word": "ズボン",
+       "romanization": "zubon",
+       "meaning": "pants",
+       "example": "このズボンは長いです。",
+       "exampleMeaning": "These pants are long."
+      },
+      {
+       "word": "スカート",
+       "romanization": "sukāto",
+       "meaning": "skirt",
+       "example": "彼女は短いスカートをはいています。",
+       "exampleMeaning": "She is wearing a short skirt."
+      },
+      {
+       "word": "ワンピース",
+       "romanization": "wanpīsu",
+       "meaning": "dress",
+       "example": "ワンピースがかわいいです。",
+       "exampleMeaning": "The dress is cute."
+      },
+      {
+       "word": "ジャケット",
+       "romanization": "jaketto",
+       "meaning": "jacket",
+       "example": "寒いので、ジャケットを着てください。",
+       "exampleMeaning": "It is cold, so please wear a jacket."
+      },
+      {
+       "word": "コート",
+       "romanization": "kōto",
+       "meaning": "coat",
+       "example": "冬にコートが必要です。",
+       "exampleMeaning": "I need a coat in winter."
+      },
+      {
+       "word": "帽子",
+       "romanization": "bōshi",
+       "meaning": "hat",
+       "example": "帽子をかぶっています。",
+       "exampleMeaning": "I am wearing a hat."
+      },
+      {
+       "word": "靴",
+       "romanization": "kutsu",
+       "meaning": "shoes",
+       "example": "新しい靴を買いたいです。",
+       "exampleMeaning": "I want to buy new shoes."
+      },
+      {
+       "word": "靴下",
+       "romanization": "kutsushita",
+       "meaning": "socks",
+       "example": "靴下が汚れています。",
+       "exampleMeaning": "My socks are dirty."
+      },
+      {
+       "word": "手袋",
+       "romanization": "tebukuro",
+       "meaning": "gloves",
+       "example": "冬は手袋をします。",
+       "exampleMeaning": "I wear gloves in winter."
+      },
+      {
+       "word": "マフラー",
+       "romanization": "mafurā",
+       "meaning": "scarf",
+       "example": "マフラーをしています。",
+       "exampleMeaning": "I am wearing a scarf."
+      },
+      {
+       "word": "ネクタイ",
+       "romanization": "nekutai",
+       "meaning": "tie",
+       "example": "父は毎日ネクタイをします。",
+       "exampleMeaning": "My father wears a tie every day."
+      },
+      {
+       "word": "ベルト",
+       "romanization": "beruto",
+       "meaning": "belt",
+       "example": "ベルトを買いました。",
+       "exampleMeaning": "I bought a belt."
+      },
+      {
+       "word": "眼鏡",
+       "romanization": "megane",
+       "meaning": "glasses",
+       "example": "眼鏡をかけています。",
+       "exampleMeaning": "I wear glasses."
+      },
+      {
+       "word": "時計",
+       "romanization": "tokei",
+       "meaning": "watch, clock",
+       "example": "この時計は新しいです。",
+       "exampleMeaning": "This watch is new."
+      },
+      {
+       "word": "かばん",
+       "romanization": "kaban",
+       "meaning": "bag",
+       "example": "かばんの中に本があります。",
+       "exampleMeaning": "There is a book in the bag."
+      },
+      {
+       "word": "着物",
+       "romanization": "kimono",
+       "meaning": "kimono",
+       "example": "おばあさんは着物を着ています。",
+       "exampleMeaning": "My grandmother is wearing a kimono."
+      },
+      {
+       "word": "傘",
+       "romanization": "kasa",
+       "meaning": "umbrella",
+       "example": "雨なので、傘を持っていきます。",
+       "exampleMeaning": "It is raining, so I will take an umbrella."
+      }
+     ]
+    },
+    {
+     "title": "Home",
+     "level": "A1",
+     "words": [
+      {
+       "word": "家",
+       "romanization": "ie",
+       "meaning": "house, home",
+       "example": "私の家は大きいです。",
+       "exampleMeaning": "My house is big."
+      },
+      {
+       "word": "台所",
+       "romanization": "daidokoro",
+       "meaning": "kitchen",
+       "example": "お母さんは台所にいます。",
+       "exampleMeaning": "My mother is in the kitchen."
+      },
+      {
+       "word": "お風呂",
+       "romanization": "ofuro",
+       "meaning": "bath, bathroom",
+       "example": "毎晩お風呂に入ります。",
+       "exampleMeaning": "I take a bath every night."
+      },
+      {
+       "word": "トイレ",
+       "romanization": "toire",
+       "meaning": "toilet, restroom",
+       "example": "トイレはどこですか。",
+       "exampleMeaning": "Where is the restroom?"
+      },
+      {
+       "word": "寝室",
+       "romanization": "shinshitsu",
+       "meaning": "bedroom",
+       "example": "私の寝室は小さいです。",
+       "exampleMeaning": "My bedroom is small."
+      },
+      {
+       "word": "リビング",
+       "romanization": "ribingu",
+       "meaning": "living room",
+       "example": "リビングでテレビを見ます。",
+       "exampleMeaning": "I watch TV in the living room."
+      },
+      {
+       "word": "窓",
+       "romanization": "mado",
+       "meaning": "window",
+       "example": "窓を開けてください。",
+       "exampleMeaning": "Please open the window."
+      },
+      {
+       "word": "ドア",
+       "romanization": "doa",
+       "meaning": "door",
+       "example": "ドアを閉めてください。",
+       "exampleMeaning": "Please close the door."
+      },
+      {
+       "word": "テーブル",
+       "romanization": "tēburu",
+       "meaning": "table",
+       "example": "テーブルの上に本があります。",
+       "exampleMeaning": "There is a book on the table."
+      },
+      {
+       "word": "椅子",
+       "romanization": "isu",
+       "meaning": "chair",
+       "example": "この椅子は座りやすいです。",
+       "exampleMeaning": "This chair is easy to sit in."
+      },
+      {
+       "word": "ベッド",
+       "romanization": "beddo",
+       "meaning": "bed",
+       "example": "ベッドで寝ます。",
+       "exampleMeaning": "I sleep in bed."
+      },
+      {
+       "word": "ソファ",
+       "romanization": "sofa",
+       "meaning": "sofa",
+       "example": "猫がソファで寝ています。",
+       "exampleMeaning": "The cat is sleeping on the sofa."
+      },
+      {
+       "word": "電気",
+       "romanization": "denki",
+       "meaning": "light, electricity",
+       "example": "電気をつけてください。",
+       "exampleMeaning": "Please turn on the light."
+      },
+      {
+       "word": "鏡",
+       "romanization": "kagami",
+       "meaning": "mirror",
+       "example": "鏡を見てください。",
+       "exampleMeaning": "Please look in the mirror."
+      },
+      {
+       "word": "屋根",
+       "romanization": "yane",
+       "meaning": "roof",
+       "example": "屋根は赤いです。",
+       "exampleMeaning": "The roof is red."
+      },
+      {
+       "word": "床",
+       "romanization": "yuka",
+       "meaning": "floor",
+       "example": "床がきれいです。",
+       "exampleMeaning": "The floor is clean."
+      },
+      {
+       "word": "壁",
+       "romanization": "kabe",
+       "meaning": "wall",
+       "example": "壁に絵があります。",
+       "exampleMeaning": "There is a picture on the wall."
+      },
+      {
+       "word": "階段",
+       "romanization": "kaidan",
+       "meaning": "stairs",
+       "example": "階段で二階に行きます。",
+       "exampleMeaning": "I go to the second floor by the stairs."
+      },
+      {
+       "word": "鍵",
+       "romanization": "kagi",
+       "meaning": "key",
+       "example": "鍵をなくしました。",
+       "exampleMeaning": "I lost my key."
+      },
+      {
+       "word": "庭",
+       "romanization": "niwa",
+       "meaning": "garden",
+       "example": "庭に花があります。",
+       "exampleMeaning": "There are flowers in the garden."
+      }
+     ]
+    },
+    {
+     "title": "Animals",
+     "level": "A1",
+     "words": [
+      {
+       "word": "犬",
+       "romanization": "inu",
+       "meaning": "dog",
+       "example": "犬が公園で走っています。",
+       "exampleMeaning": "The dog is running in the park."
+      },
+      {
+       "word": "猫",
+       "romanization": "neko",
+       "meaning": "cat",
+       "example": "猫は牛乳を飲みます。",
+       "exampleMeaning": "The cat drinks milk."
+      },
+      {
+       "word": "鳥",
+       "romanization": "tori",
+       "meaning": "bird",
+       "example": "木の上で鳥が歌っています。",
+       "exampleMeaning": "A bird is singing in the tree."
+      },
+      {
+       "word": "魚",
+       "romanization": "sakana",
+       "meaning": "fish",
+       "example": "魚は水の中を泳ぎます。",
+       "exampleMeaning": "Fish swim in the water."
+      },
+      {
+       "word": "馬",
+       "romanization": "uma",
+       "meaning": "horse",
+       "example": "馬は速いです。",
+       "exampleMeaning": "Horses are fast."
+      },
+      {
+       "word": "牛",
+       "romanization": "ushi",
+       "meaning": "cow",
+       "example": "牛は草を食べます。",
+       "exampleMeaning": "Cows eat grass."
+      },
+      {
+       "word": "豚",
+       "romanization": "buta",
+       "meaning": "pig",
+       "example": "豚は農場にいます。",
+       "exampleMeaning": "The pig is on the farm."
+      },
+      {
+       "word": "羊",
+       "romanization": "hitsuji",
+       "meaning": "sheep",
+       "example": "羊がたくさんいます。",
+       "exampleMeaning": "There are many sheep."
+      },
+      {
+       "word": "うさぎ",
+       "romanization": "usagi",
+       "meaning": "rabbit",
+       "example": "うさぎはニンジンが好きです。",
+       "exampleMeaning": "Rabbits like carrots."
+      },
+      {
+       "word": "ねずみ",
+       "romanization": "nezumi",
+       "meaning": "mouse",
+       "example": "台所にねずみがいます。",
+       "exampleMeaning": "There is a mouse in the kitchen."
+      },
+      {
+       "word": "にわとり",
+       "romanization": "niwatori",
+       "meaning": "chicken (animal)",
+       "example": "にわとりは卵を産みます。",
+       "exampleMeaning": "Chickens lay eggs."
+      },
+      {
+       "word": "あひる",
+       "romanization": "ahiru",
+       "meaning": "duck",
+       "example": "あひるが池で泳いでいます。",
+       "exampleMeaning": "The duck is swimming in the pond."
+      },
+      {
+       "word": "象",
+       "romanization": "zō",
+       "meaning": "elephant",
+       "example": "象は大きい動物です。",
+       "exampleMeaning": "The elephant is a big animal."
+      },
+      {
+       "word": "ライオン",
+       "romanization": "raion",
+       "meaning": "lion",
+       "example": "ライオンは強いです。",
+       "exampleMeaning": "Lions are strong."
+      },
+      {
+       "word": "虎",
+       "romanization": "tora",
+       "meaning": "tiger",
+       "example": "動物園で虎を見ました。",
+       "exampleMeaning": "I saw a tiger at the zoo."
+      },
+      {
+       "word": "猿",
+       "romanization": "saru",
+       "meaning": "monkey",
+       "example": "猿が木に登っています。",
+       "exampleMeaning": "The monkey is climbing the tree."
+      },
+      {
+       "word": "熊",
+       "romanization": "kuma",
+       "meaning": "bear",
+       "example": "熊ははちみつが好きです。",
+       "exampleMeaning": "Bears like honey."
+      },
+      {
+       "word": "蛇",
+       "romanization": "hebi",
+       "meaning": "snake",
+       "example": "庭に蛇がいます。",
+       "exampleMeaning": "There is a snake in the garden."
+      },
+      {
+       "word": "蝶",
+       "romanization": "chō",
+       "meaning": "butterfly",
+       "example": "蝶が花にとまっています。",
+       "exampleMeaning": "A butterfly is resting on a flower."
+      },
+      {
+       "word": "カエル",
+       "romanization": "kaeru",
+       "meaning": "frog",
+       "example": "カエルが池にいます。",
+       "exampleMeaning": "There is a frog in the pond."
+      }
+     ]
+    },
+    {
+     "title": "Weather",
+     "level": "A1",
+     "words": [
+      {
+       "word": "天気",
+       "romanization": "tenki",
+       "meaning": "weather",
+       "example": "今日は天気がいいです。",
+       "exampleMeaning": "The weather is nice today."
+      },
+      {
+       "word": "太陽",
+       "romanization": "taiyō",
+       "meaning": "sun",
+       "example": "太陽が出ています。",
+       "exampleMeaning": "The sun is out."
+      },
+      {
+       "word": "雨",
+       "romanization": "ame",
+       "meaning": "rain",
+       "example": "午後は雨が降ります。",
+       "exampleMeaning": "It will rain in the afternoon."
+      },
+      {
+       "word": "雪",
+       "romanization": "yuki",
+       "meaning": "snow",
+       "example": "冬は雪が降ります。",
+       "exampleMeaning": "It snows in winter."
+      },
+      {
+       "word": "風",
+       "romanization": "kaze",
+       "meaning": "wind",
+       "example": "今日は風が強いです。",
+       "exampleMeaning": "The wind is strong today."
+      },
+      {
+       "word": "雲",
+       "romanization": "kumo",
+       "meaning": "cloud",
+       "example": "空に雲がたくさんあります。",
+       "exampleMeaning": "There are many clouds in the sky."
+      },
+      {
+       "word": "嵐",
+       "romanization": "arashi",
+       "meaning": "storm",
+       "example": "今夜は嵐が来ます。",
+       "exampleMeaning": "A storm is coming tonight."
+      },
+      {
+       "word": "雷",
+       "romanization": "kaminari",
+       "meaning": "thunder, lightning",
+       "example": "雷の音が怖いです。",
+       "exampleMeaning": "The sound of thunder is scary."
+      },
+      {
+       "word": "霧",
+       "romanization": "kiri",
+       "meaning": "fog",
+       "example": "朝は霧が出ていました。",
+       "exampleMeaning": "There was fog in the morning."
+      },
+      {
+       "word": "空",
+       "romanization": "sora",
+       "meaning": "sky",
+       "example": "空がきれいです。",
+       "exampleMeaning": "The sky is beautiful."
+      },
+      {
+       "word": "気温",
+       "romanization": "kion",
+       "meaning": "air temperature",
+       "example": "今日の気温は二十度です。",
+       "exampleMeaning": "Today's temperature is 20 degrees."
+      },
+      {
+       "word": "湿度",
+       "romanization": "shitsudo",
+       "meaning": "humidity",
+       "example": "夏は湿度が高いです。",
+       "exampleMeaning": "Humidity is high in summer."
+      },
+      {
+       "word": "台風",
+       "romanization": "taifū",
+       "meaning": "typhoon",
+       "example": "台風が来ています。",
+       "exampleMeaning": "A typhoon is coming."
+      },
+      {
+       "word": "晴れ",
+       "romanization": "hare",
+       "meaning": "sunny weather, clear skies",
+       "example": "明日は晴れです。",
+       "exampleMeaning": "Tomorrow will be sunny."
+      },
+      {
+       "word": "曇り",
+       "romanization": "kumori",
+       "meaning": "cloudy weather",
+       "example": "今日は曇りです。",
+       "exampleMeaning": "It is cloudy today."
+      },
+      {
+       "word": "梅雨",
+       "romanization": "tsuyu",
+       "meaning": "rainy season",
+       "example": "六月は梅雨です。",
+       "exampleMeaning": "June is the rainy season."
+      },
+      {
+       "word": "天気予報",
+       "romanization": "tenki yohō",
+       "meaning": "weather forecast",
+       "example": "天気予報を見ます。",
+       "exampleMeaning": "I check the weather forecast."
+      },
+      {
+       "word": "氷",
+       "romanization": "kōri",
+       "meaning": "ice",
+       "example": "飲み物に氷を入れます。",
+       "exampleMeaning": "I put ice in my drink."
+      },
+      {
+       "word": "暑さ",
+       "romanization": "atsusa",
+       "meaning": "heat",
+       "example": "この暑さは大変です。",
+       "exampleMeaning": "This heat is tough."
+      },
+      {
+       "word": "寒さ",
+       "romanization": "samusa",
+       "meaning": "cold (weather)",
+       "example": "寒さで手が冷たいです。",
+       "exampleMeaning": "My hands are cold because of the cold weather."
+      }
+     ]
+    },
+    {
+     "title": "Days and Months",
+     "level": "A1",
+     "words": [
+      {
+       "word": "日曜日",
+       "romanization": "nichiyōbi",
+       "meaning": "Sunday",
+       "example": "日曜日は家で休みます。",
+       "exampleMeaning": "I rest at home on Sunday."
+      },
+      {
+       "word": "月曜日",
+       "romanization": "getsuyōbi",
+       "meaning": "Monday",
+       "example": "月曜日に授業があります。",
+       "exampleMeaning": "I have class on Monday."
+      },
+      {
+       "word": "火曜日",
+       "romanization": "kayōbi",
+       "meaning": "Tuesday",
+       "example": "火曜日に病院に行きます。",
+       "exampleMeaning": "I go to the hospital on Tuesday."
+      },
+      {
+       "word": "水曜日",
+       "romanization": "suiyōbi",
+       "meaning": "Wednesday",
+       "example": "水曜日に友達が来ます。",
+       "exampleMeaning": "My friend comes on Wednesday."
+      },
+      {
+       "word": "木曜日",
+       "romanization": "mokuyōbi",
+       "meaning": "Thursday",
+       "example": "木曜日に買い物をします。",
+       "exampleMeaning": "I go shopping on Thursday."
+      },
+      {
+       "word": "金曜日",
+       "romanization": "kin'yōbi",
+       "meaning": "Friday",
+       "example": "金曜日にみんなで晩ご飯を食べます。",
+       "exampleMeaning": "We all have dinner together on Friday."
+      },
+      {
+       "word": "土曜日",
+       "romanization": "doyōbi",
+       "meaning": "Saturday",
+       "example": "土曜日は仕事がありません。",
+       "exampleMeaning": "I do not have work on Saturday."
+      },
+      {
+       "word": "週",
+       "romanization": "shū",
+       "meaning": "week",
+       "example": "今週は忙しいです。",
+       "exampleMeaning": "I am busy this week."
+      },
+      {
+       "word": "一月",
+       "romanization": "ichigatsu",
+       "meaning": "January",
+       "example": "一月は寒いです。",
+       "exampleMeaning": "January is cold."
+      },
+      {
+       "word": "二月",
+       "romanization": "nigatsu",
+       "meaning": "February",
+       "example": "二月は雪が降ります。",
+       "exampleMeaning": "It snows in February."
+      },
+      {
+       "word": "三月",
+       "romanization": "sangatsu",
+       "meaning": "March",
+       "example": "三月に春が来ます。",
+       "exampleMeaning": "Spring comes in March."
+      },
+      {
+       "word": "四月",
+       "romanization": "shigatsu",
+       "meaning": "April",
+       "example": "四月に学校が始まります。",
+       "exampleMeaning": "School starts in April."
+      },
+      {
+       "word": "五月",
+       "romanization": "gogatsu",
+       "meaning": "May",
+       "example": "五月は天気がいいです。",
+       "exampleMeaning": "The weather is nice in May."
+      },
+      {
+       "word": "六月",
+       "romanization": "rokugatsu",
+       "meaning": "June",
+       "example": "六月は雨が多いです。",
+       "exampleMeaning": "There is a lot of rain in June."
+      },
+      {
+       "word": "七月",
+       "romanization": "shichigatsu",
+       "meaning": "July",
+       "example": "七月は暑いです。",
+       "exampleMeaning": "July is hot."
+      },
+      {
+       "word": "八月",
+       "romanization": "hachigatsu",
+       "meaning": "August",
+       "example": "八月に夏休みがあります。",
+       "exampleMeaning": "There is summer vacation in August."
+      },
+      {
+       "word": "九月",
+       "romanization": "kugatsu",
+       "meaning": "September",
+       "example": "九月に旅行します。",
+       "exampleMeaning": "I travel in September."
+      },
+      {
+       "word": "十月",
+       "romanization": "jūgatsu",
+       "meaning": "October",
+       "example": "十月は涼しいです。",
+       "exampleMeaning": "October is cool."
+      },
+      {
+       "word": "十一月",
+       "romanization": "jūichigatsu",
+       "meaning": "November",
+       "example": "十一月は紅葉がきれいです。",
+       "exampleMeaning": "The autumn leaves are beautiful in November."
+      },
+      {
+       "word": "十二月",
+       "romanization": "jūnigatsu",
+       "meaning": "December",
+       "example": "十二月に大掃除をします。",
+       "exampleMeaning": "We do a big cleaning in December."
+      }
+     ]
+    },
+    {
+     "title": "Common Verbs",
+     "level": "A1",
+     "words": [
+      {
+       "word": "する",
+       "romanization": "suru",
+       "meaning": "to do",
+       "example": "毎日宿題をします。",
+       "exampleMeaning": "I do homework every day."
+      },
+      {
+       "word": "行く",
+       "romanization": "iku",
+       "meaning": "to go",
+       "example": "学校に行きます。",
+       "exampleMeaning": "I go to school."
+      },
+      {
+       "word": "来る",
+       "romanization": "kuru",
+       "meaning": "to come",
+       "example": "友達が家に来ます。",
+       "exampleMeaning": "My friend comes to my house."
+      },
+      {
+       "word": "食べる",
+       "romanization": "taberu",
+       "meaning": "to eat",
+       "example": "朝ご飯にパンを食べます。",
+       "exampleMeaning": "I eat bread for breakfast."
+      },
+      {
+       "word": "飲む",
+       "romanization": "nomu",
+       "meaning": "to drink",
+       "example": "毎朝牛乳を飲みます。",
+       "exampleMeaning": "I drink milk every morning."
+      },
+      {
+       "word": "見る",
+       "romanization": "miru",
+       "meaning": "to see, to watch",
+       "example": "夜に映画を見ます。",
+       "exampleMeaning": "I watch a movie at night."
+      },
+      {
+       "word": "聞く",
+       "romanization": "kiku",
+       "meaning": "to listen, to hear",
+       "example": "音楽を聞きます。",
+       "exampleMeaning": "I listen to music."
+      },
+      {
+       "word": "話す",
+       "romanization": "hanasu",
+       "meaning": "to speak",
+       "example": "日本語を話します。",
+       "exampleMeaning": "I speak Japanese."
+      },
+      {
+       "word": "読む",
+       "romanization": "yomu",
+       "meaning": "to read",
+       "example": "本を読みます。",
+       "exampleMeaning": "I read a book."
+      },
+      {
+       "word": "書く",
+       "romanization": "kaku",
+       "meaning": "to write",
+       "example": "名前を書いてください。",
+       "exampleMeaning": "Please write your name."
+      },
+      {
+       "word": "買う",
+       "romanization": "kau",
+       "meaning": "to buy",
+       "example": "店で果物を買います。",
+       "exampleMeaning": "I buy fruit at the store."
+      },
+      {
+       "word": "寝る",
+       "romanization": "neru",
+       "meaning": "to sleep, to go to bed",
+       "example": "十時に寝ます。",
+       "exampleMeaning": "I go to bed at ten."
+      },
+      {
+       "word": "起きる",
+       "romanization": "okiru",
+       "meaning": "to get up, to wake up",
+       "example": "毎朝六時に起きます。",
+       "exampleMeaning": "I get up at six every morning."
+      },
+      {
+       "word": "住む",
+       "romanization": "sumu",
+       "meaning": "to live",
+       "example": "東京に住んでいます。",
+       "exampleMeaning": "I live in Tokyo."
+      },
+      {
+       "word": "働く",
+       "romanization": "hataraku",
+       "meaning": "to work",
+       "example": "銀行で働いています。",
+       "exampleMeaning": "I work at a bank."
+      },
+      {
+       "word": "会う",
+       "romanization": "au",
+       "meaning": "to meet",
+       "example": "土曜日に友達に会います。",
+       "exampleMeaning": "I meet my friend on Saturday."
+      },
+      {
+       "word": "歩く",
+       "romanization": "aruku",
+       "meaning": "to walk",
+       "example": "毎朝公園を歩きます。",
+       "exampleMeaning": "I walk in the park every morning."
+      },
+      {
+       "word": "待つ",
+       "romanization": "matsu",
+       "meaning": "to wait",
+       "example": "ここで待ってください。",
+       "exampleMeaning": "Please wait here."
+      },
+      {
+       "word": "作る",
+       "romanization": "tsukuru",
+       "meaning": "to make",
+       "example": "晩ご飯を作ります。",
+       "exampleMeaning": "I make dinner."
+      },
+      {
+       "word": "持つ",
+       "romanization": "motsu",
+       "meaning": "to hold, to carry",
+       "example": "荷物を持ってください。",
+       "exampleMeaning": "Please hold the luggage."
+      }
+     ]
+    },
+    {
+     "title": "Common Adjectives",
+     "level": "A1",
+     "words": [
+      {
+       "word": "大きい",
+       "romanization": "ōkii",
+       "meaning": "big",
+       "example": "大きい犬がいます。",
+       "exampleMeaning": "There is a big dog."
+      },
+      {
+       "word": "小さい",
+       "romanization": "chiisai",
+       "meaning": "small",
+       "example": "この猫は小さいです。",
+       "exampleMeaning": "This cat is small."
+      },
+      {
+       "word": "いい",
+       "romanization": "ii",
+       "meaning": "good",
+       "example": "これはいい本です。",
+       "exampleMeaning": "This is a good book."
+      },
+      {
+       "word": "悪い",
+       "romanization": "warui",
+       "meaning": "bad",
+       "example": "今日は天気が悪いです。",
+       "exampleMeaning": "The weather is bad today."
+      },
+      {
+       "word": "新しい",
+       "romanization": "atarashii",
+       "meaning": "new",
+       "example": "新しい携帯を買いました。",
+       "exampleMeaning": "I bought a new phone."
+      },
+      {
+       "word": "古い",
+       "romanization": "furui",
+       "meaning": "old",
+       "example": "この車は古いです。",
+       "exampleMeaning": "This car is old."
+      },
+      {
+       "word": "高い",
+       "romanization": "takai",
+       "meaning": "expensive, tall",
+       "example": "この店は高いです。",
+       "exampleMeaning": "This shop is expensive."
+      },
+      {
+       "word": "安い",
+       "romanization": "yasui",
+       "meaning": "cheap",
+       "example": "市場は安いです。",
+       "exampleMeaning": "The market is cheap."
+      },
+      {
+       "word": "長い",
+       "romanization": "nagai",
+       "meaning": "long",
+       "example": "この川は長いです。",
+       "exampleMeaning": "This river is long."
+      },
+      {
+       "word": "短い",
+       "romanization": "mijikai",
+       "meaning": "short",
+       "example": "このスカートは短いです。",
+       "exampleMeaning": "This skirt is short."
+      },
+      {
+       "word": "速い",
+       "romanization": "hayai",
+       "meaning": "fast",
+       "example": "新幹線は速いです。",
+       "exampleMeaning": "The Shinkansen is fast."
+      },
+      {
+       "word": "遅い",
+       "romanization": "osoi",
+       "meaning": "slow, late",
+       "example": "バスは遅いです。",
+       "exampleMeaning": "The bus is slow."
+      },
+      {
+       "word": "簡単",
+       "romanization": "kantan",
+       "meaning": "easy, simple",
+       "example": "試験は簡単でした。",
+       "exampleMeaning": "The exam was easy."
+      },
+      {
+       "word": "難しい",
+       "romanization": "muzukashii",
+       "meaning": "difficult",
+       "example": "この言葉は難しいです。",
+       "exampleMeaning": "This word is difficult."
+      },
+      {
+       "word": "かわいい",
+       "romanization": "kawaii",
+       "meaning": "cute",
+       "example": "赤ちゃんはかわいいです。",
+       "exampleMeaning": "The baby is cute."
+      },
+      {
+       "word": "楽しい",
+       "romanization": "tanoshii",
+       "meaning": "fun, enjoyable",
+       "example": "旅行は楽しいです。",
+       "exampleMeaning": "Trips are fun."
+      },
+      {
+       "word": "嬉しい",
+       "romanization": "ureshii",
+       "meaning": "happy, glad",
+       "example": "友達に会えて嬉しいです。",
+       "exampleMeaning": "I am happy to meet my friend."
+      },
+      {
+       "word": "悲しい",
+       "romanization": "kanashii",
+       "meaning": "sad",
+       "example": "その映画は悲しいです。",
+       "exampleMeaning": "That movie is sad."
+      },
+      {
+       "word": "忙しい",
+       "romanization": "isogashii",
+       "meaning": "busy",
+       "example": "今週は忙しいです。",
+       "exampleMeaning": "I am busy this week."
+      },
+      {
+       "word": "美味しい",
+       "romanization": "oishii",
+       "meaning": "delicious",
+       "example": "このカレーは美味しいです。",
+       "exampleMeaning": "This curry is delicious."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

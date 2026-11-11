@@ -1,0 +1,1469 @@
+{
+ "languages": [
+  {
+   "name": "French",
+   "stages": [
+    {
+     "title": "Family",
+     "level": "A1",
+     "words": [
+      {
+       "word": "mère",
+       "romanization": "",
+       "meaning": "mother",
+       "example": "Ma mère cuisine très bien.",
+       "exampleMeaning": "My mother cooks very well."
+      },
+      {
+       "word": "père",
+       "romanization": "",
+       "meaning": "father",
+       "example": "Mon père travaille dans une banque.",
+       "exampleMeaning": "My father works in a bank."
+      },
+      {
+       "word": "frère",
+       "romanization": "",
+       "meaning": "brother",
+       "example": "Mon frère a dix ans.",
+       "exampleMeaning": "My brother is ten years old."
+      },
+      {
+       "word": "sœur",
+       "romanization": "",
+       "meaning": "sister",
+       "example": "Ma sœur étudie la médecine.",
+       "exampleMeaning": "My sister studies medicine."
+      },
+      {
+       "word": "fils",
+       "romanization": "",
+       "meaning": "son",
+       "example": "Son fils joue au football.",
+       "exampleMeaning": "Her son plays soccer."
+      },
+      {
+       "word": "fille",
+       "romanization": "",
+       "meaning": "daughter, girl",
+       "example": "Ma fille lit un livre.",
+       "exampleMeaning": "My daughter is reading a book."
+      },
+      {
+       "word": "grand-père",
+       "romanization": "",
+       "meaning": "grandfather",
+       "example": "Mon grand-père habite à la campagne.",
+       "exampleMeaning": "My grandfather lives in the countryside."
+      },
+      {
+       "word": "grand-mère",
+       "romanization": "",
+       "meaning": "grandmother",
+       "example": "Ma grand-mère fait du pain.",
+       "exampleMeaning": "My grandmother makes bread."
+      },
+      {
+       "word": "oncle",
+       "romanization": "",
+       "meaning": "uncle",
+       "example": "Mon oncle voyage beaucoup.",
+       "exampleMeaning": "My uncle travels a lot."
+      },
+      {
+       "word": "tante",
+       "romanization": "",
+       "meaning": "aunt",
+       "example": "Ma tante habite à Paris.",
+       "exampleMeaning": "My aunt lives in Paris."
+      },
+      {
+       "word": "cousin",
+       "romanization": "",
+       "meaning": "cousin (male)",
+       "example": "Mon cousin habite à Lyon.",
+       "exampleMeaning": "My cousin lives in Lyon."
+      },
+      {
+       "word": "cousine",
+       "romanization": "",
+       "meaning": "cousin (female)",
+       "example": "Ma cousine est étudiante.",
+       "exampleMeaning": "My cousin is a student."
+      },
+      {
+       "word": "mari",
+       "romanization": "",
+       "meaning": "husband",
+       "example": "Son mari est médecin.",
+       "exampleMeaning": "Her husband is a doctor."
+      },
+      {
+       "word": "femme",
+       "romanization": "",
+       "meaning": "wife, woman",
+       "example": "Ma femme est professeure.",
+       "exampleMeaning": "My wife is a teacher."
+      },
+      {
+       "word": "parents",
+       "romanization": "",
+       "meaning": "parents",
+       "example": "Mes parents sont gentils.",
+       "exampleMeaning": "My parents are kind."
+      },
+      {
+       "word": "enfant",
+       "romanization": "",
+       "meaning": "child",
+       "example": "L'enfant joue dans le jardin.",
+       "exampleMeaning": "The child is playing in the garden."
+      },
+      {
+       "word": "bébé",
+       "romanization": "",
+       "meaning": "baby",
+       "example": "Le bébé dort.",
+       "exampleMeaning": "The baby is sleeping."
+      },
+      {
+       "word": "famille",
+       "romanization": "",
+       "meaning": "family",
+       "example": "J'aime ma famille.",
+       "exampleMeaning": "I love my family."
+      },
+      {
+       "word": "neveu",
+       "romanization": "",
+       "meaning": "nephew",
+       "example": "Mon neveu a trois ans.",
+       "exampleMeaning": "My nephew is three years old."
+      },
+      {
+       "word": "nièce",
+       "romanization": "",
+       "meaning": "niece",
+       "example": "Ma nièce aime dessiner.",
+       "exampleMeaning": "My niece likes to draw."
+      }
+     ]
+    },
+    {
+     "title": "Colors",
+     "level": "A1",
+     "words": [
+      {
+       "word": "rouge",
+       "romanization": "",
+       "meaning": "red",
+       "example": "J'ai une voiture rouge.",
+       "exampleMeaning": "I have a red car."
+      },
+      {
+       "word": "bleu",
+       "romanization": "",
+       "meaning": "blue",
+       "example": "Le ciel est bleu.",
+       "exampleMeaning": "The sky is blue."
+      },
+      {
+       "word": "vert",
+       "romanization": "",
+       "meaning": "green",
+       "example": "L'arbre est vert.",
+       "exampleMeaning": "The tree is green."
+      },
+      {
+       "word": "jaune",
+       "romanization": "",
+       "meaning": "yellow",
+       "example": "Le soleil est jaune.",
+       "exampleMeaning": "The sun is yellow."
+      },
+      {
+       "word": "noir",
+       "romanization": "",
+       "meaning": "black",
+       "example": "Mon chat est noir.",
+       "exampleMeaning": "My cat is black."
+      },
+      {
+       "word": "blanc",
+       "romanization": "",
+       "meaning": "white",
+       "example": "Elle porte une chemise blanche.",
+       "exampleMeaning": "She is wearing a white shirt."
+      },
+      {
+       "word": "gris",
+       "romanization": "",
+       "meaning": "gray",
+       "example": "Le ciel est gris aujourd'hui.",
+       "exampleMeaning": "The sky is gray today."
+      },
+      {
+       "word": "orange",
+       "romanization": "",
+       "meaning": "orange (color)",
+       "example": "Cette fleur est orange.",
+       "exampleMeaning": "This flower is orange."
+      },
+      {
+       "word": "rose",
+       "romanization": "",
+       "meaning": "pink",
+       "example": "Elle porte une robe rose.",
+       "exampleMeaning": "She is wearing a pink dress."
+      },
+      {
+       "word": "violet",
+       "romanization": "",
+       "meaning": "purple",
+       "example": "Mon sac est violet.",
+       "exampleMeaning": "My bag is purple."
+      },
+      {
+       "word": "marron",
+       "romanization": "",
+       "meaning": "brown",
+       "example": "Le chien est marron.",
+       "exampleMeaning": "The dog is brown."
+      },
+      {
+       "word": "doré",
+       "romanization": "",
+       "meaning": "golden",
+       "example": "Il a une montre dorée.",
+       "exampleMeaning": "He has a golden watch."
+      },
+      {
+       "word": "argenté",
+       "romanization": "",
+       "meaning": "silver",
+       "example": "J'aime la voiture argentée.",
+       "exampleMeaning": "I like the silver car."
+      },
+      {
+       "word": "couleur",
+       "romanization": "",
+       "meaning": "color",
+       "example": "Quelle est ta couleur préférée ?",
+       "exampleMeaning": "What is your favorite color?"
+      },
+      {
+       "word": "bleu clair",
+       "romanization": "",
+       "meaning": "light blue",
+       "example": "Je porte une chemise bleu clair.",
+       "exampleMeaning": "I am wearing a light blue shirt."
+      },
+      {
+       "word": "beige",
+       "romanization": "",
+       "meaning": "beige",
+       "example": "Le mur est beige.",
+       "exampleMeaning": "The wall is beige."
+      },
+      {
+       "word": "arc-en-ciel",
+       "romanization": "",
+       "meaning": "rainbow",
+       "example": "Il y a un arc-en-ciel dans le ciel.",
+       "exampleMeaning": "There is a rainbow in the sky."
+      },
+      {
+       "word": "crayon de couleur",
+       "romanization": "",
+       "meaning": "colored pencil",
+       "example": "L'enfant dessine avec un crayon de couleur.",
+       "exampleMeaning": "The child draws with a colored pencil."
+      },
+      {
+       "word": "pinceau",
+       "romanization": "",
+       "meaning": "paintbrush",
+       "example": "Je peins avec un pinceau.",
+       "exampleMeaning": "I paint with a paintbrush."
+      },
+      {
+       "word": "coloré",
+       "romanization": "",
+       "meaning": "colorful",
+       "example": "Ce papillon est très coloré.",
+       "exampleMeaning": "This butterfly is very colorful."
+      }
+     ]
+    },
+    {
+     "title": "Body",
+     "level": "A1",
+     "words": [
+      {
+       "word": "tête",
+       "romanization": "",
+       "meaning": "head",
+       "example": "J'ai mal à la tête.",
+       "exampleMeaning": "I have a headache."
+      },
+      {
+       "word": "visage",
+       "romanization": "",
+       "meaning": "face",
+       "example": "Elle a un joli visage.",
+       "exampleMeaning": "She has a pretty face."
+      },
+      {
+       "word": "œil",
+       "romanization": "",
+       "meaning": "eye",
+       "example": "Il a mal à l'œil.",
+       "exampleMeaning": "His eye hurts."
+      },
+      {
+       "word": "nez",
+       "romanization": "",
+       "meaning": "nose",
+       "example": "Mon nez est froid.",
+       "exampleMeaning": "My nose is cold."
+      },
+      {
+       "word": "bouche",
+       "romanization": "",
+       "meaning": "mouth",
+       "example": "Ouvre la bouche, s'il te plaît.",
+       "exampleMeaning": "Open your mouth, please."
+      },
+      {
+       "word": "oreille",
+       "romanization": "",
+       "meaning": "ear",
+       "example": "Le lapin a de longues oreilles.",
+       "exampleMeaning": "The rabbit has long ears."
+      },
+      {
+       "word": "dent",
+       "romanization": "",
+       "meaning": "tooth",
+       "example": "Je me brosse les dents.",
+       "exampleMeaning": "I brush my teeth."
+      },
+      {
+       "word": "cheveux",
+       "romanization": "",
+       "meaning": "hair",
+       "example": "Elle a les cheveux longs.",
+       "exampleMeaning": "She has long hair."
+      },
+      {
+       "word": "cou",
+       "romanization": "",
+       "meaning": "neck",
+       "example": "Elle porte une écharpe autour du cou.",
+       "exampleMeaning": "She is wearing a scarf around her neck."
+      },
+      {
+       "word": "épaule",
+       "romanization": "",
+       "meaning": "shoulder",
+       "example": "J'ai mal à l'épaule.",
+       "exampleMeaning": "My shoulder hurts."
+      },
+      {
+       "word": "main",
+       "romanization": "",
+       "meaning": "hand",
+       "example": "Lave-toi les mains.",
+       "exampleMeaning": "Wash your hands."
+      },
+      {
+       "word": "doigt",
+       "romanization": "",
+       "meaning": "finger",
+       "example": "J'ai une bague au doigt.",
+       "exampleMeaning": "I have a ring on my finger."
+      },
+      {
+       "word": "jambe",
+       "romanization": "",
+       "meaning": "leg",
+       "example": "Ma jambe me fait mal.",
+       "exampleMeaning": "My leg hurts."
+      },
+      {
+       "word": "pied",
+       "romanization": "",
+       "meaning": "foot",
+       "example": "J'ai mal au pied.",
+       "exampleMeaning": "My foot hurts."
+      },
+      {
+       "word": "genou",
+       "romanization": "",
+       "meaning": "knee",
+       "example": "Je me suis blessé au genou.",
+       "exampleMeaning": "I hurt my knee."
+      },
+      {
+       "word": "dos",
+       "romanization": "",
+       "meaning": "back",
+       "example": "J'ai mal au dos.",
+       "exampleMeaning": "My back hurts."
+      },
+      {
+       "word": "ventre",
+       "romanization": "",
+       "meaning": "stomach, belly",
+       "example": "Le chat dort sur mon ventre.",
+       "exampleMeaning": "The cat is sleeping on my belly."
+      },
+      {
+       "word": "cœur",
+       "romanization": "",
+       "meaning": "heart",
+       "example": "Mon cœur bat vite.",
+       "exampleMeaning": "My heart is beating fast."
+      },
+      {
+       "word": "bras",
+       "romanization": "",
+       "meaning": "arm",
+       "example": "Lève le bras, s'il te plaît.",
+       "exampleMeaning": "Raise your arm, please."
+      },
+      {
+       "word": "langue",
+       "romanization": "",
+       "meaning": "tongue",
+       "example": "Le chat a la langue rugueuse.",
+       "exampleMeaning": "The cat has a rough tongue."
+      }
+     ]
+    },
+    {
+     "title": "Clothes",
+     "level": "A1",
+     "words": [
+      {
+       "word": "vêtements",
+       "romanization": "",
+       "meaning": "clothes",
+       "example": "J'achète des vêtements neufs.",
+       "exampleMeaning": "I am buying new clothes."
+      },
+      {
+       "word": "chemise",
+       "romanization": "",
+       "meaning": "shirt",
+       "example": "Cette chemise est bleue.",
+       "exampleMeaning": "This shirt is blue."
+      },
+      {
+       "word": "t-shirt",
+       "romanization": "",
+       "meaning": "T-shirt",
+       "example": "Je porte un t-shirt rouge.",
+       "exampleMeaning": "I am wearing a red T-shirt."
+      },
+      {
+       "word": "pantalon",
+       "romanization": "",
+       "meaning": "pants",
+       "example": "Ce pantalon est long.",
+       "exampleMeaning": "These pants are long."
+      },
+      {
+       "word": "jupe",
+       "romanization": "",
+       "meaning": "skirt",
+       "example": "Elle porte une jupe courte.",
+       "exampleMeaning": "She is wearing a short skirt."
+      },
+      {
+       "word": "robe",
+       "romanization": "",
+       "meaning": "dress",
+       "example": "Ma robe est bleue.",
+       "exampleMeaning": "My dress is blue."
+      },
+      {
+       "word": "veste",
+       "romanization": "",
+       "meaning": "jacket",
+       "example": "Il fait froid, prends ta veste.",
+       "exampleMeaning": "It is cold, take your jacket."
+      },
+      {
+       "word": "manteau",
+       "romanization": "",
+       "meaning": "coat",
+       "example": "J'ai besoin d'un manteau pour l'hiver.",
+       "exampleMeaning": "I need a coat for winter."
+      },
+      {
+       "word": "chapeau",
+       "romanization": "",
+       "meaning": "hat",
+       "example": "Le chapeau est très grand.",
+       "exampleMeaning": "The hat is very big."
+      },
+      {
+       "word": "chaussettes",
+       "romanization": "",
+       "meaning": "socks",
+       "example": "Mes chaussettes sont sales.",
+       "exampleMeaning": "My socks are dirty."
+      },
+      {
+       "word": "chaussures",
+       "romanization": "",
+       "meaning": "shoes",
+       "example": "Je veux acheter de nouvelles chaussures.",
+       "exampleMeaning": "I want to buy new shoes."
+      },
+      {
+       "word": "écharpe",
+       "romanization": "",
+       "meaning": "scarf",
+       "example": "Je porte une écharpe en hiver.",
+       "exampleMeaning": "I wear a scarf in winter."
+      },
+      {
+       "word": "gants",
+       "romanization": "",
+       "meaning": "gloves",
+       "example": "Ses gants sont noirs.",
+       "exampleMeaning": "Her gloves are black."
+      },
+      {
+       "word": "ceinture",
+       "romanization": "",
+       "meaning": "belt",
+       "example": "Il porte une ceinture noire.",
+       "exampleMeaning": "He is wearing a black belt."
+      },
+      {
+       "word": "cravate",
+       "romanization": "",
+       "meaning": "tie",
+       "example": "Mon père porte une cravate.",
+       "exampleMeaning": "My father is wearing a tie."
+      },
+      {
+       "word": "lunettes",
+       "romanization": "",
+       "meaning": "glasses",
+       "example": "Elle porte des lunettes.",
+       "exampleMeaning": "She wears glasses."
+      },
+      {
+       "word": "montre",
+       "romanization": "",
+       "meaning": "watch",
+       "example": "Cette montre est chère.",
+       "exampleMeaning": "This watch is expensive."
+      },
+      {
+       "word": "sac",
+       "romanization": "",
+       "meaning": "bag",
+       "example": "Mon sac est lourd.",
+       "exampleMeaning": "My bag is heavy."
+      },
+      {
+       "word": "pull",
+       "romanization": "",
+       "meaning": "sweater",
+       "example": "J'ai un pull chaud.",
+       "exampleMeaning": "I have a warm sweater."
+      },
+      {
+       "word": "parapluie",
+       "romanization": "",
+       "meaning": "umbrella",
+       "example": "Il pleut, prends un parapluie.",
+       "exampleMeaning": "It is raining, take an umbrella."
+      }
+     ]
+    },
+    {
+     "title": "Home",
+     "level": "A1",
+     "words": [
+      {
+       "word": "maison",
+       "romanization": "",
+       "meaning": "house, home",
+       "example": "Ma maison est grande.",
+       "exampleMeaning": "My house is big."
+      },
+      {
+       "word": "cuisine",
+       "romanization": "",
+       "meaning": "kitchen",
+       "example": "Ma mère est dans la cuisine.",
+       "exampleMeaning": "My mother is in the kitchen."
+      },
+      {
+       "word": "salle de bain",
+       "romanization": "",
+       "meaning": "bathroom",
+       "example": "La salle de bain est à côté.",
+       "exampleMeaning": "The bathroom is next door."
+      },
+      {
+       "word": "chambre",
+       "romanization": "",
+       "meaning": "bedroom",
+       "example": "Ma chambre est petite.",
+       "exampleMeaning": "My bedroom is small."
+      },
+      {
+       "word": "salon",
+       "romanization": "",
+       "meaning": "living room",
+       "example": "Je regarde la télé dans le salon.",
+       "exampleMeaning": "I watch TV in the living room."
+      },
+      {
+       "word": "fenêtre",
+       "romanization": "",
+       "meaning": "window",
+       "example": "Ouvre la fenêtre, s'il te plaît.",
+       "exampleMeaning": "Open the window, please."
+      },
+      {
+       "word": "porte",
+       "romanization": "",
+       "meaning": "door",
+       "example": "Ferme la porte.",
+       "exampleMeaning": "Close the door."
+      },
+      {
+       "word": "table",
+       "romanization": "",
+       "meaning": "table",
+       "example": "Il y a un livre sur la table.",
+       "exampleMeaning": "There is a book on the table."
+      },
+      {
+       "word": "chaise",
+       "romanization": "",
+       "meaning": "chair",
+       "example": "Cette chaise est confortable.",
+       "exampleMeaning": "This chair is comfortable."
+      },
+      {
+       "word": "lit",
+       "romanization": "",
+       "meaning": "bed",
+       "example": "Je dors dans mon lit.",
+       "exampleMeaning": "I sleep in my bed."
+      },
+      {
+       "word": "canapé",
+       "romanization": "",
+       "meaning": "sofa",
+       "example": "Le chat dort sur le canapé.",
+       "exampleMeaning": "The cat sleeps on the sofa."
+      },
+      {
+       "word": "lampe",
+       "romanization": "",
+       "meaning": "lamp",
+       "example": "Allume la lampe, s'il te plaît.",
+       "exampleMeaning": "Turn on the lamp, please."
+      },
+      {
+       "word": "miroir",
+       "romanization": "",
+       "meaning": "mirror",
+       "example": "Regarde-toi dans le miroir.",
+       "exampleMeaning": "Look at yourself in the mirror."
+      },
+      {
+       "word": "toit",
+       "romanization": "",
+       "meaning": "roof",
+       "example": "Le toit est rouge.",
+       "exampleMeaning": "The roof is red."
+      },
+      {
+       "word": "sol",
+       "romanization": "",
+       "meaning": "floor",
+       "example": "Le sol est propre.",
+       "exampleMeaning": "The floor is clean."
+      },
+      {
+       "word": "mur",
+       "romanization": "",
+       "meaning": "wall",
+       "example": "Il y a un tableau sur le mur.",
+       "exampleMeaning": "There is a painting on the wall."
+      },
+      {
+       "word": "escalier",
+       "romanization": "",
+       "meaning": "stairs",
+       "example": "Je monte l'escalier.",
+       "exampleMeaning": "I go up the stairs."
+      },
+      {
+       "word": "clé",
+       "romanization": "",
+       "meaning": "key",
+       "example": "J'ai perdu ma clé.",
+       "exampleMeaning": "I lost my key."
+      },
+      {
+       "word": "armoire",
+       "romanization": "",
+       "meaning": "wardrobe",
+       "example": "Mes vêtements sont dans l'armoire.",
+       "exampleMeaning": "My clothes are in the wardrobe."
+      },
+      {
+       "word": "jardin",
+       "romanization": "",
+       "meaning": "garden",
+       "example": "Il y a des fleurs dans le jardin.",
+       "exampleMeaning": "There are flowers in the garden."
+      }
+     ]
+    },
+    {
+     "title": "Animals",
+     "level": "A1",
+     "words": [
+      {
+       "word": "chien",
+       "romanization": "",
+       "meaning": "dog",
+       "example": "Mon chien court dans le parc.",
+       "exampleMeaning": "My dog runs in the park."
+      },
+      {
+       "word": "chat",
+       "romanization": "",
+       "meaning": "cat",
+       "example": "Le chat boit du lait.",
+       "exampleMeaning": "The cat drinks milk."
+      },
+      {
+       "word": "oiseau",
+       "romanization": "",
+       "meaning": "bird",
+       "example": "Un oiseau chante dans l'arbre.",
+       "exampleMeaning": "A bird sings in the tree."
+      },
+      {
+       "word": "poisson",
+       "romanization": "",
+       "meaning": "fish",
+       "example": "Le poisson nage dans l'eau.",
+       "exampleMeaning": "The fish swims in the water."
+      },
+      {
+       "word": "cheval",
+       "romanization": "",
+       "meaning": "horse",
+       "example": "Le cheval est très rapide.",
+       "exampleMeaning": "The horse is very fast."
+      },
+      {
+       "word": "vache",
+       "romanization": "",
+       "meaning": "cow",
+       "example": "La vache donne du lait.",
+       "exampleMeaning": "The cow gives milk."
+      },
+      {
+       "word": "cochon",
+       "romanization": "",
+       "meaning": "pig",
+       "example": "Le cochon vit à la ferme.",
+       "exampleMeaning": "The pig lives on the farm."
+      },
+      {
+       "word": "mouton",
+       "romanization": "",
+       "meaning": "sheep",
+       "example": "Le mouton mange de l'herbe.",
+       "exampleMeaning": "The sheep eats grass."
+      },
+      {
+       "word": "lapin",
+       "romanization": "",
+       "meaning": "rabbit",
+       "example": "Le lapin saute beaucoup.",
+       "exampleMeaning": "The rabbit jumps a lot."
+      },
+      {
+       "word": "souris",
+       "romanization": "",
+       "meaning": "mouse",
+       "example": "Il y a une souris dans la cuisine.",
+       "exampleMeaning": "There is a mouse in the kitchen."
+      },
+      {
+       "word": "poule",
+       "romanization": "",
+       "meaning": "hen",
+       "example": "La poule pond des œufs.",
+       "exampleMeaning": "The hen lays eggs."
+      },
+      {
+       "word": "canard",
+       "romanization": "",
+       "meaning": "duck",
+       "example": "Le canard nage dans la mare.",
+       "exampleMeaning": "The duck swims in the pond."
+      },
+      {
+       "word": "éléphant",
+       "romanization": "",
+       "meaning": "elephant",
+       "example": "L'éléphant est un grand animal.",
+       "exampleMeaning": "The elephant is a big animal."
+      },
+      {
+       "word": "lion",
+       "romanization": "",
+       "meaning": "lion",
+       "example": "Le lion est fort.",
+       "exampleMeaning": "The lion is strong."
+      },
+      {
+       "word": "tigre",
+       "romanization": "",
+       "meaning": "tiger",
+       "example": "J'ai vu un tigre au zoo.",
+       "exampleMeaning": "I saw a tiger at the zoo."
+      },
+      {
+       "word": "singe",
+       "romanization": "",
+       "meaning": "monkey",
+       "example": "Le singe monte à l'arbre.",
+       "exampleMeaning": "The monkey climbs the tree."
+      },
+      {
+       "word": "ours",
+       "romanization": "",
+       "meaning": "bear",
+       "example": "L'ours aime le miel.",
+       "exampleMeaning": "The bear likes honey."
+      },
+      {
+       "word": "loup",
+       "romanization": "",
+       "meaning": "wolf",
+       "example": "Le loup vit dans la forêt.",
+       "exampleMeaning": "The wolf lives in the forest."
+      },
+      {
+       "word": "serpent",
+       "romanization": "",
+       "meaning": "snake",
+       "example": "Il y a un serpent dans le jardin.",
+       "exampleMeaning": "There is a snake in the garden."
+      },
+      {
+       "word": "papillon",
+       "romanization": "",
+       "meaning": "butterfly",
+       "example": "Un papillon se pose sur la fleur.",
+       "exampleMeaning": "A butterfly lands on the flower."
+      }
+     ]
+    },
+    {
+     "title": "Weather",
+     "level": "A1",
+     "words": [
+      {
+       "word": "météo",
+       "romanization": "",
+       "meaning": "weather forecast, weather",
+       "example": "La météo est bonne aujourd'hui.",
+       "exampleMeaning": "The weather is good today."
+      },
+      {
+       "word": "soleil",
+       "romanization": "",
+       "meaning": "sun",
+       "example": "Il y a beaucoup de soleil aujourd'hui.",
+       "exampleMeaning": "There is a lot of sun today."
+      },
+      {
+       "word": "pluie",
+       "romanization": "",
+       "meaning": "rain",
+       "example": "La pluie commence cet après-midi.",
+       "exampleMeaning": "The rain starts this afternoon."
+      },
+      {
+       "word": "neige",
+       "romanization": "",
+       "meaning": "snow",
+       "example": "J'aime jouer dans la neige.",
+       "exampleMeaning": "I like playing in the snow."
+      },
+      {
+       "word": "vent",
+       "romanization": "",
+       "meaning": "wind",
+       "example": "Il y a beaucoup de vent aujourd'hui.",
+       "exampleMeaning": "It is very windy today."
+      },
+      {
+       "word": "nuage",
+       "romanization": "",
+       "meaning": "cloud",
+       "example": "Il n'y a pas un seul nuage.",
+       "exampleMeaning": "There is not a single cloud."
+      },
+      {
+       "word": "orage",
+       "romanization": "",
+       "meaning": "thunderstorm",
+       "example": "Il y aura un orage ce soir.",
+       "exampleMeaning": "There will be a thunderstorm tonight."
+      },
+      {
+       "word": "chaleur",
+       "romanization": "",
+       "meaning": "heat",
+       "example": "En été, la chaleur est forte.",
+       "exampleMeaning": "In summer, the heat is strong."
+      },
+      {
+       "word": "froid",
+       "romanization": "",
+       "meaning": "cold",
+       "example": "Le froid arrive en novembre.",
+       "exampleMeaning": "The cold arrives in November."
+      },
+      {
+       "word": "brouillard",
+       "romanization": "",
+       "meaning": "fog",
+       "example": "Il y a du brouillard sur la route.",
+       "exampleMeaning": "There is fog on the road."
+      },
+      {
+       "word": "température",
+       "romanization": "",
+       "meaning": "temperature",
+       "example": "La température est basse ce matin.",
+       "exampleMeaning": "The temperature is low this morning."
+      },
+      {
+       "word": "ciel",
+       "romanization": "",
+       "meaning": "sky",
+       "example": "Le ciel est clair.",
+       "exampleMeaning": "The sky is clear."
+      },
+      {
+       "word": "éclair",
+       "romanization": "",
+       "meaning": "lightning",
+       "example": "Un éclair traverse le ciel.",
+       "exampleMeaning": "A flash of lightning crosses the sky."
+      },
+      {
+       "word": "tonnerre",
+       "romanization": "",
+       "meaning": "thunder",
+       "example": "J'entends le tonnerre.",
+       "exampleMeaning": "I hear the thunder."
+      },
+      {
+       "word": "glace",
+       "romanization": "",
+       "meaning": "ice",
+       "example": "Il y a de la glace sur la route.",
+       "exampleMeaning": "There is ice on the road."
+      },
+      {
+       "word": "humidité",
+       "romanization": "",
+       "meaning": "humidity",
+       "example": "L'humidité est forte en été.",
+       "exampleMeaning": "The humidity is high in summer."
+      },
+      {
+       "word": "tempête",
+       "romanization": "",
+       "meaning": "storm",
+       "example": "La tempête a cassé un arbre.",
+       "exampleMeaning": "The storm broke a tree."
+      },
+      {
+       "word": "averse",
+       "romanization": "",
+       "meaning": "rain shower",
+       "example": "Il y a une averse cet après-midi.",
+       "exampleMeaning": "There is a rain shower this afternoon."
+      },
+      {
+       "word": "pleuvoir",
+       "romanization": "",
+       "meaning": "to rain",
+       "example": "Il va pleuvoir demain.",
+       "exampleMeaning": "It is going to rain tomorrow."
+      },
+      {
+       "word": "neiger",
+       "romanization": "",
+       "meaning": "to snow",
+       "example": "Il va neiger cette nuit.",
+       "exampleMeaning": "It is going to snow tonight."
+      }
+     ]
+    },
+    {
+     "title": "Days and Months",
+     "level": "A1",
+     "words": [
+      {
+       "word": "lundi",
+       "romanization": "",
+       "meaning": "Monday",
+       "example": "Le lundi, j'ai cours.",
+       "exampleMeaning": "On Mondays, I have class."
+      },
+      {
+       "word": "mardi",
+       "romanization": "",
+       "meaning": "Tuesday",
+       "example": "Mardi, je vais chez le médecin.",
+       "exampleMeaning": "On Tuesday, I go to the doctor."
+      },
+      {
+       "word": "mercredi",
+       "romanization": "",
+       "meaning": "Wednesday",
+       "example": "Le mercredi, je joue au tennis.",
+       "exampleMeaning": "On Wednesdays, I play tennis."
+      },
+      {
+       "word": "jeudi",
+       "romanization": "",
+       "meaning": "Thursday",
+       "example": "Mon ami arrive jeudi.",
+       "exampleMeaning": "My friend arrives on Thursday."
+      },
+      {
+       "word": "vendredi",
+       "romanization": "",
+       "meaning": "Friday",
+       "example": "Vendredi, nous dînons au restaurant.",
+       "exampleMeaning": "On Friday, we have dinner at a restaurant."
+      },
+      {
+       "word": "samedi",
+       "romanization": "",
+       "meaning": "Saturday",
+       "example": "Je ne travaille pas le samedi.",
+       "exampleMeaning": "I do not work on Saturday."
+      },
+      {
+       "word": "dimanche",
+       "romanization": "",
+       "meaning": "Sunday",
+       "example": "Le dimanche, je me repose à la maison.",
+       "exampleMeaning": "On Sundays, I rest at home."
+      },
+      {
+       "word": "semaine",
+       "romanization": "",
+       "meaning": "week",
+       "example": "Cette semaine, je suis occupé.",
+       "exampleMeaning": "This week, I am busy."
+      },
+      {
+       "word": "janvier",
+       "romanization": "",
+       "meaning": "January",
+       "example": "Il fait froid en janvier.",
+       "exampleMeaning": "It is cold in January."
+      },
+      {
+       "word": "février",
+       "romanization": "",
+       "meaning": "February",
+       "example": "Février est le mois le plus court.",
+       "exampleMeaning": "February is the shortest month."
+      },
+      {
+       "word": "mars",
+       "romanization": "",
+       "meaning": "March",
+       "example": "Le printemps commence en mars.",
+       "exampleMeaning": "Spring begins in March."
+      },
+      {
+       "word": "avril",
+       "romanization": "",
+       "meaning": "April",
+       "example": "Mon anniversaire est en avril.",
+       "exampleMeaning": "My birthday is in April."
+      },
+      {
+       "word": "mai",
+       "romanization": "",
+       "meaning": "May",
+       "example": "En mai, les fleurs sont belles.",
+       "exampleMeaning": "In May, the flowers are beautiful."
+      },
+      {
+       "word": "juin",
+       "romanization": "",
+       "meaning": "June",
+       "example": "L'été commence en juin.",
+       "exampleMeaning": "Summer begins in June."
+      },
+      {
+       "word": "juillet",
+       "romanization": "",
+       "meaning": "July",
+       "example": "Le quatorze juillet est la fête nationale.",
+       "exampleMeaning": "July 14 is the national holiday."
+      },
+      {
+       "word": "août",
+       "romanization": "",
+       "meaning": "August",
+       "example": "Je pars en vacances en août.",
+       "exampleMeaning": "I go on vacation in August."
+      },
+      {
+       "word": "septembre",
+       "romanization": "",
+       "meaning": "September",
+       "example": "Les cours commencent en septembre.",
+       "exampleMeaning": "Classes start in September."
+      },
+      {
+       "word": "octobre",
+       "romanization": "",
+       "meaning": "October",
+       "example": "En octobre, les feuilles tombent.",
+       "exampleMeaning": "In October, the leaves fall."
+      },
+      {
+       "word": "novembre",
+       "romanization": "",
+       "meaning": "November",
+       "example": "Il pleut souvent en novembre.",
+       "exampleMeaning": "It often rains in November."
+      },
+      {
+       "word": "décembre",
+       "romanization": "",
+       "meaning": "December",
+       "example": "Noël est en décembre.",
+       "exampleMeaning": "Christmas is in December."
+      }
+     ]
+    },
+    {
+     "title": "Common Verbs",
+     "level": "A1",
+     "words": [
+      {
+       "word": "être",
+       "romanization": "",
+       "meaning": "to be",
+       "example": "Je suis étudiant.",
+       "exampleMeaning": "I am a student."
+      },
+      {
+       "word": "avoir",
+       "romanization": "",
+       "meaning": "to have",
+       "example": "J'ai deux frères.",
+       "exampleMeaning": "I have two brothers."
+      },
+      {
+       "word": "aller",
+       "romanization": "",
+       "meaning": "to go",
+       "example": "Je vais au marché.",
+       "exampleMeaning": "I go to the market."
+      },
+      {
+       "word": "venir",
+       "romanization": "",
+       "meaning": "to come",
+       "example": "Tu viens à ma fête ?",
+       "exampleMeaning": "Are you coming to my party?"
+      },
+      {
+       "word": "faire",
+       "romanization": "",
+       "meaning": "to do, to make",
+       "example": "Je fais mes devoirs l'après-midi.",
+       "exampleMeaning": "I do my homework in the afternoon."
+      },
+      {
+       "word": "manger",
+       "romanization": "",
+       "meaning": "to eat",
+       "example": "Je veux manger du pain.",
+       "exampleMeaning": "I want to eat some bread."
+      },
+      {
+       "word": "boire",
+       "romanization": "",
+       "meaning": "to drink",
+       "example": "Je veux boire de l'eau.",
+       "exampleMeaning": "I want to drink some water."
+      },
+      {
+       "word": "voir",
+       "romanization": "",
+       "meaning": "to see",
+       "example": "Je vois un film.",
+       "exampleMeaning": "I am watching a movie."
+      },
+      {
+       "word": "parler",
+       "romanization": "",
+       "meaning": "to speak",
+       "example": "Je parle français.",
+       "exampleMeaning": "I speak French."
+      },
+      {
+       "word": "écouter",
+       "romanization": "",
+       "meaning": "to listen",
+       "example": "J'aime écouter de la musique.",
+       "exampleMeaning": "I like listening to music."
+      },
+      {
+       "word": "lire",
+       "romanization": "",
+       "meaning": "to read",
+       "example": "J'aime lire le soir.",
+       "exampleMeaning": "I like reading in the evening."
+      },
+      {
+       "word": "écrire",
+       "romanization": "",
+       "meaning": "to write",
+       "example": "Écris ton nom, s'il te plaît.",
+       "exampleMeaning": "Write your name, please."
+      },
+      {
+       "word": "acheter",
+       "romanization": "",
+       "meaning": "to buy",
+       "example": "Je veux acheter des fruits.",
+       "exampleMeaning": "I want to buy some fruit."
+      },
+      {
+       "word": "dormir",
+       "romanization": "",
+       "meaning": "to sleep",
+       "example": "Je dors huit heures par nuit.",
+       "exampleMeaning": "I sleep eight hours a night."
+      },
+      {
+       "word": "habiter",
+       "romanization": "",
+       "meaning": "to live",
+       "example": "J'habite à Lyon.",
+       "exampleMeaning": "I live in Lyon."
+      },
+      {
+       "word": "travailler",
+       "romanization": "",
+       "meaning": "to work",
+       "example": "Je travaille dans une banque.",
+       "exampleMeaning": "I work in a bank."
+      },
+      {
+       "word": "aimer",
+       "romanization": "",
+       "meaning": "to like, to love",
+       "example": "J'aime le chocolat.",
+       "exampleMeaning": "I like chocolate."
+      },
+      {
+       "word": "vouloir",
+       "romanization": "",
+       "meaning": "to want",
+       "example": "Je veux apprendre le français.",
+       "exampleMeaning": "I want to learn French."
+      },
+      {
+       "word": "pouvoir",
+       "romanization": "",
+       "meaning": "to be able to, can",
+       "example": "Je peux entrer ?",
+       "exampleMeaning": "May I come in?"
+      },
+      {
+       "word": "prendre",
+       "romanization": "",
+       "meaning": "to take",
+       "example": "Je prends le bus tous les jours.",
+       "exampleMeaning": "I take the bus every day."
+      }
+     ]
+    },
+    {
+     "title": "Common Adjectives",
+     "level": "A1",
+     "words": [
+      {
+       "word": "grand",
+       "romanization": "",
+       "meaning": "big, tall",
+       "example": "J'ai un grand chien.",
+       "exampleMeaning": "I have a big dog."
+      },
+      {
+       "word": "petit",
+       "romanization": "",
+       "meaning": "small",
+       "example": "Le chat est petit.",
+       "exampleMeaning": "The cat is small."
+      },
+      {
+       "word": "bon",
+       "romanization": "",
+       "meaning": "good",
+       "example": "C'est un très bon livre.",
+       "exampleMeaning": "It is a very good book."
+      },
+      {
+       "word": "mauvais",
+       "romanization": "",
+       "meaning": "bad",
+       "example": "Le temps est mauvais aujourd'hui.",
+       "exampleMeaning": "The weather is bad today."
+      },
+      {
+       "word": "nouveau",
+       "romanization": "",
+       "meaning": "new",
+       "example": "J'ai un nouveau téléphone.",
+       "exampleMeaning": "I have a new phone."
+      },
+      {
+       "word": "vieux",
+       "romanization": "",
+       "meaning": "old",
+       "example": "Mon vélo est vieux.",
+       "exampleMeaning": "My bike is old."
+      },
+      {
+       "word": "beau",
+       "romanization": "",
+       "meaning": "beautiful, handsome",
+       "example": "Ce jardin est très beau.",
+       "exampleMeaning": "This garden is very beautiful."
+      },
+      {
+       "word": "joli",
+       "romanization": "",
+       "meaning": "pretty",
+       "example": "Quel joli village !",
+       "exampleMeaning": "What a pretty village!"
+      },
+      {
+       "word": "facile",
+       "romanization": "",
+       "meaning": "easy",
+       "example": "L'examen est facile.",
+       "exampleMeaning": "The exam is easy."
+      },
+      {
+       "word": "difficile",
+       "romanization": "",
+       "meaning": "difficult",
+       "example": "Ce mot est difficile.",
+       "exampleMeaning": "This word is difficult."
+      },
+      {
+       "word": "rapide",
+       "romanization": "",
+       "meaning": "fast",
+       "example": "Le train est rapide.",
+       "exampleMeaning": "The train is fast."
+      },
+      {
+       "word": "lent",
+       "romanization": "",
+       "meaning": "slow",
+       "example": "Le bus est lent.",
+       "exampleMeaning": "The bus is slow."
+      },
+      {
+       "word": "cher",
+       "romanization": "",
+       "meaning": "expensive",
+       "example": "Ce restaurant est cher.",
+       "exampleMeaning": "This restaurant is expensive."
+      },
+      {
+       "word": "long",
+       "romanization": "",
+       "meaning": "long",
+       "example": "Ce fleuve est long.",
+       "exampleMeaning": "This river is long."
+      },
+      {
+       "word": "court",
+       "romanization": "",
+       "meaning": "short",
+       "example": "Ce chemin est court.",
+       "exampleMeaning": "This path is short."
+      },
+      {
+       "word": "jeune",
+       "romanization": "",
+       "meaning": "young",
+       "example": "Mon frère est jeune.",
+       "exampleMeaning": "My brother is young."
+      },
+      {
+       "word": "heureux",
+       "romanization": "",
+       "meaning": "happy",
+       "example": "Je suis heureux aujourd'hui.",
+       "exampleMeaning": "I am happy today."
+      },
+      {
+       "word": "triste",
+       "romanization": "",
+       "meaning": "sad",
+       "example": "Ce film est triste.",
+       "exampleMeaning": "This movie is sad."
+      },
+      {
+       "word": "fatigué",
+       "romanization": "",
+       "meaning": "tired",
+       "example": "Je suis très fatigué.",
+       "exampleMeaning": "I am very tired."
+      },
+      {
+       "word": "propre",
+       "romanization": "",
+       "meaning": "clean",
+       "example": "Le salon est propre.",
+       "exampleMeaning": "The living room is clean."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1469 @@
+{
+ "languages": [
+  {
+   "name": "Bangla",
+   "stages": [
+    {
+     "title": "Family",
+     "level": "A1",
+     "words": [
+      {
+       "word": "মা",
+       "romanization": "ma",
+       "meaning": "mother",
+       "example": "আমার মা খুব ভালো রান্না করেন।",
+       "exampleMeaning": "My mother cooks very well."
+      },
+      {
+       "word": "বাবা",
+       "romanization": "baba",
+       "meaning": "father",
+       "example": "আমার বাবা অফিসে কাজ করেন।",
+       "exampleMeaning": "My father works in an office."
+      },
+      {
+       "word": "ভাই",
+       "romanization": "bhai",
+       "meaning": "brother",
+       "example": "আমার ভাই স্কুলে যায়।",
+       "exampleMeaning": "My brother goes to school."
+      },
+      {
+       "word": "বোন",
+       "romanization": "bon",
+       "meaning": "sister",
+       "example": "আমার বোন গান গাইতে ভালোবাসে।",
+       "exampleMeaning": "My sister loves to sing."
+      },
+      {
+       "word": "ছেলে",
+       "romanization": "chhele",
+       "meaning": "son, boy",
+       "example": "তাদের ছেলে ক্রিকেট খেলে।",
+       "exampleMeaning": "Their son plays cricket."
+      },
+      {
+       "word": "মেয়ে",
+       "romanization": "meye",
+       "meaning": "daughter, girl",
+       "example": "আমার মেয়ে বই পড়ছে।",
+       "exampleMeaning": "My daughter is reading a book."
+      },
+      {
+       "word": "দাদা",
+       "romanization": "dada",
+       "meaning": "grandfather (father's father)",
+       "example": "আমার দাদা গ্রামে থাকেন।",
+       "exampleMeaning": "My grandfather lives in the village."
+      },
+      {
+       "word": "দাদি",
+       "romanization": "dadi",
+       "meaning": "grandmother (father's mother)",
+       "example": "দাদি আমাকে গল্প বলেন।",
+       "exampleMeaning": "My grandmother tells me stories."
+      },
+      {
+       "word": "নানা",
+       "romanization": "nana",
+       "meaning": "grandfather (mother's father)",
+       "example": "নানা আমাদের বাড়িতে আসছেন।",
+       "exampleMeaning": "My maternal grandfather is coming to our house."
+      },
+      {
+       "word": "নানি",
+       "romanization": "nani",
+       "meaning": "grandmother (mother's mother)",
+       "example": "নানি খুব মিষ্টি পিঠা বানান।",
+       "exampleMeaning": "My maternal grandmother makes very sweet pitha."
+      },
+      {
+       "word": "চাচা",
+       "romanization": "chacha",
+       "meaning": "uncle (father's brother)",
+       "example": "আমার চাচা ঢাকায় থাকেন।",
+       "exampleMeaning": "My uncle lives in Dhaka."
+      },
+      {
+       "word": "ফুফু",
+       "romanization": "phuphu",
+       "meaning": "aunt (father's sister)",
+       "example": "ফুফু আজ আমাদের বাসায় এসেছেন।",
+       "exampleMeaning": "My aunt came to our home today."
+      },
+      {
+       "word": "মামা",
+       "romanization": "mama",
+       "meaning": "uncle (mother's brother)",
+       "example": "মামা আমাকে একটি উপহার দিয়েছেন।",
+       "exampleMeaning": "My uncle gave me a gift."
+      },
+      {
+       "word": "খালা",
+       "romanization": "khala",
+       "meaning": "aunt (mother's sister)",
+       "example": "খালা আমাকে খুব ভালোবাসেন।",
+       "exampleMeaning": "My aunt loves me very much."
+      },
+      {
+       "word": "স্বামী",
+       "romanization": "shami",
+       "meaning": "husband",
+       "example": "তার স্বামী ডাক্তার।",
+       "exampleMeaning": "Her husband is a doctor."
+      },
+      {
+       "word": "স্ত্রী",
+       "romanization": "stri",
+       "meaning": "wife",
+       "example": "আমার স্ত্রী শিক্ষিকা।",
+       "exampleMeaning": "My wife is a teacher."
+      },
+      {
+       "word": "পরিবার",
+       "romanization": "poribar",
+       "meaning": "family",
+       "example": "আমার পরিবার বড়।",
+       "exampleMeaning": "My family is big."
+      },
+      {
+       "word": "আত্মীয়",
+       "romanization": "attiyo",
+       "meaning": "relative",
+       "example": "ঈদে সব আত্মীয় আসে।",
+       "exampleMeaning": "All the relatives come at Eid."
+      },
+      {
+       "word": "শিশু",
+       "romanization": "shishu",
+       "meaning": "baby, young child",
+       "example": "শিশুটি ঘুমাচ্ছে।",
+       "exampleMeaning": "The baby is sleeping."
+      },
+      {
+       "word": "আপু",
+       "romanization": "apu",
+       "meaning": "older sister",
+       "example": "আপু আমাকে পড়া শেখায়।",
+       "exampleMeaning": "My older sister teaches me my lessons."
+      }
+     ]
+    },
+    {
+     "title": "Colors",
+     "level": "A1",
+     "words": [
+      {
+       "word": "লাল",
+       "romanization": "lal",
+       "meaning": "red",
+       "example": "আমার একটি লাল শার্ট আছে।",
+       "exampleMeaning": "I have a red shirt."
+      },
+      {
+       "word": "নীল",
+       "romanization": "nil",
+       "meaning": "blue",
+       "example": "আকাশ নীল।",
+       "exampleMeaning": "The sky is blue."
+      },
+      {
+       "word": "সবুজ",
+       "romanization": "shobuj",
+       "meaning": "green",
+       "example": "গাছের পাতা সবুজ।",
+       "exampleMeaning": "The leaves of the tree are green."
+      },
+      {
+       "word": "হলুদ",
+       "romanization": "holud",
+       "meaning": "yellow",
+       "example": "আমি হলুদ ফুল পছন্দ করি।",
+       "exampleMeaning": "I like yellow flowers."
+      },
+      {
+       "word": "কালো",
+       "romanization": "kalo",
+       "meaning": "black",
+       "example": "আমার বিড়ালটি কালো।",
+       "exampleMeaning": "My cat is black."
+      },
+      {
+       "word": "সাদা",
+       "romanization": "shada",
+       "meaning": "white",
+       "example": "তার একটি সাদা জামা আছে।",
+       "exampleMeaning": "She has a white dress."
+      },
+      {
+       "word": "ধূসর",
+       "romanization": "dhushor",
+       "meaning": "gray",
+       "example": "আজ আকাশ ধূসর।",
+       "exampleMeaning": "The sky is gray today."
+      },
+      {
+       "word": "কমলা",
+       "romanization": "komola",
+       "meaning": "orange (color)",
+       "example": "কমলা রঙের ফুলটি সুন্দর।",
+       "exampleMeaning": "The orange flower is beautiful."
+      },
+      {
+       "word": "গোলাপি",
+       "romanization": "golapi",
+       "meaning": "pink",
+       "example": "সে গোলাপি জামা পরেছে।",
+       "exampleMeaning": "She is wearing a pink dress."
+      },
+      {
+       "word": "বেগুনি",
+       "romanization": "beguni",
+       "meaning": "purple",
+       "example": "আমার ব্যাগটি বেগুনি।",
+       "exampleMeaning": "My bag is purple."
+      },
+      {
+       "word": "বাদামি",
+       "romanization": "badami",
+       "meaning": "brown",
+       "example": "গরুটি বাদামি।",
+       "exampleMeaning": "The cow is brown."
+      },
+      {
+       "word": "সোনালি",
+       "romanization": "shonali",
+       "meaning": "golden",
+       "example": "সে একটি সোনালি আংটি পরেছে।",
+       "exampleMeaning": "She is wearing a golden ring."
+      },
+      {
+       "word": "রুপালি",
+       "romanization": "rupali",
+       "meaning": "silver",
+       "example": "আমার রুপালি রঙের গাড়ি আছে।",
+       "exampleMeaning": "I have a silver-colored car."
+      },
+      {
+       "word": "রং",
+       "romanization": "rong",
+       "meaning": "color",
+       "example": "তোমার প্রিয় রং কী?",
+       "exampleMeaning": "What is your favorite color?"
+      },
+      {
+       "word": "আকাশি",
+       "romanization": "akashi",
+       "meaning": "light blue, sky blue",
+       "example": "আকাশি রঙের শার্টটি সুন্দর।",
+       "exampleMeaning": "The sky-blue shirt is nice."
+      },
+      {
+       "word": "বেইজ",
+       "romanization": "beij",
+       "meaning": "beige",
+       "example": "ঘরের দেয়াল বেইজ রঙের।",
+       "exampleMeaning": "The wall of the room is beige."
+      },
+      {
+       "word": "রংধনু",
+       "romanization": "rongdhonu",
+       "meaning": "rainbow",
+       "example": "আকাশে রংধনু উঠেছে।",
+       "exampleMeaning": "A rainbow has appeared in the sky."
+      },
+      {
+       "word": "ক্রেয়ন",
+       "romanization": "kreyon",
+       "meaning": "crayon",
+       "example": "শিশুটি ক্রেয়ন দিয়ে আঁকছে।",
+       "exampleMeaning": "The child is drawing with a crayon."
+      },
+      {
+       "word": "তুলি",
+       "romanization": "tuli",
+       "meaning": "paintbrush",
+       "example": "আমি তুলি দিয়ে ছবি আঁকি।",
+       "exampleMeaning": "I draw pictures with a paintbrush."
+      },
+      {
+       "word": "রঙিন",
+       "romanization": "rongin",
+       "meaning": "colorful",
+       "example": "প্রজাপতিটি রঙিন।",
+       "exampleMeaning": "The butterfly is colorful."
+      }
+     ]
+    },
+    {
+     "title": "Body",
+     "level": "A1",
+     "words": [
+      {
+       "word": "মাথা",
+       "romanization": "matha",
+       "meaning": "head",
+       "example": "আমার মাথা ব্যথা করছে।",
+       "exampleMeaning": "My head hurts."
+      },
+      {
+       "word": "মুখ",
+       "romanization": "mukh",
+       "meaning": "face, mouth",
+       "example": "তার মুখ খুব সুন্দর।",
+       "exampleMeaning": "Her face is very beautiful."
+      },
+      {
+       "word": "চোখ",
+       "romanization": "chokh",
+       "meaning": "eye",
+       "example": "তার চোখ বড়।",
+       "exampleMeaning": "She has big eyes."
+      },
+      {
+       "word": "নাক",
+       "romanization": "nak",
+       "meaning": "nose",
+       "example": "আমার নাক ঠান্ডা।",
+       "exampleMeaning": "My nose is cold."
+      },
+      {
+       "word": "কান",
+       "romanization": "kan",
+       "meaning": "ear",
+       "example": "খরগোশের কান লম্বা।",
+       "exampleMeaning": "A rabbit's ears are long."
+      },
+      {
+       "word": "দাঁত",
+       "romanization": "dat",
+       "meaning": "tooth",
+       "example": "দিনে দুইবার দাঁত মাজো।",
+       "exampleMeaning": "Brush your teeth twice a day."
+      },
+      {
+       "word": "জিভ",
+       "romanization": "jibh",
+       "meaning": "tongue",
+       "example": "আমার জিভ পুড়ে গেছে।",
+       "exampleMeaning": "I burned my tongue."
+      },
+      {
+       "word": "চুল",
+       "romanization": "chul",
+       "meaning": "hair",
+       "example": "তার চুল কালো।",
+       "exampleMeaning": "Her hair is black."
+      },
+      {
+       "word": "গলা",
+       "romanization": "gola",
+       "meaning": "neck, throat",
+       "example": "আমার গলা ব্যথা করছে।",
+       "exampleMeaning": "My throat hurts."
+      },
+      {
+       "word": "কাঁধ",
+       "romanization": "kandh",
+       "meaning": "shoulder",
+       "example": "আমার কাঁধে ব্যাগ আছে।",
+       "exampleMeaning": "There is a bag on my shoulder."
+      },
+      {
+       "word": "হাত",
+       "romanization": "hat",
+       "meaning": "hand, arm",
+       "example": "হাত ধুয়ে নাও।",
+       "exampleMeaning": "Wash your hands."
+      },
+      {
+       "word": "আঙুল",
+       "romanization": "angul",
+       "meaning": "finger",
+       "example": "আমার আঙুলে আংটি আছে।",
+       "exampleMeaning": "I have a ring on my finger."
+      },
+      {
+       "word": "পা",
+       "romanization": "pa",
+       "meaning": "leg, foot",
+       "example": "আমার পা ব্যথা করছে।",
+       "exampleMeaning": "My leg hurts."
+      },
+      {
+       "word": "হাঁটু",
+       "romanization": "hatu",
+       "meaning": "knee",
+       "example": "আমার হাঁটুতে ব্যথা।",
+       "exampleMeaning": "I have pain in my knee."
+      },
+      {
+       "word": "পিঠ",
+       "romanization": "pith",
+       "meaning": "back",
+       "example": "আমার পিঠ ব্যথা করে।",
+       "exampleMeaning": "My back hurts."
+      },
+      {
+       "word": "পেট",
+       "romanization": "pet",
+       "meaning": "stomach",
+       "example": "আমার পেট ভরে গেছে।",
+       "exampleMeaning": "My stomach is full."
+      },
+      {
+       "word": "বুক",
+       "romanization": "buk",
+       "meaning": "chest",
+       "example": "শিশুটি মায়ের বুকে ঘুমাচ্ছে।",
+       "exampleMeaning": "The baby is sleeping on its mother's chest."
+      },
+      {
+       "word": "হৃদয়",
+       "romanization": "hridoy",
+       "meaning": "heart",
+       "example": "তার হৃদয় খুব বড়।",
+       "exampleMeaning": "She has a big heart."
+      },
+      {
+       "word": "চামড়া",
+       "romanization": "chamra",
+       "meaning": "skin",
+       "example": "ঠান্ডায় চামড়া শুকিয়ে যায়।",
+       "exampleMeaning": "Skin gets dry in the cold."
+      },
+      {
+       "word": "হাড়",
+       "romanization": "har",
+       "meaning": "bone",
+       "example": "কুকুরটি হাড় চিবোচ্ছে।",
+       "exampleMeaning": "The dog is chewing a bone."
+      }
+     ]
+    },
+    {
+     "title": "Clothes",
+     "level": "A1",
+     "words": [
+      {
+       "word": "কাপড়",
+       "romanization": "kapor",
+       "meaning": "clothes",
+       "example": "আমি নতুন কাপড় কিনেছি।",
+       "exampleMeaning": "I bought new clothes."
+      },
+      {
+       "word": "শার্ট",
+       "romanization": "shart",
+       "meaning": "shirt",
+       "example": "আমার শার্ট নীল।",
+       "exampleMeaning": "My shirt is blue."
+      },
+      {
+       "word": "টি-শার্ট",
+       "romanization": "ti-shart",
+       "meaning": "T-shirt",
+       "example": "সে একটি লাল টি-শার্ট পরেছে।",
+       "exampleMeaning": "He is wearing a red T-shirt."
+      },
+      {
+       "word": "প্যান্ট",
+       "romanization": "pyant",
+       "meaning": "pants",
+       "example": "এই প্যান্টটি লম্বা।",
+       "exampleMeaning": "These pants are long."
+      },
+      {
+       "word": "শাড়ি",
+       "romanization": "shari",
+       "meaning": "sari",
+       "example": "মা শাড়ি পরেছেন।",
+       "exampleMeaning": "Mother is wearing a sari."
+      },
+      {
+       "word": "পাঞ্জাবি",
+       "romanization": "panjabi",
+       "meaning": "panjabi (long kurta)",
+       "example": "বাবা পাঞ্জাবি পরে মসজিদে গেছেন।",
+       "exampleMeaning": "Father went to the mosque wearing a panjabi."
+      },
+      {
+       "word": "লুঙ্গি",
+       "romanization": "lungi",
+       "meaning": "lungi",
+       "example": "দাদা লুঙ্গি পরে আছেন।",
+       "exampleMeaning": "Grandfather is wearing a lungi."
+      },
+      {
+       "word": "সালোয়ার কামিজ",
+       "romanization": "shalwar kamiz",
+       "meaning": "salwar kameez",
+       "example": "আমার একটি নতুন সালোয়ার কামিজ আছে।",
+       "exampleMeaning": "I have a new salwar kameez."
+      },
+      {
+       "word": "জুতা",
+       "romanization": "juta",
+       "meaning": "shoes",
+       "example": "আমার জুতা পুরোনো।",
+       "exampleMeaning": "My shoes are old."
+      },
+      {
+       "word": "স্যান্ডেল",
+       "romanization": "syandel",
+       "meaning": "sandals",
+       "example": "আমি স্যান্ডেল পরে বাইরে যাই।",
+       "exampleMeaning": "I go outside wearing sandals."
+      },
+      {
+       "word": "মোজা",
+       "romanization": "moja",
+       "meaning": "socks",
+       "example": "আমার মোজা ময়লা।",
+       "exampleMeaning": "My socks are dirty."
+      },
+      {
+       "word": "টুপি",
+       "romanization": "tupi",
+       "meaning": "cap, hat",
+       "example": "ছেলেটি একটি টুপি পরেছে।",
+       "exampleMeaning": "The boy is wearing a cap."
+      },
+      {
+       "word": "চশমা",
+       "romanization": "choshma",
+       "meaning": "glasses",
+       "example": "দাদার চশমা টেবিলে আছে।",
+       "exampleMeaning": "Grandfather's glasses are on the table."
+      },
+      {
+       "word": "ঘড়ি",
+       "romanization": "ghori",
+       "meaning": "watch, clock",
+       "example": "আমার ঘড়ি বন্ধ হয়ে গেছে।",
+       "exampleMeaning": "My watch has stopped."
+      },
+      {
+       "word": "ব্যাগ",
+       "romanization": "byag",
+       "meaning": "bag",
+       "example": "তোমার ব্যাগ কোথায়?",
+       "exampleMeaning": "Where is your bag?"
+      },
+      {
+       "word": "ছাতা",
+       "romanization": "chhata",
+       "meaning": "umbrella",
+       "example": "বৃষ্টি হচ্ছে, ছাতা নাও।",
+       "exampleMeaning": "It is raining, take an umbrella."
+      },
+      {
+       "word": "ওড়না",
+       "romanization": "orna",
+       "meaning": "scarf, dupatta",
+       "example": "সে একটি লাল ওড়না পরেছে।",
+       "exampleMeaning": "She is wearing a red dupatta."
+      },
+      {
+       "word": "জ্যাকেট",
+       "romanization": "jyaket",
+       "meaning": "jacket",
+       "example": "শীতে আমি জ্যাকেট পরি।",
+       "exampleMeaning": "I wear a jacket in winter."
+      },
+      {
+       "word": "সোয়েটার",
+       "romanization": "soyeter",
+       "meaning": "sweater",
+       "example": "মা আমাকে একটি সোয়েটার দিয়েছেন।",
+       "exampleMeaning": "Mother gave me a sweater."
+      },
+      {
+       "word": "বেল্ট",
+       "romanization": "belt",
+       "meaning": "belt",
+       "example": "আমার বেল্টটি চামড়ার।",
+       "exampleMeaning": "My belt is made of leather."
+      }
+     ]
+    },
+    {
+     "title": "Home",
+     "level": "A1",
+     "words": [
+      {
+       "word": "বাড়ি",
+       "romanization": "bari",
+       "meaning": "house, home",
+       "example": "আমার বাড়ি বড়।",
+       "exampleMeaning": "My house is big."
+      },
+      {
+       "word": "রান্নাঘর",
+       "romanization": "rannaghor",
+       "meaning": "kitchen",
+       "example": "মা রান্নাঘরে আছেন।",
+       "exampleMeaning": "Mother is in the kitchen."
+      },
+      {
+       "word": "বাথরুম",
+       "romanization": "bathrum",
+       "meaning": "bathroom",
+       "example": "বাথরুম কোথায়?",
+       "exampleMeaning": "Where is the bathroom?"
+      },
+      {
+       "word": "শোবার ঘর",
+       "romanization": "shobar ghor",
+       "meaning": "bedroom",
+       "example": "আমার শোবার ঘর ছোট।",
+       "exampleMeaning": "My bedroom is small."
+      },
+      {
+       "word": "বারান্দা",
+       "romanization": "baranda",
+       "meaning": "balcony, veranda",
+       "example": "আমরা বারান্দায় চা খাই।",
+       "exampleMeaning": "We drink tea on the balcony."
+      },
+      {
+       "word": "জানালা",
+       "romanization": "janala",
+       "meaning": "window",
+       "example": "জানালাটি খুলে দাও।",
+       "exampleMeaning": "Please open the window."
+      },
+      {
+       "word": "দরজা",
+       "romanization": "dorja",
+       "meaning": "door",
+       "example": "দরজা বন্ধ করো।",
+       "exampleMeaning": "Close the door."
+      },
+      {
+       "word": "টেবিল",
+       "romanization": "tebil",
+       "meaning": "table",
+       "example": "টেবিলে একটি বই আছে।",
+       "exampleMeaning": "There is a book on the table."
+      },
+      {
+       "word": "চেয়ার",
+       "romanization": "cheyar",
+       "meaning": "chair",
+       "example": "এই চেয়ারটি আরামদায়ক।",
+       "exampleMeaning": "This chair is comfortable."
+      },
+      {
+       "word": "বিছানা",
+       "romanization": "bichhana",
+       "meaning": "bed",
+       "example": "আমি বিছানায় ঘুমাই।",
+       "exampleMeaning": "I sleep on the bed."
+      },
+      {
+       "word": "সোফা",
+       "romanization": "sofa",
+       "meaning": "sofa",
+       "example": "বিড়ালটি সোফায় বসে আছে।",
+       "exampleMeaning": "The cat is sitting on the sofa."
+      },
+      {
+       "word": "ফ্যান",
+       "romanization": "fyan",
+       "meaning": "fan",
+       "example": "গরমে আমি ফ্যান চালাই।",
+       "exampleMeaning": "I turn on the fan in the heat."
+      },
+      {
+       "word": "বাতি",
+       "romanization": "bati",
+       "meaning": "light, lamp",
+       "example": "বাতিটি জ্বালিয়ে দাও।",
+       "exampleMeaning": "Turn on the light."
+      },
+      {
+       "word": "আয়না",
+       "romanization": "ayna",
+       "meaning": "mirror",
+       "example": "আয়নায় নিজেকে দেখো।",
+       "exampleMeaning": "Look at yourself in the mirror."
+      },
+      {
+       "word": "ছাদ",
+       "romanization": "chhad",
+       "meaning": "roof",
+       "example": "আমরা ছাদে ঘুড়ি ওড়াই।",
+       "exampleMeaning": "We fly kites on the roof."
+      },
+      {
+       "word": "মেঝে",
+       "romanization": "mejhe",
+       "meaning": "floor",
+       "example": "মেঝেটি পরিষ্কার।",
+       "exampleMeaning": "The floor is clean."
+      },
+      {
+       "word": "দেয়াল",
+       "romanization": "deyal",
+       "meaning": "wall",
+       "example": "দেয়ালে একটি ছবি আছে।",
+       "exampleMeaning": "There is a picture on the wall."
+      },
+      {
+       "word": "সিঁড়ি",
+       "romanization": "shiri",
+       "meaning": "stairs",
+       "example": "সিঁড়ি দিয়ে ওপরে যাও।",
+       "exampleMeaning": "Go up using the stairs."
+      },
+      {
+       "word": "চাবি",
+       "romanization": "chabi",
+       "meaning": "key",
+       "example": "আমার চাবি হারিয়ে গেছে।",
+       "exampleMeaning": "I lost my key."
+      },
+      {
+       "word": "আলমারি",
+       "romanization": "almari",
+       "meaning": "wardrobe",
+       "example": "জামা আলমারিতে আছে।",
+       "exampleMeaning": "The clothes are in the wardrobe."
+      }
+     ]
+    },
+    {
+     "title": "Animals",
+     "level": "A1",
+     "words": [
+      {
+       "word": "কুকুর",
+       "romanization": "kukur",
+       "meaning": "dog",
+       "example": "আমার কুকুর পার্কে দৌড়ায়।",
+       "exampleMeaning": "My dog runs in the park."
+      },
+      {
+       "word": "বিড়াল",
+       "romanization": "biral",
+       "meaning": "cat",
+       "example": "বিড়ালটি দুধ খাচ্ছে।",
+       "exampleMeaning": "The cat is drinking milk."
+      },
+      {
+       "word": "পাখি",
+       "romanization": "pakhi",
+       "meaning": "bird",
+       "example": "গাছে একটি পাখি গান গাইছে।",
+       "exampleMeaning": "A bird is singing in the tree."
+      },
+      {
+       "word": "মাছ",
+       "romanization": "machh",
+       "meaning": "fish",
+       "example": "মাছ পানিতে সাঁতার কাটে।",
+       "exampleMeaning": "Fish swim in the water."
+      },
+      {
+       "word": "ঘোড়া",
+       "romanization": "ghora",
+       "meaning": "horse",
+       "example": "ঘোড়া খুব দ্রুত দৌড়ায়।",
+       "exampleMeaning": "A horse runs very fast."
+      },
+      {
+       "word": "গরু",
+       "romanization": "goru",
+       "meaning": "cow",
+       "example": "গরু দুধ দেয়।",
+       "exampleMeaning": "The cow gives milk."
+      },
+      {
+       "word": "ছাগল",
+       "romanization": "chhagol",
+       "meaning": "goat",
+       "example": "ছাগলটি ঘাস খাচ্ছে।",
+       "exampleMeaning": "The goat is eating grass."
+      },
+      {
+       "word": "ভেড়া",
+       "romanization": "bhera",
+       "meaning": "sheep",
+       "example": "মাঠে অনেক ভেড়া আছে।",
+       "exampleMeaning": "There are many sheep in the field."
+      },
+      {
+       "word": "হাঁস",
+       "romanization": "hash",
+       "meaning": "duck",
+       "example": "হাঁস পুকুরে সাঁতার কাটছে।",
+       "exampleMeaning": "The duck is swimming in the pond."
+      },
+      {
+       "word": "মুরগি",
+       "romanization": "murgi",
+       "meaning": "hen, chicken",
+       "example": "মুরগি ডিম দেয়।",
+       "exampleMeaning": "The hen lays eggs."
+      },
+      {
+       "word": "হাতি",
+       "romanization": "hati",
+       "meaning": "elephant",
+       "example": "হাতি অনেক বড় প্রাণী।",
+       "exampleMeaning": "The elephant is a very big animal."
+      },
+      {
+       "word": "বাঘ",
+       "romanization": "bagh",
+       "meaning": "tiger",
+       "example": "সুন্দরবনে বাঘ আছে।",
+       "exampleMeaning": "There are tigers in the Sundarbans."
+      },
+      {
+       "word": "সিংহ",
+       "romanization": "shingho",
+       "meaning": "lion",
+       "example": "সিংহকে বনের রাজা বলা হয়।",
+       "exampleMeaning": "The lion is called the king of the jungle."
+      },
+      {
+       "word": "বানর",
+       "romanization": "banor",
+       "meaning": "monkey",
+       "example": "বানরটি গাছে উঠছে।",
+       "exampleMeaning": "The monkey is climbing the tree."
+      },
+      {
+       "word": "ভালুক",
+       "romanization": "bhaluk",
+       "meaning": "bear",
+       "example": "ভালুক মধু ভালোবাসে।",
+       "exampleMeaning": "Bears love honey."
+      },
+      {
+       "word": "সাপ",
+       "romanization": "shap",
+       "meaning": "snake",
+       "example": "ঘরে একটি সাপ আছে।",
+       "exampleMeaning": "There is a snake in the house."
+      },
+      {
+       "word": "প্রজাপতি",
+       "romanization": "projapoti",
+       "meaning": "butterfly",
+       "example": "প্রজাপতিটি ফুলের ওপর বসেছে।",
+       "exampleMeaning": "The butterfly sat on the flower."
+      },
+      {
+       "word": "ইঁদুর",
+       "romanization": "indur",
+       "meaning": "mouse, rat",
+       "example": "রান্নাঘরে একটি ইঁদুর আছে।",
+       "exampleMeaning": "There is a mouse in the kitchen."
+      },
+      {
+       "word": "খরগোশ",
+       "romanization": "khorgosh",
+       "meaning": "rabbit",
+       "example": "খরগোশ গাজর খায়।",
+       "exampleMeaning": "Rabbits eat carrots."
+      },
+      {
+       "word": "কাক",
+       "romanization": "kak",
+       "meaning": "crow",
+       "example": "কাক গাছে বসে ডাকছে।",
+       "exampleMeaning": "The crow is sitting in the tree and cawing."
+      }
+     ]
+    },
+    {
+     "title": "Weather",
+     "level": "A1",
+     "words": [
+      {
+       "word": "আবহাওয়া",
+       "romanization": "abohawa",
+       "meaning": "weather",
+       "example": "আজ আবহাওয়া সুন্দর।",
+       "exampleMeaning": "The weather is nice today."
+      },
+      {
+       "word": "রোদ",
+       "romanization": "rod",
+       "meaning": "sunshine",
+       "example": "আজ খুব রোদ।",
+       "exampleMeaning": "It is very sunny today."
+      },
+      {
+       "word": "বৃষ্টি",
+       "romanization": "brishti",
+       "meaning": "rain",
+       "example": "বিকেলে বৃষ্টি হবে।",
+       "exampleMeaning": "It will rain in the afternoon."
+      },
+      {
+       "word": "বাতাস",
+       "romanization": "batash",
+       "meaning": "wind, breeze",
+       "example": "আজ অনেক বাতাস বইছে।",
+       "exampleMeaning": "A lot of wind is blowing today."
+      },
+      {
+       "word": "মেঘ",
+       "romanization": "megh",
+       "meaning": "cloud",
+       "example": "আকাশে অনেক মেঘ।",
+       "exampleMeaning": "There are many clouds in the sky."
+      },
+      {
+       "word": "ঝড়",
+       "romanization": "jhor",
+       "meaning": "storm",
+       "example": "আজ রাতে ঝড় হবে।",
+       "exampleMeaning": "There will be a storm tonight."
+      },
+      {
+       "word": "বজ্র",
+       "romanization": "bojro",
+       "meaning": "thunder",
+       "example": "বজ্রের শব্দে শিশুটি ভয় পেয়েছে।",
+       "exampleMeaning": "The child got scared by the sound of thunder."
+      },
+      {
+       "word": "বিজলি",
+       "romanization": "bijli",
+       "meaning": "lightning",
+       "example": "আকাশে বিজলি চমকাচ্ছে।",
+       "exampleMeaning": "Lightning is flashing in the sky."
+      },
+      {
+       "word": "কুয়াশা",
+       "romanization": "kuasha",
+       "meaning": "fog",
+       "example": "শীতে সকালে কুয়াশা থাকে।",
+       "exampleMeaning": "There is fog in the morning in winter."
+      },
+      {
+       "word": "গরম",
+       "romanization": "gorom",
+       "meaning": "heat, hot",
+       "example": "গ্রীষ্মকালে খুব গরম পড়ে।",
+       "exampleMeaning": "It gets very hot in summer."
+      },
+      {
+       "word": "ঠান্ডা",
+       "romanization": "thanda",
+       "meaning": "cold",
+       "example": "আজ খুব ঠান্ডা।",
+       "exampleMeaning": "It is very cold today."
+      },
+      {
+       "word": "শীত",
+       "romanization": "shit",
+       "meaning": "winter",
+       "example": "আমি শীত পছন্দ করি।",
+       "exampleMeaning": "I like winter."
+      },
+      {
+       "word": "বর্ষা",
+       "romanization": "borsha",
+       "meaning": "monsoon, rainy season",
+       "example": "বর্ষায় রাস্তা কাদা হয়ে যায়।",
+       "exampleMeaning": "The roads get muddy in the monsoon."
+      },
+      {
+       "word": "তাপমাত্রা",
+       "romanization": "tapmatra",
+       "meaning": "temperature",
+       "example": "আজ তাপমাত্রা বেশি।",
+       "exampleMeaning": "The temperature is high today."
+      },
+      {
+       "word": "আকাশ",
+       "romanization": "akash",
+       "meaning": "sky",
+       "example": "আকাশ পরিষ্কার।",
+       "exampleMeaning": "The sky is clear."
+      },
+      {
+       "word": "আর্দ্রতা",
+       "romanization": "ardrota",
+       "meaning": "humidity",
+       "example": "বর্ষায় আর্দ্রতা বেশি থাকে।",
+       "exampleMeaning": "Humidity is high in the monsoon."
+      },
+      {
+       "word": "বন্যা",
+       "romanization": "bonna",
+       "meaning": "flood",
+       "example": "বন্যায় অনেক বাড়ি ডুবে গেছে।",
+       "exampleMeaning": "Many houses were flooded."
+      },
+      {
+       "word": "ভেজা",
+       "romanization": "bheja",
+       "meaning": "wet",
+       "example": "আমার জামা ভেজা।",
+       "exampleMeaning": "My clothes are wet."
+      },
+      {
+       "word": "শুকনো",
+       "romanization": "shukno",
+       "meaning": "dry",
+       "example": "আজ আবহাওয়া শুকনো।",
+       "exampleMeaning": "The weather is dry today."
+      },
+      {
+       "word": "সূর্য",
+       "romanization": "shurjo",
+       "meaning": "sun",
+       "example": "সূর্য পূর্ব দিকে ওঠে।",
+       "exampleMeaning": "The sun rises in the east."
+      }
+     ]
+    },
+    {
+     "title": "Days and Months",
+     "level": "A1",
+     "words": [
+      {
+       "word": "রবিবার",
+       "romanization": "robibar",
+       "meaning": "Sunday",
+       "example": "রবিবার আমাদের অফিস খোলা থাকে।",
+       "exampleMeaning": "Our office is open on Sunday."
+      },
+      {
+       "word": "সোমবার",
+       "romanization": "shombar",
+       "meaning": "Monday",
+       "example": "সোমবার আমার ক্লাস আছে।",
+       "exampleMeaning": "I have class on Monday."
+      },
+      {
+       "word": "মঙ্গলবার",
+       "romanization": "mongolbar",
+       "meaning": "Tuesday",
+       "example": "মঙ্গলবার আমি ডাক্তারের কাছে যাই।",
+       "exampleMeaning": "On Tuesday I go to the doctor."
+      },
+      {
+       "word": "বুধবার",
+       "romanization": "budhbar",
+       "meaning": "Wednesday",
+       "example": "বুধবার আমার বন্ধু আসবে।",
+       "exampleMeaning": "My friend will come on Wednesday."
+      },
+      {
+       "word": "বৃহস্পতিবার",
+       "romanization": "brihoshpotibar",
+       "meaning": "Thursday",
+       "example": "বৃহস্পতিবার আমরা বাজারে যাই।",
+       "exampleMeaning": "On Thursday we go to the market."
+      },
+      {
+       "word": "শুক্রবার",
+       "romanization": "shukrobar",
+       "meaning": "Friday",
+       "example": "শুক্রবার স্কুল বন্ধ।",
+       "exampleMeaning": "School is closed on Friday."
+      },
+      {
+       "word": "শনিবার",
+       "romanization": "shonibar",
+       "meaning": "Saturday",
+       "example": "শনিবার আমরা বেড়াতে যাব।",
+       "exampleMeaning": "We will go out on Saturday."
+      },
+      {
+       "word": "সপ্তাহ",
+       "romanization": "shoptaho",
+       "meaning": "week",
+       "example": "এই সপ্তাহে আমি ব্যস্ত।",
+       "exampleMeaning": "I am busy this week."
+      },
+      {
+       "word": "জানুয়ারি",
+       "romanization": "januari",
+       "meaning": "January",
+       "example": "জানুয়ারিতে খুব শীত পড়ে।",
+       "exampleMeaning": "It gets very cold in January."
+      },
+      {
+       "word": "ফেব্রুয়ারি",
+       "romanization": "februari",
+       "meaning": "February",
+       "example": "ফেব্রুয়ারিতে বইমেলা হয়।",
+       "exampleMeaning": "The book fair is held in February."
+      },
+      {
+       "word": "মার্চ",
+       "romanization": "march",
+       "meaning": "March",
+       "example": "মার্চ মাসে আমার জন্মদিন।",
+       "exampleMeaning": "My birthday is in March."
+      },
+      {
+       "word": "এপ্রিল",
+       "romanization": "epril",
+       "meaning": "April",
+       "example": "এপ্রিলে গরম বাড়ে।",
+       "exampleMeaning": "It gets hotter in April."
+      },
+      {
+       "word": "মে",
+       "romanization": "me",
+       "meaning": "May",
+       "example": "মে মাসে আম পাকে।",
+       "exampleMeaning": "Mangoes ripen in May."
+      },
+      {
+       "word": "জুন",
+       "romanization": "jun",
+       "meaning": "June",
+       "example": "জুনে বর্ষা শুরু হয়।",
+       "exampleMeaning": "The monsoon begins in June."
+      },
+      {
+       "word": "জুলাই",
+       "romanization": "julai",
+       "meaning": "July",
+       "example": "জুলাইয়ে খুব বৃষ্টি হয়।",
+       "exampleMeaning": "It rains a lot in July."
+      },
+      {
+       "word": "আগস্ট",
+       "romanization": "agast",
+       "meaning": "August",
+       "example": "আগস্টে স্কুল খোলা থাকে।",
+       "exampleMeaning": "School is open in August."
+      },
+      {
+       "word": "সেপ্টেম্বর",
+       "romanization": "september",
+       "meaning": "September",
+       "example": "সেপ্টেম্বরে আবহাওয়া সুন্দর থাকে।",
+       "exampleMeaning": "The weather is nice in September."
+      },
+      {
+       "word": "অক্টোবর",
+       "romanization": "october",
+       "meaning": "October",
+       "example": "অক্টোবরে আমরা বেড়াতে যাই।",
+       "exampleMeaning": "We go on trips in October."
+      },
+      {
+       "word": "নভেম্বর",
+       "romanization": "november",
+       "meaning": "November",
+       "example": "নভেম্বরে শীত আসে।",
+       "exampleMeaning": "Winter arrives in November."
+      },
+      {
+       "word": "ডিসেম্বর",
+       "romanization": "december",
+       "meaning": "December",
+       "example": "ডিসেম্বরে আমাদের বিজয় দিবস।",
+       "exampleMeaning": "Our Victory Day is in December."
+      }
+     ]
+    },
+    {
+     "title": "Common Verbs",
+     "level": "A1",
+     "words": [
+      {
+       "word": "যাওয়া",
+       "romanization": "jawa",
+       "meaning": "to go",
+       "example": "আমি রোজ স্কুলে যাই।",
+       "exampleMeaning": "I go to school every day."
+      },
+      {
+       "word": "আসা",
+       "romanization": "asha",
+       "meaning": "to come",
+       "example": "তুমি কখন আসবে?",
+       "exampleMeaning": "When will you come?"
+      },
+      {
+       "word": "খাওয়া",
+       "romanization": "khawa",
+       "meaning": "to eat",
+       "example": "আমি সকালে ভাত খাই।",
+       "exampleMeaning": "I eat rice in the morning."
+      },
+      {
+       "word": "ঘুমানো",
+       "romanization": "ghumano",
+       "meaning": "to sleep",
+       "example": "আমি রাতে তাড়াতাড়ি ঘুমাই।",
+       "exampleMeaning": "I sleep early at night."
+      },
+      {
+       "word": "দেখা",
+       "romanization": "dekha",
+       "meaning": "to see, to watch",
+       "example": "আমি টিভি দেখি।",
+       "exampleMeaning": "I watch TV."
+      },
+      {
+       "word": "শোনা",
+       "romanization": "shona",
+       "meaning": "to listen, to hear",
+       "example": "আমি গান শুনি।",
+       "exampleMeaning": "I listen to songs."
+      },
+      {
+       "word": "বলা",
+       "romanization": "bola",
+       "meaning": "to say, to tell",
+       "example": "আমাকে সত্যি কথা বলো।",
+       "exampleMeaning": "Tell me the truth."
+      },
+      {
+       "word": "পড়া",
+       "romanization": "pora",
+       "meaning": "to read, to study",
+       "example": "আমি রোজ বই পড়ি।",
+       "exampleMeaning": "I read books every day."
+      },
+      {
+       "word": "লেখা",
+       "romanization": "lekha",
+       "meaning": "to write",
+       "example": "আমি খাতায় লিখি।",
+       "exampleMeaning": "I write in a notebook."
+      },
+      {
+       "word": "কেনা",
+       "romanization": "kena",
+       "meaning": "to buy",
+       "example": "আমি বাজার থেকে ফল কিনি।",
+       "exampleMeaning": "I buy fruit from the market."
+      },
+      {
+       "word": "দেওয়া",
+       "romanization": "deoa",
+       "meaning": "to give",
+       "example": "আমাকে একটু পানি দাও।",
+       "exampleMeaning": "Give me some water."
+      },
+      {
+       "word": "নেওয়া",
+       "romanization": "neoa",
+       "meaning": "to take",
+       "example": "ছাতা নিয়ে যাও।",
+       "exampleMeaning": "Take an umbrella with you."
+      },
+      {
+       "word": "করা",
+       "romanization": "kora",
+       "meaning": "to do",
+       "example": "আমি রোজ ব্যায়াম করি।",
+       "exampleMeaning": "I exercise every day."
+      },
+      {
+       "word": "থাকা",
+       "romanization": "thaka",
+       "meaning": "to live, to stay",
+       "example": "আমি ঢাকায় থাকি।",
+       "exampleMeaning": "I live in Dhaka."
+      },
+      {
+       "word": "খেলা",
+       "romanization": "khela",
+       "meaning": "to play",
+       "example": "ছেলেরা মাঠে ফুটবল খেলে।",
+       "exampleMeaning": "The boys play football in the field."
+      },
+      {
+       "word": "জানা",
+       "romanization": "jana",
+       "meaning": "to know",
+       "example": "আমি তাকে জানি।",
+       "exampleMeaning": "I know him."
+      },
+      {
+       "word": "চাওয়া",
+       "romanization": "chaoa",
+       "meaning": "to want",
+       "example": "আমি এক কাপ চা চাই।",
+       "exampleMeaning": "I want a cup of tea."
+      },
+      {
+       "word": "রান্না করা",
+       "romanization": "ranna kora",
+       "meaning": "to cook",
+       "example": "মা ভাত রান্না করেন।",
+       "exampleMeaning": "Mother cooks rice."
+      },
+      {
+       "word": "হাঁটা",
+       "romanization": "hata",
+       "meaning": "to walk",
+       "example": "আমি সকালে হাঁটি।",
+       "exampleMeaning": "I walk in the morning."
+      },
+      {
+       "word": "বসা",
+       "romanization": "bosha",
+       "meaning": "to sit",
+       "example": "এখানে বসো।",
+       "exampleMeaning": "Sit here."
+      }
+     ]
+    },
+    {
+     "title": "Common Adjectives",
+     "level": "A1",
+     "words": [
+      {
+       "word": "বড়",
+       "romanization": "boro",
+       "meaning": "big",
+       "example": "আমার একটি বড় কুকুর আছে।",
+       "exampleMeaning": "I have a big dog."
+      },
+      {
+       "word": "ছোট",
+       "romanization": "chhoto",
+       "meaning": "small",
+       "example": "বিড়ালটি ছোট।",
+       "exampleMeaning": "The cat is small."
+      },
+      {
+       "word": "ভালো",
+       "romanization": "bhalo",
+       "meaning": "good",
+       "example": "এটি খুব ভালো বই।",
+       "exampleMeaning": "This is a very good book."
+      },
+      {
+       "word": "খারাপ",
+       "romanization": "kharap",
+       "meaning": "bad",
+       "example": "আজ আবহাওয়া খারাপ।",
+       "exampleMeaning": "The weather is bad today."
+      },
+      {
+       "word": "নতুন",
+       "romanization": "notun",
+       "meaning": "new",
+       "example": "আমার একটি নতুন ফোন আছে।",
+       "exampleMeaning": "I have a new phone."
+      },
+      {
+       "word": "পুরোনো",
+       "romanization": "purono",
+       "meaning": "old",
+       "example": "আমার গাড়ি পুরোনো।",
+       "exampleMeaning": "My car is old."
+      },
+      {
+       "word": "সুন্দর",
+       "romanization": "shundor",
+       "meaning": "beautiful",
+       "example": "ফুলটি খুব সুন্দর।",
+       "exampleMeaning": "The flower is very beautiful."
+      },
+      {
+       "word": "সহজ",
+       "romanization": "shohoj",
+       "meaning": "easy",
+       "example": "পরীক্ষাটি সহজ ছিল।",
+       "exampleMeaning": "The exam was easy."
+      },
+      {
+       "word": "কঠিন",
+       "romanization": "kothin",
+       "meaning": "difficult, hard",
+       "example": "এই শব্দটি কঠিন।",
+       "exampleMeaning": "This word is difficult."
+      },
+      {
+       "word": "দ্রুত",
+       "romanization": "druto",
+       "meaning": "fast",
+       "example": "ট্রেনটি খুব দ্রুত চলে।",
+       "exampleMeaning": "The train goes very fast."
+      },
+      {
+       "word": "ধীর",
+       "romanization": "dhir",
+       "meaning": "slow",
+       "example": "সে ধীর গতিতে হাঁটে।",
+       "exampleMeaning": "He walks at a slow pace."
+      },
+      {
+       "word": "দামি",
+       "romanization": "dami",
+       "meaning": "expensive",
+       "example": "এই ঘড়িটি অনেক দামি।",
+       "exampleMeaning": "This watch is very expensive."
+      },
+      {
+       "word": "সস্তা",
+       "romanization": "shosta",
+       "meaning": "cheap",
+       "example": "বাজারে ফল সস্তা।",
+       "exampleMeaning": "Fruit is cheap at the market."
+      },
+      {
+       "word": "লম্বা",
+       "romanization": "lomba",
+       "meaning": "tall, long",
+       "example": "তার ভাই লম্বা।",
+       "exampleMeaning": "Her brother is tall."
+      },
+      {
+       "word": "খাটো",
+       "romanization": "khato",
+       "meaning": "short",
+       "example": "এই প্যান্টটি খাটো।",
+       "exampleMeaning": "These pants are short."
+      },
+      {
+       "word": "মিষ্টি",
+       "romanization": "mishti",
+       "meaning": "sweet",
+       "example": "আম খুব মিষ্টি।",
+       "exampleMeaning": "Mangoes are very sweet."
+      },
+      {
+       "word": "খুশি",
+       "romanization": "khushi",
+       "meaning": "happy",
+       "example": "আমি আজ খুব খুশি।",
+       "exampleMeaning": "I am very happy today."
+      },
+      {
+       "word": "দুঃখী",
+       "romanization": "dukkhi",
+       "meaning": "sad",
+       "example": "সে আজ দুঃখী।",
+       "exampleMeaning": "She is sad today."
+      },
+      {
+       "word": "ক্লান্ত",
+       "romanization": "klanto",
+       "meaning": "tired",
+       "example": "আমি অনেক ক্লান্ত।",
+       "exampleMeaning": "I am very tired."
+      },
+      {
+       "word": "পরিষ্কার",
+       "romanization": "porishkar",
+       "meaning": "clean",
+       "example": "ঘরটি পরিষ্কার।",
+       "exampleMeaning": "The room is clean."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

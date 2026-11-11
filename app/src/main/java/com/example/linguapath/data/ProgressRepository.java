@@ -20,7 +20,7 @@ public class ProgressRepository {
     }
 
     // To add a language later, add its name here (and its lessons to content.json)
-    private static final String[] LANGUAGES = {"Spanish", "Korean"};
+    private static final String[] LANGUAGES = {"Spanish", "Korean", "Bangla", "Japanese", "French"};
 
     private static final Handler mainHandler = new Handler(Looper.getMainLooper());
 

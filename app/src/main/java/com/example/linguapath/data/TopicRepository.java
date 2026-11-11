@@ -72,6 +72,7 @@ public class TopicRepository {
                 }
                 topics.add(topic);
             }
+            addBangla(context, topics);
         } catch (IOException | JSONException e) {
             Log.e(TAG, "Could not read topics.json", e);
         }
@@ -80,7 +81,27 @@ public class TopicRepository {
         }
         return topics;
     }
-
+    // Adds the Bangla words from topics_bangla.json to the topics we already loaded
+    private static void addBangla(Context context, List<Topic> topics) {
+        try {
+            JSONObject bn = new JSONObject(readAsset(context, "topics_bangla.json"));
+            for (Topic topic : topics) {
+                JSONArray list = bn.optJSONArray(topic.id);
+                if (list == null) {
+                    continue;
+                }
+                List<TopicWord> parsed = new ArrayList<>();
+                for (int j = 0; j < list.length(); j++) {
+                    JSONObject w = list.getJSONObject(j);
+                    parsed.add(new TopicWord(w.getString("word"), w.getString("romanization"),
+                            w.getString("meaning"), w.getString("emoji")));
+                }
+                topic.setWords("Bangla", parsed);
+            }
+        } catch (IOException | JSONException e) {
+            Log.e(TAG, "Could not read topics_bangla.json", e);
+        }
+    }
     private static String readAsset(Context context, String fileName) throws IOException {
         InputStream in = context.getAssets().open(fileName);
         ByteArrayOutputStream out = new ByteArrayOutputStream();

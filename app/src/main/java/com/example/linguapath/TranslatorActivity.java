@@ -72,6 +72,9 @@ public class TranslatorActivity extends AppCompatActivity {
         binding.buttonBack.setOnClickListener(v -> finish());
         binding.chipKorean.setOnClickListener(v -> selectTarget("Korean"));
         binding.chipSpanish.setOnClickListener(v -> selectTarget("Spanish"));
+        binding.chipBangla.setOnClickListener(v -> selectTarget("Bangla"));
+        binding.chipJapanese.setOnClickListener(v -> selectTarget("Japanese"));
+        binding.chipFrench.setOnClickListener(v -> selectTarget("French"));
         binding.buttonSwap.setOnClickListener(v -> {
             toEnglish = !toEnglish;
             directionChanged();
@@ -142,9 +145,13 @@ public class TranslatorActivity extends AppCompatActivity {
     }
 
     private void showChips() {
-        boolean korean = "Korean".equals(target);
-        binding.chipKorean.setBackgroundResource(korean ? R.drawable.bg_card_sage : R.drawable.bg_card_sky);
-        binding.chipSpanish.setBackgroundResource(korean ? R.drawable.bg_card_sky : R.drawable.bg_card_sage);
+        String[] names = {"Korean", "Spanish", "Bangla", "Japanese", "French"};
+        android.widget.TextView[] chips = {binding.chipKorean, binding.chipSpanish,
+                binding.chipBangla, binding.chipJapanese, binding.chipFrench};
+        for (int i = 0; i < chips.length; i++) {
+            chips[i].setBackgroundResource(names[i].equals(target)
+                    ? R.drawable.bg_card_sage : R.drawable.bg_card_sky);
+        }
     }
 
     private void showDirection() {
@@ -163,7 +170,7 @@ public class TranslatorActivity extends AppCompatActivity {
             return;
         }
         String speakTag = toEnglish
-                ? ("Korean".equals(target) ? "ko-KR" : "es-ES")
+                ? SpeechHelper.localeFor(target).toLanguageTag()
                 : "en-US";
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);

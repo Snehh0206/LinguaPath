@@ -173,7 +173,7 @@ public class FriendsActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.friends_need_name, Toast.LENGTH_SHORT).show();
             return;
         }
-        String[] languages = {"Spanish", "Korean"};
+        String[] languages = {"Spanish", "Korean", "Bangla", "Japanese", "French"};
         new AlertDialog.Builder(this)
                 .setTitle(R.string.friends_chat_language)
                 .setItems(languages, (dialog, which) -> {
