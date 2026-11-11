@@ -1,18 +1,11 @@
 package com.example.linguapath;
 
 import android.animation.ObjectAnimator;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
@@ -20,9 +13,15 @@ import androidx.appcompat.widget.PopupMenu;
 import com.example.linguapath.data.AuthRepository;
 import com.example.linguapath.databinding.ActivityLanguageSelectBinding;
 import com.example.linguapath.databinding.DialogLanguageChoiceBinding;
+import com.example.linguapath.util.InviteHelper;
 import com.example.linguapath.view.Motion;
 import com.example.linguapath.view.TouchBounce;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+
+import android.view.ViewGroup;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class LanguageSelectActivity extends AppCompatActivity {
 
@@ -32,7 +31,7 @@ public class LanguageSelectActivity extends AppCompatActivity {
     private AuthRepository authRepository;
     private ObjectAnimator floatKorean;
     private ObjectAnimator floatSpanish;
-    private ActivityResultLauncher<Void> pickContact;
+    private InviteHelper invite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +43,7 @@ public class LanguageSelectActivity extends AppCompatActivity {
 
         authRepository = new AuthRepository();
 
-        // The system contact picker. The app never sees the whole contact list.
-        pickContact = registerForActivityResult(new ActivityResultContracts.PickContact(), uri -> {
-            if (uri != null) {
-                shareInvite(contactName(uri));
-            }
-        });
+        invite = new InviteHelper(this);
 
         binding.cardKorean.setOnClickListener(v -> onLanguagePicked("Korean"));
         binding.cardSpanish.setOnClickListener(v -> onLanguagePicked("Spanish"));
@@ -57,6 +51,22 @@ public class LanguageSelectActivity extends AppCompatActivity {
         binding.cardJapanese.setOnClickListener(v -> onLanguagePicked("Japanese"));
         binding.cardFrench.setOnClickListener(v -> onLanguagePicked("French"));
         binding.buttonMenu.setOnClickListener(v -> startActivity(new Intent(this, MenuActivity.class)));
+        binding.navMenu.setOnClickListener(v ->
+                startActivity(new Intent(this, MenuActivity.class)));
+        binding.navFriends.setOnClickListener(v ->
+                startActivity(new Intent(this, FriendsActivity.class)));
+        binding.navAccount.setOnClickListener(v ->
+                startActivity(new Intent(this, AccountActivity.class)));
+
+        // Keep the bar above the system navigation buttons / gesture line
+        ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
+            Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            ViewGroup.MarginLayoutParams lp =
+                    (ViewGroup.MarginLayoutParams) binding.bottomBar.getLayoutParams();
+            lp.bottomMargin = (int) (16 * getResources().getDisplayMetrics().density) + bars.bottom;
+            binding.bottomBar.setLayoutParams(lp);
+            return insets;
+        });
 
         // Cards float in, and tilt in 3D when touched
         Motion.fadeSlideIn(binding.cardKorean, 100);
@@ -135,7 +145,7 @@ public class LanguageSelectActivity extends AppCompatActivity {
                 return true;
             }
             if (item.getItemId() == R.id.menu_invite) {
-                pickContact.launch(null);
+                invite.start();
                 return true;
             }
             if (item.getItemId() == R.id.menu_translator) {
@@ -157,33 +167,6 @@ public class LanguageSelectActivity extends AppCompatActivity {
             return false;
         });
         popup.show();
-    }
-
-    // Reads only the name of the one contact the user picked
-    private String contactName(Uri uri) {
-        try (Cursor c = getContentResolver().query(uri,
-                new String[]{ContactsContract.Contacts.DISPLAY_NAME}, null, null, null)) {
-            if (c != null && c.moveToFirst() && c.getString(0) != null) {
-                return c.getString(0);
-            }
-        } catch (Exception e) {
-            Log.w(TAG, "Could not read contact name", e);
-        }
-        return "";
-    }
-
-    // Implicit Intent: the user chooses SMS, WhatsApp, Messenger and so on
-    private void shareInvite(String name) {
-        String greeting = name.isEmpty() ? "Hi!" : "Hi " + name + "!";
-        Intent send = new Intent(Intent.ACTION_SEND);
-        send.setType("text/plain");
-        send.putExtra(Intent.EXTRA_TEXT,
-                getString(R.string.invite_message, greeting, getString(R.string.invite_link)));
-        try {
-            startActivity(Intent.createChooser(send, getString(R.string.invite_chooser)));
-        } catch (ActivityNotFoundException e) {
-            Toast.makeText(this, R.string.invite_no_app, Toast.LENGTH_SHORT).show();
-        }
     }
 
     private void confirmLogout() {

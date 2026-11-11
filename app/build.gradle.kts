@@ -37,7 +37,7 @@ android {
 
 dependencies {
     implementation("com.google.mlkit:text-recognition-japanese:16.0.1")
-    implementation("cz.adaptech.tesseract4android:tesseract4android:4.7.0")
+    implementation("cz.adaptech.tesseract4android:tesseract4android:4.9.0")
     implementation(libs.activity.ktx)
     implementation(libs.appcompat)
     implementation(libs.constraintlayout)

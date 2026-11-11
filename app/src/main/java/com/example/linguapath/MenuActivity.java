@@ -1,25 +1,19 @@
 package com.example.linguapath;
 
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.linguapath.data.AuthRepository;
 import com.example.linguapath.databinding.ActivityMenuBinding;
 import com.example.linguapath.databinding.ItemHubBinding;
+import com.example.linguapath.util.InviteHelper;
 import com.example.linguapath.view.Motion;
 import com.example.linguapath.view.TouchBounce;
 
@@ -28,15 +22,8 @@ public class MenuActivity extends AppCompatActivity {
 
     private ActivityMenuBinding binding;
     private AuthRepository authRepository;
+    private InviteHelper invite;
     private int delay = 60;
-
-    // Pick one contact (no contact list is read or uploaded)
-    private final ActivityResultLauncher<Void> pickContact = registerForActivityResult(
-            new ActivityResultContracts.PickContact(), uri -> {
-                if (uri != null) {
-                    shareInvite(contactName(uri));
-                }
-            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +32,7 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         authRepository = new AuthRepository();
+        invite = new InviteHelper(this);
         String email = authRepository.getEmail();
         binding.textSignedIn.setText(getString(R.string.signed_in_as, email == null ? "" : email));
         binding.buttonBack.setOnClickListener(v -> finish());
@@ -71,7 +59,7 @@ public class MenuActivity extends AppCompatActivity {
         addItem("🏆", R.string.hub_leaderboard, R.string.hub_leaderboard_sub, R.drawable.bg_card_peach,
                 () -> open(LeaderboardActivity.class));
         addItem("💌", R.string.hub_invite, R.string.hub_invite_sub, R.drawable.bg_card_peach,
-                () -> pickContact.launch(null));
+                () -> invite.start());
 
         addSection(R.string.hub_sec_account);
         addItem("🙋", R.string.hub_account, R.string.hub_account_sub, R.drawable.bg_card_sky,
@@ -123,34 +111,6 @@ public class MenuActivity extends AppCompatActivity {
 
     private int dp(int value) {
         return (int) (value * getResources().getDisplayMetrics().density);
-    }
-
-    // ---- Invite a friend ----
-
-    private String contactName(Uri uri) {
-        try (Cursor cursor = getContentResolver().query(uri,
-                new String[]{ContactsContract.Contacts.DISPLAY_NAME}, null, null, null)) {
-            if (cursor != null && cursor.moveToFirst()) {
-                String name = cursor.getString(0);
-                return name == null ? "" : name;
-            }
-        } catch (RuntimeException ignored) {
-            // no name: the message just says "there"
-        }
-        return "";
-    }
-
-    private void shareInvite(String name) {
-        String text = getString(R.string.hub_invite_text,
-                name.isEmpty() ? "there" : name, getString(R.string.invite_link));
-        Intent send = new Intent(Intent.ACTION_SEND);
-        send.setType("text/plain");
-        send.putExtra(Intent.EXTRA_TEXT, text);
-        try {
-            startActivity(Intent.createChooser(send, getString(R.string.invite_chooser)));
-        } catch (ActivityNotFoundException e) {
-            Toast.makeText(this, R.string.invite_no_app, Toast.LENGTH_SHORT).show();
-        }
     }
 
     // ---- Log out ----

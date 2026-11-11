@@ -36,7 +36,7 @@ public class QuizActivity extends AppCompatActivity {
     public static final String EXTRA_REVISION = "extra_revision";
     public static final String EXTRA_TOPIC_ID = "extra_topic_id";
     public static final String EXTRA_TOPIC_TITLE = "extra_topic_title";
-
+    private int hintForIndex = -1; // the question where the hint was tapped
     private static final String TAG = "QuizActivity";
     private static final int PASS_PERCENT = 70;
     private static final int PERFECT_BONUS = 5;
@@ -173,7 +173,7 @@ public class QuizActivity extends AppCompatActivity {
         binding.textPromptSub.setText(q.promptSub);
         binding.textPromptSub.setVisibility(
                 (q.promptSub.isEmpty() || hideWord) ? View.GONE : View.VISIBLE);
-
+        updateHint(q, hideWord);
         for (int i = 0; i < optionViews.length; i++) {
             if (!build && i < q.options.size()) {
                 optionViews[i].setVisibility(View.VISIBLE);
@@ -225,6 +225,7 @@ public class QuizActivity extends AppCompatActivity {
         binding.buttonShowWord.setVisibility(View.GONE);
         binding.textPromptSub.setVisibility(q.promptSub.isEmpty() ? View.GONE : View.VISIBLE);
         boolean correct = viewModel.selected == q.correctIndex;
+        updateHint(q, false); // after answering, the English shows by itself
 
         for (TextView option : optionViews) {
             option.setEnabled(false);
@@ -288,7 +289,28 @@ public class QuizActivity extends AppCompatActivity {
         binding.buttonCheck.setVisibility(answered ? View.GONE : View.VISIBLE);
         binding.buttonCheck.setEnabled(!viewModel.buildPlaced.isEmpty());
     }
-
+    // English hint under a foreign word (meaning and listening questions)
+    private void updateHint(QuizQuestion q, boolean hideWord) {
+        boolean canHint = (q.type == QuizQuestion.TYPE_MEANING || q.type == QuizQuestion.TYPE_LISTEN)
+                && q.correctIndex >= 0 && q.correctIndex < q.options.size() && !hideWord;
+        if (!canHint) {
+            binding.textHint.setVisibility(View.GONE);
+            return;
+        }
+        boolean shown = hintForIndex == viewModel.index || viewModel.selected != -1;
+        binding.textHint.setVisibility(View.VISIBLE);
+        if (shown) {
+            binding.textHint.setText(getString(R.string.quiz_translation,
+                    q.options.get(q.correctIndex)));
+            binding.textHint.setOnClickListener(null);
+        } else {
+            binding.textHint.setText(R.string.quiz_show_translation);
+            binding.textHint.setOnClickListener(v -> {
+                hintForIndex = viewModel.index;
+                updateHint(q, false);
+            });
+        }
+    }
     private TextView makeBlock(String text, int backgroundRes, Runnable onClick) {
         TextView block = new TextView(this);
         block.setText(text);

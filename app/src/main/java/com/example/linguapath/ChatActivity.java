@@ -1,5 +1,6 @@
 package com.example.linguapath;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
@@ -173,12 +174,14 @@ public class ChatActivity extends AppCompatActivity {
 
         binding.editMessage.setText("");
         final String sentText = text;
-        ChatRepository.sendMessage(room.id, nickname, text, success -> {
+        final int pts = pointsForMessage(text); // decided before sending, so the badge goes along
+        final String toSend = pts > 0 ? text + ChatMessageAdapter.POINTS_MARK + pts : text;
+        ChatRepository.sendMessage(room.id, nickname, toSend, success -> {
             if (isFinishing() || isDestroyed()) {
                 return;
             }
             if (success) {
-                scoreMessage(sentText);
+                scoreMessage(sentText, pts);
             } else {
                 binding.textChatError.setText(R.string.chat_send_failed);
             }
@@ -209,11 +212,36 @@ public class ChatActivity extends AppCompatActivity {
                 .show();
     }
 
-    // The marking rule: 2 points for each known word used (max 3 words), max 30 points a day
-    private void scoreMessage(String text) {
+    private static final int POINTS_PER_REWARD = 3;    // points given
+    private static final int MESSAGES_PER_REWARD = 3;  // good messages needed
+    private static final int MAX_MARKED_LENGTH = 190;  // the badge needs a few spare characters
+
+    private SharedPreferences chatPrefs() {
+        return getSharedPreferences("linguapath_chatpoints", MODE_PRIVATE);
+    }
+
+    // A "good" message uses at least one word you know. Every 3rd good message earns points.
+    private int pointsForMessage(String text) {
+        if (scoreMode != null || text.length() > MAX_MARKED_LENGTH
+                || text.equalsIgnoreCase(lastScoredText)) {
+            return 0;
+        }
+        if (VocabMatcher.findWords(text, knownWords, room.language).isEmpty()) {
+            return 0;
+        }
+        int streak = chatPrefs().getInt("good", 0) + 1;
+        if (streak < MESSAGES_PER_REWARD) {
+            return 0;
+        }
+        int remaining = ChatSettings.DAILY_POINT_CAP - settings.getPointsToday();
+        return Math.max(0, Math.min(POINTS_PER_REWARD, remaining));
+    }
+
+    private void scoreMessage(String text, int pts) {
         if (scoreMode != null) { // private chat: reward points come only from Score Mode matches
             if (!scoreMode.onMyMessage(text)) {
-                int practice = VocabMatcher.pointsFor(VocabMatcher.findWords(text, knownWords, room.language));
+                int practice = VocabMatcher.pointsFor(
+                        VocabMatcher.findWords(text, knownWords, room.language));
                 if (practice > 0) {
                     showPopupText(getString(R.string.score_practice_popup, practice));
                 }
@@ -223,20 +251,21 @@ public class ChatActivity extends AppCompatActivity {
         if (text.equalsIgnoreCase(lastScoredText)) {
             return; // the same message twice earns nothing
         }
+        if (VocabMatcher.findWords(text, knownWords, room.language).isEmpty()) {
+            return; // no known word, no progress
+        }
         lastScoredText = text;
 
-        List<String> found = VocabMatcher.findWords(text, knownWords, room.language);
-        int points = VocabMatcher.pointsFor(found);
-
-        ChatSettings s = settings;
-        int remaining = ChatSettings.DAILY_POINT_CAP - s.getPointsToday();
-        points = Math.min(points, remaining);
-        if (points <= 0) {
-            return;
+        int streak = chatPrefs().getInt("good", 0) + 1;
+        if (pts > 0) {
+            chatPrefs().edit().putInt("good", 0).apply();
+            settings.addPointsToday(pts);
+            ChatScoreRepository.award(nickname, pts);
+            showPointsPopup(pts);
+        } else if (streak < MESSAGES_PER_REWARD) {
+            chatPrefs().edit().putInt("good", streak).apply();
+            showPopupText(getString(R.string.chat_progress_popup, streak, MESSAGES_PER_REWARD));
         }
-        s.addPointsToday(points);
-        ChatScoreRepository.award(nickname, points);
-        showPointsPopup(points);
     }
 
     // "+4 ✨" floats up and fades away

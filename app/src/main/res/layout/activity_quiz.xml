@@ -126,6 +126,18 @@
                     android:textColor="@color/ink_soft"
                     android:textSize="16sp"
                     android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/textHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="8dp"
+                    android:textColor="@color/ink_soft"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
                 <LinearLayout
                     android:id="@+id/groupBuild"
                     android:layout_width="match_parent"

@@ -382,7 +382,7 @@
     <string name="friends_remove_title">Remove friend?</string>
     <string name="friends_remove_msg">%1$s will no longer be able to chat with you.</string>
     <string name="friends_request_sent">Request sent to %1$s</string>
-    <string name="friends_need_name">Pick a nickname first (Chat → Change name).</string>
+
     <string name="friends_failed">Could not load. Check your connection.</string>
     <string name="friends_chat_language">Chat in which language?</string>
     <string name="friends_leaderboard_button">🏆 Friends leaderboard</string>
@@ -400,7 +400,7 @@
     <string name="translator_warn_message">About %1$d free characters are left today. When they run out, new translations are switched off until tomorrow. Saved translations still work.</string>
     <string name="menu_invite">Invite friends</string>
     <string name="invite_message">%1$s I am learning Spanish and Korean with LinguaPath. Come and learn with me! %2$s</string>
-    <string name="invite_link">https://github.com/Snehh0206/LinguaPath</string>
+
     <string name="invite_chooser">Invite with</string>
     <string name="invite_no_app">No app found to send the invitation.</string>
     <string name="topics_subtitle_language">Words for the places you will go · %1$s</string>
@@ -412,7 +412,6 @@
     <string name="menu_account_page">My account</string>
     <string name="menu_quests">Daily quests</string>
     <string name="account_name_loading">Loading name…</string>
-    <string name="account_no_name">No nickname yet (pick one in Chat)</string>
     <string name="account_level">Level %1$d</string>
     <string name="account_to_next">%1$d / %2$d XP to level %3$d</string>
     <string name="account_xp">⚡ %1$d XP</string>
@@ -521,4 +520,28 @@
     <string name="room_ja_travel">Japanese · Travel</string>
     <string name="room_fr_everyday">French · Everyday</string>
     <string name="room_fr_travel">French · Travel</string>
+    <string name="navbar_menu">Menu</string>
+    <string name="navbar_friends">Friends</string>
+    <string name="navbar_account">Account</string>
+    <string name="contacts_why_title">Allow contacts?</string>
+    <string name="contacts_why_message">LinguaPath uses your contacts only so you can pick a friend and send the invite as a normal message. Your contact list is never uploaded.</string>
+    <string name="contacts_denied_soft">No problem. You can allow contacts any time to invite friends.</string>
+    <string name="gallery_why_title">Allow photo access?</string>
+    <string name="gallery_why_message">LinguaPath opens your gallery so you can choose a picture. Pictures stay on your phone and are never uploaded.</string>
+    <string name="gallery_denied_soft">No problem. You can allow photo access any time.</string>
+    <string name="reminder_settings_title_perm">Permission is off</string>
+    <string name="perm_settings_contacts">Contacts access is turned off. Turn it on in Settings to invite friends from your contacts.</string>
+    <string name="perm_settings_photos">Photo access is turned off. Turn it on in Settings to choose a picture.</string>
+    <string name="avatar_title">Profile picture</string>
+    <string name="avatar_choose">Choose from gallery</string>
+    <string name="avatar_letter">Use my letter instead</string>
+    <string name="avatar_failed">Could not use that picture. Try another one.</string>
+    <string name="account_edit_name">✏ Change nickname</string>
+    <string name="invite_link">https://github.com/Snehh0206/LinguaPath/releases/latest</string>
+    <string name="quiz_show_translation">💡 Tap to see the English</string>
+    <string name="quiz_translation">💬 %1$s</string>
+    <string name="friends_need_name">Pick a nickname first (Account → Change nickname).</string>
+    <string name="account_no_name">No nickname yet. Tap "Change nickname".</string>
+    <string name="chat_progress_popup">✨ %1$d/%2$d good messages</string>
+    <string name="chat_badge_points">✨ +%1$s points</string>
 </resources>

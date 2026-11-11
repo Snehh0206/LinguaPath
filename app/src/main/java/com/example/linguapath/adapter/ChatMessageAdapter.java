@@ -26,7 +26,8 @@ public class ChatMessageAdapter extends RecyclerView.Adapter<ChatMessageAdapter.
     private final String myUid;
     private final Consumer<ChatMessage> longClickListener;
     private final DateFormat timeFormat = DateFormat.getTimeInstance(DateFormat.SHORT);
-
+    // An invisible character followed by the points: the badge travels inside the message text
+    public static final String POINTS_MARK = "\u2063";
     public ChatMessageAdapter(String myUid, Consumer<ChatMessage> longClickListener) {
         this.myUid = myUid;
         this.longClickListener = longClickListener;
@@ -65,7 +66,22 @@ public class ChatMessageAdapter extends RecyclerView.Adapter<ChatMessageAdapter.
         // Set everything every time: rows are recycled
         b.textName.setVisibility(mine ? View.GONE : View.VISIBLE);
         b.textName.setText(m.name);
-        b.textMessage.setText(m.text);
+        String shown = m.text;
+        int mark = shown.indexOf(POINTS_MARK);
+        if (mark >= 0) {
+            String pts = shown.substring(mark + 1);
+            shown = shown.substring(0, mark);
+            if (pts.matches("\\d{1,2}")) {
+                b.textPoints.setText(b.getRoot().getResources()
+                        .getString(R.string.chat_badge_points, pts));
+                b.textPoints.setVisibility(View.VISIBLE);
+            } else {
+                b.textPoints.setVisibility(View.GONE);
+            }
+        } else {
+            b.textPoints.setVisibility(View.GONE);
+        }
+        b.textMessage.setText(shown);
         b.textTime.setText(timeFormat.format(new Date(m.ts)));
 
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) b.bubble.getLayoutParams();

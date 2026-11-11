@@ -14,6 +14,7 @@ import com.example.linguapath.databinding.ActivityWordDetailBinding;
 import com.example.linguapath.model.Word;
 import com.example.linguapath.speech.SpeechHelper;
 import com.example.linguapath.service.StudyTimerController;
+import com.example.linguapath.util.Romanizer;
 
 public class WordDetailActivity extends AppCompatActivity {
 
@@ -60,7 +61,7 @@ public class WordDetailActivity extends AppCompatActivity {
         currentWord = word;
         binding.textDetailWord.setText(word.getWord());
         binding.textDetailMeaning.setText(word.getMeaning());
-        binding.textDetailExample.setText(word.getExample());
+        binding.textDetailExample.setText(Romanizer.withRoman(language, word.getExample()));
         binding.textDetailExampleMeaning.setText(word.getExampleMeaning());
 
         if (word.getRomanization().isEmpty()) {

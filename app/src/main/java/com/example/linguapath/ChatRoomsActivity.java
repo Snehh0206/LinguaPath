@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.InputFilter;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,7 +50,8 @@ public class ChatRoomsActivity extends AppCompatActivity {
         adapter.setRooms(ChatRoom.ALL);
 
         binding.buttonBack.setOnClickListener(v -> finish());
-        binding.buttonChangeName.setOnClickListener(v -> showNicknameDialog(true));
+        binding.buttonChangeName.setOnClickListener(v ->
+                startActivity(new Intent(this, AccountActivity.class)));
         binding.buttonLeaderboard.setOnClickListener(v ->
                 startActivity(new Intent(this, LeaderboardActivity.class)));
 
@@ -75,7 +77,9 @@ public class ChatRoomsActivity extends AppCompatActivity {
                 settings.setNickname(uid, name);
                 showName();
             } else {
-                showNicknameDialog(false); // first time: the user must pick a name
+                Toast.makeText(this, R.string.friends_need_name, Toast.LENGTH_LONG).show();
+                startActivity(new Intent(this, AccountActivity.class));
+                finish();
             }
         });
     }

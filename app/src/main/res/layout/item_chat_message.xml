@@ -30,7 +30,20 @@
             android:layout_height="wrap_content"
             android:textColor="@color/ink"
             android:textSize="16sp" />
-
+        <TextView
+            android:id="@+id/textPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_card_butter"
+            android:paddingStart="8dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="2dp"
+            android:textColor="@color/ink"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
         <TextView
             android:id="@+id/textTime"
             android:layout_width="wrap_content"

@@ -22,7 +22,7 @@ import com.example.linguapath.databinding.ActivityTranslatorBinding;
 import com.example.linguapath.speech.SpeechHelper;
 import com.example.linguapath.system.NetworkMonitor;
 import com.example.linguapath.view.Motion;
-
+import com.example.linguapath.util.Romanizer
 import java.util.ArrayList;
 
 public class TranslatorActivity extends AppCompatActivity {
@@ -278,7 +278,7 @@ public class TranslatorActivity extends AppCompatActivity {
 
     private void showResult(String translated, boolean fromCache) {
         lastTranslated = translated;
-        binding.textResult.setText(translated);
+        binding.textResult.setText(toEnglish ? translated : Romanizer.withRoman(target, translated));
         binding.textResultSource.setText(
                 fromCache ? R.string.translator_from_cache : R.string.translator_from_online);
         binding.cardResult.setVisibility(View.VISIBLE);

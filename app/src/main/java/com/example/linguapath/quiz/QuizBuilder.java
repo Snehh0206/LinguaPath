@@ -14,6 +14,8 @@ public class QuizBuilder {
 
     private static final int MAX_QUESTIONS = 10;
     private static final int OPTIONS = 4;
+    private static final int MIN_BLOCKS = 2; // beginner sentences only: 2 to 4 words
+    private static final int MAX_BLOCKS = 4;
 
     // stageWords: the words being tested. pool: all words of the language, for wrong options.
     public static List<QuizQuestion> build(List<Word> stageWords, List<Word> pool) {
@@ -36,16 +38,24 @@ public class QuizBuilder {
         return questions;
     }
     // For stage quizzes only: every 4th question becomes "build the sentence" (when the word has an example)
+    // For stage quizzes only: the 4th and 8th questions become "build the sentence",
+    // using only short beginner sentences (2 to 4 words) from this stage
     public static List<QuizQuestion> buildForStage(List<Word> stageWords, List<Word> pool) {
         List<QuizQuestion> questions = build(stageWords, pool);
-        for (int i = 3; i < questions.size(); i += 4) {
-            Word word = null;
-            for (Word w : stageWords) {
-                if (w.getId() == questions.get(i).wordId) {
-                    word = w;
-                }
+
+        List<Word> easy = new ArrayList<>();
+        for (Word w : stageWords) {
+            int n = tokens(w.getExample()).size();
+            String english = w.getExampleMeaning();
+            if (n >= MIN_BLOCKS && n <= MAX_BLOCKS && english != null && !english.isEmpty()) {
+                easy.add(w);
             }
-            QuizQuestion sentence = (word == null) ? null : makeSentence(word, pool);
+        }
+        Collections.shuffle(easy);
+
+        int next = 0;
+        for (int i = 3; i < questions.size() && next < easy.size(); i += 4) {
+            QuizQuestion sentence = makeSentence(easy.get(next++), pool);
             if (sentence != null) {
                 questions.set(i, sentence);
             }
@@ -68,7 +78,8 @@ public class QuizBuilder {
     private static QuizQuestion makeSentence(Word word, List<Word> pool) {
         List<String> answer = tokens(word.getExample());
         String english = word.getExampleMeaning();
-        if (answer.size() < 3 || answer.size() > 8 || english == null || english.isEmpty()) {
+        if (answer.size() < MIN_BLOCKS || answer.size() > MAX_BLOCKS
+                || english == null || english.isEmpty()) {
             return null; // too short, too long, or no example: stays a normal question
         }
         Set<String> used = new HashSet<>(answer);

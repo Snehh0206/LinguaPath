@@ -11,7 +11,6 @@ import com.google.mlkit.vision.text.japanese.JapaneseTextRecognizerOptions;
 import com.example.linguapath.data.BanglaOcr;
 
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.PickVisualMediaRequest;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +19,7 @@ import com.example.linguapath.data.ImageLoader;
 import com.example.linguapath.data.ReminderSettings;
 import com.example.linguapath.data.TranslationRepository;
 import com.example.linguapath.databinding.ActivitySignTranslateBinding;
+import com.example.linguapath.util.GalleryHelper;
 import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
@@ -35,7 +35,7 @@ import androidx.core.content.FileProvider;
 import java.io.File;
 
 // Gallery photo of a sign -> text recognition (on the phone) -> translation to English.
-// The photo comes through the system Photo Picker, as a content:// address that we read with ContentResolver.
+// The photo comes through the gallery helper, as a content:// address that we read with ContentResolver.
 public class SignTranslateActivity extends AppCompatActivity {
 
     private static final String STATE_SOURCE = "state_source";
@@ -45,7 +45,7 @@ public class SignTranslateActivity extends AppCompatActivity {
     private static final ExecutorService photoExecutor = Executors.newSingleThreadExecutor();
 
     private ActivitySignTranslateBinding binding;
-    private ActivityResultLauncher<PickVisualMediaRequest> pickPhoto;
+    private GalleryHelper gallery;
     private TextRecognizer latinRecognizer;
     private TextRecognizer koreanRecognizer;
     private TextRecognizer japaneseRecognizer;
@@ -77,12 +77,8 @@ public class SignTranslateActivity extends AppCompatActivity {
             }
         }
 
-        // The system Photo Picker: no permission needed. It returns a content:// address.
-        pickPhoto = registerForActivityResult(new ActivityResultContracts.PickVisualMedia(), uri -> {
-            if (uri != null) {
-                onPhotoPicked(uri);
-            }
-        });
+        // Opens the real gallery. The chosen photo goes to onPhotoPicked.
+        gallery = new GalleryHelper(this, this::onPhotoPicked);
         // The camera app saves the photo to the address we give it
         takePicture = registerForActivityResult(new ActivityResultContracts.TakePicture(), success -> {
             if (success && cameraUri != null) {
@@ -97,10 +93,7 @@ public class SignTranslateActivity extends AppCompatActivity {
         binding.chipBangla.setOnClickListener(v -> selectSource("Bangla"));
         binding.chipJapanese.setOnClickListener(v -> selectSource("Japanese"));
         binding.chipFrench.setOnClickListener(v -> selectSource("French"));
-        binding.buttonChoosePhoto.setOnClickListener(v -> pickPhoto.launch(
-                new PickVisualMediaRequest.Builder()
-                        .setMediaType(ActivityResultContracts.PickVisualMedia.ImageOnly.INSTANCE)
-                        .build()));
+        binding.buttonChoosePhoto.setOnClickListener(v -> gallery.open());
         binding.buttonTranslate.setOnClickListener(v -> translate());
         binding.buttonSwap.setOnClickListener(v -> {
             toEnglish = !toEnglish;
