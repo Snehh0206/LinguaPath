@@ -137,10 +137,22 @@
             android:name=".CreditsActivity"
             android:exported="false" />
         <activity
+            android:name=".FriendsActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".AccountActivity"
             android:exported="false" />
         <activity
             android:name=".QuestsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ScenarioActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MenuActivity"
             android:exported="false" />
 
         <provider

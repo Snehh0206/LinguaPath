@@ -35,7 +35,8 @@ public class QuizRepository {
             List<Word> stageWords = toWords(dao.getWordsForStage(stageId));
             List<Word> pool = toWords(dao.getWordsForLanguage(language));
 
-            List<QuizQuestion> questions = QuizBuilder.build(stageWords, pool);
+            //List<QuizQuestion> questions = QuizBuilder.build(stageWords, pool);
+            List<QuizQuestion> questions = QuizBuilder.buildForStage(stageWords, pool);
             mainHandler.post(() -> callback.onLoaded(questions));
         });
     }

@@ -5,6 +5,9 @@
         android:enabled="false"
         android:title="@string/signed_in_as" />
     <item
+        android:id="@+id/menu_friends"
+        android:title="@string/menu_friends" />
+    <item
         android:id="@+id/menu_chat"
         android:title="@string/menu_chat" />
     <item

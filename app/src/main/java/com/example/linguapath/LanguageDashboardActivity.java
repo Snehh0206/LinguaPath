@@ -33,6 +33,8 @@ import com.example.linguapath.data.QuestRepository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import android.widget.Toast;
+import com.example.linguapath.data.QuestRepository;
 
 public class LanguageDashboardActivity extends AppCompatActivity {
 

@@ -5,6 +5,9 @@ import com.example.linguapath.model.Word;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import com.example.linguapath.model.Word;   // already there, keep it
+import java.util.HashSet;
+import java.util.Set;
 
 // Turns a stage's words into questions. No Android code in here.
 public class QuizBuilder {
@@ -32,7 +35,65 @@ public class QuizBuilder {
         }
         return questions;
     }
+    // For stage quizzes only: every 4th question becomes "build the sentence" (when the word has an example)
+    public static List<QuizQuestion> buildForStage(List<Word> stageWords, List<Word> pool) {
+        List<QuizQuestion> questions = build(stageWords, pool);
+        for (int i = 3; i < questions.size(); i += 4) {
+            Word word = null;
+            for (Word w : stageWords) {
+                if (w.getId() == questions.get(i).wordId) {
+                    word = w;
+                }
+            }
+            QuizQuestion sentence = (word == null) ? null : makeSentence(word, pool);
+            if (sentence != null) {
+                questions.set(i, sentence);
+            }
+        }
+        return questions;
+    }
 
+    private static List<String> tokens(String sentence) {
+        List<String> list = new ArrayList<>();
+        if (sentence == null || sentence.trim().isEmpty()) {
+            return list;
+        }
+        for (String t : sentence.trim().split("\\s+")) {
+            list.add(t);
+        }
+        return list;
+    }
+
+    // Word blocks = the sentence's words + 2 wrong words taken from other example sentences
+    private static QuizQuestion makeSentence(Word word, List<Word> pool) {
+        List<String> answer = tokens(word.getExample());
+        String english = word.getExampleMeaning();
+        if (answer.size() < 3 || answer.size() > 8 || english == null || english.isEmpty()) {
+            return null; // too short, too long, or no example: stays a normal question
+        }
+        Set<String> used = new HashSet<>(answer);
+        List<String> extras = new ArrayList<>();
+        List<Word> shuffled = new ArrayList<>(pool);
+        Collections.shuffle(shuffled);
+        for (Word other : shuffled) {
+            if (other.getId() == word.getId()) {
+                continue;
+            }
+            for (String t : tokens(other.getExample())) {
+                if (!used.contains(t) && !extras.contains(t)) {
+                    extras.add(t);
+                    break;
+                }
+            }
+            if (extras.size() == 2) {
+                break;
+            }
+        }
+        List<String> blocks = new ArrayList<>(answer);
+        blocks.addAll(extras);
+        Collections.shuffle(blocks);
+        return QuizQuestion.sentence(word.getId(), english, word.getExample(), blocks, answer);
+    }
     private static QuizQuestion make(Word word, List<Word> pool, int type) {
         // Only "which word means this?" has foreign words as options
         boolean optionsAreMeanings = (type != QuizQuestion.TYPE_WORD);

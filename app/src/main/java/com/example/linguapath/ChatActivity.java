@@ -17,6 +17,7 @@ import com.example.linguapath.model.ChatRoom;
 import com.example.linguapath.chat.ChatLevels;
 import com.example.linguapath.chat.VocabMatcher;
 import com.example.linguapath.data.ChatScoreRepository;
+import com.example.linguapath.chat.ScoreModeController;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -43,6 +44,10 @@ public class ChatActivity extends AppCompatActivity {
 
     private ChatRepository.Registration messageRegistration;
     private ChatRepository.Registration connectionRegistration;
+    public static final String EXTRA_FRIEND_NAME = "extra_friend_name";
+    public static final String EXTRA_LANGUAGE = "extra_language";
+    public static final String EXTRA_FRIEND_UID = "extra_friend_uid";
+    private ScoreModeController scoreMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +56,11 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         settings = new ChatSettings(this);
-        room = ChatRoom.byId(getIntent().getStringExtra(EXTRA_ROOM_ID));
+        String roomId = getIntent().getStringExtra(EXTRA_ROOM_ID);
+        String friendName = getIntent().getStringExtra(EXTRA_FRIEND_NAME);
+        room = friendName != null
+                ? ChatRoom.privateRoom(roomId, getIntent().getStringExtra(EXTRA_LANGUAGE))
+                : ChatRoom.byId(roomId);
         nickname = getIntent().getStringExtra(EXTRA_NICKNAME);
         myUid = ChatRepository.currentUid();
         if (room == null || nickname == null || myUid == null) {
@@ -59,10 +68,21 @@ public class ChatActivity extends AppCompatActivity {
             return;
         }
 
-        binding.textRoomTitle.setText(room.titleRes);
+        if (friendName != null) {
+            binding.textRoomTitle.setText(getString(R.string.chat_with, friendName));
+        } else {
+            binding.textRoomTitle.setText(room.titleRes);
+        }
         binding.editMessage.setHint(getString(R.string.chat_input_hint, room.language));
         binding.buttonBack.setOnClickListener(v -> finish());
         binding.buttonSend.setOnClickListener(v -> send());
+        String friendUid = getIntent().getStringExtra(EXTRA_FRIEND_UID);
+        if (friendName != null && friendUid != null) {
+            scoreMode = new ScoreModeController(this, binding, roomId.substring(3), myUid,
+                    friendUid, friendName, nickname, this::showPopupText);
+            binding.buttonMore.setVisibility(View.VISIBLE);
+            binding.buttonMore.setOnClickListener(v -> scoreMode.showMenu(v));
+        }
 
         adapter = new ChatMessageAdapter(myUid, this::showOptions);
         layoutManager = new LinearLayoutManager(this);
@@ -93,6 +113,9 @@ public class ChatActivity extends AppCompatActivity {
         scoreRegistration = ChatScoreRepository.listenMyScore(points ->
                 binding.textMyScore.setText(getString(R.string.chat_my_score,
                         points, getString(ChatLevels.nameFor(points)))));
+        if (scoreMode != null) {
+            scoreMode.start();
+        }
     }
 
     @Override
@@ -109,6 +132,9 @@ public class ChatActivity extends AppCompatActivity {
         if (scoreRegistration != null) {
             scoreRegistration.remove();
             scoreRegistration = null;
+        }
+        if (scoreMode != null) {
+            scoreMode.stop();
         }
     }
 
@@ -182,8 +208,18 @@ public class ChatActivity extends AppCompatActivity {
                 })
                 .show();
     }
+
     // The marking rule: 2 points for each known word used (max 3 words), max 30 points a day
     private void scoreMessage(String text) {
+        if (scoreMode != null) { // private chat: reward points come only from Score Mode matches
+            if (!scoreMode.onMyMessage(text)) {
+                int practice = VocabMatcher.pointsFor(VocabMatcher.findWords(text, knownWords, room.language));
+                if (practice > 0) {
+                    showPopupText(getString(R.string.score_practice_popup, practice));
+                }
+            }
+            return;
+        }
         if (text.equalsIgnoreCase(lastScoredText)) {
             return; // the same message twice earns nothing
         }
@@ -205,8 +241,14 @@ public class ChatActivity extends AppCompatActivity {
 
     // "+4 ✨" floats up and fades away
     private void showPointsPopup(int points) {
+        showPopupText(getString(R.string.chat_points_popup, points));
+    }
+
+    // Shows any short text in the floating popup
+    private void showPopupText(String text) {
         TextView popup = binding.textPointsPopup;
-        popup.setText(getString(R.string.chat_points_popup, points));
+        popup.setText(text);
+
         popup.setVisibility(View.VISIBLE);
         popup.setAlpha(0f);
         popup.setTranslationY(24 * getResources().getDisplayMetrics().density);
@@ -229,6 +271,7 @@ public class ChatActivity extends AppCompatActivity {
         binding.textHint.setText(getString(R.string.chat_hint_words,
                 String.join(", ", copy.subList(0, Math.min(3, copy.size())))));
     }
+
     private void confirmReport(ChatMessage message) {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.chat_report_title)

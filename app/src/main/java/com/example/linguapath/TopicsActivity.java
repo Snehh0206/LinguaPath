@@ -44,7 +44,6 @@ public class TopicsActivity extends AppCompatActivity {
             }
         }
         binding.textTopicsSubtitle.setText(getString(R.string.topics_subtitle_language, language));
-
         binding.buttonBack.setOnClickListener(v -> finish());
         binding.chipKorean.setOnClickListener(v -> selectLanguage("Korean"));
         binding.chipSpanish.setOnClickListener(v -> selectLanguage("Spanish"));

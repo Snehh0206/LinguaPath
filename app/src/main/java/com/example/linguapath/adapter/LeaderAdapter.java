@@ -24,6 +24,11 @@ public class LeaderAdapter extends RecyclerView.Adapter<LeaderAdapter.LeaderView
     public LeaderAdapter(String myUid) {
         this.myUid = myUid;
     }
+    private boolean xpMode = false;
+
+    public void setMode(boolean xp) {
+        xpMode = xp;
+    }
 
     public void setItems(List<ChatScoreRepository.Entry> entries) {
         items.clear();
@@ -48,8 +53,14 @@ public class LeaderAdapter extends RecyclerView.Adapter<LeaderAdapter.LeaderView
 
         b.textRank.setText(position < 3 ? MEDALS[position] : String.valueOf(position + 1));
         b.textLeaderName.setText(mine ? context.getString(R.string.leaderboard_you, e.name) : e.name);
-        b.textLeaderLevel.setText(ChatLevels.nameFor(e.points));
-        b.textLeaderPoints.setText(context.getString(R.string.leaderboard_points, e.points));
+        if (xpMode) {
+            b.textLeaderLevel.setText(context.getString(R.string.account_level,
+                    com.example.linguapath.data.RewardRepository.levelForXp(e.points)));
+            b.textLeaderPoints.setText(context.getString(R.string.leaderboard_xp, e.points));
+        } else {
+            b.textLeaderLevel.setText(ChatLevels.nameFor(e.points));
+            b.textLeaderPoints.setText(context.getString(R.string.leaderboard_points, e.points));
+        }
         b.getRoot().setBackgroundResource(mine ? R.drawable.bg_card_peach : R.drawable.bg_word_card);
     }
 

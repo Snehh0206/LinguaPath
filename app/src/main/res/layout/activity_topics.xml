@@ -73,7 +73,8 @@
                 android:paddingBottom="12dp"
                 android:text="@string/lang_korean"
                 android:textColor="@color/ink"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/chipSpanish"
@@ -89,7 +90,8 @@
                 android:paddingBottom="12dp"
                 android:text="@string/lang_spanish"
                 android:textColor="@color/ink"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:visibility="gone"/>
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView

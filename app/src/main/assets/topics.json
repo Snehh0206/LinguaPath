@@ -149,6 +149,31 @@
           {"word": "고객", "romanization": "gogaek", "meaning": "customer", "emoji": "🧑‍💼"}
         ]
       }
+    },
+    {
+      "id": "people", "title": "Meeting people", "emoji": "👋", "theme": 0,
+      "words": {
+        "Spanish": [
+          {"word": "hola", "romanization": "OH-lah", "meaning": "hello", "emoji": "👋"},
+          {"word": "adiós", "romanization": "ah-dee-OHS", "meaning": "goodbye", "emoji": "🚶"},
+          {"word": "mucho gusto", "romanization": "MOO-cho GOOS-toh", "meaning": "nice to meet you", "emoji": "🤝"},
+          {"word": "me llamo", "romanization": "meh YAH-moh", "meaning": "my name is", "emoji": "🏷️"},
+          {"word": "amigo", "romanization": "ah-MEE-goh", "meaning": "friend", "emoji": "🧑‍🤝‍🧑"},
+          {"word": "¿cómo estás?", "romanization": "KOH-moh ehs-TAHS", "meaning": "how are you?", "emoji": "🙂"},
+          {"word": "gracias", "romanization": "GRAH-see-ahs", "meaning": "thank you", "emoji": "🙏"},
+          {"word": "por favor", "romanization": "por fah-VOR", "meaning": "please", "emoji": "🤲"}
+        ],
+        "Korean": [
+          {"word": "안녕하세요", "romanization": "annyeonghaseyo", "meaning": "hello", "emoji": "👋"},
+          {"word": "안녕히 가세요", "romanization": "annyeonghi gaseyo", "meaning": "goodbye", "emoji": "🚶"},
+          {"word": "만나서 반갑습니다", "romanization": "mannaseo bangapseumnida", "meaning": "nice to meet you", "emoji": "🤝"},
+          {"word": "제 이름은", "romanization": "je ireumeun", "meaning": "my name is", "emoji": "🏷️"},
+          {"word": "친구", "romanization": "chingu", "meaning": "friend", "emoji": "🧑‍🤝‍🧑"},
+          {"word": "잘 지내요?", "romanization": "jal jinaeyo", "meaning": "how are you?", "emoji": "🙂"},
+          {"word": "감사합니다", "romanization": "gamsahamnida", "meaning": "thank you", "emoji": "🙏"},
+          {"word": "주세요", "romanization": "juseyo", "meaning": "please give me", "emoji": "🤲"}
+        ]
+      }
     }
   ]
 }

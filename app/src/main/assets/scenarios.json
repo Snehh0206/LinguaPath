@@ -1,0 +1,51 @@
+{"scenarios":[
+  {"topicId":"cafe",
+    "Spanish":[
+      {"say":"Buenos días. ¿Qué desea tomar?","sm":"Good morning. What would you like to drink?","ask":"Order a coffee.","ok":0,"o":[{"t":"Un café, por favor.","m":"A coffee, please."},{"t":"Adiós, hasta luego.","m":"Goodbye, see you later."},{"t":"¿Dónde está el baño?","m":"Where is the bathroom?"}]},
+      {"say":"Aquí tiene. Son tres euros.","sm":"Here you go. That is three euros.","ask":"Pay and say thank you.","ok":1,"o":[{"t":"Mucho gusto.","m":"Nice to meet you."},{"t":"Aquí tiene. Gracias.","m":"Here you are. Thank you."},{"t":"Tengo hambre.","m":"I am hungry."}]},
+      {"say":"¿Algo más?","sm":"Anything else?","ask":"Say no, that is all, and ask for the bill.","ok":2,"o":[{"t":"Sí, muy bien, gracias.","m":"Yes, very well, thanks."},{"t":"Buenas noches.","m":"Good night."},{"t":"No, nada más. La cuenta, por favor.","m":"No, nothing else. The bill, please."}]}],
+    "Korean":[
+      {"say":"어서 오세요. 뭐 드릴까요?","sm":"Welcome. What can I get you?","ask":"Order a coffee.","ok":0,"o":[{"t":"커피 한 잔 주세요.","r":"keopi han jan juseyo","m":"One coffee, please."},{"t":"안녕히 가세요.","r":"annyeonghi gaseyo","m":"Goodbye."},{"t":"화장실이 어디예요?","r":"hwajangsiri eodiyeyo","m":"Where is the bathroom?"}]},
+      {"say":"삼천 원입니다.","sm":"That is 3,000 won.","ask":"Pay and say thank you.","ok":1,"o":[{"t":"처음 뵙겠습니다.","r":"cheoeum boepgesseumnida","m":"Nice to meet you."},{"t":"여기 있어요. 감사합니다.","r":"yeogi isseoyo. gamsahamnida","m":"Here you go. Thank you."},{"t":"배고파요.","r":"baegopayo","m":"I am hungry."}]},
+      {"say":"더 필요하세요?","sm":"Do you need anything more?","ask":"Say no, you are fine.","ok":2,"o":[{"t":"네, 안녕하세요.","r":"ne, annyeonghaseyo","m":"Yes, hello."},{"t":"죄송합니다.","r":"joesonghamnida","m":"I am sorry."},{"t":"아니요, 괜찮아요.","r":"aniyo, gwaenchanayo","m":"No, I am fine."}]}]},
+
+  {"topicId":"airport",
+    "Spanish":[
+      {"say":"Su pasaporte, por favor.","sm":"Your passport, please.","ask":"Hand it over politely.","ok":2,"o":[{"t":"Me gusta el café.","m":"I like coffee."},{"t":"Quiero la cuenta.","m":"I want the bill."},{"t":"Aquí tiene.","m":"Here you are."}]},
+      {"say":"¿Cuál es el motivo de su viaje?","sm":"What is the reason for your trip?","ask":"Say you are on vacation.","ok":1,"o":[{"t":"Me llamo Ana.","m":"My name is Ana."},{"t":"Estoy de vacaciones.","m":"I am on vacation."},{"t":"Muchas gracias por la cuenta.","m":"Thanks a lot for the bill."}]},
+      {"say":"¿Puedo ayudarle?","sm":"Can I help you?","ask":"Ask where gate 15 is.","ok":0,"o":[{"t":"¿Dónde está la puerta quince?","m":"Where is gate fifteen?"},{"t":"¿Cuánto cuesta el café?","m":"How much is the coffee?"},{"t":"Buenas tardes, mucho gusto.","m":"Good afternoon, nice to meet you."}]}],
+    "Korean":[
+      {"say":"여권을 보여 주세요.","sm":"Please show your passport.","ask":"Hand it over politely.","ok":0,"o":[{"t":"여기 있습니다.","r":"yeogi itseumnida","m":"Here it is."},{"t":"커피 주세요.","r":"keopi juseyo","m":"Coffee, please."},{"t":"저는 학생이에요.","r":"jeoneun haksaengieyo","m":"I am a student."}]},
+      {"say":"여행 목적이 뭐예요?","sm":"What is the purpose of your trip?","ask":"Say you are here for sightseeing.","ok":1,"o":[{"t":"삼천 원이에요.","r":"samcheon wonieyo","m":"It is 3,000 won."},{"t":"관광이에요.","r":"gwangwang-ieyo","m":"It is sightseeing."},{"t":"맛있어요.","r":"masisseoyo","m":"It is delicious."}]},
+      {"say":"도와드릴까요?","sm":"Can I help you?","ask":"Ask where gate 15 is.","ok":2,"o":[{"t":"커피 한 잔 주세요.","r":"keopi han jan juseyo","m":"One coffee, please."},{"t":"감사합니다, 안녕히 계세요.","r":"gamsahamnida, annyeonghi gyeseyo","m":"Thank you, goodbye."},{"t":"십오 번 게이트가 어디예요?","r":"sibo beon geiteuga eodiyeyo","m":"Where is gate 15?"}]}]},
+
+  {"topicId":"shop",
+    "Spanish":[
+      {"say":"Hola, ¿puedo ayudarle?","sm":"Hello, can I help you?","ask":"Say you are just looking.","ok":1,"o":[{"t":"Un café, por favor.","m":"A coffee, please."},{"t":"Solo estoy mirando, gracias.","m":"I am just looking, thanks."},{"t":"Aquí tiene mi pasaporte.","m":"Here is my passport."}]},
+      {"say":"Esta camisa cuesta veinte euros.","sm":"This shirt costs twenty euros.","ask":"Ask if you can try it on.","ok":0,"o":[{"t":"¿Puedo probármela?","m":"Can I try it on?"},{"t":"¿Dónde está el aeropuerto?","m":"Where is the airport?"},{"t":"Tengo mucha hambre.","m":"I am very hungry."}]},
+      {"say":"¿Cómo va a pagar?","sm":"How will you pay?","ask":"Say you will pay by card.","ok":2,"o":[{"t":"Me llamo Pablo.","m":"My name is Pablo."},{"t":"Está muy lejos.","m":"It is very far."},{"t":"Pago con tarjeta.","m":"I pay by card."}]}],
+    "Korean":[
+      {"say":"어서 오세요. 도와드릴까요?","sm":"Welcome. Can I help you?","ask":"Say you are just looking.","ok":2,"o":[{"t":"여권 여기 있어요.","r":"yeogwon yeogi isseoyo","m":"Here is my passport."},{"t":"커피 주세요.","r":"keopi juseyo","m":"Coffee, please."},{"t":"그냥 구경하는 거예요.","r":"geunyang gugyeonghaneun geoyeyo","m":"I am just looking."}]},
+      {"say":"이 셔츠는 이만 원이에요.","sm":"This shirt is 20,000 won.","ask":"Ask if you can try it on.","ok":0,"o":[{"t":"입어 봐도 돼요?","r":"ibeo bwado dwaeyo","m":"May I try it on?"},{"t":"공항이 어디예요?","r":"gonghangi eodiyeyo","m":"Where is the airport?"},{"t":"배가 고파요.","r":"baega gopayo","m":"I am hungry."}]},
+      {"say":"어떻게 계산하시겠어요?","sm":"How would you like to pay?","ask":"Say you will pay by card.","ok":1,"o":[{"t":"제 이름은 민수예요.","r":"je ireumeun minsuyeyo","m":"My name is Minsu."},{"t":"카드로 할게요.","r":"kadeuro halgeyo","m":"I will pay by card."},{"t":"너무 멀어요.","r":"neomu meoreoyo","m":"It is too far."}]}]},
+
+  {"topicId":"festival",
+    "Spanish":[
+      {"say":"¡Bienvenidos al festival! ¿Tiene entrada?","sm":"Welcome to the festival! Do you have a ticket?","ask":"Say yes and show your ticket.","ok":0,"o":[{"t":"Sí, aquí está mi entrada.","m":"Yes, here is my ticket."},{"t":"No, quiero la cuenta.","m":"No, I want the bill."},{"t":"Adiós, buenas noches.","m":"Goodbye, good night."}]},
+      {"say":"La música empieza a las ocho.","sm":"The music starts at eight.","ask":"Ask what time the fireworks are.","ok":1,"o":[{"t":"¿Cuánto cuesta la camisa?","m":"How much is the shirt?"},{"t":"¿A qué hora son los fuegos artificiales?","m":"What time are the fireworks?"},{"t":"Mi pasaporte, por favor.","m":"My passport, please."}]},
+      {"say":"¿Le gusta el festival?","sm":"Do you like the festival?","ask":"Say you love it.","ok":2,"o":[{"t":"No entiendo la puerta.","m":"I do not understand the door."},{"t":"Quiero un billete.","m":"I want a ticket."},{"t":"¡Me encanta! Es muy divertido.","m":"I love it! It is very fun."}]}],
+    "Korean":[
+      {"say":"축제에 오신 것을 환영합니다! 표 있으세요?","sm":"Welcome to the festival! Do you have a ticket?","ask":"Say yes and show your ticket.","ok":1,"o":[{"t":"아니요, 계산서 주세요.","r":"aniyo, gyesanseo juseyo","m":"No, the bill please."},{"t":"네, 여기 표 있어요.","r":"ne, yeogi pyo isseoyo","m":"Yes, here is my ticket."},{"t":"안녕히 가세요.","r":"annyeonghi gaseyo","m":"Goodbye."}]},
+      {"say":"음악은 여덟 시에 시작해요.","sm":"The music starts at eight.","ask":"Ask what time the fireworks are.","ok":0,"o":[{"t":"불꽃놀이는 몇 시예요?","r":"bulkkonnorineun myeot siyeyo","m":"What time are the fireworks?"},{"t":"이 셔츠는 얼마예요?","r":"i syeocheuneun eolmayeyo","m":"How much is this shirt?"},{"t":"여권 여기 있어요.","r":"yeogwon yeogi isseoyo","m":"Here is my passport."}]},
+      {"say":"축제가 마음에 드세요?","sm":"Do you like the festival?","ask":"Say you love it.","ok":2,"o":[{"t":"화장실이 어디예요?","r":"hwajangsiri eodiyeyo","m":"Where is the bathroom?"},{"t":"카드로 할게요.","r":"kadeuro halgeyo","m":"I will pay by card."},{"t":"너무 좋아요! 정말 재미있어요.","r":"neomu joayo! jeongmal jaemiisseoyo","m":"I love it! It is really fun."}]}]},
+
+  {"topicId":"people",
+    "Spanish":[
+      {"say":"¡Hola! Me llamo Lucía. ¿Cómo te llamas?","sm":"Hi! My name is Lucía. What is your name?","ask":"Say your name and that you are happy to meet her.","ok":1,"o":[{"t":"Aquí tiene mi pasaporte.","m":"Here is my passport."},{"t":"Me llamo Sam. Mucho gusto.","m":"My name is Sam. Nice to meet you."},{"t":"Un café, por favor.","m":"A coffee, please."}]},
+      {"say":"¿De dónde eres?","sm":"Where are you from?","ask":"Say you are from Bangladesh.","ok":0,"o":[{"t":"Soy de Bangladés.","m":"I am from Bangladesh."},{"t":"Son las tres.","m":"It is three o'clock."},{"t":"Estoy muy bien, gracias.","m":"I am very well, thanks."}]},
+      {"say":"Encantada. ¿Cómo estás?","sm":"Nice to meet you. How are you?","ask":"Say you are fine and ask back.","ok":2,"o":[{"t":"Soy de Bangladés.","m":"I am from Bangladesh."},{"t":"La cuenta, por favor.","m":"The bill, please."},{"t":"Estoy bien, gracias. ¿Y tú?","m":"I am fine, thanks. And you?"}]}],
+    "Korean":[
+      {"say":"안녕하세요! 저는 지민이에요. 이름이 뭐예요?","sm":"Hello! I am Jimin. What is your name?","ask":"Say your name and that you are happy to meet her.","ok":2,"o":[{"t":"여권 여기 있어요.","r":"yeogwon yeogi isseoyo","m":"Here is my passport."},{"t":"커피 한 잔 주세요.","r":"keopi han jan juseyo","m":"One coffee, please."},{"t":"저는 샘이에요. 만나서 반갑습니다.","r":"jeoneun saemieyo. mannaseo bangapseumnida","m":"I am Sam. Nice to meet you."}]},
+      {"say":"어느 나라 사람이에요?","sm":"Which country are you from?","ask":"Say you are from Bangladesh.","ok":0,"o":[{"t":"저는 방글라데시 사람이에요.","r":"jeoneun banggeulladesi saramieyo","m":"I am from Bangladesh."},{"t":"삼천 원이에요.","r":"samcheon wonieyo","m":"It is 3,000 won."},{"t":"카드로 할게요.","r":"kadeuro halgeyo","m":"I will pay by card."}]},
+      {"say":"저도 반가워요. 잘 지내요?","sm":"Nice to meet you too. How are you?","ask":"Say you are well and ask back.","ok":1,"o":[{"t":"방글라데시 사람이에요.","r":"banggeulladesi saramieyo","m":"I am from Bangladesh."},{"t":"잘 지내요. 지민 씨는요?","r":"jal jinaeyo. jimin ssineunyo","m":"I am well. And you, Jimin?"},{"t":"계산서 주세요.","r":"gyesanseo juseyo","m":"The bill, please."}]}]}
+]}

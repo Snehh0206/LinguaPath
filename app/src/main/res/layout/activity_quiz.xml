@@ -126,7 +126,54 @@
                     android:textColor="@color/ink_soft"
                     android:textSize="16sp"
                     android:textStyle="italic" />
+                <LinearLayout
+                    android:id="@+id/groupBuild"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/quiz_build_answer_label"
+                        android:textColor="@color/ink_soft"
+                        android:textSize="12sp" />
+
+                    <com.example.linguapath.view.FlowLayout
+                        android:id="@+id/flowAnswer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_word_card"
+                        android:minHeight="72dp"
+                        android:padding="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/quiz_build_bank_label"
+                        android:textColor="@color/ink_soft"
+                        android:textSize="12sp" />
+
+                    <com.example.linguapath.view.FlowLayout
+                        android:id="@+id/flowBank"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:padding="4dp" />
+
+                    <Button
+                        android:id="@+id/buttonCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:backgroundTint="@color/accent"
+                        android:text="@string/quiz_check"
+                        android:textColor="@color/ink" />
+                </LinearLayout>
                 <TextView
                     android:id="@+id/option0"
                     style="@style/QuizOption" />
