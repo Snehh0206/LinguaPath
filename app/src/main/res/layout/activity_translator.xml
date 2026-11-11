@@ -85,6 +85,7 @@
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayout"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -95,6 +96,21 @@
             app:counterEnabled="true"
             app:counterMaxLength="120"
             app:hintTextColor="@color/ink">
+            <TextView
+                android:id="@+id/buttonMic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_card_sky"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:text="@string/translator_mic"
+                android:textColor="@color/ink"
+                android:textSize="14sp" />
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editText"
@@ -105,6 +121,21 @@
                 android:minLines="2"
                 android:textColor="@color/ink" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/buttonSwap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_card_butter"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/ink"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/textUsage"

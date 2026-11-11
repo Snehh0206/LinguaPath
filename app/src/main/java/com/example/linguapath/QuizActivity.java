@@ -21,6 +21,7 @@ import com.example.linguapath.data.QuizAttempt;
 import com.example.linguapath.data.QuizHistoryRepository;
 import com.example.linguapath.data.WordStatsRepository;
 import com.example.linguapath.speech.SpeechHelper;
+import com.example.linguapath.data.QuestRepository;
 
 import java.util.List;
 
@@ -290,6 +291,7 @@ public class QuizActivity extends AppCompatActivity {
                 new CloudSyncRepository().uploadProgress(language, store.getCompletedCount(language));
             }
             viewModel.xpGained = xp;
+            QuestRepository.onQuizFinished(this); // counts the quiz for the daily quest and syncs XP
 
             // Topic words are not lesson words, so they must not enter the word scores
             if (!topicQuiz) {

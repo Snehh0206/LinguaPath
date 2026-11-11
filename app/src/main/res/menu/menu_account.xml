@@ -11,6 +11,12 @@
         android:id="@+id/menu_progress"
         android:title="@string/menu_progress" />
     <item
+        android:id="@+id/menu_account_page"
+        android:title="@string/menu_account_page" />
+    <item
+        android:id="@+id/menu_quests"
+        android:title="@string/menu_quests" />
+    <item
         android:id="@+id/menu_sign"
         android:title="@string/menu_sign" />
     <item
@@ -19,6 +25,9 @@
     <item
         android:id="@+id/menu_saved"
         android:title="@string/menu_saved" />
+    <item
+        android:id="@+id/menu_invite"
+        android:title="@string/menu_invite" />
     <item
         android:id="@+id/menu_reminder"
         android:title="@string/menu_reminder" />

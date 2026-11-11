@@ -17,6 +17,14 @@ import com.example.linguapath.view.TouchBounce;
 import com.example.linguapath.databinding.DialogLanguageChoiceBinding;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import android.content.ActivityNotFoundException;
+import android.database.Cursor;
+import android.net.Uri;
+import android.provider.ContactsContract;
+import android.widget.Toast;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+
 public class LanguageSelectActivity extends AppCompatActivity {
 
     private static final String TAG = "LanguageSelect";
@@ -25,6 +33,7 @@ public class LanguageSelectActivity extends AppCompatActivity {
     private AuthRepository authRepository;
     private ObjectAnimator floatKorean;
     private ObjectAnimator floatSpanish;
+    private ActivityResultLauncher<Void> pickContact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +44,12 @@ public class LanguageSelectActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         authRepository = new AuthRepository();
+        // The system contact picker. The app never sees the whole contact list.
+        pickContact = registerForActivityResult(new ActivityResultContracts.PickContact(), uri -> {
+            if (uri != null) {
+                shareInvite(contactName(uri));
+            }
+        });
 
         binding.cardKorean.setOnClickListener(v -> onLanguagePicked("Korean"));
         binding.cardSpanish.setOnClickListener(v -> onLanguagePicked("Spanish"));
@@ -92,6 +107,14 @@ public class LanguageSelectActivity extends AppCompatActivity {
                 startActivity(new Intent(this, ProgressActivity.class));
                 return true;
             }
+            if (item.getItemId() == R.id.menu_sign) {
+                startActivity(new Intent(this, SignTranslateActivity.class));
+                return true;
+            }
+            if (item.getItemId() == R.id.menu_invite) {
+                pickContact.launch(null);
+                return true;
+            }
             if (item.getItemId() == R.id.menu_translator) {
                 startActivity(new Intent(this, TranslatorActivity.class));
                 return true;
@@ -106,6 +129,14 @@ public class LanguageSelectActivity extends AppCompatActivity {
             }
             if (item.getItemId() == R.id.menu_logout) {
                 confirmLogout();
+                return true;
+            }
+            if (item.getItemId() == R.id.menu_account_page) {
+                startActivity(new Intent(this, AccountActivity.class));
+                return true;
+            }
+            if (item.getItemId() == R.id.menu_quests) {
+                startActivity(new Intent(this, QuestsActivity.class));
                 return true;
             }
             return false;
@@ -129,7 +160,32 @@ public class LanguageSelectActivity extends AppCompatActivity {
                 .show();
     }
 
+    // Reads only the name of the one contact the user picked
+    private String contactName(Uri uri) {
+        try (Cursor c = getContentResolver().query(uri,
+                new String[]{ContactsContract.Contacts.DISPLAY_NAME}, null, null, null)) {
+            if (c != null && c.moveToFirst() && c.getString(0) != null) {
+                return c.getString(0);
+            }
+        } catch (Exception e) {
+            Log.w(TAG, "Could not read contact name", e);
+        }
+        return "";
+    }
 
+    // Implicit Intent: the user chooses SMS, WhatsApp, Messenger and so on
+    private void shareInvite(String name) {
+        String greeting = name.isEmpty() ? "Hi!" : "Hi " + name + "!";
+        Intent send = new Intent(Intent.ACTION_SEND);
+        send.setType("text/plain");
+        send.putExtra(Intent.EXTRA_TEXT,
+                getString(R.string.invite_message, greeting, getString(R.string.invite_link)));
+        try {
+            startActivity(Intent.createChooser(send, getString(R.string.invite_chooser)));
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, R.string.invite_no_app, Toast.LENGTH_SHORT).show();
+        }
+    }
     @Override
     protected void onResume() {
         super.onResume();

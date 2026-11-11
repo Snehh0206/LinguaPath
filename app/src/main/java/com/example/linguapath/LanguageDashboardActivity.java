@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,7 @@ import com.example.linguapath.service.WordOfDayService;
 import com.example.linguapath.speech.SpeechHelper;
 import com.example.linguapath.view.Motion;
 import com.example.linguapath.data.QuizHistoryRepository;
+import com.example.linguapath.data.QuestRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -142,6 +144,14 @@ public class LanguageDashboardActivity extends AppCompatActivity {
             fabFloat = Motion.startFloat(binding.fabContinue, 4, 1400);
         }
         refreshProgress();
+        QuestRepository.restoreAndRefresh(this, paid -> {
+            if (isFinishing() || isDestroyed()) {
+                return;
+            }
+            for (QuestRepository.Quest q : paid) {
+                Toast.makeText(this, getString(R.string.quest_toast, q.rewardXp), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

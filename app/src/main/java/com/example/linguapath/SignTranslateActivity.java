@@ -51,6 +51,8 @@ public class SignTranslateActivity extends AppCompatActivity {
     private ActivityResultLauncher<Uri> takePicture;
     private Uri cameraUri;
     private String source = "Spanish"; // the language written on the sign
+    private static final String STATE_TO_ENGLISH = "state_to_english";
+    private boolean toEnglish = true; // true: sign -> English, false: English sign -> Korean/Spanish
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,7 @@ public class SignTranslateActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         if (savedInstanceState != null) {
+            toEnglish = savedInstanceState.getBoolean(STATE_TO_ENGLISH, true);
             String savedCamera = savedInstanceState.getString(STATE_CAMERA_URI);
             if (savedCamera != null) {
                 cameraUri = Uri.parse(savedCamera);
@@ -93,6 +96,11 @@ public class SignTranslateActivity extends AppCompatActivity {
                         .setMediaType(ActivityResultContracts.PickVisualMedia.ImageOnly.INSTANCE)
                         .build()));
         binding.buttonTranslate.setOnClickListener(v -> translate());
+        binding.buttonSwap.setOnClickListener(v -> {
+            toEnglish = !toEnglish;
+            directionChanged();
+        });
+        showDirection();
         showChips();
     }
     // Opens the phone's camera app. The photo is saved through a FileProvider (a content provider),
@@ -113,6 +121,7 @@ public class SignTranslateActivity extends AppCompatActivity {
     }
     @Override
     protected void onSaveInstanceState(Bundle outState) {
+        outState.putBoolean(STATE_TO_ENGLISH, toEnglish);
         super.onSaveInstanceState(outState);
         outState.putString(STATE_SOURCE, source);
         if (cameraUri != null) {
@@ -134,6 +143,7 @@ public class SignTranslateActivity extends AppCompatActivity {
     private void selectSource(String language) {
         source = language;
         showChips();
+        showDirection();
         if (currentBitmap != null) {
             recognize(currentBitmap); // read the same photo again with the other language
         }
@@ -209,7 +219,7 @@ public class SignTranslateActivity extends AppCompatActivity {
         binding.textMessage.setText(R.string.sign_reading);
         binding.textMessage.setTextColor(getColor(R.color.ink_soft));
 
-        recognizerFor(source).process(InputImage.fromBitmap(bitmap, 0))
+        recognizerFor(toEnglish ? source : "English").process(InputImage.fromBitmap(bitmap, 0))
                 .addOnSuccessListener(result -> {
                     if (isFinishing() || isDestroyed()) {
                         return;
@@ -247,7 +257,7 @@ public class SignTranslateActivity extends AppCompatActivity {
 
         setBusy(true);
         binding.cardResult.setVisibility(View.GONE);
-        TranslationRepository.translateToEnglish(this, shortened, source, new TranslationRepository.Callback() {
+        TranslationRepository.Callback callback = new TranslationRepository.Callback() {
             @Override
             public void onSuccess(String translated, boolean fromCache) {
                 if (isFinishing() || isDestroyed()) {
@@ -275,12 +285,33 @@ public class SignTranslateActivity extends AppCompatActivity {
                             .setPositiveButton(android.R.string.ok, null)
                             .show();
                 } else {
-                    showError(messageResId); // offline: kept and translated when we are back online
+                    showError(messageResId);
                 }
             }
-        });
+        };
+        if (toEnglish) {
+            TranslationRepository.translateToEnglish(this, shortened, source, callback);
+        } else {
+            TranslationRepository.translate(this, shortened, source, callback);
+        }
+    }
+    private void showDirection() {
+        binding.buttonSwap.setText(getString(
+                toEnglish ? R.string.sign_dir_to_english : R.string.sign_dir_from_english, source));
+        binding.textLangLabel.setText(toEnglish ? R.string.sign_language_label : R.string.sign_label_into);
+        binding.textResultLabel.setText(toEnglish
+                ? getString(R.string.sign_result_label)
+                : getString(R.string.sign_result_foreign, source));
     }
 
+    private void directionChanged() {
+        showDirection();
+        binding.cardResult.setVisibility(View.GONE);
+        binding.textMessage.setText("");
+        if (currentBitmap != null) {
+            recognize(currentBitmap); // read the same photo again with the right recognizer
+        }
+    }
     // Cuts the text to a number of bytes without cutting a character in half
     private static String truncateBytes(String text, int maxBytes) {
         byte[] bytes = text.getBytes(StandardCharsets.UTF_8);
