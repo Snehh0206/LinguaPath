@@ -98,6 +98,15 @@ public class WordDetailActivity extends AppCompatActivity {
             binding.buttonSpeakWord.setOnClickListener(v -> speak(word.getWord()));
             binding.buttonSpeakExample.setOnClickListener(v -> speak(word.getExample()));
         }
+        // Some words have no example sentence: hide that whole part
+        boolean hasExample = !word.getExample().isEmpty();
+        int exampleVisibility = hasExample ? View.VISIBLE : View.GONE;
+        binding.labelExample.setVisibility(exampleVisibility);
+        binding.textDetailExample.setVisibility(exampleVisibility);
+        binding.textDetailExampleMeaning.setVisibility(exampleVisibility);
+        if (!hasExample) {
+            binding.buttonSpeakExample.setVisibility(View.GONE);
+        }
     }
 
     private void updateSaveButton() {
