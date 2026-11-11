@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.provider.OpenableColumns;
 import android.text.format.Formatter;
 import android.view.View;
+import com.google.mlkit.vision.text.japanese.JapaneseTextRecognizerOptions;
+import com.example.linguapath.data.BanglaOcr;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.PickVisualMediaRequest;
@@ -46,6 +48,7 @@ public class SignTranslateActivity extends AppCompatActivity {
     private ActivityResultLauncher<PickVisualMediaRequest> pickPhoto;
     private TextRecognizer latinRecognizer;
     private TextRecognizer koreanRecognizer;
+    private TextRecognizer japaneseRecognizer;
     private Bitmap currentBitmap;
     private static final String STATE_CAMERA_URI = "state_camera_uri";
     private ActivityResultLauncher<Uri> takePicture;
@@ -91,6 +94,9 @@ public class SignTranslateActivity extends AppCompatActivity {
         binding.buttonBack.setOnClickListener(v -> finish());
         binding.chipKorean.setOnClickListener(v -> selectSource("Korean"));
         binding.chipSpanish.setOnClickListener(v -> selectSource("Spanish"));
+        binding.chipBangla.setOnClickListener(v -> selectSource("Bangla"));
+        binding.chipJapanese.setOnClickListener(v -> selectSource("Japanese"));
+        binding.chipFrench.setOnClickListener(v -> selectSource("French"));
         binding.buttonChoosePhoto.setOnClickListener(v -> pickPhoto.launch(
                 new PickVisualMediaRequest.Builder()
                         .setMediaType(ActivityResultContracts.PickVisualMedia.ImageOnly.INSTANCE)
@@ -138,6 +144,9 @@ public class SignTranslateActivity extends AppCompatActivity {
         if (koreanRecognizer != null) {
             koreanRecognizer.close();
         }
+        if (japaneseRecognizer != null) {
+            japaneseRecognizer.close();
+        }
     }
 
     private void selectSource(String language) {
@@ -150,9 +159,13 @@ public class SignTranslateActivity extends AppCompatActivity {
     }
 
     private void showChips() {
-        boolean korean = "Korean".equals(source);
-        binding.chipKorean.setBackgroundResource(korean ? R.drawable.bg_card_sage : R.drawable.bg_card_sky);
-        binding.chipSpanish.setBackgroundResource(korean ? R.drawable.bg_card_sky : R.drawable.bg_card_sage);
+        String[] names = {"Korean", "Spanish", "Bangla", "Japanese", "French"};
+        android.widget.TextView[] chips = {binding.chipKorean, binding.chipSpanish,
+                binding.chipBangla, binding.chipJapanese, binding.chipFrench};
+        for (int i = 0; i < chips.length; i++) {
+            chips[i].setBackgroundResource(names[i].equals(source)
+                    ? R.drawable.bg_card_sage : R.drawable.bg_card_sky);
+        }
     }
 
     // ---- 1. The photo ----
@@ -208,6 +221,13 @@ public class SignTranslateActivity extends AppCompatActivity {
             }
             return koreanRecognizer;
         }
+        if ("Japanese".equals(language)) {
+            if (japaneseRecognizer == null) {
+                japaneseRecognizer = TextRecognition.getClient(
+                        new JapaneseTextRecognizerOptions.Builder().build());
+            }
+            return japaneseRecognizer;
+        }
         if (latinRecognizer == null) {
             latinRecognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
         }
@@ -215,6 +235,10 @@ public class SignTranslateActivity extends AppCompatActivity {
     }
 
     private void recognize(Bitmap bitmap) {
+        if (toEnglish && "Bangla".equals(source)) {
+            recognizeBangla(bitmap); // ML Kit cannot read Bengali, so Tesseract does it
+            return;
+        }
         setBusy(true);
         binding.textMessage.setText(R.string.sign_reading);
         binding.textMessage.setTextColor(getColor(R.color.ink_soft));
@@ -242,7 +266,29 @@ public class SignTranslateActivity extends AppCompatActivity {
                     showError(R.string.sign_read_failed);
                 });
     }
-
+    private void recognizeBangla(Bitmap bitmap) {
+        setBusy(true);
+        binding.textMessage.setText(R.string.sign_reading);
+        binding.textMessage.setTextColor(getColor(R.color.ink_soft));
+        new Thread(() -> {
+            String text = BanglaOcr.read(getApplicationContext(), bitmap);
+            runOnUiThread(() -> {
+                if (isFinishing() || isDestroyed()) {
+                    return;
+                }
+                setBusy(false);
+                if (text == null) {
+                    showError(R.string.sign_read_failed);
+                } else if (text.isEmpty()) {
+                    showError(R.string.sign_no_text);
+                } else {
+                    binding.editRecognized.setText(text);
+                    binding.textMessage.setText("");
+                    translate();
+                }
+            });
+        }).start();
+    }
     // ---- 3. Translation ----
 
     private void translate() {

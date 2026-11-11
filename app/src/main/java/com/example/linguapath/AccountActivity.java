@@ -53,6 +53,11 @@ public class AccountActivity extends AppCompatActivity {
         showLanguage("Korean", binding.textLangKorean);
         showLanguage("Spanish", binding.textLangSpanish);
 
+
+        showLanguage("Bangla", binding.textLangBangla);
+        showLanguage("Japanese", binding.textLangJapanese);
+        showLanguage("French", binding.textLangFrench);
+
         RewardRepository.syncMine(this);
 
         ChatRepository.loadNickname((name, failed) -> {

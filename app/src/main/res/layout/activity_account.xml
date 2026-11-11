@@ -170,6 +170,39 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/textLangBangla"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_card_sky"
+            android:elevation="4dp"
+            android:padding="16dp"
+            android:textColor="@color/ink"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textLangJapanese"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_card_butter"
+            android:elevation="4dp"
+            android:padding="16dp"
+            android:textColor="@color/ink"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textLangFrench"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_card_peach"
+            android:elevation="4dp"
+            android:padding="16dp"
+            android:textColor="@color/ink"
+            android:textSize="16sp" />
+
+        <TextView
             android:id="@+id/buttonQuests"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
