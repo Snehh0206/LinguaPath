@@ -51,6 +51,12 @@ public class ChatRepository {
     private static FirebaseDatabase db() {
         return FirebaseDatabase.getInstance();
     }
+    // Private chats live in "dm", public rooms in "messages"
+    private static DatabaseReference roomRef(String roomId) {
+        return roomId.startsWith("dm_")
+                ? db().getReference("dm").child(roomId.substring(3))
+                : db().getReference("messages").child(roomId);
+    }
 
     public static String currentUid() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -82,7 +88,10 @@ public class ChatRepository {
             callback.onDone(false);
             return;
         }
-        db().getReference("profiles").child(uid).child("name").setValue(name)
+        Map<String, Object> update = new HashMap<>();
+        update.put("name", name);
+        update.put("nameLower", name.toLowerCase(java.util.Locale.ROOT));
+        db().getReference("profiles").child(uid).updateChildren(update)
                 .addOnCompleteListener(task -> callback.onDone(task.isSuccessful()));
     }
 
@@ -94,7 +103,7 @@ public class ChatRepository {
             callback.onDone(false);
             return;
         }
-        DatabaseReference room = db().getReference("messages").child(roomId);
+        DatabaseReference room = roomRef(roomId);
         String key = room.push().getKey(); // keys sort by time, so order is automatic
         if (key == null) {
             callback.onDone(false);
@@ -113,7 +122,7 @@ public class ChatRepository {
 
     // Delivers the last 50 messages, then every new one as it arrives
     public static Registration listen(String roomId, MessageListener listener) {
-        Query query = db().getReference("messages").child(roomId)
+        Query query = roomRef(roomId)
                 .orderByKey().limitToLast(LAST_MESSAGES);
 
         ChildEventListener childListener = new ChildEventListener() {

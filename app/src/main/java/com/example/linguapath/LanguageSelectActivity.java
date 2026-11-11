@@ -16,6 +16,13 @@ import com.example.linguapath.view.Motion;
 import com.example.linguapath.view.TouchBounce;
 import com.example.linguapath.databinding.DialogLanguageChoiceBinding;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import android.content.ActivityNotFoundException;
+import android.database.Cursor;
+import android.net.Uri;
+import android.provider.ContactsContract;
+import android.widget.Toast;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 
 public class LanguageSelectActivity extends AppCompatActivity {
 
@@ -25,6 +32,7 @@ public class LanguageSelectActivity extends AppCompatActivity {
     private AuthRepository authRepository;
     private ObjectAnimator floatKorean;
     private ObjectAnimator floatSpanish;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +44,12 @@ public class LanguageSelectActivity extends AppCompatActivity {
 
         authRepository = new AuthRepository();
 
+        // The system contact picker. The app never sees the whole contact list.
+        pickContact = registerForActivityResult(new ActivityResultContracts.PickContact(), uri -> {
+            if (uri != null) {
+                shareInvite(contactName(uri));
+            }
+        });
         binding.cardKorean.setOnClickListener(v -> onLanguagePicked("Korean"));
         binding.cardSpanish.setOnClickListener(v -> onLanguagePicked("Spanish"));
         binding.buttonMenu.setOnClickListener(this::showAccountMenu);
@@ -80,6 +94,10 @@ public class LanguageSelectActivity extends AppCompatActivity {
                 .setTitle(getString(R.string.signed_in_as, email == null ? "" : email));
 
         popup.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.menu_friends) {
+                startActivity(new Intent(this, FriendsActivity.class));
+                return true;
+            }
             if (item.getItemId() == R.id.menu_credits) {
                 startActivity(new Intent(this, CreditsActivity.class));
                 return true;
@@ -90,6 +108,14 @@ public class LanguageSelectActivity extends AppCompatActivity {
             }
             if (item.getItemId() == R.id.menu_progress) {
                 startActivity(new Intent(this, ProgressActivity.class));
+                return true;
+            }
+            if (item.getItemId() == R.id.menu_sign) {
+                startActivity(new Intent(this, SignTranslateActivity.class));
+                return true;
+            }
+            if (item.getItemId() == R.id.menu_invite) {
+                pickContact.launch(null);
                 return true;
             }
             if (item.getItemId() == R.id.menu_translator) {
@@ -112,7 +138,32 @@ public class LanguageSelectActivity extends AppCompatActivity {
         });
         popup.show();
     }
+    // Reads only the name of the one contact the user picked
+    private String contactName(Uri uri) {
+        try (Cursor c = getContentResolver().query(uri,
+                new String[]{ContactsContract.Contacts.DISPLAY_NAME}, null, null, null)) {
+            if (c != null && c.moveToFirst() && c.getString(0) != null) {
+                return c.getString(0);
+            }
+        } catch (Exception e) {
+            Log.w(TAG, "Could not read contact name", e);
+        }
+        return "";
+    }
 
+    // Implicit Intent: the user chooses SMS, WhatsApp, Messenger and so on
+    private void shareInvite(String name) {
+        String greeting = name.isEmpty() ? "Hi!" : "Hi " + name + "!";
+        Intent send = new Intent(Intent.ACTION_SEND);
+        send.setType("text/plain");
+        send.putExtra(Intent.EXTRA_TEXT,
+                getString(R.string.invite_message, greeting, getString(R.string.invite_link)));
+        try {
+            startActivity(Intent.createChooser(send, getString(R.string.invite_chooser)));
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, R.string.invite_no_app, Toast.LENGTH_SHORT).show();
+        }
+    }
     private void confirmLogout() {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.logout_title)

@@ -43,4 +43,21 @@ public class TranslationUsage {
     public boolean canUse(int chars) {
         return !isBlockedToday() && getUsedToday() + chars <= DAILY_CHAR_LIMIT;
     }
+    public static final int WARN_REMAINING = 300; // warn when this few characters are left
+
+    public int getRemaining() {
+        return Math.max(0, DAILY_CHAR_LIMIT - getUsedToday());
+    }
+
+    // True once per day, when the limit is close
+    public boolean shouldWarnNow() {
+        if (isBlockedToday() || getRemaining() > WARN_REMAINING) {
+            return false;
+        }
+        if (today().equals(prefs.getString("warned_date", ""))) {
+            return false;
+        }
+        prefs.edit().putString("warned_date", today()).apply();
+        return true;
+    }
 }

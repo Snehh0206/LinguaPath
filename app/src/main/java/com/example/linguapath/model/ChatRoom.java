@@ -26,7 +26,10 @@ public class ChatRoom {
             new ChatRoom("es_travel", R.string.room_es_travel, "Spanish", "✈️"),
             new ChatRoom("ko_everyday", R.string.room_ko_everyday, "Korean", "☕"),
             new ChatRoom("ko_travel", R.string.room_ko_travel, "Korean", "✈️")));
-
+    // A private chat between two friends (no fixed title, the screen shows the friend's name)
+    public static ChatRoom privateRoom(String id, String language) {
+        return new ChatRoom(id, 0, language == null ? "Spanish" : language, "💬");
+    }
     public static ChatRoom byId(String id) {
         for (ChatRoom room : ALL) {
             if (room.id.equals(id)) {

@@ -43,6 +43,8 @@ public class ChatActivity extends AppCompatActivity {
 
     private ChatRepository.Registration messageRegistration;
     private ChatRepository.Registration connectionRegistration;
+    public static final String EXTRA_FRIEND_NAME = "extra_friend_name";
+    public static final String EXTRA_LANGUAGE = "extra_language";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +53,11 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         settings = new ChatSettings(this);
-        room = ChatRoom.byId(getIntent().getStringExtra(EXTRA_ROOM_ID));
+        String roomId = getIntent().getStringExtra(EXTRA_ROOM_ID);
+        String friendName = getIntent().getStringExtra(EXTRA_FRIEND_NAME);
+        room = friendName != null
+                ? ChatRoom.privateRoom(roomId, getIntent().getStringExtra(EXTRA_LANGUAGE))
+                : ChatRoom.byId(roomId);
         nickname = getIntent().getStringExtra(EXTRA_NICKNAME);
         myUid = ChatRepository.currentUid();
         if (room == null || nickname == null || myUid == null) {
@@ -59,7 +65,11 @@ public class ChatActivity extends AppCompatActivity {
             return;
         }
 
-        binding.textRoomTitle.setText(room.titleRes);
+        if (friendName != null) {
+            binding.textRoomTitle.setText(getString(R.string.chat_with, friendName));
+        } else {
+            binding.textRoomTitle.setText(room.titleRes);
+        }
         binding.editMessage.setHint(getString(R.string.chat_input_hint, room.language));
         binding.buttonBack.setOnClickListener(v -> finish());
         binding.buttonSend.setOnClickListener(v -> send());

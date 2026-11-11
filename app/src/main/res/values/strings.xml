@@ -321,10 +321,10 @@
     <string name="chat_hint_words">Try using: %1$s</string>
     <string name="chat_points_popup">+%1$d ✨ vocabulary points</string>
     <string name="leaderboard_button">🏆 Top 10</string>
-    <string name="leaderboard_title">Top chatters</string>
-    <string name="leaderboard_how">You earn 2 points for each word you have learned that you use in a message (up to 6 per message, 30 a day).</string>
+
+
     <string name="leaderboard_loading">Loading…</string>
-    <string name="leaderboard_empty">No scores yet. Be the first!</string>
+
     <string name="leaderboard_failed">Could not load the scores. Check your connection.</string>
     <string name="leaderboard_you">%1$s (you)</string>
     <string name="leaderboard_points">%1$d pts</string>
@@ -360,4 +360,49 @@
     <string name="choice_topics">Learn words by topic</string>
     <string name="choice_topics_sub">Café, airport, shopping and more</string>
     <string name="wod_listen">Listen</string>
+    <string name="leaderboard_title">Friends leaderboard</string>
+    <string name="leaderboard_how">You and your friends only. Switch between XP and chat points.</string>
+    <string name="leaderboard_empty">Add friends to compete with them!</string>
+    <string name="menu_friends">Friends</string>
+    <string name="friends_title">Friends</string>
+    <string name="friends_subtitle">Add friends, chat privately and compete.</string>
+    <string name="friends_search_hint">Search by nickname</string>
+    <string name="friends_search">Search</string>
+    <string name="friends_search_short">Type at least 2 letters.</string>
+    <string name="friends_searching">Searching…</string>
+    <string name="friends_no_results">Nobody found with that name.</string>
+    <string name="friends_requests">Friend requests</string>
+    <string name="friends_my">My friends</string>
+    <string name="friends_none">No friends yet. Search for a nickname above.</string>
+    <string name="friends_add">Add</string>
+    <string name="friends_accept">Accept</string>
+    <string name="friends_decline">Decline</string>
+    <string name="friends_chat">💬 Chat</string>
+    <string name="friends_remove">Remove</string>
+    <string name="friends_remove_title">Remove friend?</string>
+    <string name="friends_remove_msg">%1$s will no longer be able to chat with you.</string>
+    <string name="friends_request_sent">Request sent to %1$s</string>
+    <string name="friends_need_name">Pick a nickname first (Chat → Change name).</string>
+    <string name="friends_failed">Could not load. Check your connection.</string>
+    <string name="friends_chat_language">Chat in which language?</string>
+    <string name="friends_leaderboard_button">🏆 Friends leaderboard</string>
+    <string name="chat_with">Chat with %1$s</string>
+    <string name="leaderboard_xp">⚡ %1$d XP</string>
+    <string name="leaderboard_tab_xp">⚡ XP</string>
+    <string name="leaderboard_tab_points">⭐ Points</string>
+    <string name="dir_from_english">English → %1$s  ⇄</string>
+    <string name="dir_to_english">%1$s → English  ⇄</string>
+    <string name="translator_hint_foreign">%1$s text</string>
+    <string name="translator_mic">🎤 Speak</string>
+    <string name="translator_mic_unavailable">Voice input is not available on this phone.</string>
+    <string name="translator_mic_prompt">Speak now…</string>
+    <string name="translator_warn_title">Almost at today\'s limit</string>
+    <string name="translator_warn_message">About %1$d free characters are left today. When they run out, new translations are switched off until tomorrow. Saved translations still work.</string>
+    <string name="menu_invite">Invite friends</string>
+    <string name="invite_message">%1$s I am learning Spanish and Korean with LinguaPath. Come and learn with me! %2$s</string>
+    <string name="invite_link">https://github.com/Snehh0206/LinguaPath</string>
+    <string name="invite_chooser">Invite with</string>
+    <string name="invite_no_app">No app found to send the invitation.</string>
+    <string name="topics_subtitle_language">Words for the places you will go · %1$s</string>
+
 </resources>

@@ -136,6 +136,9 @@
         <activity
             android:name=".CreditsActivity"
             android:exported="false" />
+        <activity
+            android:name=".FriendsActivity"
+            android:exported="false" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
