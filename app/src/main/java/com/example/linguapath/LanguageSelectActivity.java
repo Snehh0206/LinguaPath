@@ -27,7 +27,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 public class LanguageSelectActivity extends AppCompatActivity {
 
     private static final String TAG = "LanguageSelect";
-
+    private ActivityResultLauncher<Void> pickContact;
     private ActivityLanguageSelectBinding binding;
     private AuthRepository authRepository;
     private ObjectAnimator floatKorean;

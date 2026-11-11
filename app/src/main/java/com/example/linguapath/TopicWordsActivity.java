@@ -14,6 +14,7 @@ import com.example.linguapath.model.Topic;
 import com.example.linguapath.model.TopicWord;
 import com.example.linguapath.speech.SpeechHelper;
 import android.content.Intent;
+import com.example.linguapath.data.ScenarioRepository;
 
 import java.util.List;
 
@@ -94,6 +95,19 @@ public class TopicWordsActivity extends AppCompatActivity {
             showLearnButton();
         });
         binding.buttonQuiz.setOnClickListener(v -> startTopicQuiz());
+        // Show the situation button only when this topic has a situation for this language
+        ScenarioRepository.load(this, t.id, language, list -> {
+            if (isFinishing() || isDestroyed() || list.isEmpty()) {
+                return;
+            }
+            binding.buttonScenario.setVisibility(View.VISIBLE);
+            binding.buttonScenario.setOnClickListener(v -> {
+                Intent intent = new Intent(this, ScenarioActivity.class);
+                intent.putExtra(ScenarioActivity.EXTRA_TOPIC_ID, t.id);
+                intent.putExtra(ScenarioActivity.EXTRA_LANGUAGE, language);
+                startActivity(intent);
+            });
+        });
     }
 
     // Saved through the Content Provider, like the other saved words

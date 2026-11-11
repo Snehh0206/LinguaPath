@@ -147,6 +147,10 @@
             android:name=".QuestsActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".ScenarioActivity"
+            android:exported="false" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"

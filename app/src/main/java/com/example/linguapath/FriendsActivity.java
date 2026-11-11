@@ -183,6 +183,7 @@ public class FriendsActivity extends AppCompatActivity {
                     intent.putExtra(ChatActivity.EXTRA_NICKNAME, nickname);
                     intent.putExtra(ChatActivity.EXTRA_FRIEND_NAME, friend.name);
                     intent.putExtra(ChatActivity.EXTRA_LANGUAGE, languages[which]);
+                    intent.putExtra(ChatActivity.EXTRA_FRIEND_UID, friend.uid);
                     startActivity(intent);
                 })
                 .show();
